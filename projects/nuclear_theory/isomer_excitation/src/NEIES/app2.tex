@@ -1,0 +1,39 @@
+\chapter{An Integral of Bessel Functions} \label{sec:integral-bessel}
+
+We consider the integral
+\begin{align}
+    I = \int\limits_{0}^{\infty} \frac{dq q^2}{\omega^2 - q^2 + i\epsilon} j_L(qx) j_L(qX)
+\end{align}
+which is conveniently put into the equivalent form
+\begin{align}
+    I = \int\limits_{0-i\epsilon}^{\infty - i\epsilon} \frac{dq q^2}{\omega ^2 - q^2} j_L(qx) j_L(qX)
+\end{align}
+First since the integrand is an even function of $q$, we can extend the integration to the whole real axis and divide by 2
+\begin{align}
+    I = \frac{1}{2}\int\limits_{-\infty-i\epsilon}^{\infty-i\epsilon} \frac{dq q^2}{\omega^2 - q^2 } j_L(qx) j_L(qX)
+\end{align}
+The integrand has two poles, at $q = \pm \omega $, above the integration line. We can evaluate the integral using the residue theorem
+Assume that $X>x$, we write the spherical bessel function of larger argument in terms of the spherical Hankel functions
+\begin{align}
+    j_L(qX) = \frac{1}{2}\left[h_L^{(+)}(qX) + h_L^{(-)}(qX)\right]
+\end{align}
+\begin{align}
+    I = \frac{1}{2}\int\limits_{-\infty-i\epsilon}^{\infty - i\epsilon} \frac{dq q^2}{\omega^2 - q^2 } j_L(qx) \frac{1}{2}\left[h_L^{(+)}(qX) + h_L^{(-)}(qX)\right] = I_++ I_-
+\end{align}
+where
+\begin{align}
+    I_{\pm} = \frac{1}{4}\int\limits_{-\infty-i\epsilon}^{\infty - i\epsilon} \frac{dq q^2}{\omega^2 - q^2 } j_L(qx) h_L^{(\pm)}(qX)
+\end{align}
+Remember that at large distances the spherical Hankel functions behave as
+\begin{align}
+    h_L^{(+)}(z) \sim (-i)^{L+1} \frac{e^{iz}}{z}, \quad h_L^{(-)}(z) \sim (i)^{L+1} \frac{e^{-iz}}{    z}
+\end{align}
+It follows that the integral $I_+$ can be calculated by closing the contour in the upper half plane, while the integral $I_-$ can be calculated by closing the contour in the lower half plane. Since both poles are above the integration line, only $I_+$ contributes to the integral. We have
+\begin{align}
+    I = I_+ = 2\pi i \sum\limits_{q = \pm \omega} Res\left(\frac{1}{4}\frac{q^2}{\omega^2 - q^2 } j_L(qx) h_L^{(+)}(qX), q\right) = \frac{\pi i}{2} \omega j_L(\omega x) h_L^{(+)}(\omega X)
+\end{align}
+
+So the integral of interest is given by
+\begin{align}
+    \int\limits_{0}^{\infty} \frac{dq q^2}{\omega^2 - q^2 + i\epsilon} j_L(qx) j_L(qX) = \frac{\pi i}{2} \omega j_L(\omega x_<) h_L^{(+)}(\omega x_>)
+\end{align}

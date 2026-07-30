@@ -1,0 +1,120 @@
+\chapter{The Fourier series of the electromagnetic field emitted by a particle}
+
+
+\section{The expansion in powers of inverse distance}
+We obtain here the Fourier series of the electromagnetic field emitted by a particle, assuming that the particle's trajectrory amplitude is small compared to the observation distance.
+
+We shall use the same notations as before
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & {\bf x} - \text{the observation point}                                                                                                                             \\
+         & {\bf r}(t) - \text{the particle's trajectory at time $t$}                                                                                                          \\
+         & {\mathfrak R}_0 - \text{the particle's initial position}                                                                                                           \\
+         & {\bf x}_0 = {\bf x}-{\mathfrak R}_0 - \text{the distance between the observation point and the particle's initial position}                                        \\
+         & {\bf r}_0(t) = {\bf r}(t) - {\mathfrak R}_0 - \text{the particle's trajectory at time $t$ - measured with respect to the initial position}                         \\
+         & {\bf R}({\bf x}_0,t) = {\bf x}-{\bf r}(t) = {\bf x}_0 - {\bf r}_0(t) - \text{the distance between the observation point and the particle's instantaneous position} \\
+         & {\bf n}({\bf x}_0,t) = \frac{{\bf R}(t)}{|{\bf R}(t)|} - \text{the unit vector of the observation point relative to the particle's trajectory at time $t$}         \\
+         & {\bf n}_0 = \frac{{\bf x}_0}{|{\bf x}_0|} - \text{the unit vector of the observation point relative to the particle's initial position}                            \\
+         & {\pmb \beta}(t) = \frac{d{\bf r}_0(t)}{dt} - \text{the velocity of the particle's trajectory at time $t$ in units of $c$}
+    \end{align}
+\end{tcolorbox}
+
+The general goal is to expand the Fourier transform of the electromagnetic field in powers of inverse distance $\frac1{|{\bf x}_0|}$
+
+We use the formulas
+\begin{align}
+     & |{\bf R}({\bf x}_0,t)|=|{\bf x}_0-{\bf r}_0(t)|\approx|{\bf x}_0 |- {\bf r}_0(t)\cdot{\bf n}_0  +\frac12\frac{{\bf r}_0(t)\cdot{\bf r}_0(t) -({\bf r}_0(t)\cdot{\bf n}_0)^2}{|{\bf x}_0|}                             \\
+     & {\bf n}({\bf x}_0,t) \approx {\bf n}_0 + \frac{{\bf n}_0\times({\bf n}_0\times{\bf r}_0(t))}{|{\bf x}_0|}                                                                                                             \\
+     & \frac1{|{\bf R}({\bf x}_0,t)|} \approx \frac1{|{\bf x}_0|}\left(1 + \frac{{\bf r}_0(t)\cdot{\bf n}_0}{|{\bf x}_0|} - \frac{{\bf r}_0(t)\cdot{\bf r}_0(t) - 3 ({\bf r}_0(t)\cdot {\bf n}_0)^2}{2|{\bf x}_0|^2} \right)
+\end{align}
+
+It is convenient to introduce the notations
+\begin{align}
+    { r}_\parallel(t) = {\bf r}_0(t)\cdot{\bf n}_0,\qquad r_\perp(t) = |{\bf r}_0(t)\times{\bf n}_0|
+\end{align}
+\subsection{The electric field}
+
+For the electric field we will use both (\ref{exomega-f1}) and (\ref{exomega-f2}), they should be equivalent up to an integration by parts
+
+\subsection{The electric field in the frequency domain; first formula}
+
+We start from the expression of the electric field in the frequency domain (\ref{exomega-f1})
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left(\frac{i\omega}c\frac{{\pmb \beta}(t)-{\bf n}({\bf x_0},t)}{R({\bf x}_0,t)}+\frac{{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)}\right)
+\end{align}
+and the direct calculation shows that
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}{c}|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                                                                   \\
+                              & \times\left[\frac1{|{\bf x}_0|}\left(\frac{i\omega}c({\pmb \beta}(t)-{\bf n}_0)\right)+\frac1{|{\bf x}_0|^2}\left({\bf n}_0+\frac{i\omega}c({\bf r}_0(t)+{\bf r}_0(t)\cdot{\bf n}_0({\pmb \beta}(t)-2{\bf n}_0))+\frac{\omega^2}{2c^2}({\bf r}_0(t)^2 -({\bf r}_0(t)\cdot{\bf n}_0)^2)({\bf n}_0-{\pmb \beta}(t))\right)\right]
+\end{align}
+or, with the notations introduced before
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}{c}|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                      \\
+                              & \times\left[\frac1{|{\bf x}_0|}\frac{i\omega}c({\pmb \beta}(t)-{\bf n}_0)+\frac1{|{\bf x}_0|^2}\left({\bf n}_0+\frac{i\omega}c({\bf r}_0(t)+r_\parallel(t)({\pmb \beta}(t)-2{\bf n}_0))+\frac{\omega^2}{2c^2}r_\perp(t)^2({\bf n}_0-{\pmb \beta}(t))\right)\right]
+\end{align}
+
+The first term into the previous equation can be transformed into the standard form using
+\begin{align}
+    \frac{d}{dt}\left[{\bf n}_0 e^{i\frac{\omega}{c}(t-r_\parallel(t))}\right]=\frac{i\omega}c{\bf n}_0 (1-{\pmb \beta}(t)\cdot{\bf n}_0) e^{i\frac{\omega}{c}(1-r_\parallel(t))}\label{partsn0}
+\end{align}
+and by adding the total derivative to the integration kernel we obtain
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}{c}|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                                      \\
+                              & \times\left[\frac1{|{\bf x}_0|}\frac{i\omega}c({\pmb \beta}(t)-{\bf n}_0 ({\pmb \beta}(t)\cdot{\bf n}_0))+\frac1{|{\bf x}_0|^2}\left({\bf n}_0+\frac{i\omega}c({\bf r}_0(t)+r_\parallel(t)({\pmb \beta}(t)-2{\bf n}_0))+\frac{\omega^2}{2c^2}r_\perp(t)^2({\bf n}_0-{\pmb \beta}(t))\right)\right]
+\end{align}
+or
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}{c}|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                           \\
+                                  & \times\left[-\frac1{|{\bf x}_0|}\frac{i\omega}c{\bf n}_0\times({\bf n}_0\times{\pmb \beta}(t))+\frac1{|{\bf x}_0|^2}\left({\bf n}_0+\frac{i\omega}c({\bf r}_0(t)+r_\parallel(t)({\pmb \beta}(t)-2{\bf n}_0))+\frac{\omega^2}{2c^2}r_\perp(t)^2({\bf n}_0-{\pmb \beta}(t))\right)\right]
+    \end{align}
+\end{tcolorbox}
+
+
+\subsection{The electric field in the frequency domain; second formula}
+
+Now we consider the formula (\ref{exomega-f2})
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[-\frac{{\bf n}({\bf x}_0,t)\times({\bf n}({\bf x}_0,t)\times{\pmb \beta}(t))}{R({\bf x}_0,t)}\left(\frac{i\omega}c-\frac1{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)(1+{\bf n}({\bf x}_0,t)\cdot{\pmb \beta}(t))}{R({\bf x}_0,t)^2}\right]
+\end{align}
+
+which, by direct calculation, is written as
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) = & \frac1{2\pi}\frac{e_0 e^{i\frac{\omega|{\bf x}_0|}c}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                                                                         \\
+                                & \times\left[-\frac{1}{|{\bf x}_0|}\frac{i\omega}c{\bf n}_0\times({\bf n}_0\times{\pmb \beta}(t))\right.\nonumber                                                                                                                                                                                                                   \\
+                                & \left.\,+\frac1{|{\bf x}_0|^2}\left({\bf n}_0-{\pmb \beta }(t) +2 {\bf n}_0({\bf n}_0\cdot{\pmb \beta}(t)  ) + \frac{i\omega}c({\bf r}_0(t)\times({\bf n}_0\times{\pmb \beta}(t))+{\bf n}_0\times({\bf r}_0(t)\times{\pmb \beta}(t))-3{\bf n}_0({\bf n}_0\cdot{\pmb \beta}(t))({\bf r}_0(t)\cdot{\bf n}_0))\right.\right.\nonumber \\
+                                & \left.\left.\,+\frac{\omega^2}{2c^2}{\bf n}_0\times({\bf n}_0\times{\pmb \beta}(t))({\bf r}_0(t)^2 - ({\bf n}_0\cdot{\bf r}_0(t))^2)\right)\right]
+\end{align}
+
+We use the notations
+\begin{align}
+     & {\pmb \beta}_\perp(t) = {\pmb \beta}(t)-{\bf n}_0({\bf n}_0\cdot{\pmb \beta}(t)) = - {\bf n}_0\times({\bf n}_0\times{\pmb \beta}(t)) \\
+     & \beta_\parallel(t) = {\bf n}_0\cdot{\pmb \beta}(t)                                                                                   \\
+     & r_{0\parallel}(t) = {\bf r}_0(t)\cdot{\bf n}_0                                                                                       \\
+     & r_{0\perp(t)} = |{\bf r}_0(t)\times{\bf n}_0|
+\end{align}
+and using the result (\ref{partsn0}) we can replace inside the integral
+\begin{align}
+    {\bf n}_0\rightarrow {\bf n}_0\beta_\parallel(t)
+\end{align}
+and we obtain
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf E}({\bf x}_0,\omega) = & \frac1{2\pi}\frac{e_0 e^{i\frac{\omega|{\bf x}_0|}c}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                                                                         \\
+                                    & \times\left[\frac{1}{|{\bf x}_0|}\frac{i\omega}c{\pmb \beta}_\perp(t)\right.\nonumber                                                                                                                                                                                                                                              \\
+                                    & \left.\,+\frac1{|{\bf x}_0|^2}\left(3{\bf n}_0\beta_\parallel(t)-{\pmb \beta }(t)  + \frac{i\omega}c({\bf r}_0(t)\times({\bf n}_0\times{\pmb \beta}(t))+{\bf n}_0\times({\bf r}_0(t)\times{\pmb \beta}(t))-3{\bf n}_0 \beta_\parallel(t)r_{0\parallel}(t))-\frac{\omega^2}{2c^2}{\pmb \beta}_\perp(t)r_{0\perp}(t)^2\right)\right]
+    \end{align}
+\end{tcolorbox}
+\subsection{The magnetic field}
+Also by direct calculation the result (\ref{bxomega-f1})
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\bf n}({\bf x}_0,t)\times{\pmb \beta}(t)}{R({\bf x}_0,t)}\left(\frac{i\omega}c-\frac{1}{R({\bf x}_0,t)}\right),\label{bxomega-f1}
+\end{align}
+is written as
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf B}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}{c}|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t-\frac1c{\bf n}_0\cdot{\bf r}_0(t)\right)}\nonumber                                                                                                                                                    \\
+                                  & \times\left[\frac1{|{\bf x}_0|}\frac{i\omega}c{\bf n}_0\times{\pmb \beta}(t)+\frac1{|{\bf x}_0|^2}\left(-{\bf n}_0\times{\pmb \beta}(t) - \frac{i\omega}c({\bf r}_0(t)\times{\pmb \beta}(t) - 2 r_\parallel(t)({\bf n}_0\times{\pmb \beta}(t)))-\frac{\omega^2}{2c^2} r_\perp(t)^2({\bf n}_0\times{\pmb \beta}(t))\right)\right]
+    \end{align}
+\end{tcolorbox}
+

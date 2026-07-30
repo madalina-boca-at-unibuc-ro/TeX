@@ -1,0 +1,178 @@
+\chapter{Process of Isomer state Excitation}
+
+According to \cite{jacob_enhanced_2025}, the process it a two-step process, where the first step is the excitation of the nucleus to a higher energy state, and the second step is the decay of the excited state to the isomeric state. The first step can be achieved through two  mechanisms, (photon absorption and inelastic electron scattering). The second step is presumed to be photon emission.
+
+In the case of photon absorption the incoming photon is produced by Brehmstrahlung of electrons on a metal target.
+
+The Feynman diagrams for the two processes are shown in Fig. \ref{fig:diagrams-process-1} and Fig. \ref{fig:diagrams-process-2} below.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|a\rangle \)};
+                \vertex [above=2cm of e_in, xshift=0cm] (e_mid);
+                \vertex [above=2cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out){\(|b\rangle\)} ;
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_out] (gamma_out) {\(|\gamma\rangle\)} ;
+
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (e_mid) -- [fermion, green!40!blue] (e_out),
+                (e_mid) -- [photon, edge label=\(q\), blue] (n_mid),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                (n_top) -> [photon, edge label=\(k\), blue] (gamma_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|a\rangle \)};
+                \vertex [above=2cm of e_in, xshift=0cm] (e_mid);
+                \vertex [above=2cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out){\(|b\rangle\)} ;
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_top] (gamma_out) {\(|\gamma'\rangle\)} ;
+
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (e_top) -- [fermion, green!40!blue] (e_out),
+                (e_top) -- [photon, edge label=\(q\), blue] (n_top),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                (n_mid) -> [photon, edge label=\(k'\), blue] (gamma_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+    \end{center}
+
+
+    \caption{The  two Feynman diagrams for the  process (1) of isomer state excitation: inelastic electron scattering followed by photon emission.    \label{fig:diagrams-process-1}}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|a\rangle \)};
+                \vertex [above=2cm of e_in, xshift=0cm] (e_mid);
+                \vertex [above=2cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out){\(|b\rangle\)} ;
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_out] (gamma_out) {\(|\gamma\rangle\)} ;
+
+                \vertex [above left=1cm and 3cm of e_in] (nuc) {\(O\)};
+                \vertex [above=1cm of e_in] (i) {\(.\)};
+                \draw  [draw=red, fill=red, fill opacity=0.3, thick] (nuc) circle (0.1cm);
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (e_mid) -- [fermion, green!40!blue] (e_out),
+                (e_mid) -- [photon, edge label=\(q\), blue] (n_mid),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                  (n_top) -> [photon, edge label=\(k\), blue] (gamma_out),
+                                    (nuc) --[photon, red] (i),
+
+                };
+            \end{feynman}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|a\rangle \)};
+                \vertex [above=2cm of e_in, xshift=0cm] (e_mid);
+                \vertex [above=2cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out){\(|b\rangle\)} ;
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_top] (gamma_out) {\(|\gamma'\rangle\)} ;
+
+
+                \vertex [above left=1cm and 3cm of e_in] (nuc) {\(O\)};
+                \vertex [above=1cm of e_in] (i) {\(.\)};
+                \draw  [draw=red, fill=red, fill opacity=0.3, thick] (nuc) circle (0.1cm);
+
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (e_top) -- [fermion, green!40!blue] (e_out),
+                (e_top) -- [photon, edge label=\(q\), blue] (n_top),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                (n_mid) -> [photon, edge label=\(k'\), blue] (gamma_out),
+                                    (nuc) --[photon, red] (i),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+    \end{center}
+
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|\gamma\rangle \)};
+                \vertex [above=2cm of e_in, xshift=0cm] (e_mid);
+                \vertex [above=2cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out) ;
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_out] (gamma_out) {\(|\gamma'\rangle\)} ;
+
+
+                \diagram* {
+                (e_in) -- [photon, edge label=\(k\), blue] (n_mid),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                (n_top) -> [photon, edge label=\(k\), blue] (gamma_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) ;
+                \vertex [above=1.5cm of e_in, xshift=0cm] (e_mid) {\(|\gamma\rangle\)};
+                \vertex [above=2.5cm of e_mid, xshift=0cm] (e_top);
+                \vertex [above=2cm of e_top, xshift=0cm] (e_out);
+
+                \vertex [right=2cm of e_in] (n_in) {\(|\alpha\rangle\)};
+                \vertex [above=2cm of n_in] (n_mid) ;
+                \vertex [above=2cm of n_mid] (n_top);
+                \vertex [above=2cm of n_top] (n_out) {\(|\beta\rangle\)} ;
+                \vertex [right=2cm of n_top] (gamma_out) {\(|\gamma'\rangle\)} ;
+
+
+                \diagram* {
+                (e_mid) -- [photon, edge label=\(k\), blue] (n_top),
+                (n_in) -- [fermion, very thick] (n_mid) -- [fermion, very thick] (n_out),
+                (n_mid) -> [photon, edge label=\(k'\), blue] (gamma_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+    \end{center}
+
+
+    \caption{The  two Feynman diagrams for the  process (2) of isomer state excitation: photon absorption followed by photon emission.    \label{fig:diagrams-process-2}}
+\end{figure}
+

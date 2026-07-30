@@ -1,0 +1,121 @@
+
+
+% Preamble with common LaTeX settings and packages
+
+
+% Language settings
+\usepackage[english]{babel}
+
+% Import management
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage{chngcntr}
+\usepackage{chappg}
+
+
+% Font and encoding
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{calc}
+\usepackage{ulem}
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage{empheq}
+
+
+% Numbering
+
+\numberwithin{equation}{section}
+\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+\usepackage[chapter,nottoc]{tocbibind}
+\usepackage[titletoc]{appendix}
+\usepackage{tocloft}
+
+% Allow for part-qualified chapter and section numbers in the table of contents.
+\setlength{\cftchapnumwidth}{3.5em}
+\setlength{\cftsecnumwidth}{4.5em}
+\setlength{\cftsubsecnumwidth}{5.5em}
+\setlength{\cftsubsubsecnumwidth}{6.5em}
+\cftsetpnumwidth{3.5em}
+\cftsetrmarg{4.5em}
+
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Colors
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tcolorbox}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% References and citations
+\usepackage[hyperindex,breaklinks=true,hypertexnames=false]{hyperref}
+\renewcommand{\theHchapter}{\thepart.\arabic{chapter}}
+\usepackage{cleveref}
+
+% Page layout
+\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+\usepackage{emptypage}
+
+% Fonts 
+\usepackage{kpfonts}
+\usepackage{eufrak}
+
+% Indentation
+\usepackage{indentfirst}
+
+% Custom commands
+\newcommand{\chapterauthor}[1]{%
+    {\parindent0pt\vspace*{-25pt}%
+            \linespread{1.1}\large\scshape#1%
+            \par\nobreak\vspace*{35pt}}
+    \@afterheading%
+}
+
+% Tikz
+\usepackage{tikz, tikz-3dplot}
+
+% tcolorbox libraries
+\tcbuselibrary{skins,breakable}
+
+% Custom distinctive box for important results (text + math)
+\newtcolorbox{importantbox}[1][]{%
+    enhanced,
+    colback=NavyBlue!5!white,
+    colframe=NavyBlue!75!black,
+    boxrule=1.5pt,
+    arc=4pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    #1
+}
+
+% Left-border highlight box for intermediate results
+\newtcolorbox{highlightbox}[1][]{%
+    enhanced,
+    frame hidden,
+    colback=WildStrawberry!5!white,
+    borderline west={3pt}{0pt}{WildStrawberry!80!black},
+    arc=0mm,
+    left=12pt,
+    right=12pt,
+    top=8pt,
+    bottom=8pt,
+    #1
+}

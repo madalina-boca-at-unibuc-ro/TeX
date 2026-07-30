@@ -1,0 +1,18 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Compiled document (remove this rule if PDFs should be versioned)
+*.pdf
+
+# Editor and sync artifacts
+*~
+*conflicted copy*
+

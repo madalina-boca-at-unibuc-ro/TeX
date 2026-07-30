@@ -1,0 +1,93 @@
+
+
+\chapter{The ponderomotive force theory}
+\section{Equations of motion}
+
+Consider the relativistic equations of motion for a particle with a time and coordinate dependent mass ${\cal M}({\bm x},t)$
+
+The covariant Lagrange function will be
+\begin{align}
+ L_{(\tau)} = -{\cal M}(x) c\sqrt{\frac{dx_\mu}{d\tau}\frac{dx^\mu}{d\tau}}=-{\cal M}(x) c\sqrt{\dot x_{\mu}\dot x^{\mu}}
+\end{align}
+The equations of motion are obtained from
+\begin{align}
+ &\frac{\partial L_{(\tau)}}{\partial\dot x_\mu}=-{\cal M}(x)c\frac{\dot x^{\mu}}{\sqrt{\dot x_{\mu}\dot x^{\mu}}}\quad \frac{\partial L_{(\tau)}}{\partial x_{\mu}}=-\frac{\partial {\cal M}(x)}{\partial x_\mu}c\sqrt{\dot x_{\mu}\dot x^{\mu}},\\
+  &\frac{d}{d\tau}\left(-{\cal M}(x)c\frac{\dot x^{\mu}}{\sqrt{\dot x_{\mu}\dot x^{\mu}}}\right)=-\frac{\partial {\cal M}(x)}{\partial x_{\mu}}c\sqrt{\dot x_\mu\dot x^\mu}
+\end{align}
+If we assume that
+\begin{align}
+ \dot x_\mu\dot x^{\mu} = c^2
+\end{align}
+as it should be then the equations of motion are
+\begin{align}
+    \frac{d}{d\tau}\left({\cal M}(x)\dot x^{\mu}\right)=c^2\frac{\partial {\cal M}(x)}{\partial x_{\mu}}
+\end{align}
+The expression of the four acceleration $\frac{du}{d\tau}$ will be  
+\begin{align}
+{\cal M}(x)\frac{d\dot x^{\mu}}{d\tau}=c^2\frac{\partial{\cal M}(x)}{\partial x_{\mu}}-\dot x^{\mu} \frac{d{\cal M}(x)}{d\tau}=c^2\frac{\partial{\cal M}(x)}{\partial x_{\mu}}-\dot x^{\mu}\dot x^{\nu}\frac{\partial{\cal M}(x)}{\partial x_{\nu}}=\left(c^2 g^{\mu\nu} -\dot x^{\mu}\dot x^{\nu}\right)\frac{\partial{\cal M}(x)}{\partial x^{\nu}}
+\end{align}
+The covariant form of the equations of motion 
+\begin{align}
+    \boxed{\frac{dx^{\mu}}{d\tau}=u^{\mu},\quad \frac{du^{\mu}}{d\tau}=\frac{1}{{\cal M}(x)}\left(c^2 g^{\mu\nu} -\dot x^{\mu}\dot x^{\nu}\right)\frac{\partial{\cal M}(x)}{\partial x^{\nu}}}
+\end{align}
+To check the correctness of the above formula we shoud verify that
+\begin{align}
+    u\cdot \frac{du}{d\tau}=0
+\end{align}
+In our case,
+\begin{align}
+u_\mu\frac{du^\mu}{d\tau}=\frac{1}{{\cal M}(x)}\left(c^2 g^{\mu\nu} -u^{\mu}u^{\nu}\right)u_\mu\frac{\partial{\cal M}(x)}{\partial x^{\nu}}=0
+\end{align}
+
+
+The above formulas are valid if $u^\mu\approx 0$, or $u^\mu\ll c $. If $u$ is not small, the formulas are still valid, but in a reference frame in which the dressed electron is at rest, and we need to perform a Lorentz boost to find the acceleration in the laboratory frame.
+
+
+
+
+
+\section{The dressed mass}
+
+In our case we define the variable mass in terms of a 4-vector potential
+\begin{align}
+ A(x) = \left(\frac{ \Phi(x)}c,{\bm A}(x)\right)
+\end{align}
+as
+\begin{align}
+ {\cal M}(x) = m\sqrt{1-\frac{e^2\langle A^2\rangle (x)}{(mc)^2}}
+\end{align}
+where $m$ is the (constant) mass of the isolated particle and $ \langle A^2\rangle(x) $ is the time average
+\begin{align}
+ \langle A^2\rangle (x)= \frac 1{T} \int\limits_{-T/2}^{T/2}d\tau A^2(t+\tau, {\bm x})
+\end{align}
+In  a Coulomb gauge, the four vector potential reduces to
+\begin{align}
+ A(x) = \left(0, {\bm A}(x)\right), \quad A^2(x) = -{\bm A}^2(x)
+\end{align}
+and the dressed mass becomes
+\begin{align}
+ {\cal M}(x) =m\sqrt{1+\frac{e^2\langle {\bm A}^2\rangle(x)}{(mc)^2}},\quad \langle {\bm A}^2\rangle (x)= \frac 1{T} \int\limits_{-T/2}^{T/2}d\uptau {\bm A}^2(t+\uptau, {\bm x}) = -\frac 1{T} \int\limits_{-T/2}^{T/2}d\uptau { A}^2(t+\uptau, {\bm x})
+\end{align}
+Define the dimensionless quantity
+\begin{align}
+ a(x) = \frac{e^2}{(mc)^2}\frac1T\int\limits_{-T/2}^{T/2} d \uptau {\bm A}^2(t+\uptau, {\bm x})= -\frac{e^2}{(mc)^2}\frac1T\int\limits_{-T/2}^{T/2} d \uptau { A}^2(t+\uptau, {\bm x})
+\end{align}
+
+The derivatives are
+\begin{align}
+ \frac{\partial a(x)}{\partial x_{\mu}}= \frac{2e^2}{(mc)^2}\frac1T\int\limits_{-T/2}^{T/2} d \uptau {\bm A}(t+\uptau, {\bm x})\cdot \partial^\mu {\bm A}(t+\uptau, {\bm x})=- \frac{2e^2}{(mc)^2}\frac1T\int\limits_{-T/2}^{T/2} d \uptau { A}(t+\uptau, {\bm x})\cdot \partial^\mu { A}(t+\uptau, {\bm x})
+\end{align}
+
+
+We can define the 4-vector
+\begin{align}
+ \upsilon = (1,0,0,0),\quad  \text{and}\quad c\uptau\upsilon = (c\uptau, 0, 0, 0)
+\end{align}
+
+and define ${\bm A}$ as a function of the four-vector $x\equiv (ct,{\bm x})$. Then in covariant notations we get
+\begin{align}
+& \boxed{a(x) = -\frac{e^2}{(mc)^2}\frac1{\lambda}\int\limits_{-\lambda/2}^{\lambda/2} d\chi  { A}^2(x + \chi \upsilon)=-\frac{e^2}{(mc)^2}\frac1{\lambda}\int\limits_{-\lambda/2}^{\lambda/2} d\chi   A_\alpha(x + \chi \upsilon) A^\alpha(x + \chi \upsilon)}\\
+&\boxed{\partial^\mu a(x) = -\frac{2e^2}{(mc)^2}\frac1{\lambda}\int\limits_{-\lambda/2}^{\lambda/2} d\chi  { A}(x + \chi \upsilon)\cdot\partial^\mu{ A}(x + \chi \upsilon)=-\frac{2e^2}{(mc)^2}\frac1{\lambda}\int\limits_{-\lambda/2}^{\lambda/2} d\chi  { A}_\alpha(x + \chi \upsilon)\cdot\partial^\mu{ A}^\alpha(x + \chi \upsilon)}\\
+&\boxed{{\cal M}(x) = m  \sqrt{1+a(x)}}\\
+&\boxed{\partial^\mu {\cal M}(x) =m\partial^\mu\sqrt{1+a(x)}=\frac m2{\partial^\mu a(x)}\frac1{\sqrt{1+a(x)}}}
+\end{align}

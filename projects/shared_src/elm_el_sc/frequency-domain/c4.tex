@@ -1,0 +1,106 @@
+\chapter{Numerical calculation of the Fourier transform of the potentials}
+
+In this chapter we will discuss the numerical calculation of the Fourier transform of the potentials.
+
+
+
+\section{General results}
+The Fourier transform of the potential is
+\begin{align}
+     & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}\frac1{R({\bf x}_0,t)}                             \\
+     & {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dte^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}
+\end{align}
+where
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & {\bf x}_0={\bf x}-{\boldsymbol{\mathfrak{R}}}_0,\qquad {\bf r}_0(t)={\bf r}(t)-{\boldsymbol{\mathfrak{R}}}_0, \qquad {\bf n}_0=\frac{{\bf x}_0}{|{\bf x}_0|}    \nonumber \\
+         & {\bf R}({\bf x}_0,t)={\bf x}_0-{\bf r}_0(t),\qquad R({\bf x}_0,t)=|{\bf R}({\bf x}_0,t)|,\qquad {\bf n}({\bf x}_0,t)=\frac{{\bf R}({\bf x}_0,t)}{R({\bf x}_0,t)}
+    \end{align}
+\end{tcolorbox}
+In the above equation the notations are
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{enumerate}
+
+        \item ${\bf x},t $ are the observation point and time in the laboratory frame,
+        \item ${\boldsymbol{\mathfrak{R}}}_0$ is the initial electron position,
+        \item ${\bf r}(t)$ the electron trajectory as a function of time, with respect to the laboratory frame,
+        \item ${\bf x}_0$ is the observation point relative to the electron initial position
+        \item ${\bf r}_0(t)$ is the electron trajectory relative to the electron initial position as a function of time in the laboratory frame. {\color{red}${\bf r}_0(t)$ is the quantity that can be assumed as small with respect to ${\bf x}_0$ for long distances.}
+    \end{enumerate}
+\end{tcolorbox}
+
+
+\section[The Fourier transform of the potentials]{The Fourier transform of the potentials in the long distance approximation}
+
+
+The expansion up to the third order in $\frac1{|{\bf x}_0|}$ is
+\begin{align}
+     & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left[ct-{\bf n}_0\cdot{\bf r}_0(t)\right)}                                     \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)       \right.\nonumber \\
+     & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2\right)     \right]\end{align}
+\begin{align}
+     & {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0 c}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left(ct-{\bf n}_0\cdot{\bf r}_0(t)\right)} {\boldsymbol{\beta}}(t) \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)       \right.\nonumber \\
+     & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2\right)     \right]
+\end{align}
+We denote the angles of ${\bf n}_0$ by $\theta_0$, $\phi_0$
+
+To perform the change of variable $t\rightarrow\tau$ we can use the relation
+\begin{align}
+    dt = \gamma d\tau,\qquad \gamma = \frac{u^0}{c} = \frac1{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align}
+
+The Fourier expansion becomes then
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}d\tau \gamma e^{i\frac{\omega}c\left[ct(\tau)-{\bf n}_0\cdot{\bf r}_0(\tau)\right)}                                     \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(\tau)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(\tau)|^2} \right)       \right.\nonumber \\
+         & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(\tau)
+        \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(\tau)+\frac{i\omega}c({\bf r}_0(\tau)
+        \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(\tau)|^2\right)     \right]                                                                                                                                                                                                                                                                                                                                                            \\
+         & {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0 c}\int\limits_{-\infty}^{\infty}d\tau \gamma e^{i\frac{\omega}c\left[ct(\tau)-{\bf n}_0\cdot{\bf r}_0(\tau)\right)} {\boldsymbol{\beta}}(\tau) \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(\tau)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(\tau)|^2} \right)       \right.\nonumber     \\
+         & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(\tau)
+        \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(\tau)+\frac{i\omega}c({\bf r}_0(\tau)
+        \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(\tau)|^2\right)     \right]
+    \end{align}
+\end{tcolorbox}
+To eliminate the numerical errors we might need to compute separately the terms in different orders in $\frac1{|{\bf x}_0|}$; to begin with we compute the first order term. Note the ${\bf x}_0$ depends only on the electron initial position and on the observation point, so it is a constant with respect to the integration over $\tau$.
+
+
+\section{Using the proper retarded time as an integration variable}
+
+
+In the expression of the Fourier transform of the potentials (\ref{tranf_pot_scalar}, \ref{tranf_A_vector}) the integration variable is $t$. 
+    \begin{align}
+        &\Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{1}{R({\bf x},t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}({\bf x}_0,t_r))}\\
+        &{\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t_r)(1-{\bm{n}}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}
+    \end{align}
+
+The integrand is calculated in terms of the retarded proper time $\tau_r$
+    \begin{align}
+        &\Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{1}{R({\bf x},\tau_r)(1-{\bf n}({\bf x}_0,\tau_r)\cdot{\boldsymbol{\beta}}({\bf x}_0,\tau_r))}\label{tranf_pot_scalar_retarded}\\
+        &{\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(\tau_r)}{R({\bf x}_0,\tau_r)(1-{\bm{n}}({\bf x}_0,\tau_r)\cdot{\boldsymbol{\beta}}(\tau_r))}\label{tranf_A_vector_retarded}
+    \end{align}
+The relation between $t$ and $\tau_r$ is ((\ref{deftau_r}))
+    \begin{align}
+        ct=  r^0(\tau_r)+|{\bf x}_0-{\bf r}_0(\tau_r)|=ct+\sqrt{(x_{0i}-r_{0i}(\tau_r))(x_{0i}-r_{0i}(\tau_r))}\label{taur_def}
+    \end{align}
+    and the derivative of $t$ with respect to $\tau_r$ is
+    \begin{align} 
+        \frac{d(ct)}{d\tau_r}=\frac{d}{d\tau_r}\left(ct+\sqrt{(x_{0i}-r_{0i}(\tau_r))(x_{0i}-r_{0i}(\tau_r))}\right)=1-\frac{(x_{0i}-r_{0i}(\tau_r))\beta_i(\tau_r)}{\sqrt{(x_{0i}-r_{0i}(\tau_r))(x_{0i}-r_{0i}(\tau_r))}}=1-\frac{{\boldsymbol{\beta}}(\tau_r)\cdot({\bf R}_0(\tau_r)}{|{\bf R}_0(\tau_r)|}\ge 0
+    \end{align}
+
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+        We assume that the routine of integration of the particles trajectory returns an interpolation function, so we can evaluate the trajectory at any proper time $\tau_r$.
+        For each particle and for each observation point we do the following steps:
+\begin{enumerate}
+\item We define an array $\{\tau_r\}$ with equidistant grid in $\tau_r$ from $\tau_r^{min}$ to $\tau_r^{max}$ with $N$ points.
+\item At each point we evaluate the corresponding laboratory time $t$ according to the formula (\ref{taur_def}) and store the value in another array $\{t\}$.
+\item Use a Julia routine to define an interpolation function from the arrays $\{t\}$ to $\{\tau_r\}$. Now we have a function $\tau_{f}(t)$ that returns the proper time for any laboratory time $t$.
+\item find the minimum and the maximum laboratory time: $t_{min}=\{t\}[1]$, $t_{max}=\{t\}[end]$ and define a time step to be used in the Fourier transform: $\Delta t = \frac{t_{max}-t_{min}}{N_t}$
+\item build an array $\{\tau_{int}\}$ with $\{\tau_{int}\}[i]=\tau_{f}(t[i])$
+\end{enumerate}
+Now we can define a function which gets as an argument the trajectory of the particle and the point in the plane of the observation and returns the set of the proper times to be used in the Fourier transform. Such a function should be broadcasted to all the observation points.  Cons: the interpolation function might require a large number of points to be accurate, if the particle's velocity is very large, but then we need anyway many points in the Fourier transform.
+    \end{tcolorbox}
+    

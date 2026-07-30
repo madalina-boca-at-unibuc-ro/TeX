@@ -1,0 +1,49 @@
+\section{The gauge invariance of the plane wave}
+
+The gauge invariance of the plane wave leads to the non-uniqueness of the polarization vector. A change of the form
+\begin{align}
+    s \rightarrow s' = s + \lambda n,
+\end{align}
+where $\lambda$ is an arbitrary complex number leads to a vector potential which describes the same electromagnetic field as \eqref{eq:plane_wave}.
+
+
+
+
+
+For proof, we consider a plane wave pulse, propagating along the direction ${\bf n}_1$. The vector potential of the pulse is given by
+\begin{align}
+    A_1(x) = A_0 f(k_1\phi_1)\Re\{s_1 e^{i k_1\phi_1}\}
+\end{align}
+where
+\begin{align}
+    \varphi_1 = n_1\cdot x, \qquad n_1 = (1,{\bf n}_1), \qquad k_1 = \frac{\omega_1}{c}
+\end{align}
+$f$ is the envelope of the pulse and $s_1$ is the polarization vector of the pulse.
+
+The gauge condition is given by
+\begin{align}
+    s_1\cdot n_1=0
+\end{align}
+and is always obeyed.
+
+If there is another null vector $n_2$ in the spatial direction ${\bf n}_2$,
+\begin{align}
+    n_2 = (1,{\bf n}_2)
+\end{align}
+and $k_2= \frac{\omega_2}{c}$ we can find a gauge transformation of the field $A_1(x)$ such that
+\begin{align}
+    s_1\cdot n_2=0
+\end{align}
+The gauge transformation is given by
+\begin{align}
+    s_1\rightarrow s_1' = s_1 + \alpha n_1
+\end{align}
+where $\alpha$ is a number calculated from the condition $s_1'\cdot n_2=0$.
+We obtain
+\begin{align}
+    \alpha = - \frac{s_1\cdot n_2}{n_1\cdot n_2}
+\end{align}
+and the gauge transformation is given by
+\begin{align}
+    s_1\rightarrow s_1' = s_1 - \frac{s_1\cdot n_2}{n_1\cdot n_2} n_1
+\end{align}

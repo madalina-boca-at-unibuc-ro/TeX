@@ -1,0 +1,3 @@
+# This document uses the pdfLaTeX version of kpfonts.
+# Override the system-wide LuaLaTeX default so `latexmk main.tex` works.
+$pdf_mode = 1;

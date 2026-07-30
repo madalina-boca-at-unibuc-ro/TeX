@@ -1,0 +1,28 @@
+# Directories unrelated to the scientific LaTeX project collection
+/Books/
+/fast_wrt/
+
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*-SAVE-ERROR
+
+# Compiled documents (remove this rule if PDFs should be versioned)
+*.pdf
+
+# Editor and sync artifacts
+*~
+*conflicted copy*
+
+# Recoverable metadata from repositories consolidated into this monorepository
+.standalone-git-backup/
+

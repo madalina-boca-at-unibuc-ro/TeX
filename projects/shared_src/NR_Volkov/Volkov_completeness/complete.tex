@@ -1,0 +1,17 @@
+\chapter{Proof of completeness of NRV solutions}
+
+
+We calculate 
+\begin{align} 
+{\cal I}=\int d{\bm p}\psi({\bm p},{\bm x}_1,t)\psi^*({\bm p},{\bm x}_2,t)
+\end{align}
+using the approximate form of the solutions
+By direct replacement we obtain 
+\begin{align} 
+{\cal I}=\frac1{(2\pi\hbar)^{3}}\int d{\bm p}_\perp e^{-\frac{i}{\hbar}{\bm p}_\perp\cdot{\bm r}_\perp}&\frac1{\left[1-\left({\bm a}^2(k\phi_1)+\frac{2{\bm a}(k\phi_1)\cdot{\bm p}_\perp}{mc}\right)\right]^{1/4}}\frac{e^{\frac{i}{\hbar}mc(z_1-z_2)}}{\left[1-\left({\bm a}^2(k\phi_2)+\frac{2{\bm a}(k\phi_2)\cdot{\bm p}_\perp}{mc}\right)\right]^{1/4}}\nonumber\\
+&\times \int d p_3e^{\frac{i}{\hbar}(mc-p_3)\int\limits_{\phi_2}^{\phi_1}d\xi \left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}\right]}
+\end{align}
+The integral over $p_3$ is a $\delta$ function
+\begin{align} 
+    \int d p_3e^{\frac{i}{\hbar}(mc-p_3)\int\limits_{\phi_2}^{\phi_1}d\xi \left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}\right]}=2\pi\hbar\delta(\int\limits_{\phi_2}^{\phi_1}d\xi \left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}\right])
+\end{align}

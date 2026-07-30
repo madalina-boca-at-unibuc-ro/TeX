@@ -1,0 +1,252 @@
+\chapter{The series expansion of the Fourier transform of the potentials in the frequency domain: the particle in circular motion}
+
+\section{General results}
+The Fourier transform of the potential is
+\begin{align}
+     & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}\frac1{R({\bf x}_0,t)}                             \\
+     & {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dte^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}
+\end{align}
+The expansion up to the third order in $\frac1{|{\bf x}_0|}$ is
+\begin{align}
+     & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left[ct-{\bf n}_0\cdot{\bf r}_0(t)\right)}                                     \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)       \right.\nonumber \\
+     & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2\right)     \right]\end{align}
+\begin{align}
+     & {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0 c}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left(ct-{\bf n}_0\cdot{\bf r}_0(t)\right)} {\boldsymbol{\beta}}(t) \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)       \right.\nonumber \\
+     & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2\right)     \right]
+\end{align}
+We denote the angles of ${\bf n}_0$ by $\theta_0$, $\phi_0$
+
+The particle trajectory is assumed circular with radius $R_0$ and angular velocity $\omega_0$, in the plane $z_0=0$, we denote by $\varphi_0$ the initial phase of the trajectory
+\begin{align}
+    {\bf r}_0(t)=R_0\left(\cos(\omega_0 t+\varphi_0), \sin(\omega_0 t+\varphi_0), 0\right)
+\end{align}
+The velocity is
+\begin{align}
+    {\bf v}_0(t)=R_0\omega_0\left(-\sin(\omega_0 t+\varphi_0), \cos(\omega_0 t+\varphi_0), 0\right)
+\end{align}
+The acceleration is
+\begin{align}
+    {\bf a}_0(t)=-R_0\omega_0^2\left(\cos(\omega_0 t+\varphi_0), \sin(\omega_0 t+\varphi_0), 0\right)
+\end{align}
+Then we have
+\begin{align}
+     & {\bf n}_0\cdot{\bf r}_0(t)=R_0\sin\theta_0\cos(\omega_0 t+\varphi_0-\phi_0)                             \\
+     & |{\bf n}_0\times{\bf r}_0(t)|^2=R_0^2(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_0 t+\varphi_0-\phi_0))
+\end{align}
+
+The Jacobi-Anger formula is
+\begin{align}
+    e^{i z \cos \theta} \equiv \sum_{n=-\infty}^{\infty} i^n J_n(z) e^{i n \theta}, \qquad e^{-i z \cos \theta} \equiv \sum_{n=-\infty}^{\infty} i^n J_n(-z) e^{i n \theta} = \sum_{n=-\infty}^{\infty} i^n J_{-n}(z) e^{i n \theta}=\sum_{n=-\infty}^{\infty} (-i)^n J_{n}(z) e^{-i n \theta}
+\end{align}
+
+The exponent in the integral for the potentials is
+\begin{align}
+    e^{i\frac{\omega}c\left(ct-{\bf n}_0\cdot{\bf r}_0(t)\right)}=e^{i\frac{\omega}c\left(ct-R_0\sin\theta_0\cos(\omega_0 t+\varphi_0-\phi_0)\right)}=e^{i\omega t} e^{-i\frac{\omega}c R_0\sin\theta_0\cos(\omega_0 t+\varphi_0-\phi_0)}
+\end{align}
+We use the notations
+\begin{align}
+    \frac{\omega_0}c R_0\sin\theta_0=\alpha_0, \qquad \frac{\omega}c R_0\sin\theta_0=\alpha,\qquad \frac{\omega_0}c = k_0,\qquad \frac{\omega}c = k
+\end{align}
+Then we have
+\begin{align}
+    e^{-i\frac{\omega}c R_0\sin\theta_0\cos(\omega_0 t+\varphi_0-\phi_0)} & =e^{-i \alpha_0 \cos(\omega_0 t+\varphi_0-\phi_0)}=\sum\limits_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega}{\omega_0}\alpha_0) e^{-i n (\omega_0 t+\varphi_0-\phi_0)}=\sum\limits_{n=-\infty}^{\infty} e^{-in\frac{\pi}2} J_n(\alpha) e^{-i n \omega_0 t}e^{in(\phi_0-\varphi_0)}\nonumber \\
+                                                                          & = \sum\limits_{n=-\infty}^{\infty} e^{-i n \omega_0 t}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\label{expser}
+\end{align}
+
+
+The velocity can be written as
+\begin{align}
+    {\boldsymbol{\beta}}(t)=\frac{R_0\omega_0}{c}\left(-\sin(\omega_0 t+\varphi_0), \cos(\omega_0 t+\varphi_0), 0\right)=k_0R_0\left(-\sin(\omega_0 t+\varphi_0), \cos(\omega_0 t+\varphi_0), 0\right)
+\end{align}
+It is convenient to write the reduced velocity in spherical coordinates
+\begin{align}
+    \beta_r = -k_0 R_0\sin\theta_0 \sin(\omega_0 t+\varphi_0-\phi_0), \qquad \beta_\theta = -k_0 R_0\cos\theta_0 \sin(\omega_0 t+\varphi_0-\phi_0), \qquad \beta_\phi = k_0 R_0\cos(\omega_0 t+\varphi_0-\phi_0)
+\end{align}
+
+
+
+\section{The scalar potential}
+
+\begin{align}
+     & \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left[ct-{\bf n}_0\cdot{\bf r}_0(t)\right)}                                     \left[\frac1{|{\bf x}_0|} +\frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)       \right.\nonumber \\
+     & \qquad \qquad \qquad \left.+\frac1{|{\bf x}_0|^3}\left(\frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2\right)     \right]\end{align}
+
+
+We will use the temporary notations
+\begin{align}
+     & \tilde\Phi^{(1)} = 1,                                                                                \\
+     & \tilde\Phi^{(2)}  = {\bf n}_0\cdot{\bf r}_0(t)+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} , \\
+     & \tilde\Phi^{(3)} = \frac32({\bf r}_0(t)
+    \cdot{\bf n}_0)^2-\frac12{\bf r}^2_0(t)+\frac{i\omega}c({\bf r}_0(t)
+    \cdot{\bf n}_0) |{\bf n}_0\times{\bf r}_0(t)|^2
+\end{align}
+and we write
+\begin{align}
+    \Phi({\bf x}_0,\omega) & = \sum\limits_{i=1,2,3}\Phi^{(i)}({\bm x}_0,\omega)
+\end{align}
+with
+\begin{align}
+    \Phi^{(j)}({\bm x}_0,\omega) & = \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\frac{ e^{i\frac{\omega}c|{\bm x}_0|}}{|{\bm x}_0|^i}\int\limits_{-\infty}^{\infty}dte^{i\omega t} e^{-i\frac{\omega}c{\bf n}_0\cdot{\bf x}_0}\tilde\Phi^{(i)}(t)
+\end{align}
+Using the previous result (\ref{expser}) we have
+\begin{align}
+    \Phi^{(j)}({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{ e^{i\frac{\omega}c|{\bm x}_0|}}{|{\bm x}_0|^j}\sum\limits_{n=-\infty}^{\infty}(-i)^nJ_n(\alpha) e^{in(\phi_0-\varphi_0)}\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}e^{-i n \omega_0 t}\tilde\Phi^{(j)}(t)
+\end{align}
+We will write
+\begin{align}
+    \tilde\Phi^{(j)}(t) & = \sum\limits_{m=-4}^{4} C^{(j)}_m e^{im (\omega_0t + \varphi_0-\phi_0)}
+\end{align}
+and then we obtain
+\begin{align}
+    \Phi^{(j)}({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{ e^{i\frac{\omega}c|{\bm x}_0|}}{|{\bm x}_0|^j}\sum\limits_{n=-\infty}^{\infty}(-i)^nJ_n(\alpha) e^{in(\phi_0-\varphi_0)}\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t} e^{-i n \omega_0 t}\sum\limits_{m=-4}^{4} C^{(j)}_m e^{im (\omega_0t + \varphi_0-\phi_0)}\nonumber \\
+                                 & =\frac{e_0}{4\pi\epsilon_0}\frac{ e^{i\frac{\omega}c|{\bm x}_0|}}{|{\bm x}_0|^j}\sum\limits_{n=-\infty}^{\infty}\sum\limits_{m=-4}^{4} C^{(j)}_m (-i)^nJ_n(\alpha) e^{i(n-m)(\phi_0-\varphi_0)}\frac1{2\pi}\int\limits_{-\infty}^{\infty}dte^{i\omega t} e^{-i (n-m) \omega_0 t}\nonumber                               \\
+                                 & =\frac{e_0}{4\pi\epsilon_0}\frac{ e^{i\frac{\omega}c|{\bm x}_0|}}{|{\bm x}_0|^j}\sum\limits_{n=-\infty}^{\infty}\sum\limits_{m=-4}^{4} C^{(j)}_m (-i)^nJ_n(\alpha) e^{i(n-m)(\phi_0-\varphi_0)}\delta(\omega-(n-m)\omega_0)
+\end{align}
+In the previous sum we change the sumation index $n\rightarrow N = n-m$ (with $n=N+m$) and we obtain
+\begin{align}
+    \Phi^{(j)}({\bf x}_0,\omega) = \sum\limits_{N=-\infty}^{\infty} \Phi_N^{(j)}({\bf x}_0,\omega)\delta(\omega-N\omega_0)
+\end{align}
+with
+\begin{align}
+    \Phi^{(j)}_N({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{ e^{iN\frac{\omega_0}c|{\bm x}_0|}}{|{\bm x}_0|^j}\sum\limits_{m=-4}^{4} C^{(j)}_m (-i)^{N+m}J_{N+m}(N\frac{\omega_0}cR_0\sin\theta_0) e^{iN(\phi_0-\varphi_0)}
+\end{align}
+The coefficients $C^{(j)}_m$ are calculated (see the Mathematica file \href{run:/home/madalina/Dropbox/work/bin/Mathematica/helical/circular-motion-angular-mom/v1.0.nb}{v1.0.nb})
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{|c||c|c|c|}
+        \hline
+        $C_m^{(j)}$ & $j=1$ & $j=2$                                           & $j=3$                                       \\
+        \hline
+        \hline
+        $m=-4$      & 0     & 0                                               & 0                                           \\
+        \hline
+        $m=-3$      & 0     & 0                                               & $-i\frac{N\omega_0R_0^3\sin^3\theta_0}{8c}$ \\
+        \hline
+        $m=-2$      & 0     & $-i\frac{N\omega_0R_0^2\sin\theta_0}{8c}$       & 0                                           \\
+        \hline
+        $m=-1$      & 0     & $\frac{R_0\sin\theta_0}{2}$                     & 0                                           \\
+        \hline
+        $m=0$       & 1     & $i \frac{N\omega_0 R_0^2(3+2\cos\theta_0)}{8c}$ & 0                                           \\
+        \hline
+        $m=1$       & 0     & $\frac{R_0\sin\theta_0}{2}$                     & 0                                           \\
+        \hline
+        $m=2$       & 0     & $-i\frac{N\omega_0R_0^2\sin\theta_0}{8c}$       & 0                                           \\
+        \hline
+        $m=3$       & 0     & 0                                               & 0                                           \\
+        \hline
+        $m=4$       & 0     & 0                                               & 0                                           \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+\section{First order formulas}
+
+\subsection{The scalar potential}
+\begin{align}
+    \Phi^{(1)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t} \frac1{|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty} e^{-i n \omega_0 t}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\nonumber \\
+                                 & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dte^{i(\omega-n\omega_0)t}\nonumber                   \\
+                                 & =\frac{e_0}{4\pi\epsilon_0} \frac{e^{ink_0|{\bf x}_0|}}{|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(n\alpha_0) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-n\omega_0)
+\end{align}
+
+\subsection{The vector potential}
+\begin{align}
+    {\bf A}^{(1)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0 c}\int\limits_{-\infty}^{\infty}dte^{i\omega t} \frac1{|{\bf x}_0|}{\boldsymbol{\beta}}(t)\sum\limits_{n=-\infty}^{\infty} e^{-i n \omega_0 t}J_n(\alpha_0) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\nonumber \\
+                                    & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha_0) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dt {\boldsymbol{\beta}}(t)e^{i(\omega-n\omega_0)t}
+\end{align}
+The radial component of the vector potential is
+\begin{align}
+    {A}_r^{(1)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}(-k_0 R_0\sin\theta_0 \sin(\omega_0 t+\varphi_0-\phi_0))\nonumber                                                                           \\
+                                  & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}(-k_0R_0\sin\theta_0)\frac1{2}e^{-i\frac{\pi}2}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}-e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]\nonumber \\
+                                  & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\sin\theta_0}{2}e^{i\frac{\pi}2}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}-e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]\nonumber         \\
+                                  & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\sin\theta_0}{2}\left[\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{i(n-1)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n-1)\omega_0)+\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{i(n+1)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n+1)\omega_0)\right]\nonumber                   \\
+                                  & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\sin\theta_0}{2}\sum\limits_{n=-\infty}^{\infty}e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\left[J_{n-1}(\alpha)+J_{n+1}(\alpha)\right]\delta(\omega-n\omega_0)
+\end{align}
+
+The component $A_\theta^{(1)}({\bf x}_0,\omega)$ is calculated similar, and we obtain the result
+\begin{align}
+    {A}_\theta^{(1)}({\bf x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\cos\theta_0}{2}\sum\limits_{n=-\infty}^{\infty}e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\left[J_{n-1}(\alpha)+J_{n+1}(\alpha)\right]\delta(\omega-n\omega_0)
+\end{align}
+
+The component $A_\phi^{(1)}({\bf x}_0,\omega)$ is
+\begin{align}
+    {A}_\phi^{(1)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}(k_0 R_0\cos(\omega_0 t+\varphi_0-\phi_0))\nonumber                                                                  \\
+                                     & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c|{\bf x}_0|}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}(k_0R_0)\frac1{2}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}+e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]\nonumber        \\
+                                     & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0}{2}\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty}dt e^{i(\omega-n\omega_0)t}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}+e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]\nonumber              \\
+                                     & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0}{2}\left[\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) (-i)e^{i(n-1)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n-1)\omega_0)+\sum\limits_{n=-\infty}^{\infty}J_n(\alpha) (i)e^{i(n+1)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n+1)\omega_0)\right]\nonumber \\
+                                     & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0}{2}(-i)\sum\limits_{n=-\infty}^{\infty}e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\left[J_{n+1}(\alpha)-J_{n-1}(\alpha)\right]\delta(\omega-n\omega_0)
+\end{align}
+
+Finally, we obtained the fourier transform of the potentials
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        \Phi^{(1)}({\bf x}_0,\omega)     & =\sum\limits_{n=-\infty}^{\infty} \Phi_n^{(1)}({\bf x}_0)\delta(\omega-n\omega_0),       \\
+        A_r^{(1)}({\bf x}_0,\omega)      & =\sum\limits_{n=-\infty}^{\infty} A_{r,n}^{(1)}({\bf x}_0)\delta(\omega-n\omega_0),      \\
+        A_\theta^{(1)}({\bf x}_0,\omega) & =\sum\limits_{n=-\infty}^{\infty} A_{\theta,n}^{(1)}({\bf x}_0)\delta(\omega-n\omega_0), \\
+        A_\phi^{(1)}({\bf x}_0,\omega)   & =\sum\limits_{n=-\infty}^{\infty} A_{\phi,n}^{(1)}({\bf x}_0)\delta(\omega-n\omega_0)
+    \end{align}
+\end{tcolorbox}
+with
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        \Phi_n^{(1)}({\bf x}_0)       & =\frac{e_0}{4\pi\epsilon_0} \frac{e^{ink_0|{\bf x}_0|}}{|{\bf x}_0|}J_n(n\alpha_0) e^{in(\phi_0-\varphi_0-\frac{\pi}2)},                                                                 \\
+        A_{r,n}^{(1)}({\bf x}_0)      & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ink_0|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\sin\theta_0}{2}\left[J_{n-1}(n\alpha_0)+J_{n+1}(n\alpha_0)\right] e^{in(\phi_0-\varphi_0-\frac{\pi}2)}, \\
+        A_{\theta,n}^{(1)}({\bf x}_0) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ink_0|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0\cos\theta_0}{2}\left[J_{n-1}(n\alpha_0)+J_{n+1}(n\alpha_0)\right] e^{in(\phi_0-\varphi_0-\frac{\pi}2)}, \\
+        A_{\phi,n}^{(1)}({\bf x}_0)   & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ink_0|{\bf x}_0|}}{|{\bf x}_0|}\frac{k_0R_0}{2}\left[J_{n+1}(n\alpha_0)-J_{n-1}(n\alpha_0)\right] e^{in(\phi_0-\varphi_0-\frac{\pi}2)}
+    \end{align}
+\end{tcolorbox}
+
+\section{Second order formulas}
+
+\subsection{The scalar potential}
+\begin{align}
+    \Phi^{(2)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left[ct-{\bf n}_0\cdot{\bf r}_0(t)\right)} \frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)\nonumber                                   \\
+                                 & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|^2}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\sum\limits_{n=-\infty}^{\infty} e^{-i n \omega_0 t}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)
+\end{align}
+Using the previous results we have
+\begin{align}
+    {{\bf n}_0\cdot{\bf r}_0(t)}+ & \frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2}  =R_0\sin\theta_0\cos(\omega_0 t+\varphi_0-\phi_0)+\frac{i\omega}{2c}R_0^2(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_0 t+\varphi_0-\phi_0))\nonumber                                                                                         \\
+                                  & =\frac{R_0\sin\theta_0}2\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}+e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]+\frac{i\omega}{2c}R_0^2\left[\cos^2\theta_0-\frac{\sin^2\theta_0}4\left(e^{i(\omega_0 t+\varphi_0-\phi_0)}-e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right)^2\right]\nonumber               \\
+                                  & = \frac{i\omega R_0^2}{4c}(1+\cos^2\theta_0)+\frac{R_0\sin\theta_0}{2}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}+e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]  -i\frac{\omega R_0^2 \sin^2\theta_0}{8c}\left[e^{2i(\omega_0 t+\varphi_0-\phi_0)}+e^{-2i(\omega_0 t+\varphi_0-\phi_0)}\right]\nonumber
+\end{align}
+The scalar potential is
+\begin{align}
+    \Phi^{(2)}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|^2}\sum\limits_{n=-\infty}^{\infty} J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\int\limits_{-\infty}^{\infty} dt e^{i\omega t} e^{-i n \omega_0 t}                                                                              \\
+                                 & \times\left\{\frac{i\omega R_0^2}{4c}(1+\cos^2\theta_0)+\frac{R_0\sin\theta_0}{2}\left[e^{i(\omega_0 t+\varphi_0-\phi_0)}+e^{-i(\omega_0 t+\varphi_0-\phi_0)}\right]  -i\frac{\omega R_0^2 \sin^2\theta_0}{8c}\left[e^{2i(\omega_0 t+\varphi_0-\phi_0)}+e^{-2i(\omega_0 t+\varphi_0-\phi_0)}\right]\right\}\nonumber
+\end{align}
+\begin{align}
+    \Phi^{(2)}({\bf x}_0,\omega)  =\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|^2}\sum\limits_{n=-\infty}^{\infty} J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}    \times
+     & \left\{\frac{i\omega R_0^2}{4c}(1+\cos^2\theta_0)\delta(\omega-n\omega_0)+\right.                                                                                                       \\                                                                                                                                                                                                & +\frac{R_0\sin\theta_0}{2}\left[e^{i(\varphi_0-\phi_0)}\delta(\omega-(n-1)\omega_0)+e^{-i(\varphi_0-\phi_0)}\delta(\omega-(n+1)\omega_0)\right] \nonumber \\
+     & \left. -i\frac{\omega R_0^2 \sin^2\theta_0}{8c}\left[e^{2i(\varphi_0-\phi_0)}\delta(\omega-(n-2)\omega_0)+e^{-2i(\varphi_0-\phi_0)}\delta(\omega-(n+2)\omega_0)\right]\right\}\nonumber
+\end{align}
+\begin{align}
+    \Phi^{(2)}({\bf x}_0,\omega)  =\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|^2}\sum\limits_{n=-\infty}^{\infty} J_n(\alpha)    \times
+     & \left\{\frac{i\omega R_0^2}{4c}(1+\cos^2\theta_0)e^{in(\phi_0-\varphi_0-\frac{\pi}2)} \delta(\omega-n\omega_0)+\right.                                                                                                \\                                                                                                                                                                                                & +\frac{R_0\sin\theta_0}{2}\left[e^{i(n-1)(\phi_0-\varphi_0-\frac{\pi}2)} (-i)\delta(\omega-(n-1)\omega_0)+e^{i(n+1)(\phi_0-\varphi_0-\frac{\pi}2)} (i)\delta(\omega-(n+1)\omega_0)\right] \nonumber \\
+     & \left.+i\frac{\omega R_0^2 \sin^2\theta_0}{8c}\left[e^{i(n-2)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n-2)\omega_0)+e^{i(n+2)(\phi_0-\varphi_0-\frac{\pi}2)}\delta(\omega-(n+2)\omega_0)\right]\right\}\nonumber
+\end{align}
+\begin{align}
+    \Phi^{(2)}({\bf x}_0,\omega)  =\frac{e_0 }{4\pi\epsilon_0}\frac{i R_0e^{i\frac{\omega}c|{\bf x}_0|}}{2|{\bf x}_0|^2}
+    \sum\limits_{n=-\infty}^{\infty} e^{in(\phi_0-\varphi_0-\frac{\pi}2)} & \delta(\omega-n\omega_0)    \times
+    \left\{\frac{\omega R_0}{2c}(1+\cos^2\theta_0)J_n(\alpha)+\right.                                          \\                                                                                                                                                                                                &\left. -\sin\theta_0\left[J_{n+1}(\alpha) - J_{n-1}(\alpha)\right] +\frac{\omega R_0 \sin^2\theta_0}{4c}\left[J_{n+2}(\alpha)+J_{n-2}(\alpha)\right]\right\}\nonumber
+\end{align}
+
+\subsection{The vector potential}
+
+\begin{align}
+    A^{(2)}_{r,n}({\bf x}_0,\omega) & = =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt\beta_r(t)e^{i\frac{\omega}c\left[ct-{\bf n}_0\cdot{\bf r}_0(t)\right)} \frac1{|{\bf x}_0|^2}\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)\nonumber                                \\
+                                    & =\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bf x}_0|}}{4\pi\epsilon_0|{\bf x}_0|^2}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\sum\limits_{n=-\infty}^{\infty} e^{-i n \omega_0 t}J_n(\alpha) e^{in(\phi_0-\varphi_0-\frac{\pi}2)}\beta_r(t)\left({{\bf n}_0\cdot{\bf r}_0(t)}+\frac{i\omega}{2c}{|{\bf n}_0\times{\bf r}_0(t)|^2} \right)
+\end{align}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../shared_src"
+		}
+	],
+	"settings": {
+		"git.openRepositoryInParentFolders": "always"
+	}
+}

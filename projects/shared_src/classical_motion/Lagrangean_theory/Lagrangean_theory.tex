@@ -1,0 +1,300 @@
+
+\section{The relativistic Lagrangian theory for a particle in a potential force}
+
+
+For a particle of mass $m$, moving in a potential field
+\begin{align}
+V({\bf x})
+\end{align}
+the Lagrange (non-covariant) function is
+\begin{align}
+ L_{(t)}=-m c \sqrt{c^{2}-{{\bf v}}^{2}(t)}-V({\bf x})
+\end{align}
+where
+\begin{align}
+ {\bf v}(t) = \frac{d{\bf x}(t)}{dt}
+\end{align}
+is the non-covariant velocity. The action integral is
+\begin{align}
+ S=\int\limits_{t_1}^{t_2} d t L_{(t)}
+\end{align}
+and the extremum condition for the action becomes
+\begin{align}
+\delta S=&\delta \int\limits_{t_1}^{t_2}dt L_{(t)}({\bf x},{\bf v})=\int\limits_{t_1}^{t_2}dt\left(\frac{\partial L}{\partial {\bf x}}\cdot\delta{\bf x}+\frac{\partial L}{\partial {\bf v}}\cdot\delta{\bf v}\right)=\int\limits_{t_1}^{t_2}dt\left(\frac{\partial L}{\partial {\bf x}}\cdot\delta{\bf x}+\frac{\partial L}{\partial {\bf v}}\cdot\delta{\frac{d{\bf x}}{dt}}\right)=\int\limits_{t_1}^{t_2}dt\left(\frac{\partial L}{\partial {\bf x}}\cdot\delta{\bf x}+\frac{\partial L}{\partial {\bf v}}\cdot{\frac{d{\delta\bf x}}{dt}}\right)=\nonumber\\
+=&\int\limits_{t_1}^{t_2}dt\left(\frac{\partial L}{\partial {\bf x}}\cdot\delta{\bf x}+\frac{d}{dt}\left(\frac{\partial L}{\partial {\bf v}}\cdot\delta{\bf x}\right)-\frac{d}{dt}\left(\frac{\partial L}{\partial {\bf v}}\right)\cdot\delta{\bf x}\right)=\int\limits_{t_1}^{t_2}dt\left(\frac{\partial L}{\partial {\bf x}}-\frac{d}{dt}\frac{\partial L}{\partial {\bf v}}\right)\cdot\delta{\bf x}
+\end{align}
+The Lagrange equations become
+\begin{align}
+ \frac{\partial L_{(t)}}{\partial {\bf x}}-\frac{d}{dt}\frac{\partial L_{(t)}}{\partial {\bf v}}={\bf 0}
+\end{align}
+i.e.
+\begin{align}
+ -\frac{\partial V}{\partial{\bf x}}=\frac{d}{dt}\frac{mc{\bf v}}{\sqrt{c^2-{\bf v}^2}}
+\end{align}
+The relativistic momentum is
+\begin{align}
+ {\bf p} = \frac{\partial L_{(t)}}{\partial {\bf v}}=\frac{mc{\bf v}}{\sqrt{c^2-{\bf v}^2}}=\frac{m{\bf v}}{\sqrt{1-\frac{{\bf v}^2}{c^2}}} = m\gamma {\bf v}
+\end{align}
+and the three dimensional force acting on the particle is
+\begin{align}
+ {\bf F} = -\frac{\partial V({\bf x})}{\partial {\bf x}}
+\end{align}
+and we obtained the equation of motion in the non-covariant form
+\begin{align}
+& {\bf F}=-\frac{\partial V}{\partial{\bf x}}=\frac{d{\bf p}}{dt},\quad p=m\gamma {\bf v}\\
+\end{align}
+\begin{importantbox}
+\begin{align}
+\frac{d{\bf x}}{dt} = {\bf v},\qquad
+\frac{d}{dt}\left(m\gamma{\bf v}\right)={\bf F} = -\frac{\partial V}{\partial{\bf x}}.
+\end{align}
+\end{importantbox}
+
+
+To get the covariant version of the equation of motion we define the proper time $\tau$, with
+\begin{align}
+ dt = \gamma d \tau,\quad d\tau=\frac{dt}{\gamma},\quad \frac{d}{d\tau} = \gamma\frac{d}{dt}
+\end{align}
+and
+\begin{align}
+ x = (ct, {\bf x}),\quad u = \frac{dx}{d\tau}=(\gamma c, \gamma {\bf v}),\quad p = m u = (\gamma mc,\gamma{\bf v})=(mc\gamma,{\bf p})
+\end{align}
+The four vector force is
+\begin{align}
+ K = \frac{d p}{d\tau}=\left(mc\frac{d\gamma}{d\tau}, \frac{d{\bf p}}{d\tau}\right)
+\end{align}
+The derivative of $\gamma$ is calculated directly
+\begin{align}
+\frac{d\gamma}{dt}=\frac{d}{dt}\frac1{\sqrt{1-\frac{{\bf v}^2}{c^2}}}=\frac1{c^2}\frac{{\bf v}\cdot\frac{d{\bf v}}{dt}}{(1-\frac{{\bf v}^2}{c^2})^{3/2}}
+\end{align}
+and
+\begin{align}
+\frac{d\gamma}{dt} = \frac{\gamma^3}{c^2}{\bf v}\cdot\frac{d{\bf v}}{dt},\quad  mc\frac{d\gamma}{d\tau}=\gamma^4 \frac{m}c{\bf v}\cdot \frac{d{\bf v}}{dt}\label{dg}
+\end{align}
+
+We want to prove that the four-force $K$ is orthogonal on the four velocity $u$, i.e.
+\begin{align}
+ mc \frac{d\gamma}{d\tau} c\gamma = \frac{d{\bf p}}{d\tau}\cdot\gamma{\bf v}=m\frac{d\gamma{\bf v}}{d\tau}\cdot\gamma{\bf v}
+\end{align}
+A direct proof is obvious, i.e.
+\begin{align}
+ m\frac12\frac{d}{d\tau}(c^2\gamma^2)-m\frac12\frac{d}{d\tau}(\gamma{\bf v})^2=\frac{m}2\frac{d}{d\tau}\left(\gamma^2(c^2-{\bf v}^2)\right)=\frac{mc^2}{2}\frac{d}{d\tau}1=0
+\end{align}
+A more involved proof would be
+\begin{align}
+ mc\frac{d\gamma}{d\tau} =\frac1{c\gamma}\frac{d{\bf p}}{d\tau}\cdot\gamma{\bf v} = \frac{\gamma}c\frac{d{\bf p}}{dt}\cdot{\bf v}=m\frac{\gamma}c\frac{d\gamma{\bf v}}{dt}\cdot{\bf v}=m\frac{\gamma}c\left(\frac{d\gamma}{dt}{\bf v}^2+\gamma\frac{d{\bf v}}{dt}\cdot{\bf v}\right)
+\end{align}
+or
+\begin{align}
+  mc\gamma\frac{d\gamma}{dt}=m\frac{\gamma}c\left(\frac{d\gamma}{dt}{\bf v}^2+\gamma\frac{d{\bf v}}{dt}\cdot{\bf v}\right),\quad \frac{d\gamma}{dt} =\frac1{c^2}\left(\frac{d\gamma}{dt}{\bf v}^2+\gamma\frac{d{\bf v}}{dt}\cdot{\bf v}\right),\quad \frac{1}{\gamma^2}\frac{d\gamma}{dt}=\frac1{c^2}\gamma\frac{d{\bf v}}{dt}\cdot{\bf v}
+\end{align}
+which is equivalent to the result (\ref{dg}).
+
+The covariant version of the equation of motion is
+\begin{align}
+ x = (ct, {\bf x}),\quad \frac{dx}{d\tau} = u,\quad \frac{d (mu)}{d\tau} = K,\quad K = \left(\gamma\frac{{\bf v}}c\cdot{\bf F},\gamma{\bf F}\right) = \left(\frac{{\bf u}}c\cdot{\bf F},\frac{u^0}{c}{\bf F}\right),\quad {\bf F} = -\frac{\partial V}{\partial {\bf x}}
+\end{align}
+or
+\begin{importantbox}
+\begin{align}
+ x = (ct, {\bf x}),\quad \frac{dx}{d\tau} = \frac{p}{m},\quad \frac{d p}{d\tau} = K,\quad
+ K  = \left(\frac{{\bf p}}{mc}\cdot{\bf F},\frac{p^0}{mc}{\bf F}\right),\quad
+ {\bf F} = -\frac{\partial V}{\partial {\bf x}}.
+\end{align}
+\end{importantbox}
+
+The direct derivation of the above equations can be obtained directly from the covariant Lagrange function. The action integral can e written as
+\begin{align}
+ S = \int dt L_{(t)}=\int d\tau\gamma L_{(t)}=\int d\tau L_{(\tau)},\quad L_{(\tau)} = \gamma L_{(t)} = -mc\gamma\sqrt{c^2 - {\bf v}^2}-\gamma V({\bf x})
+\end{align}
+i.e.
+\begin{align}
+ L_{(\tau)}= -mc\sqrt{\frac{dx_{\mu}}{d\tau}\frac{dx^{\mu}}{d\tau}} - \frac 1c \frac{dx^0}{d\tau} V({\bf x})
+\end{align}
+The covariant equations of motion are
+\begin{align}
+ \frac{d}{d\tau}\frac{\partial L_{(\tau)}}{\partial \dot x_\mu}=\frac{\partial L_{(\tau)}}{\partial x_{\mu}},\quad \dot x_{\mu}=\frac{dx_{\mu}}{d\tau}
+\end{align}
+In our case
+\begin{align}
+ \frac{\partial L_{(\tau)}}{\partial \dot x_i}=-m\dot x^i,\quad \frac{\partial L_{(\tau)}}{\partial x_i}=-\frac1c \dot x^0\frac{\partial V}{\partial x_i}=\frac1c \dot x^0\frac{\partial V({\bf x})}{\partial x^i}=-\gamma F^i = -K^i
+\end{align}
+and the spatial components of the equations of motions become
+\begin{align}
+ \frac{d}{d\tau}(m\dot x^i) =K ^i
+\end{align}
+for the temporal components we get
+\begin{align}
+ \frac{\partial L_{(\tau)}}{\partial \dot x_0}=-mc\dot x^0-\frac1c V({\bf x}), \quad \frac{d}{d\tau}\frac{\partial L_{(\tau)}}{\partial \dot x_0}=-mc\frac{d\dot x^0}{d\tau}-\frac1c\frac{\partial V}{\partial x^i}\dot x^i=-mc\frac{d\dot x^0}{d\tau}+\frac1c{\bf F}\cdot{\bf u}
+\end{align}
+i.e.
+\begin{align}
+ mc\frac{du^0}{d\tau} = \frac1c{\bf F}\cdot{\bf u}
+\end{align}
+with the notation
+\begin{align}
+ u=\dot x,\quad p  = mu
+\end{align}
+we get
+\begin{importantbox}
+\begin{align}
+ \dot x = u = \frac{p}{m},\quad \dot p = K,\quad
+ K = \left(\frac1{cm}{\bf F}\cdot {\bf p},\frac{p^0}{mc}{\bf F}\right),\quad
+ F^i = -\frac{\partial V({\bf x})}{\partial x^i}.
+\end{align}
+\end{importantbox}
+
+
+
+
+
+\section{The relativistic Lagrangian theory for a particle in an electromagnetic field}
+
+In that case the potential is
+\begin{align}
+ V(x, \dot x) = q(\frac{\Phi}c c -{\bf A} \cdot {\bf v})
+\end{align}
+and the covariant Lagrange function
+\begin{importantbox}
+\begin{align}
+L_{(\tau)}= -mc\sqrt{\frac{dx_{\mu}}{d\tau}\frac{dx^{\mu}}{d\tau}}
+- \frac 1c \frac{dx^0}{d\tau} V(x, \dot x)
+= -mc\sqrt{\frac{dx_{\mu}}{d\tau}\frac{dx^{\mu}}{d\tau}}
+-q A_\mu(x)\frac{dx^{\mu}}{d\tau}.
+\end{align}
+\end{importantbox}
+where $A$ is the four potential
+\begin{align}
+ A(x) = \left(\frac{\Phi(x)}{c},{\bf A}(x)\right)
+\end{align}
+Then the covariant Lagrange equations become
+\begin{align}
+ &\frac{\partial L_{(\tau)}}{\partial\left(\frac{du^{\mu}}{d\tau}\right)}=-m\frac{dx_{\mu}}{d\tau}-qA_\mu(x),\quad \frac{d}{d\tau}\frac{\partial L_{(\tau)}}{\partial\left(\frac{du^{\mu}}{d\tau}\right)}= -m\frac{d}{d\tau}\frac{dx_{\mu}}{d\tau}-q\partial_\nu A_\mu(x) \frac{dx_{\nu}}{d\tau}\\
+ &\frac{\partial L_{(\tau)}}{\partial x^\mu}=-q\partial_\mu A_\nu \frac{dx^{\nu}}{d\tau}\\
+ &{\frac{d}{d\tau} (m\frac{dx_{\mu}}{d\tau}) = q\left(\partial_\mu A_\nu(x) - \partial_\nu A_\mu(x)\right)\frac{dx^\nu}{d\tau}}
+\end{align}
+or
+\begin{highlightbox}
+\begin{align}
+& \frac{dx^{\mu}}{d\tau} = \frac{p^{\mu}}m, \label{eq1}\\
+& \frac{dp^\mu}{d\tau} = \frac{q}{m} F^{\mu\nu}(x)p_\nu,qquad
+F_{\mu\nu}(x)=\partial_\mu A_\nu(x) - \partial_\nu A_\mu(x). \label{eq2}
+\end{align}
+\end{highlightbox}
+
+\section{The non-covariant kinematics}
+
+\subsection{The relation between covariant and non-covariant velocity/acceleration}
+
+We review here the relation between the covariant and non covariant velocity and acceleration
+\subsubsection{The covariant kinematics}
+
+The independent variable is the proper time of the particle $\tau$
+
+\begin{enumerate}
+\item the trajectory
+\begin{align}
+    r(\tau)\equiv (ct(\tau), x(\tau), y(\tau), z(\tau))
+\end{align}
+\item the 4-velocity
+\begin{align}
+    u(\tau)=\frac{dr(\tau)}{d\tau},\quad u\cdot u = c^2
+\end{align}
+    \item the 4-acceleration
+    \begin{align}
+        w(\tau)=\frac{du(\tau)}{d\tau}, \quad w\cdot u = 0
+    \end{align}
+\end{enumerate}
+
+\subsubsection{The non-covariant kinematics}
+
+The independent variable is the laboratory time $t$. The relation between the proper time $\tau$ and the laboratory time $t$ is
+\begin{align}
+ dt = \gamma d\tau,\quad  \gamma =\frac1{\sqrt{1-\frac{{\bf v}^2}{c^2}}}=\frac{u^0}{c},\quad
+ \frac{d}{dt}=\frac{1}{\gamma}\frac{d}{dt}
+\end{align}
+\begin{enumerate}
+\item the trajectory 
+\begin{align}
+    {\bf r}(t) \equiv (x(t), y(t), z(t))
+\end{align}
+\item the velocity
+\begin{align}
+{\bf v}(t) =\frac{d{\bf r}(t)}{dt},\quad {\bf v}(t)=\frac{{\bf u}}{\gamma} = c\frac{\bf u}{u^0},\quad {\boldsymbol{\beta}} = \frac{\bf v}c=\frac{\bf u}{u^0}
+\end{align}
+\item the acceleration
+\begin{align}
+    {\bf a}(t)=\frac{d{\bf v}(t)}{dt}=\frac{d}{dt}\frac{{\bf u}}{\gamma}=\frac1{\gamma}\frac{d{\bf u}}{dt}-{\bf u}\frac1{\gamma^2}\frac{d{\bf \gamma}}{dt}=\frac1{\gamma^2}\frac{d{\bf u}}{d\tau}-{\bf u}\frac1{\gamma^3}\frac{d{\bf \gamma}}{d\tau}=\frac1{\gamma^2}{\boldsymbol w}-{\bf u}\frac1{\gamma^3}\frac{d{\bf \gamma}}{d\tau}
+\end{align}
+From 
+\begin{align}
+\gamma = \frac1c\sqrt{c^2+{\bf u}^2}\quad\longrightarrow\quad\frac{d\gamma}{d\tau}=\frac1{c\sqrt{c^2+{\bf u}^2}}{\bf u}\cdot\frac{d{\bf u}}{d\tau}=\frac1{c^2\gamma}{\bf u}\cdot{{\boldsymbol w}}
+\end{align}
+and the acceleration is 
+\begin{importantbox}
+\begin{align}
+&    {\bf a}(t) = \frac1{\gamma^2}{\boldsymbol w}-\frac1{c^2\gamma^4}({\bf u}\cdot{\boldsymbol w}){\bf u}=\frac1{\gamma^2}\left({\boldsymbol w}-\frac1{c^2}({\bf v}\cdot{\boldsymbol w}){\bf v}\right)=\frac1{\gamma^2}\left({\boldsymbol w}-({\boldsymbol \beta}\cdot{\boldsymbol w}){\boldsymbol \beta}\right)\\
+&\dot{\boldsymbol\beta}(t)\equiv\frac{d{\boldsymbol\beta}(t)}{dt}=\frac1{\gamma^2c}\left({\boldsymbol w}-({\boldsymbol \beta}\cdot{\boldsymbol w}){\boldsymbol \beta}\right)
+\end{align}
+\end{importantbox}
+
+
+
+
+\end{enumerate}
+
+ Starting from the previously written {\bf covariant equations of motion}
+
+The equation of motion of a charged particle in the field is
+\begin{align}
+\frac{dx^{\mu}}{d\tau}=u^{\mu},\quad \frac{du^{\mu}}{d\tau}=\frac{e}{m}F^{\mu\nu}u_{\nu}
+\end{align}
+where $\tau$ is the proper time.
+
+we can derive the  non-covariant equations
+
+
+
+The derivatives of the coordinates are
+\begin{align}
+ \frac{d{\bf x}}{dt} =\frac1{\gamma}d{\bf x}{d\tau}=c\frac{\bf u}{u^0}={\bf v} =c{\bf\beta}
+\end{align}
+
+Using the explicit form of $F$ we obtain
+\begin{align}
+m\frac{d}{dt}\left(\gamma{\bf v}\right)=e\left({\bf E}+{\bf v}\times{\bf B}\right)
+\end{align}
+i.e.
+\begin{align}
+ m\frac{d\gamma}{dt}{\bf v}+m\gamma\frac{d{\bf v}}{dt}=e\left({\bf E}+{\bf v}\times{\bf B}\right)
+\end{align}
+We multiply the entire equation by ${\bf v}$ and we get
+\begin{align}
+    m\frac{d\gamma}{dt}{\bf v}^2+m\gamma{\bf v}\cdot\frac{d{\bf v}}{dt}=e{\bf E}\cdot{\bf v}, \quad  m\frac{d\gamma}{dt}{\bf v}^2+m\gamma\frac12\frac{d{\bf v}^2}{dt}=e{\bf E}\cdot{\bf v}, 
+\end{align}
+Using the definition of $\gamma$
+\begin{align}
+    \gamma=\frac1{\sqrt{1-\frac{{\bf v}^2}{c^2}}},\quad \longrightarrow \quad \frac{d\gamma}{dt}=\frac12\frac{\gamma^3}{c^2}\frac{d{\bf v}^2}{dt}\quad \longrightarrow \quad \frac{d{\bf v}^2}{dt}=\frac{2c^2}{\gamma^3}\frac{d\gamma}{dt},\quad {\bf v}^2=c^2\frac{\gamma^2-1}{\gamma^2} 
+\end{align}
+Finally, we have
+\begin{align}
+    m\frac{d\gamma}{dt}{c^2}\frac{\gamma^2-1}{\gamma^2}+m\gamma\frac12\frac{2c^2}{\gamma^3}\frac{d\gamma}{dt}=e{\bf E}\cdot{\bf v},\quad  mc^2\frac{d\gamma}{dt} = e{\bf E}\cdot{\bf v}
+\end{align}
+and the second equation of motion becomes
+\begin{align}
+    \frac{e{\bf E}\cdot{\bf v}}{c^2}{\bf v}+m\gamma\frac{d{\bf v}}{dt}=e\left({\bf E}+{\bf v}\times{\bf B}\right)
+\end{align}
+i.e.
+\begin{importantbox}
+\begin{align}
+m\gamma\frac{d{\bf v}}{dt}=e\left({\bf E}+{\bf v}\times{\bf B}-\frac1{c^2}({\bf E}\cdot{\bf v}){\bf v}\right)
+\end{align}
+\end{importantbox}
+
+The system of 6 equations that has to be solved numerically is 
+\begin{highlightbox}
+\begin{align}
+   & \frac{d{\bf r}}{dt}={\bf v}\\
+   & \frac{d{\bf v}}{dt}=\frac{e}{m\gamma}\left({\bf E}+{\bf v}\times{\bf B}-\frac1{c^2}({\bf E}\cdot{\bf v}){\bf v}\right),\quad \gamma = \frac1{\sqrt{1-\frac{{\bf v}^2}{c^2}}}
+\end{align}
+\end{highlightbox}

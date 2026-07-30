@@ -1,0 +1,184 @@
+\section{The trajectory a plane wave propagating along $Oz$}
+
+{\color{red}We consider initially only the case of a plane wave propagating along $Oz$ (${\bf n} = {\bf e}_z$); in the next section we will return to the case of an arbitrary propagation direction}
+
+In the relativistic case the equations of motion are
+\begin{equation}
+    \frac{dp^{\mu}}{d\tau}=e_0F^{\mu\nu}u_{\nu},\qquad  u=\frac{d  x}{d\tau},\qquad  p=m_0 u,
+\end{equation}
+where \(m_0\), \(e_0\) are the rest mass and charge of the particle, \(\tau\) is the proper time and \(\hat{\bf F}\) is  the electromagnetic four-tensor of the field intensities:
+\begin{equation}
+    F^{\mu\nu}=\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}\equiv\;\vline\,\vline\begin{array}{cccc}0&\frac{dA^1(\phi)}{d\phi}&\frac{dA^2(\phi)}{d\phi}&0\\\\-\frac{dA^1(\phi)}{d\phi}&0&0&-\frac{dA^1(\phi)}{d\phi}\\\\-\frac{dA^2(\phi)}{d\phi}&0&0&-\frac{dA^2(\phi)}{d\phi}\\\\0&\frac{dA^1(\phi)}{d\phi}&\frac{dA^2(\phi)}{d\phi}&0\end{array}\vline\,\vline.
+\end{equation}
+With the above definitions the equations of motion become
+\begin{eqnarray}
+    &&\frac{dp^0}{d\tau}=\frac{dp^3}{d\tau}=-e_0\frac{d{\bf A}(\phi)}{d\phi}\cdot{\bf u}_{\perp},\label{ep1}\\
+    &&\frac{d{\bf p}_{\perp}}{d\tau}=-e_0\frac{d{\bf A}(\phi)}{d\phi}\left(u^0-u^3\right).\label{ep2}
+\end{eqnarray}
+From the first  of the above formulae one obtains
+\begin{equation}
+    \frac{d(p^0-p^3)}{d\tau}=0
+\end{equation}
+i.e. \(p^0-p^3=m_0(u^0-u^3)\) is a constant of motion; taking into account the initial conditions we have \(p^0-p^3=m_0(u^0_0-u^3_0)\). Further, noticing that
+\begin{equation}
+    u^0-u^3={\mathrm{const}}=\frac{d}{d\tau}\left(x^0-x^3\right)=\frac{d\phi}{d\tau}\label{dphidtau}
+\end{equation}
+we have
+\begin{importantbox}
+    \begin{align}
+        \frac{d\phi}{d\tau} = (u^0_0-u^3_0)=\frac{n\cdot p_0}{m_0}\quad \longrightarrow \quad \phi(\tau) = \frac{n\cdot p_0}{m_0}(\tau-\tau_0)+\phi_0.
+    \end{align}
+\end{importantbox}
+
+Eq.(\ref{ep2}) becomes
+\begin{equation}
+    \frac{d{\bf p}_{\perp}}{d\tau}=-e_0\,\frac{d{\bf A}}{d\phi}\,\frac{d\phi}{d\tau}.
+\end{equation}
+It is again convenient to look for the solutions of the above equations as functions of \(\phi\).  Using the initial conditions one obtains
+\begin{equation}\label{eq-i1}
+    {\bf p}_{\perp}(\phi)=\left(-e_0{\bf A}(\phi)+e_0{\bf A}_0\right)+ {\bf p}_{0\perp}
+\end{equation}
+and, then, from Eqs.(\ref{ep1}) and (\ref{eq-i1})
+\begin{align}
+    \frac{dp^3(\phi)}{d\phi}= \frac{dp^3}{d\tau}\frac{d\tau}{d\phi} = \frac{dp^3}{d\tau}\frac1{n\cdot u_0}=-\frac{e_0}{n\cdot u_0}\frac{d{\bf A}(\phi)}{d\phi}\cdot{\bf u}_{\perp} = -\frac{e_0}{m_0 n\cdot u_0}\frac{d{\bf A}(\phi)}{d\phi}\left(-e_0{\bf A}(\phi)+e_0{\bf A}_0+ {\bf p}_{0\perp}\right)
+\end{align}
+\begin{equation}
+    \frac{dp^3(\phi)}{d\phi}=\frac{1}{2n \cdot p_0}\frac{d}{d\phi}{\left(e_0{\bf A}(\phi)-e_0{\bf A}_0-{\bf p}_{0\perp}\right)^2} = \frac1{2n\cdot p_0}\frac{d}{d\phi}\left(e_0^2{\pmb{\cal A}}(\phi)\right)^2
+\end{equation}
+with\begin{importantbox}
+    \begin{equation}
+        e_0{\pmb{\cal A}}(\phi)=(e_0{\bf A}(\phi)-e_0{\bf A}_0 - {\bf p}_{0\perp}).
+    \end{equation}
+\end{importantbox}
+from which we get the solution
+\begin{equation}
+    p^3(\phi)=\frac{e_0^2{\pmb{\cal A}}^2(\phi)}{2n\cdot p_0}-\frac{{\bf p}_{\perp0}^2}{2n\cdot p_0}+p_{0}^3,
+\end{equation}
+An equivalent notation for the above formula is
+\begin{equation}
+    e_0{\pmb{\cal A}}(\phi_0) = e_0{\pmb{\cal A}}_0 =- {\bf p}_{0\perp}, \qquad p^3(\phi)=\frac{e_0^2{\pmb{\cal A}}^2(\phi)}{2n\cdot p_0}-\frac{e_0^2{\pmb{\cal A}}^2_0}{2n\cdot p_0}+p_{0}^3.
+\end{equation}
+Finally, the solution for the four-momentum of the particle is
+\begin{importantbox}
+    \begin{align}
+         & {\bf p}_{\perp}(\phi)  = -e_0{\pmb{\cal A}}(\phi),                                                                            \\
+         & p^3(\phi)              = \frac{e_0^2{\pmb{\cal A}}^2(\phi)}{2n\cdot p_0}-\frac{e_0^2{\pmb{\cal A}}^2_0}{2n\cdot p_0}+p_{0}^3, \\
+         & p^0(\phi)              = p^3(\phi) + n\cdot p_0.
+    \end{align}\end{importantbox}
+The differential equations in \(\phi\) obeyed by the coordinates are
+\begin{equation}
+    \frac{d{\bf r}}{d\phi}=\frac{d{\bf r}}{d\tau}\frac{d\tau}{d\phi}=\frac{1}{(u_0^0-u_0^3)}\frac{d{\bf r}}{d\tau}=\frac{{\bf p}(\phi)}{n\cdot p_0}.
+\end{equation}
+with the solution
+\begin{align}
+     & {\bf r}_{\perp}(\phi)={\pmb{\mathfrak R}}_{0\perp}-\frac{1}{n\cdot p_0}\int\limits_{\phi_0}^{\phi}e_0{\pmb{\cal A}}(\chi)d\chi,                                                \\
+     & z(\phi)={\mathfrak R}_{0}^3+\int\limits_{\phi_0}^{\phi}d\chi\left[\frac{e_0^2{\pmb{\cal A}}^2(\chi)-e_0^2{\pmb{\cal A}}^2_0}{2(n\cdot p_0)^2}+\frac{p_0^3}{n\cdot p_0}\right].
+\end{align}
+
+We write the above result explicitly, assuming that the field is gradually turned on, i.e. \({\bf A}_0=0\); also the inferior limit of the integrals is taken to be \(-\infty\) (not written explicitly)
+Then we have
+\begin{align}
+     & e_0{\pmb{\cal A}}(\phi) =e_0 {\bf A}(\phi) - {\bf p}_{0\perp}
+\end{align}
+and then
+\begin{align}
+     & {\bf p}_{\perp}(\phi) = -e_0{\pmb{\cal A}}(\phi) = -e_0{\bf A}(\phi) + {\bf p}_{0\perp}                                                                                                                        \\
+     & p^3(\phi) =\frac{(e_0{\bf A}(\phi)-{\bf p}_{0\perp})^2}{2n\cdot p_0}-\frac{{\bf p}_{0\perp}^2}{2n\cdot p_0}+p_{0}^3 = \frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2n\cdot p_0}+p_{0}^3, \\
+     & p^0(\phi) = p^3(\phi) + n\cdot p_0 = \frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2n\cdot p_0}+p_{0}^0
+\end{align}
+With the above formulae the coordinates of the particle are\begin{importantbox}
+    \begin{align}
+         & {\bf r}_{\perp}(\phi)={\pmb{\mathfrak R}}_{0\perp}+\frac{{\bf p}_{0\perp}}{n\cdot p_0}(\phi-\phi_0)-\frac{1}{n\cdot p_0}\int\limits_{\phi_0}^{\phi}e_0{\bf A}(\chi)d\chi,                                     \\
+         & z(\phi)={\mathfrak R}_{0}^3+\frac{p_0^3}{n\cdot p_0}(\phi-\phi_0)+\int\limits_{-\infty}^{\phi}d\chi\frac{e_0^2{\bf A}^2(\chi)-2e_0{\bf A}(\chi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}                        \\
+         & ct = z(\phi) + \phi = \phi_0 + {\mathfrak R}_{0}^3+\frac{p_0^0}{n\cdot p_0}(\phi-\phi_0)+\int\limits_{-\infty}^{\phi}d\chi\frac{e_0^2{\bf A}^2(\chi)-2e_0{\bf A}(\chi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}
+    \end{align}\end{importantbox}
+and the relation between $\phi$ and the proper time $\tau$ is
+\begin{equation}
+    \phi(\tau) = \frac{n\cdot p_0}{m_0}(\tau-\tau_0)+\phi_0.
+\end{equation}
+We can calculate also the 3D velocity ${\bf v}$ of the particle as a function of \(\phi\): We start from the derivative of $z(\phi)$ with respect to $t$
+\begin{align}
+    \frac{dz}{dt} = \frac{dz}{d\phi}\frac{d\phi}{dt} = \frac{dz}{d\phi} \left(c-\frac{dz}{dt}\right) \quad \longrightarrow \quad \frac{dz}{dt} = c\frac{\frac{dz}{d\phi}}{1+\frac{dz}{d\phi}}.
+\end{align}
+Using the above formula and the expression of $z(\phi)$ we get
+\begin{equation}
+    \frac{dz}{d\phi} = \frac{p_0^3}{n\cdot p_0}+\frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}
+\end{equation}
+and
+\begin{align}
+    \frac{d{\bf r}_{\perp}}{dt} = \frac{d{\bf r}_{\perp}}{d\phi}\frac{d\phi}{dt} = \left(\frac{{\bf p}_{0\perp}}{n\cdot p_0}-\frac{1}{n\cdot p_0}e_0{\bf A}(\phi)\right)\left(c-\frac{dz}{dt}\right).
+\end{align}
+so the final expression for the velocity is
+\begin{importantbox}
+    \begin{align}
+         & v_z(\phi) = c\frac{\frac{dz}{d\phi}}{1+\frac{dz}{d\phi}},\qquad
+        {\bf v}_{\perp}(\phi) = c\left(\frac{{\bf p}_{0\perp}-e_0{\bf A}(\phi)}{n\cdot p_0}\right)\frac1{1+\frac{dz}{d\phi}}                                \\
+         & \text{where}\qquad \frac{dz}{d\phi}=\frac{p_0^3}{n\cdot p_0}+\frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}
+    \end{align}
+\end{importantbox}
+
+
+\section{The case of a plane wave propagating along an arbitrary direction}
+
+{\color{red}The final results can also be written for the plane wave propagating in an arbitrary direction ${\bf n}$; for this we should just replace the component along $z$ by $\parallel$ and the $x,y$ components by $\perp$}
+\begin{highlightbox}
+For a plane wave laser field propagating along ${\bf n}$ and described in the Lorenz-Coulomb gauge by the vector potential
+\begin{align}
+A(\phi) = (0, {\bf A}(\phi)),\qquad \phi = ct -{\bf n}\cdot{\bf r}\equiv n\cdot x,
+\qquad {\bf n}\cdot{\bf A}(\phi)=0.
+\end{align}
+\end{highlightbox}
+
+The initial conditions and notation are
+\begin{highlightbox}
+    \begin{align}
+        & {\bf r}(\phi_0)={\pmb{\mathfrak R}}_0,\qquad
+        {\bf p}(\phi_0)={\bf p}_0,\qquad
+        {\bf A}_0={\bf A}(\phi_0)=0, \\
+        & p_{\parallel}={\bf n}\cdot{\bf p},\qquad
+        {\bf p}_{\perp}={\bf p}-p_{\parallel}{\bf n},\qquad
+        n\cdot p_0=p_0^0-p_{0\parallel}, 
+    \end{align} 
+    \end{highlightbox}
+    We can see that $\phi$ depends linearly on $\tau$
+    \begin{highlightbox}
+    \begin{align}
+        & \phi(\tau)=\frac{n\cdot p_0}{m_0}(\tau-\tau_0)+\phi_0.
+    \end{align}
+\end{highlightbox}
+The trajectory is
+\begin{highlightbox}
+    \begin{align}
+         & {\bf r}_{\perp}(\phi)={\pmb{\mathfrak R}}_{0\perp}
+         +\frac{{\bf p}_{0\perp}}{n\cdot p_0}(\phi-\phi_0)
+         -\frac{1}{n\cdot p_0}\int\limits_{\phi_0}^{\phi}e_0{\bf A}(\chi)d\chi, \\
+         & r_{\parallel}(\phi)={\mathfrak R}_{0\parallel}
+         +\frac{p_{0\parallel}}{n\cdot p_0}(\phi-\phi_0)
+         +\int\limits_{-\infty}^{\phi}d\chi\,
+         \frac{e_0^2{\bf A}^2(\chi)-2e_0{\bf A}(\chi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}, \\
+         & ct(\phi)\equiv r^0(\phi)=r_{\parallel}(\phi)+\phi
+         =\phi_0+{\mathfrak R}_{0\parallel}
+         +\frac{p_0^0}{n\cdot p_0}(\phi-\phi_0)
+         +\int\limits_{-\infty}^{\phi}d\chi\,
+         \frac{e_0^2{\bf A}^2(\chi)-2e_0{\bf A}(\chi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}.
+    \end{align}
+\end{highlightbox}
+The four-momentum is
+\begin{highlightbox}
+    \begin{align}
+         & {\bf p}_{\perp}(\phi) = -e_0{\bf A}(\phi)+{\bf p}_{0\perp}, \\
+         & p_{\parallel}(\phi) = \frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2n\cdot p_0}+p_{0\parallel}, \\
+         & p^0(\phi) = \frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2n\cdot p_0}+p_0^0.
+    \end{align}
+\end{highlightbox}
+The velocity components are
+\begin{highlightbox}
+    \begin{align}
+         & v_{\parallel}(\phi)=c\frac{\frac{dr_{\parallel}}{d\phi}}{1+\frac{dr_{\parallel}}{d\phi}},\qquad
+         {\bf v}_{\perp}(\phi)=c\left(\frac{{\bf p}_{0\perp}-e_0{\bf A}(\phi)}{n\cdot p_0}\right)
+         \frac{1}{1+\frac{dr_{\parallel}}{d\phi}}, \\
+         & \text{where}\qquad
+         \frac{dr_{\parallel}}{d\phi}=\frac{p_{0\parallel}}{n\cdot p_0}
+         +\frac{e_0^2{\bf A}^2(\phi)-2e_0{\bf A}(\phi)\cdot{\bf p}_{0\perp}}{2(n\cdot p_0)^2}.
+    \end{align}
+\end{highlightbox}

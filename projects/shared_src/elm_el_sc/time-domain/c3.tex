@@ -1,0 +1,333 @@
+\section{The observables in the time domain}
+
+
+\subsection{The Electric and Magnetic field}
+
+From the four tensor $F$ we can extract the electric and magnetic fields as
+\begin{importantbox}
+\begin{align}
+     & {\bf E}(x)  = c(F^{10}(x), F^{20}(x), F^{30}(x)) \\
+     & {\bf B}(x)  = (F^{32}(x), F^{13}(x), F^{21}(x))  
+\end{align}\end{importantbox}
+If $F$ is written as the sum of $F_l$, $F_s$ then also the electric and magnetic field are a sum of two such terms
+\begin{align}
+    {\bf E}(x)={\bf E}_l(x)+{\bf E}_s(x), \quad {\bf E}_{s/l} =c(F^{10}_{s/l}(x), F^{20}_{s/l}(x), F^{30}_{s/l}(x)) \\
+    {\bf B}(x)={\bf B}_l(x)+{\bf B}_s(x), \quad {\bf B}_{s/l} =c(F^{32}_{s/l}(x), F^{13}_{s/l}(x), F^{21}_{s/l}(x))
+\end{align}
+note that {\it only} the long range components obey the relation
+\begin{align}
+    {\bf n}_0\cdot{\bf E}_l(x) =0,\quad {\bf B}_l(x) = \frac1c{\bf n}_0\times{\bf E}_l(x), \quad {\bf n}_0=\frac{{\bf x}_0}{|{\bf x}_0|}
+\end{align}
+Here ${\bf n}_0=\hat{\bf x}_0$ is the unity vector of the translated  observation direction
+
+It is convenient to introduce the notations
+\begin{importantbox}
+\begin{align}
+     & {\bf E}_l(x) = \frac1{|{\bf x}_0|}{\boldsymbol{\mathfrak e}}_l(x),\qquad{\bf B}_l(x) = \frac1{|{\bf x}_0|}{\boldsymbol{\mathfrak b}}_l(x),\qquad\nonumber \\
+     & {\bf E}_s(x) = \frac1{|{\bf x}_0|^2}{\mathfrak e}_s(x),\qquad{\bf B}_s(x) = \frac1{|{\bf x}_0|^2}{\boldsymbol{\mathfrak b}}_s(x),\qquad\nonumber          \\
+     & {\boldsymbol{\mathfrak b}}_l = \frac1{c}{\bf n}_0\times{\boldsymbol{\mathfrak e}}_l
+\end{align}
+\end{importantbox}
+
+
+
+\subsection{Non covariant form of the emitted fields}
+
+
+In the non-covariant form the particle trajectory is calculated as a function of the time measured in the laboratory frame
+\begin{align}
+    r(\tau) -\rightarrow {\bf r}(t)
+\end{align}
+As before, we choose to measure the trajectory with respect to translated reference frame
+\begin{align}
+    {\bf r}(t) \rightarrow {\bf r}_0(t) = {\bf r}(t) - {\boldsymbol{\mathfrak R}}_0
+\end{align}
+We denote the observation point by ${\bf x}$ and define
+\begin{align}
+    {\bf x}_0={\bf x}-{\boldsymbol{\mathfrak R}}_0
+\end{align}
+with
+\begin{align}
+    {\bf x}-{\bf r}(t) = {\bf x}_0-{\bf r}_0(t)
+\end{align}
+The particle velocity and acceleration are
+\begin{align}
+    {\bf v}(t) =\frac{d{\bf r}_0(t)}{dt} \equiv \dot {\bf r}_0(t), \quad {\bf a}(t) = \frac{d^2{\bf r}_0(t)}{dt^2}\equiv\ddot {\bf r}_0(t)
+\end{align}
+The relation between the covariant and non-covariant quantities
+
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{l|l|l}
+            \hline
+                         & non-covariant  & covariant                                                                                                                                                          \\\hline
+            time         & $t$            & $\tau$, $dt=\gamma d\tau$                                                                                                                                          \\\hline
+            trajectory   & ${\bf r}_0(t)$ & $r_0(\tau) = (ct, {\bf r}_0(\tau))$                                                                                                                                \\\hline
+            velocity     & ${\bf v}(t)$   & $u(\tau) = \gamma c(1,{\boldsymbol \beta}(\tau)),\quad  {\boldsymbol{\beta}  ={\bf v}/c}$                                                                          \\\hline
+            acceleration & ${\bf a}(t)$   & $w(\tau) = \gamma^4({\bf a}(\tau)\cdot{\boldsymbol\beta}(\tau)), {\bf a}(\tau)+{\boldsymbol{\beta(\tau)}\times({\boldsymbol\beta}(\tau)\times {\bf a}(\tau))})$
+        \end{tabular}\end{center}
+    \caption{The relation between covariant and non-covariant observables}
+\end{table}
+
+The definition of the retarded time is now adapted from (\ref{deftau_r})
+\begin{align}
+    ct = ct_r +|{\bf x}_0-{\bf r}_0(t_r)|\label{crt}
+\end{align}
+
+We start from
+\begin{align}
+    F^{\alpha\beta}(x)={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}{(u\cdot R_0)^3}\vline}_{\tau=\tau_r}
+\end{align}
+with
+\begin{align}
+    R_0(t)=(|{\bf x}_0-{\bf r}_0(t)|, |{\bf x}_0-{\bf r}_0(t))\equiv {\bf R}_0 (1,{\bf n}_0)
+\end{align}
+with (\ref{defnr})
+\begin{align}
+    R_0(t)=|{\bf R}_0(t)|n_{R_0}(t),\quad {\bf R}_0(t)={\bf x}_0-{\bf r}_0(t),\quad n_{R_0}=(1,{\bf n}_{R_0}(t)),\quad {\bf n}_{R_0}(t)=\frac{{\bf x}_0-{\bf r}_0(t)}{|{\bf x}_0-{\bf r}_0(t)|}\label{defnr-t}
+\end{align}
+We get
+\begin{align}
+    F^{\alpha\beta}(x)=\frac{e}{4\pi\epsilon_0c |{\bf R}_0|}\frac{(u\cdot n_{R_0})(n_{R_0}^{\alpha}w^{\beta}-n_{R_0}^{\beta}w^{\alpha})-(w\cdot n_{R_0})(n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha})}{(u\cdot n_{R_0})^3}+\frac{ec}{4\pi\epsilon_0 |{\bf R}_0|^2}\frac{n_{R_0}^{\alpha}u^\beta-n_{R_0}^{\beta}u^\alpha}{(u\cdot n_{R_0})^3}
+\end{align}
+Using the previous results we have
+\begin{align}
+     & u\cdot n_{R_0}=\gamma c(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})                                                                                                                   \\
+     & w\cdot n_{R_0} =\gamma^4 \left({\bf a}\cdot{\boldsymbol\beta}-{\bf n}_{R_0}\cdot{\bf a}- {\bf n}_{R_0}\cdot({\boldsymbol\beta}\times({\boldsymbol\beta}\times {\bf a}))\right)
+\end{align}
+
+The electric field is
+\begin{align}
+    E_i =cF^{i0} = & \frac{ec}{4\pi\epsilon_0c|{\bf R}_0|}\frac{\gamma c(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})\gamma^4\left(n_{R_0}^i{\bf a}\cdot{\boldsymbol\beta}-a^i-({\boldsymbol\beta}\times({\boldsymbol\beta}\times{\bf a}))^i\right)}{\gamma^3c^3(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\nonumber                     \\
+                   & -\frac{ec}{4\pi\epsilon_0c|{\bf R}_0|}\frac{\gamma^4 \left({\bf a}\cdot{\boldsymbol\beta}-{\bf n}_{R_0}\cdot{\bf a}- {\bf n}_{R_0}\cdot({\boldsymbol\beta}\times({\boldsymbol\beta}\times {\bf a}))\right)(n_{R_0}^i\gamma c-\gamma c\beta^i)}{\gamma^3c^3(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\nonumber \\
+                   & +\frac{ec^2}{4\pi\epsilon_0 |{\bf R}_0|^2}\frac{n_{R_0}^i\gamma c-\gamma c\beta^i}{\gamma^3c^3(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\end{align}
+\begin{align}
+    E_i  = & \frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{\gamma^2 \left(({\bf n}_{R_0}-{\boldsymbol\beta})^i{\bf a}\cdot{\boldsymbol\beta}-a^i(1-{\boldsymbol\beta}^2)\right)}{c^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^2} -\frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{\gamma^2 \left({\bf a}\cdot{\boldsymbol\beta}(1-{\bf n}_{R_0}\cdot{\boldsymbol\beta})-({\bf n}_{R_0}\cdot{\bf a})(1-{\boldsymbol\beta}^2)\right)({\bf n}_{R_0}-{\boldsymbol\beta})^i}{c^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\nonumber \\
+           & +\frac{e}{4\pi\epsilon_0 |{\bf R}_0|^2}\frac{({\bf n}_{R_0}-{\boldsymbol\beta})^i}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}
+\end{align}
+\begin{align}
+    E_i  = & \frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{ ({\bf n}_{R_0}\cdot{\bf a})({\bf n}_{R_0}-{\boldsymbol\beta})^i-a^i(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})}{c^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3} +\frac{e}{4\pi\epsilon_0 |{\bf R}_0|^2}\frac{({\bf n}_{R_0}-{\boldsymbol\beta})^i}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}
+\end{align}
+\begin{align}
+    \boxed{{\bf E}({\bf x},t)={\frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{{\bf n}_{R_0}\times[({\bf n}_{R_0}-{\boldsymbol\beta})\times {\bf a}]}{c^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}+\frac{e}{4\pi\epsilon_0 |{\bf R}_0|^2}\frac{{\bf n}_{R_0}-{\boldsymbol\beta}}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\,\vline}_{\,t=t_r}}
+\end{align}
+
+The magnetic field is
+\begin{align}
+    B^i = -\frac12\epsilon_{ijk}F^{jk} & =\epsilon_{ijk}\left[\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(w^{j}R_0^k)-((w\cdot R_0)-c^2)(u^{j}R_0^k)}{(u\cdot R_0)^3}\right]
+\end{align}
+\begin{align}
+    B^i = \frac{e}{4\pi\epsilon_0c|{\bf R}_0|}\frac{\epsilon_{ijk}((u\cdot n_{R_0})w^{j}n_{R_0}^k-(w\cdot n_{R_0})u^j n_{R_0}^k)}{(u\cdot n_{R_0})^3}+\frac{ec}{4\pi\epsilon_0|{\bf R}_0|^2}\frac{\epsilon_{ijk}u^jn_{R_0}^k}{(u\cdot n_{R_0})^3}
+\end{align}
+\begin{align}
+    B^i = & \frac{e}{4\pi\epsilon_0c|{\bf R}_0|}\frac{\gamma^5 c(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0})[({\bf a}+{\boldsymbol\beta}\times({\boldsymbol\beta}\times{\bf a}))\times{\bf n}_{R_0}]^i-\gamma^5 c \left({\bf a}\cdot{\boldsymbol\beta}-{\bf n}_{R_0}\cdot{\bf a}- {\bf n}_{R_0}\cdot({\boldsymbol\beta}\times({\boldsymbol\beta}\times {\bf a}))\right)({\boldsymbol\beta}\times{\bf n}_{R_0})^i}{\gamma^3 c^3(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\nonumber \\
+          & -\frac{e}{4\pi\epsilon_0|{\bf R}_0|^2}\frac{({\bf n}_{R_0}\times{\boldsymbol\beta})^i}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}
+\end{align}
+\begin{align}
+    B^i = & \frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0})({\bf a}\times{\bf n}_{R_0})^i+({\bf a}\cdot{\bf n}_{R_0})({\boldsymbol\beta}\times{\bf n}_{R_0})^i}{c^3(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}-\frac{e}{4\pi\epsilon_0|{\bf R}_0|^2}\frac{({\bf n}_{R_0}\times{\boldsymbol\beta})^i}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}
+\end{align}
+\begin{align}
+    {\bf B} = & {\bf n}_{R_0}\times\left[-\frac{e}{4\pi\epsilon_0|{\bf R}_0|}\frac{(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0}){\bf a}+({\bf a}\cdot{\bf n}_{R_0}){\boldsymbol\beta}}{c^3(1 -{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}-\frac{e}{4\pi\epsilon_0|{\bf R}_0|^2}\frac{{\boldsymbol\beta}}{\gamma^2(1-{\boldsymbol\beta}\cdot{\bf n}_{R_0})^3}\right]
+\end{align}
+\begin{align}
+    \boxed{{\bf B}({\bf x},t)=\frac1c{\bf n}_{R_0}\times{\bf E}({\bf x},t)}
+\end{align}
+\subsection{Expansion of the the electric and magnetic field in long and short distance terms}
+
+Using (\ref{defnr-t}) we have
+\begin{align}
+    {\bf R}_0(t)     & = {\bf x}_0 -{\bf r}_0(t),                                                                                                                                                                                                                                                                                                                                                                            \\
+    |{\bf R}_0(t)|   & = |{\bf x}_0-{\bf r}_0(t)| \approx |{\bf x}_0| - \frac{{\bf x}_0\cdot{\bf r}_0(t)}{|{\bf x}_0|}+\frac12\frac{{\bf x}_0^2{\bf r}_0^2(t)-({\bf x}_0\cdot{\bf r}_0(t))^2}{|{\bf x}_0|^3}
+    \nonumber                                                                                                                                                                                                                                                                                                                                                                                                                \\
+                     & =|{\bf x}_0| \left(1- \frac{{\bf n}_0\cdot{\bf r}_0(t)}{|{\bf x}_0|}+\frac12\frac{({\bf n}_0\times{\bf r}_0(t))^2}{|{\bf x}_0|^2}\right)     \label{expansionR_0}                                                                                                                                                                                                                                     \\
+    {\bf n}_{R_0}(t) & = \frac{{\bf x}_0-{\bf r}_0(t)}{|{\bf x}_0-{\bf r}_0(t)|}\approx \frac{{\bf x}_0}{|{\bf x}_0|}-\frac{{\bf r}_0(t)}{|{\bf x}_0|}+\frac{{\bf x}_0({\bf r}_0(t)\cdot{\bf x}_0)}{|{\bf x}_0|^3}-\frac12\frac{({\bf r}_0(t)\times{\bf x}_0)^2}{|{\bf x}_0|^5}{\bf x}_0+\frac{({\bf r}_0(t)\cdot{\bf x}_0)^2}{|{\bf x}_0|^5}{\bf x}_0-\frac{{\bf r}_0(t)\cdot{\bf x}_0}{|{\bf x}_0|^3}{\bf r}_0(t)\nonumber \\
+                     & = {\bf n}_0+\frac{{\bf n}_0\times({\bf n}_0\times{\bf r}_0(t))}{|{\bf x}_0|}-\frac{{\bf r}_0(t)^2-3({\bf n}_0\cdot{\bf r}_0(t))^2}{|{\bf x}_0|^2}{\bf n}_0-\frac{{\bf n}_0\cdot{\bf r}_0(t)}{|{\bf x}_0|^2}{\bf r}_0(t)
+\end{align}
+where
+\begin{align}
+    {\bf n}_0=\frac{|{\bf x}_0|}{|{\bf x}_0|}
+\end{align}
+
+{\bf{\color{red} CONTINUATION MISSING HERE}}
+
+\section{The observables of the electromagnetic field}
+
+\subsection{The energy density}
+The energy density of the electromagnetic field is
+\begin{align}
+    w (x)=\frac{\epsilon_0}{2}{\bf E}(x)^2+\frac1{2\mu_0}{\bf B}^2(x)
+\end{align}
+if $w$ is calculated at large distances from the origin then it is safe to use only the long range components
+\begin{align}
+    w (x)\approx w_l(x) =\frac{\epsilon_0}{2}{\bf E}_l(x)^2+\frac1{2\mu_0}{\bf B}_l^2(x)=\epsilon_0{\bf E}_l^2(x)=\frac1{|{\bf x} - {\bf r}_0|^2}\epsilon_0{\boldsymbol{\mathfrak e}}^2_l(x)
+\end{align}
+
+\subsection{The energy density current}
+
+The energy density current is the Poynting vector
+\begin{align}
+    {\bf S}(x)=\frac1{\mu_0}{\bf E}(x)\times{\bf B}(x)
+\end{align}
+is measures the energy flow (the energy per unit time per unit surface).
+At large distances ${\bf S}$ can be safely calculated from the long range expressions
+\begin{align}
+    {\bf S}(x)\approx{\bf S}_l(x) = \frac1{\mu_0}{\bf E}_l(x)\times{\bf B}_l(x)={\bf n}_0\left(\frac1{\mu_0c}{\bf E}_l^2(x)\right)
+\end{align}
+
+The total energy contained at a given moment $t_{in}$ in a sphere of radius ${\cal R}$ centered at the origin ${\bf x}=0$ of the reference frame can be calculated as the time integral of the flux of ${\bf S}$ on the sphere surface
+\begin{align}
+    W(t_{in})=\int\limits_{t_{in}}^{\infty}dt\oint\limits_{\cal R}d{\bf a}\cdot{\bf S}(x)=\frac{{\cal R}^2}{\mu_0c^2} \int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi}d\Omega ({\bf n}\cdot{\bf n}_0){\bf E}_l^2(x)= {\cal R}^2\int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi}d\Omega ({\bf n}\cdot{\bf n}_0)w_l(x)
+\end{align}
+In the previous expression $w$ must be calculated on the surface of the sphere of radius ${\cal R}$.
+
+The angular distribution of the radiated energy is then
+\begin{align}
+    \frac{dW({\bf n})}{d\Omega} & ={\cal R}^2\int\limits_{t_{in}}^{\infty}d(ct)({\bf n}\cdot{\bf n}_0)w_l(x)\equiv {\cal R}^2\int\limits_{t_{in}}^{\infty}d(ct)({\bf n}\cdot{\bf n}_0)w_l(ct, {\bf n}R)=\epsilon_0{\cal R}^2\int\limits_{t_{in}}^{\infty}d(ct)({\bf n}\cdot{\bf n}_0)\frac{{\boldsymbol{\mathfrak e}}_l^2(ct, {\bf n}{\cal R})}{|{\bf n}{\cal R} - {\bf r}_0|^2}\nonumber \\
+                                & =\epsilon_0{\cal R}^2\frac{{\cal R}-{\bf n}\cdot{\bf r}_0}{|{\bf n}{\cal R} - {\bf r}_0|^3}\int\limits_{t_{in}}^{\infty}d(ct){\boldsymbol{\mathfrak e}}_l^2 (ct, {\bf n}{\cal R})
+\end{align}
+
+
+\subsection{The linear momentum density}
+
+The linear momentum density of the electromagnetic field is
+\begin{align}
+    {\bf g}(x) = \frac1{\mu_0c^2}{\bf E}(x)\times{\bf B}(x)=\frac1{c^2}{\bf S}(x)\label{g_exact}
+\end{align}
+At large distances we can use the long distance terms
+\begin{align}
+    {\bf g}(x)\approx {\bf g}_l(x)=\frac1{c^2}{\bf S}_l(x)
+\end{align}
+
+
+
+\subsection{The linear momentum density current}
+
+The continuity equation for the linear momentum is
+\begin{align}
+    \frac{\partial g_i}{\partial t}+\partial_j T_{ij}(x)=0
+\end{align}
+with
+\begin{align}
+    T_{ij}(x) = -\epsilon_0E_i(x)E_j(x)-\frac1{\mu_0}B_i(x)B_j(x)+w(x)\delta_{ij}
+\end{align}
+
+Al large distances it is enough to use the long distance approximations
+\begin{align}
+    \frac{\partial g_{l,i}}{\partial t}+\partial_j T_{l,ij}(x)=0, \quad
+    T_{l,ij}(x) = -\epsilon_0E_{l,i}(x)E_{l,j}(x)-\frac1{\mu_0}B_{l,i}(x)B_{l,j}(x)+w_l(x)\delta_{ij}
+\end{align}
+
+
+The total momentum contained within a sphere of radius ${\cal R}$ at a moment $t_{in}$ is
+\begin{align}
+    G_{l,i}=\int\limits_{t_{in}}^{\infty}dt\oint\limits_{\cal R} da n_j T_{l,ij}
+\end{align}
+Here $n_j$ are the Cartesian components of the radial unity vector ${\bf n}$.
+\begin{align}
+    G_{l,i}={\cal R}^2\frac1{c}\int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi} d\Omega \left[n_i w_l-\epsilon_0E_{l,i}({\bf n}\cdot{\bf E}_l)-\frac1{\mu_0}B_{l,i}({\bf n}\cdot{\bf B}_l)\right]
+\end{align}
+The integrand in RHS  must be calculated on the sphere of radius ${\cal R}$ centered at the origin. Then the angular distribution of the total radiated momentum is
+\begin{align}
+    \frac{dG_{l,i}}{d\Omega} & =\frac1c {\cal R}^2\int\limits_{ct_{in}}^{\infty}d(ct) \left[n_i w_l(ct, {\bf n}{\cal R})-\epsilon_0E_{l,i}(ct, {\bf n}{\cal R})({\bf n}\cdot{\bf E}_l(ct, {\bf n}{\cal R}))-\frac1{\mu_0}B_{l,i}(ct, {\bf n}{\cal R})({\bf n}\cdot{\bf B}_l(ct, {\bf n}{\cal R}))\right]\nonumber                                                                                                                     \\
+                             & =\frac{\epsilon_0}c \frac{{\cal R}^2}{|{\bf n}\cdot{\cal R} - {\bf r}_0|^2}\int\limits_{ct_{in}}^{\infty}d(ct) \left[n_i {\boldsymbol{\mathfrak e}}^2_l(ct, {\bf n}{\cal R})-{\mathfrak e}_{l,i}(ct, {\bf n}{\cal R})({\bf n}\cdot{\boldsymbol{\mathfrak e}}_l(ct, {\bf n}{\cal R}))-c^2{\mathfrak b}_{l,i}(ct, {\bf n}{\cal R})({\bf n}\cdot{\boldsymbol{\mathfrak b}}_l(ct, {\bf n}{\cal R}))\right]
+\end{align}
+
+
+\subsection{The angular momentum density}
+
+The angular momentum density is defined as
+\begin{align}
+    {\bf l}(x)={\bf x}\times {\bf g}(x)
+\end{align}
+where ${\bf g}(x)$ is the linear momentum density (\ref{g_exact})
+\begin{align}
+    {\bf g}(x)=\epsilon_0{\bf E}(x)\times{\bf B}(x)
+\end{align}
+and ${\bf x} \equiv x{\bf n}$ is the observation point measured with respect to the laboratory frame
+If we use the splitting into long and short range term of ${\bf E}$ and ${\bf B}$ we have
+\begin{align}
+    {\bf E}(x)={\bf E}_l(x)+{\bf E}_s(x),\quad   {\bf B}(x)={\bf B}_l(x)+{\bf B}_s(x),
+\end{align}
+In a point of observation at the distance $|{\bf x}|$ from the origin ${\bf x}=|{\bf x}|{\bf n}$ the angular momentum density is
+\begin{align}
+    {\bf l}(x) & =  \epsilon_0|{\bf x}|{\bf n}\times\left(\left({\bf E}_l(x)+{\bf E}_s(x)\right)\times\left({\bf B}_l(x)+{\bf B}_s(x)\right)\right)\nonumber                                                                                                         \\
+               & \approx\epsilon_0|{\bf x}|{\bf n}\times\left[{\bf E}_l(x)\times{\bf B}_l(x)\right]+\epsilon_0|{\bf x}|{\bf n}\times\left[{\bf E}_l(x)\times{\bf B}_s(x)\right]+\epsilon_0|{\bf x}|{\bf n}\times\left[{\bf E}_s(x)\times{\bf B}_l(x)\right]\nonumber        \\
+    =          & \epsilon_0R{\bf E}_l(x) \left({\bf n}\cdot{\bf B}_s(x))\right)-\epsilon_0R{\bf B}_l(x) \left({\bf n}\cdot{\bf E}_s(x)\right)=-\epsilon_0 Rc\left({\bf n}\times{\bf B}_l(x)\right)\left({\bf n}\cdot{\bf B}_s(x)\right)-\frac{\epsilon_0R}{c}\left({\bf n}\times{\bf E}_l(x)\right)\left({\bf n}\cdot{\bf E}_s(x)\right)\nonumber \\
+    =          & -\frac{\epsilon_0R}c\left[\left({\bf n}\times{\bf E}_l(x)\right)\left({\bf n}\cdot{\bf E}_s(x)\right)+c^2\left({\bf n}\times{\bf B}_l(x)\right)\left({\bf n}\cdot{\bf B}_s(x)\right)\right]
+\end{align}
+
+
+
+
+\subsection{The angular momentum density current}
+
+The continuity equation for the angular momentum density is
+\begin{align}
+     & \frac{\partial}{\partial t} l_i(x)+\frac{\partial}{\partial x_l} M_{l i}(x)=0,\nonumber                         \\
+     & M_{l i}(x)=\epsilon_{i j k} x_j\left[ \delta_{k l}w(x)-\epsilon_0 E_k(x) E_l(x)-\mu_0^{-1} B_k(x) B_l(x)\right]
+\end{align}
+The total angular momentum contained at the moment $t_{in}$ within a sphere of radius $R$ is
+\begin{align}
+    L_i(t_{in}) & =\int\limits_{t_{in}}^{\infty}dt\oint\limits_{R_0} da n_l\epsilon_{i j k} x_j\left[ \delta_{k l}w(x)-\epsilon_0 E_k(x) E_l(x)-\mu_0^{-1} B_k(x) B_l(x)\right]\nonumber                                                                              \\
+                & =\frac1c R^3\int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi} d\Omega \epsilon_{i j k} n_ln_j\left[ \delta_{k l}w(x)-\epsilon_0 E_k(x) E_l(x)-\mu_0^{-1} B_k(x) B_l(x)\right]\nonumber                                                          \\
+                & =\frac1c R^3\int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi} d\Omega \epsilon_{i j k} n_ln_j\left[ -\epsilon_0 E_k(x) E_l(x)-\mu_0^{-1} B_k(x) B_l(x)\right]\nonumber                                                                          \\
+                & =-\frac{\epsilon_0}c R^3\int\limits_{ct_{in}}^{\infty}d(ct)\int\limits_{4\pi}d\Omega\left[\left({\bf n}\times{\bf E}(x)\right)\left({\bf n}\cdot{\bf E}(x)\right)+c^2\left({\bf n}\times{\bf B}(x)\right)\left({\bf n}\cdot{\bf B}(x)\right)\right]
+\end{align}
+
+
+\section{Calculation of the observables integrated over time}
+
+The observables expressed as integrals over the laboratory time can be also written as integrals over the proper time $\tau$, using (\ref{deftau_r}) we have
+\begin{align}
+    \frac{d{ct}}{d\tau} = u^0(\tau)-\frac{{\bf u}(\tau)\cdot({\bf x-{\bf r(\tau)}})}{|{\bf x-{\bf r(\tau)}}|}=u(\tau)\cdot n_{R_0}(\tau)
+\end{align}
+where $n_{R_0}$ is defined in (\ref{defnr}).
+so, the integration can  be done over $\tau$ (for the one particle case), with the replacement rule
+\begin{align}
+    \int d(ct) (\ldots) = \int d\tau u(\tau) \cdot n_{R_0}(\tau) (...)
+\end{align}
+
+{\bf{\color{red} CONTINUATION MISSING HERE}}
+
+
+\subsection{Nonrelativistic and low intensity approximations of the retarded time}
+
+
+
+
+The retarded time is calculated as the solution of the equation (\ref{crt})
+\begin{align}
+    ct=  ct_r+|{\bm x}_0-{\bm r}_0(t_r)|
+\end{align}
+Using the large distances approximation
+\begin{align}
+    |{\bm x}_0-{\bm r}_0|\approx |{\bm x}_0|-\frac{{\bm x}_0\cdot{\bm r}_0}{|{\bm x}_0|}+\frac{{\bm r}_0^2{\bm x}_0^2-({\bm r}_0\cdot{\bm x}_0)^2}{2|{\bm x}_0|^3}=
+    |{\bm x}_0|-{{\bm r}_0\cdot{\bm n}_0}+\frac{{\bm r}_0^2{\bm n}_0^2-({\bm r}_0\cdot{\bm n}_0)^2}{2|{\bm x}_0|}
+\end{align}
+the equation for the retarded time becomes
+\begin{align}
+    ct-|{\bm x}_0| = r^0(\tau_r)-{\bm n}_0\cdot{\bm r}_0(\tau_r)+\frac{{\bm r}_0^2(\tau_r)-({\bm r}_0(\tau_r)\cdot{\bm n}_0)^2}{2|{\bm x}_0|}
+\end{align}
+We know from the general theory that  for any possible trajectory the temporal component of $r(\tau)$, $r^0(\tau)$ is a monotonic function of $\tau$, as consequence we can use $r^0(\tau)$ as independent variable in all the equations of motion.
+Define
+\begin{align}
+    {\mathfrak T} = \frac{r^0(\tau)}c,\quad \tau\equiv \tau({\mathfrak T})
+\end{align}
+and the trajectory is parametrised with ${\mathfrak T}$, and the same, obviously, for $u$, $\rho$
+\begin{align}
+    r(\tau)\rightarrow r(\tau({\mathfrak T})) \equiv r(\mathfrak T),\quad u\equiv u({\mathfrak T}),\quad \rho\equiv\rho({\mathfrak T})
+\end{align}
+
+With these, the equation for calculation of the retarded${\mathfrak T}$ is up to the second order in $|{\bm r_0}|/|{\bm x}_0|$
+\begin{align}
+    ct - |{\bm x}_0| = c{\mathfrak T}_r - {\bm n}_0\cdot{\bm r_0}({\mathfrak T}_r)+\frac{{\bm r}_0^2({\mathfrak T}_r)-({\bm r}_0({\mathfrak T}_r)\cdot{\bm n}_0)^2}{2|{\bm x}_0|},\nonumber \\
+    c{\mathfrak T}_r -=ct - |{\bm x}_0| + {\bm n}_0\cdot{\bm r_0}({\mathfrak T}_r)-\frac{{\bm r}_0^2({\mathfrak T}_r)-({\bm r}_0({\mathfrak T}_r)\cdot{\bm n}_0)^2}{2|{\bm x}_0|}
+\end{align}
+We define an iterative solution
+\begin{align}
+     & {\mathfrak T}_r^{(0)} =t -\frac{|{\bm x}_0|}{c}                                                                                                                                                                    \\
+     & {\mathfrak T}_r^{(1)} = t-\frac{|{\bm x}_0|}c+\frac{{\bm n}_0\cdot{\bm r}_0({\mathfrak T}_r^{(0)})}{c}                                                                                                             \\
+     & {\mathfrak T}_r^{(2)} = t-\frac{|{\bm x}_0|}c+\frac{{\bm n}_0\cdot{\bm r}_0({\mathfrak T}_r^{(1)})}{c}-\frac{{\bm r}_0^2({\mathfrak T}_r^{(1)})-({\bm r}_0({\mathfrak T}_r^{(1)})\cdot{\bm n}_0)^2}{2|{\bm x}_0|c}
+\end{align}
+
+{\bf{\color{red} CONTINUATION MISSING HERE}}

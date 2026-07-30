@@ -1,0 +1,294 @@
+\chapter{The Fourier spectrum of the emitted field in Thomson scattering - general case}
+
+In order to calculate the angular momentum of the emitted radiation we need the fields beyond the lowest order in $\frac1{|{\bf x}|}$.
+
+We start from the expression of the potentials
+\begin{align}
+     & \Phi({\bf x}_0t) = \frac{e_0}{4\pi\epsilon_0}\frac{1}{|{\bf x}_0-{\bf r}_0(t_r)|}\frac1{1-{\boldsymbol{\beta}(t_r)\cdot{\bf n}(t_r)}}                                  \\
+     & {\bf A}({\bf x}_0,t) = \frac{e_0 }{4\pi\epsilon_0 c}\frac{1}{|{\bf x}_0-{\bf r}_0(t_r)|}\frac{{\boldsymbol{\beta}}(t_r)}{1-{\boldsymbol{\beta}(t_r)\cdot{\bf n}(t_r)}}
+\end{align}
+where we use the notations, {\color{red}assuming they are known as functions on the retarded time in the laboratory frame}; later we will discuss passing to the electron proper time.
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & {\bf x}_0={\bf x}-{\boldsymbol{\mathfrak{R}}}_0,\qquad {\bf r}_0(t)={\bf r}(t)-{\boldsymbol{\mathfrak{R}}}_0, \qquad {\bf n}_0=\frac{{\bf x}_0}{|{\bf x}_0|}    \nonumber \\
+         & {\bf R}({\bf x}_0,t)={\bf x}_0-{\bf r}_0(t),\qquad R({\bf x}_0,t)=|{\bf R}({\bf x}_0,t)|,\qquad {\bf n}({\bf x}_0,t)=\frac{{\bf R}({\bf x}_0,t)}{R({\bf x}_0,t)}
+    \end{align}
+\end{tcolorbox}
+and ${\boldsymbol{\mathfrak{R}}}_0$ is the initial electron position. The retarded time is calculated as the solution of the equation
+\begin{align}
+    t=t_r+\frac{|{\bf x}_0-{\bf r}_0(t_r)|}{c}
+\end{align}
+
+\section{Calculation of the Fourier transform of the potentials}
+\subsection{The Fourier transform of the scalar potential}
+The Fourier transform of the scalar potential is
+\begin{align}
+    \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{1}{R({\bf x},t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}({\bf x}_0,t_r))}\label{tranf_pot_scalar}
+\end{align}
+After the change of variable the previous expression becomes
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{1}{R({\bf x}_0,t)}\label{tranf_pot}
+    \end{align}
+\end{tcolorbox}
+
+\subsection{The Fourier transform of the vector potential}
+The Fourier transform of the vector potential is
+\begin{align}
+    {\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t_r)(1-{\bm{n}}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}\label{tranf_A_vector}
+\end{align}
+After the change of variable  $t\rightarrow t_r$
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\label{tranf_A}
+    \end{align}
+\end{tcolorbox}
+
+\subsection{Check of the Lorenz condition in the Fourier transform}
+The Lorenz condition requires
+\begin{align}
+    {\boldsymbol{\nabla}}\cdot{\bf A}({\bf x}_0,t)+\frac1{c^2}\frac{\partial \Phi({\bf x}_0.t)}{\partial t}=0
+\end{align}
+In Fourier transform the previous relation becomes
+\begin{align}
+    \frac1{2\pi}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\left(    {\boldsymbol{\nabla}}\cdot{\bf A}({\bf x}_0,t)+\frac1{c^2}\frac{\partial \Phi({\bf x}_0.t)}{\partial t}\right)=0
+\end{align}
+which after an integration by parts becomes
+\begin{align}
+    {\boldsymbol{\nabla}}\cdot{\bf A}({\bf x}_0,\omega)-\frac{i\omega}{c^2} \Phi({\bf x}_0,\omega)=0
+\end{align}
+which can be written as
+\begin{align}
+    0=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[-\frac{i\omega}c(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}({\bf x}_0,t))-\frac{{\bf n}({\bf x}_0,r)\cdot{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\right]\frac1{R({\bf x}_0,t)}
+\end{align}
+Using the identity
+\begin{align}
+    \frac{d}{dt}\frac{e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}}{cR({\bf x}_0,t)}=\left[\frac{i\omega}c(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}({\bf x}_0,t))+\frac{{\bf n}({\bf x}_0,r)\cdot{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\right]\frac1{R({\bf x}_0,t)}
+\end{align}
+we have
+\begin{align}
+    {\boldsymbol{\nabla}}\cdot{\bf A}({\bf x}_0,\omega)-\frac{i\omega}{c^2} \Phi({\bf x}_0,\omega)=-\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt\frac{d}{dt}\frac{e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}}{cR({\bf x}_0,t)}=0
+\end{align}
+which ends the calculation.
+\section{Calculation of the Fourier transform of the fields}
+
+
+\subsection{The Fourier transform of the electric field}
+
+We start from
+\begin{align}
+    {\bf E}=-{\boldsymbol{\nabla}}\Phi-\frac{d{\bf A}}{dt}
+\end{align}
+For the calculation of ${\boldsymbol{\nabla}}\Phi$ there are two ways. (1): We calculate the gradient of $\Phi({\bf x},t)$ and then we take the Fourier transform, and (2): We calculate the gradient of the Fourier transform $\Phi({\bf x},\omega)$
+We start from
+\begin{align}
+    \Phi({\bf x}_0,t)=\frac{e_0}{4\pi\epsilon_0}\frac1{R({\bf x}_0,t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}
+\end{align}
+
+\subsubsection{(1)}
+The gradient of  $\Phi$ is
+\begin{align}
+    {\boldsymbol{\nabla}}\Phi({\bf x}_0,t)=\frac{e_0}{4\pi\epsilon_0}\frac{{\boldsymbol{\beta}}(t_r)-{\bf n}({\bf x}_0,t_r)}{R^2({\bf x}_0,t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))^2}+\frac{d\Phi({\bf x}_0,t_r)}{dt_r}{\boldsymbol{\nabla}}t_r
+\end{align}
+We use
+\begin{align}
+    {\boldsymbol{\nabla}}t_r=  -\frac{{\bf n}}{c(1-{\bf n}\cdot{\boldsymbol{\beta}})}
+\end{align}
+and
+\begin{align}
+    {\boldsymbol{\nabla}}\Phi({\bf x}_0,t)=\frac{e_0}{4\pi\epsilon_0}\frac{{\boldsymbol{\beta}}(t_r)-{\bf n}({\bf x}_0,t_r)}{R^2({\bf x}_0,t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))^2}-\frac{{\bf n}({\bf x}_0,t_r)}{c(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}})t_r))}\frac{d\Phi({\bf x}_0,t_r)}{dt_r}
+\end{align}
+We calculate the Fourier transform of the gradient of the scalar potential
+\begin{align}
+    ({\boldsymbol{\nabla}}\Phi)({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(t_r)-{\bf n}({\bf x}_0,t_r)}{R^2({\bf x}_0,t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))^2}\nonumber \\
+                                                   & -\frac1{2\pi}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{{\bf n}({\bf x}_0,t_r)}{c(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}\frac{d\Phi({\bf x}_0,t_r)}{dt_r}
+\end{align}
+We perform the change of variable $t\rightarrow t_r$, with
+\begin{align}
+    dt=dt_r(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))
+\end{align}
+\begin{align}
+    ({\boldsymbol{\nabla}}\Phi)({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}\nonumber \\
+                                                   & -\frac1{2\pi}\frac1c\int\limits_{-\infty}^{\infty}dte^{i\omega  \left(t+\frac{R({\bf x}_0,t)}c\right)}{{\bf n}({\bf x}_0,t)}\frac{d\Phi({\bf x}_0,t)}{dt}
+\end{align}
+In the second term we perform an integration by parts using
+\begin{align}
+     & \frac{d{\bf n}({\bf x}_0,t)}{dt}=c\frac{{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))-{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}                    \\
+     & \frac{de^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}}{dt}=i\omega(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}
+\end{align}
+and we have
+\begin{align}
+    ({\boldsymbol{\nabla}}\Phi)({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}\nonumber                                                                           \\
+                                                   & +\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega  \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))-{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\frac{1}{R({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}\nonumber \\
+                                                   & +\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega  \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{i\omega}c(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))\frac{{\bf n}({\bf x}_0,t)}{R({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t)}
+\end{align}
+and the final result is
+\begin{align}
+    ({\boldsymbol{\nabla}}\Phi)({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left(\frac{-1}{R^2({\bf x}_0,t)}+\frac{i\omega}{c}\frac1{R({\bf x}_0,t)}\right){\bf n}({\bf x}_0,t)\label{gradphixomega}
+\end{align}
+
+\subsubsection{(2)}
+
+The Fourier transform of the scalar potential is
+\begin{align}
+    \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{1}{R({\bf x},t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}({\bf x}_0,t_r))}
+\end{align}
+After the change of variable the previous expression becomes
+\begin{align}
+    \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{1}{R({\bf x}_0,t)}
+\end{align}
+The gradient of the previous expression is
+\begin{align}
+    ({\boldsymbol{\nabla}}\Phi)({\bf x}_0,\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left(\frac{-1}{R^2({\bf x}_0,t)}+\frac{i\omega}{c}\frac1{R({\bf x}_0,t)}\right){\bf n}({\bf x}_0,t)
+\end{align}
+identical with the previous  result (\ref{gradphixomega}), so the two approaches are equivalent.
+
+Next, we calculate the Fourier transform of $\frac{d{\bf A}}{dt}$
+\begin{align}
+    \left(\frac{d{\bf A}}{dt}\right)({\bf x}_0,\omega)=\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}\frac{d{\bf A}}{dt}
+\end{align}
+After an integration by parts
+\begin{align}
+    \left(\frac{d{\bf A}}{dt}\right)({\bf x}_0,\omega)=-(i\omega)\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}{\bf A}({\bf x}_0,t)=-\frac{i\omega}c\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t_r)(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}
+\end{align}
+After the change of variable from $t$ to $t_r$ we obtain
+\begin{align}
+    \left(\frac{d{\bf A}}{dt}\right)({\bf x},\omega)=-\frac{i\omega}c\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}{c}\right)}\frac{{\boldsymbol{\beta}}(t)}{R({\bf x},_0t)}
+\end{align}
+With these the Fourier transform of the electric field is
+\begin{align}
+    {\bf E}({\bf x}_0,\omega)= & -{\boldsymbol{\nabla}}\Phi({\bf x}_0,\omega)-\left(\frac{d{\bf A}}{dt}\right)({\bf x}_0,\omega)
+\end{align}
+and, using the previous results
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[\frac{i\omega}c\left(\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x_0},t)}{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)}\right]
+\end{align}
+
+\subsubsection{The relation to the standard form of the electric field}
+
+We use the identity
+\begin{align}
+    \frac{d}{dt}\frac{e^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}{\bf n}({\bf x}_0,t)}{cR({\bf x}_0,t)}=\frac{i\omega}c\frac{{\bf n}({\bf x}_0,t)-{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)}+\frac{{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))+{\bf n}({\bf x}_0,t)\times({\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t))}{R^2({\bf x}_0,t)}
+\end{align}
+and rewrite the electric field as
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dt\left\{e^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[\frac{i\omega}c\left(\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x_0},t)}{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)}\right]+\frac{d}{dt}\frac{e^{i\omega\left(t+\frac{R({\bf x}_0,t)}c\right)}{\bf n}({\bf x}_0,t)}{cR({\bf x}_0,t)}\right\}\nonumber \\
+                              & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[\frac{i\omega}c\left(\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x_0},t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)(1+{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)^2}\right.\nonumber                   \\
+                              & \left. \qquad \qquad  \qquad \qquad  \qquad \qquad  \qquad \qquad +\frac{{\bf n}({\bf x}_0,t)\times({\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t))}{R^2({\bf x}_0,t)}\right]
+\end{align}
+which can be written in the equivalent form
+\begin{align}
+    {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[-\frac{{\bf n}({\bf x}_0,t)\times({\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)}\left(\frac{i\omega}c-\frac1{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)(1+{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)^2}\right]
+\end{align}
+
+\subsection{The Fourier transform of the magnetic field}
+There are two possible ways of calculation: (1): we can calculate the curl of ${\bf A}({\bf x}_0,t)$ and then perform the Fourier transform, or (2): take the curl of the fourier transform
+
+The vector potential does not depend explicitly on time, but only through the retarded time $t_r$
+\begin{align}
+    {\bf A}\equiv {\bf A}({\bf x}_0,t_r({\bf x}_0,t))
+\end{align}
+
+\subsubsection{(1)}
+
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\int\limits_0^{\infty}dt \left({\boldsymbol{\nabla}}\times{\bf A}({\bf x}_0,t_r)\right)e^{i\omega t}= \frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}\left[{\left({\boldsymbol{\nabla}}\times{\bf A}({\bf x},t)\right)\vline}_{t=t_r}+({\boldsymbol\nabla} t_r)\times\dot{\bf A}({\bf x}_0,t_r)\right]
+\end{align}
+We use
+\begin{align}
+     & {\boldsymbol{\nabla}} t_r=                                                                                     -\frac{{\bf n}}{c                                                                                        (1-{\bf n}\cdot{\boldsymbol{\beta}})}                             \\
+     & {\boldsymbol{\nabla}}\times{\bf A}({\bf x}_0,t)=\frac{e_0}{4\pi\epsilon_0 c}{\boldsymbol{\nabla}}\times\frac{{\boldsymbol{\beta}}}{R(1-{\boldsymbol{\beta}}\cdot{\bf n})}=\frac{e_0}{4\pi\epsilon_0c}\frac{-{\bf n}\times{\boldsymbol{\beta}}}{R^2(1-{\boldsymbol{\beta}}\cdot{\bf n})^2}
+\end{align}
+With these the magnetic field is
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}\left[\frac{-{\bf n}({\bf x}_0,t_r)\times{\boldsymbol{\beta}}(t_r)}{R^2({\bf x}_0,t_r)(1-{\boldsymbol{\beta}}(t_r)\cdot{\bf n}({\bf x}_0,t_r))^2}\right]                                                    \nonumber \\
+                               & -\frac1{2\pi} \int\limits_{-\infty}^{\infty}dt e^{i\omega t}\left[\frac{{\bf n}({\bf x}_0,t_r)}{c                                                                                        (1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}\times\frac{d{\bf A}({\bf x}_0,t_r)}{dt_r}\right]
+\end{align}
+We make a change of variable
+\begin{align}
+    t\rightarrow t_r.\qquad  t=t_r+\frac{R}{c}.\qquad dt=dt_r(1-{\bf n}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))
+\end{align}
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[\frac{-{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R^2({\bf x}_0,t)(1-{\boldsymbol{\beta}}(t)\cdot{\bf n}({\bf x}_0,t))}\right] \nonumber \\
+                               & -\frac1{2\pi} \frac1c\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}-0,t)}c\right)}\left[{{\bf n}({\bf x}_0,t)}\times\frac{d{\bf A}({\bf x}_0,t)}{dt}\right]
+\end{align}
+In the second term we do an integration by parts, using
+\begin{align}
+     & \frac{d{\bf n}({\bf x}_0,t)}{dt}=c\frac{{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))-{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}                    \\
+     & \frac{de^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}}{dt}=i\omega(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}
+\end{align}
+After the integration by parts, we have
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & +\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[\frac{-{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R^2({\bf x}_0,t)(1-{\boldsymbol{\beta}}(t)\cdot{\bf n}({\bf x}_0,t))}\right]                   \nonumber                                                \\
+                               & +\frac1{2\pi} \frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}-0,t)}c\right)}\left[i\frac{\omega}c(1-{\bm{n}}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))\frac{{\bf  n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t)}\right]\nonumber \\
+                               & +\frac1{2\pi} \frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}-0,t)}c\right)}\left[\frac{{\bf n}({\bf x}_0,t)({\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)}\times\frac{{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)(1-{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}\right]
+\end{align}
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & +\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[\frac{(-1+{\boldsymbol{\beta}}(t)\cdot{\bf n}({\bf x}_0,t))}{R^2({\bf x}_0,t)(1-{\boldsymbol{\beta}}(t)\cdot{\bf n}({\bf x}_0,t))}{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)\right] \nonumber \\
+                               & +\frac1{2\pi} \frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}-0,t)}c\right)}\left[i\frac{\omega}c\frac{{\bf  n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\right]
+\end{align}
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[-\frac{1}{R^2({\bf x}_0,t)}+i\frac{\omega}c\frac{1}{R({\bf x}_0,t)}\right]{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)\label{bxomega}
+\end{align}
+\subsubsection{(2)}
+
+We calculate the Fourier transform of the vector potential
+\begin{align}
+    {\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega t}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t_r)(1-{\bm{n}}({\bf x}_0,t_r)\cdot{\boldsymbol{\beta}}(t_r))}
+\end{align}
+After the change of variable  $t\rightarrow t_r$
+\begin{align}
+    {\bf A}({\bf x_0},\omega)=\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t)}
+\end{align}
+and the magnetic field is
+\begin{align}
+    {\bf B}({\bf x}_0,\omega) & ={\boldsymbol{\nabla}}\times\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dte^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t)} =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{\infty}^{\infty}dt{\boldsymbol{\nabla}}\times e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t)}
+\end{align}
+By direct calculation we have
+\begin{align}
+    {\boldsymbol{\nabla}}\times e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\boldsymbol{\beta}}(t_r)}{R({\bf x}_0,t)}=\frac{i \omega}c\frac{{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R({\bf x}_0.t)}-\frac{{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R^2({\bf x}_0,t)}
+\end{align}
+and we reobtain the result  (\ref{bxomega})
+\begin{align}
+    {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\left[-\frac{1}{R^2({\bf x}_0,t)}+i\frac{\omega}c\frac{1}{R({\bf x}_0,t)}\right]{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t),
+\end{align}
+i.e. the two approaches are equivalent.
+
+
+
+\subsection{Summary of results}
+The Fourier transform of the potentials is
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        \Phi({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\frac{1}{R({\bf x}_0,t)}
+    \end{align}
+\end{tcolorbox}
+respectively
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf A}({\bf x}_0,\omega)=\frac1{2\pi}\frac{e}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\frac{{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}
+    \end{align}
+\end{tcolorbox}
+
+
+We obtained two equivalent forms for the Fourier transform of the electric field
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left(\frac{i\omega}c\frac{{\boldsymbol{\beta}}(t)-{\bf n}({\bf x_0},t)}{R({\bf x}_0,t)}+\frac{{\bf n}({\bf x}_0,t)}{R^2({\bf x}_0,t)}\right)\label{exomega-f1}
+    \end{align}
+\end{tcolorbox}
+or
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf E}({\bf x}_0,\omega) & =\frac1{2\pi}\frac{e_0}{4\pi\epsilon_0}\int\limits_{-\infty}^{\infty}dte^{i\omega\left( t+\frac{R({\bf x}_0,t)}{c}\right)}\left[-\frac{{\bf n}({\bf x}_0,t)\times({\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)}\left(\frac{i\omega}c-\frac1{R({\bf x}_0,t)}\right)+\frac{{\bf n}({\bf x}_0,t)(1+{\bf n}({\bf x}_0,t)\cdot{\boldsymbol{\beta}}(t))}{R({\bf x}_0,t)^2}\right]\label{exomega-f2}
+    \end{align}
+\end{tcolorbox}
+
+and the magnetic field
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+        {\bf B}({\bf x}_0,\omega)= & \frac1{2\pi}\frac{e_0}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}dt e^{i\omega \left(t+\frac{R({\bf x}_0,t)}c\right)}\frac{{\bf n}({\bf x}_0,t)\times{\boldsymbol{\beta}}(t)}{R({\bf x}_0,t)}\left(\frac{i\omega}c-\frac{1}{R({\bf x}_0,t)}\right),\label{bxomega-f1-oc1}
+    \end{align}
+\end{tcolorbox}
+

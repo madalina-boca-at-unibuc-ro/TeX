@@ -1,0 +1,138 @@
+
+
+
+\section{The Laguerre Gauss modes}
+ {\color{red} For simplicity the LG modes will be written only for the case when the field is propagating along $Oz$}
+
+\subsection{The field parameters}
+\begin{enumerate}
+    \item the dimensionless intensity parameter $a_0$; the amplitude of the electric field is $E_0 = \omega \xi \frac{mc}{|e|}$
+    \item propagation direction only along $Oz$ axis. ${\bf n} ={\bf e}_z$
+    \item $\omega$ = frequency; $T=\frac{2\pi}{\omega}$, $k = \frac{\omega}c$, $\lambda= c T$
+    \item $w_0$ = the beam waist
+    \item $z_R = \frac{kw_0^2}{2}$ = the Rayleigh length
+    \item $w(z) = w_0\sqrt{1+\frac{z^2}{z_R^2}}$
+    \item $\psi_G(z) = \arctan\frac{z}{z_R}$
+    \item $\epsilon=\pm1$ helicity sign
+    \item $\zeta_x$, $\zeta_y$ polarization parameters $|\zeta_x|^2 + |\zeta_y|^2=1$
+\end{enumerate}
+\subsection{The scalar solution}
+
+Define the scalar solution
+\begin{importantbox}
+    \begin{align}
+        u_{pm}({\bf r}) = N_{pm}\frac{w_0}{w(z)}\left(\frac{\sqrt{2}}{w(z)}\right)^me^{-i(2p + m +1)\psi_G(z)}e^{-\frac{k}2\frac{x^2+y^2}{z_R+i z}}\, _1F_1(-p, m+1, \frac{2(x^2+y^2)}{w(z)^2}) (x+i\epsilon y)^m, \\
+        N_{pm} = \frac{\sqrt{2}}{m!}\sqrt{\frac{(p+m)!}{p!}}.
+    \end{align}
+\end{importantbox}
+
+The derivatives
+\begin{align}
+    \frac{du_{pm}({\bf r})}{dx}= & N_{pm}\frac{w_0}{w(z)}\left(\frac{\sqrt{2}}{w(z)}\right)^me^{-i(2p + m +1)\psi_G(z)}e^{-\frac{k}2\frac{x^2+y^2}{z_R+i z}}\,\nonumber         \\
+                                 & \times\left[_1F_1(-p, m+1, \frac{2(x^2+y^2)}{w(z)^2}) \left(m(x+i\epsilon y)^{m-1}-(x+i\epsilon y)^m\frac{kx}{z_R+iz}\right)\right.\nonumber \\
+                                 & \quad\left.-\frac{p}{m+1}\frac{4x}{w(z)^2}\,_1F_1(-p+1, m+2, \frac{2(x^2+y^2)}{w(z)^2})\right]
+\end{align}
+\begin{align}
+    \frac{du_{pm}({\bf r})}{dy}= & N_{pm}\frac{w_0}{w(z)}\left(\frac{\sqrt{2}}{w(z)}\right)^me^{-i(2p + m +1)\psi_G(z)}e^{-\frac{k}2\frac{x^2+y^2}{z_R+i z}}\,\nonumber                  \\
+                                 & \times\left[_1F_1(-p, m+1, \frac{2(x^2+y^2)}{w(z)^2}) \left(im\epsilon(x+i\epsilon y)^{m-1}-(x+i\epsilon y)^m\frac{ky}{z_R+iz}\right)\right.\nonumber \\
+                                 & \quad\left.-\frac{p}{m+1}\frac{4y}{w(z)^2}\,_1F_1(-p+1, m+2, \frac{2(x^2+y^2)}{w(z)^2})\right]
+\end{align}
+\subsection{The electric field}
+The Cartesian components of the electric field are
+\begin{highlightbox}
+    \begin{align}
+         & E_x({\bf r},t) = E_0\Re\left\{\zeta_x u_{pm}({\bf r})f(\phi)\right\},\quad f(\phi)=e^{-i\phi-\frac{(\phi -  \tau_0)^2 }{\tau^2}},\quad \phi = \omega t-kz                  \\
+         & E_y({\bf r},t) = E_0\Re\left\{\zeta_y u_{pm}({\bf r})f(\phi)\right\}                                                                                                       \\
+         & E_z({\bf r},t) = E_0\Re\left\{-\frac1{ik}\left[\zeta_x\frac{\partial u_{pm}({\bf r})}{\partial x}+\zeta_y\frac{\partial u_{pm}({\bf r})}{\partial y}\right]f(\phi)\right\}
+    \end{align}
+\end{highlightbox}
+
+\subsection{The magnetic field}
+The Cartesian components of the magnetic field are
+\begin{highlightbox}
+    \begin{align}
+         & B_x({\bf r},t) = \frac{E_0}c\Re\left\{-\zeta_y u_{pm}({\bf r})f(\phi)\right\},\quad f(\phi)=e^{-i\phi-\frac{(\phi -  \tau)^2 }{\tau^2}},\quad \phi = \omega t-kz                    \\
+         & B_y({\bf r},t) = \frac{E_0}c\Re\left\{\zeta_x u_{pm}({\bf r})f(\phi)\right\}                                                                                                        \\
+         & B_z({\bf r},t) = \frac{E_0}c\Re\left\{-\frac1{ik}\left[-\zeta_y\frac{\partial u_{pm}({\bf r})}{\partial x}+\zeta_x\frac{\partial u_{pm}({\bf r})}{\partial y}\right]f(\phi)\right\}
+    \end{align}
+\end{highlightbox}
+
+
+\section{The Laguerre--Gauss modes propagating along an arbitrary direction}
+
+Let ${\bf n}$ be the propagation direction, with ${\bf n}^2=1$. We decompose the position vector into its components parallel and perpendicular to ${\bf n}$,
+\begin{importantbox}
+    \begin{align}
+        r_{\parallel}={\bf n}\cdot{\bf r},\qquad
+        {\bf r}_{\perp}={\bf r}-r_{\parallel}{\bf n},\qquad
+        {\bf r}=r_{\parallel}{\bf n}+{\bf r}_{\perp}.
+    \end{align}
+\end{importantbox}
+We introduce two real polarization vectors ${\bf \epsilon}_1$ and ${\bf \epsilon}_2$ which, together with ${\bf n}$, form an orthonormal right-handed basis,
+\begin{align}
+    {\bf \epsilon}_a\cdot{\bf \epsilon}_b=\delta_{ab},\qquad
+    {\bf \epsilon}_a\cdot{\bf n}=0,\qquad
+    {\bf \epsilon}_1\times{\bf \epsilon}_2={\bf n}.
+\end{align}
+For ${\bf n}={\bf e}_z$, the vectors ${\bf \epsilon}_1$ and ${\bf \epsilon}_2$ lie in the plane orthogonal to $Oz$. The transverse coordinates and derivatives are
+\begin{align}
+    r_1={\bf \epsilon}_1\cdot{\bf r}_{\perp},\qquad
+    r_2={\bf \epsilon}_2\cdot{\bf r}_{\perp},\qquad
+    r_{\perp}^2=r_1^2+r_2^2,\qquad
+    \partial_a={\bf \epsilon}_a\cdot{\bf \nabla}.
+\end{align}
+The scalar Laguerre--Gauss mode is obtained from the mode propagating along $Oz$ through the replacements $z\to r_{\parallel}$, $x\to r_1$, and $y\to r_2$:
+\begin{importantbox}
+    \begin{align}
+        u_{pm}({\bf r})={} & N_{pm}\frac{w_0}{w(r_{\parallel})}
+        \left(\frac{\sqrt{2}}{w(r_{\parallel})}\right)^m
+        e^{-i(2p+m+1)\psi_G(r_{\parallel})}
+        e^{-\frac{k}{2}\frac{r_{\perp}^2}{z_R+i r_{\parallel}}}\nonumber                              \\
+                           & \times{}_1F_1\left(-p,m+1,\frac{2r_{\perp}^2}{w(r_{\parallel})^2}\right)
+        (r_1+i\epsilon r_2)^m,
+        \qquad
+        N_{pm}=\frac{\sqrt{2}}{m!}\sqrt{\frac{(p+m)!}{p!}}.
+    \end{align}
+
+\end{importantbox}
+An equivalent form for the scalar Laguerre--Gauss mode is obtained starting from the identity
+\begin{align}
+    \frac{k}{2}\frac{r_{\perp}^2}{z_R+i r_{\parallel}} = \frac{r_{\perp}^2}{w(r_{\parallel})^2} + i\frac{k r_{\parallel} r_{\perp}^2}{2 (r_{\parallel}^2 + z_R^2)}.
+\end{align}
+and we have
+\begin{importantbox}
+    \begin{align}
+        u_{pm}({\bf r})={} & N_{pm}\frac{w_0}{w(r_{\parallel})}
+        \left(\frac{\sqrt{2}}{w(r_{\parallel})}\right)^m
+        e^{-i(2p+m+1)\psi_G(r_{\parallel})} e^{-i\frac{k r_{\parallel} r_{\perp}^2}{2 (r_{\parallel}^2 + z_R^2)}}
+        e^{-\frac{r_{\perp}^2}{w(r_{\parallel})^2}}\nonumber                                          \\
+                           & \times{}_1F_1\left(-p,m+1,\frac{2r_{\perp}^2}{w(r_{\parallel})^2}\right)
+        (r_1+i\epsilon r_2)^m,
+        \qquad
+        N_{pm}=\frac{\sqrt{2}}{m!}\sqrt{\frac{(p+m)!}{p!}}.
+    \end{align}
+\end{importantbox}
+We write the polarization vector as
+\begin{align}
+    {\bf e} = \zeta_1{\bf \epsilon}_1+\zeta_2{\bf \epsilon}_2,\qquad
+    |\zeta_1|^2+|\zeta_2|^2=1,\qquad
+    \phi=\omega t-k r_{\parallel}.
+\end{align}
+The electric field propagating along ${\bf n}$ is
+\begin{highlightbox}
+    \begin{align}
+        {\bf E}({\bf r},t)=E_0\Re\left\{
+        \left[u_{pm}({\bf r})\left(\zeta_1{\bf \epsilon}_1+\zeta_2{\bf \epsilon}_2\right)
+            -\frac{{\bf n}}{ik}\left(\zeta_1\partial_1u_{pm}({\bf r})
+            +\zeta_2\partial_2u_{pm}({\bf r})\right)\right]f(\phi)\right\}.
+    \end{align}
+\end{highlightbox}
+The corresponding magnetic field is
+\begin{highlightbox}
+    \begin{align}
+        {\bf B}({\bf r},t)=\frac{E_0}{c}\Re\left\{
+        \left[u_{pm}({\bf r})\left(-\zeta_2{\bf \epsilon}_1+\zeta_1{\bf \epsilon}_2\right)
+            -\frac{{\bf n}}{ik}\left(-\zeta_2\partial_1u_{pm}({\bf r})
+            +\zeta_1\partial_2u_{pm}({\bf r})\right)\right]f(\phi)\right\}.
+    \end{align}
+\end{highlightbox}

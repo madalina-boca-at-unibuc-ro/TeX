@@ -1,0 +1,123 @@
+
+\chapter{Calculation of NRV solutions}
+
+Consider the electromagnetic field described by the vector potential
+\begin{align}
+    {\bm A}({\bm r},t)= {\bm e}_x A_x(k\phi)+{\bm e}_y A_y(k\phi), \qquad \phi = c t-z,\qquad k=\frac{\omega}{c}
+\end{align}
+We define the vector ${\bm k}$
+\begin{align}
+    {\bm k}=k{\bm e}_z
+\end{align}
+The Schrodinger equation has the form
+\begin{align}
+    i\hbar\frac{\partial\psi({\bm p};{\bm r},t)}{\partial t}=\frac{({\bm P}-e{\bm A}(k\phi))^2}{2m}\psi({\bm p};{\bm r},t)
+\end{align}
+Note that the vector potential and the momentum operator commute
+\begin{align}
+    [P_i, A_j]=0,\qquad i,j\in\{1,2,3\}
+\end{align}
+and the equation becomes
+\begin{align}
+    i\hbar\frac{\partial \psi({\bm p};{\bm r},t)}{\partial t}=-\frac{\hbar^2}{2m}\Delta\Psi({\bm p};{\bm r},t)+\frac{i\hbar e}m {\bm A}(k\phi)\cdot{\boldsymbol{\nabla}}\psi({\bm p};{\bm r},t)+\frac{e^2{\bm A}^2(k\phi)}{2m}\psi({\bm p};{\bm r},t)=0
+\end{align}
+
+We look for a solution of the form
+\begin{align}
+    \psi({\bm p};{\bm r},t)=\frac1{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}v(k\phi)e^{iF(k\phi)}
+\end{align}
+with ${v}$ and $F$ real
+With this form we have
+\begin{align}
+     & i\hbar\frac{\partial\psi({\bm p};{\bm r},t)}{\partial t}=\frac1{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}e^{iF(k\phi)}v(k\phi)\left[\hbar \omega \left(i\frac{v'(k\phi)}{v(k\phi)}-F'(k\phi)\right)+\frac{{\bm p}^2}{2m}\right] \\
+     & i\hbar\frac{e}mA_x(k\phi)\frac{\partial}{\partial x}\psi({\bm r},t)=\frac1{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}e^{iF(k\phi)}v(k\phi)\left(-\frac{e{\bm A(k \phi)}\cdot{\bm p}}{m}\right)                                   \\
+     & -\frac{\hbar^2}{2m}\Delta\psi({\bm p};{\bm r},t)=\frac1{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}e^{iF(k\phi)}v(k\phi)\nonumber                                                                                                 \\
+     & \qquad\qquad\qquad\times\left[\frac{{\bm p}^2}{2m}+\frac{\hbar^2k^2}{2m}\left(-iF''(k\phi)-\frac{v''(k\phi)}{v(k\phi)}+F'(k\phi)^2-iF'(k\phi)\frac{v'(k\phi)}{v(k\phi)}\right)+\frac{i\hbar {\bm k}\cdot{\bm p}}{2m}\left(\frac{v'(k\phi)}{v(k\phi)}+iF'(k\phi)\right)\right]
+\end{align}
+With the previous results the Schrodinger equation becomes
+\begin{align}
+    \hbar \omega \left(i\frac{v'(k\phi)}{v(k\phi)}-F'(k\phi)\right)+\frac{{\bm p}^2}{2m}= & \frac{e^2{\bm A}^2(k\phi)}{2m}-\frac{e{\bm A(k \phi)}\cdot{\bm p}}{m}+\frac{{\bm p}^2}{2m}+\frac{i\hbar {\bm k}\cdot{\bm p}}{m}\left(\frac{v'(k\phi)}{v(k\phi)}+iF'(k\phi)\right)\nonumber \\
+                                                                                          & +\frac{\hbar^2k^2}{2m}\left(-iF''(k\phi)-\frac{v''(k\phi)}{v(k\phi)}+F'(k\phi)^2-2iF'(k\phi)\frac{v'(k\phi)}{v(k\phi)}\right)
+\end{align}
+If we separate the real and imaginary part of the previous equation we get
+\begin{align}
+     & \hbar \omega \frac{v'(k\phi)}{v(k\phi)}-\frac{\hbar {\bm k}\cdot{\bm p}}{m}\frac{v'(k\phi)}{v(k\phi)}+\frac{\hbar^2k^2}{2m}\left(F''(k\phi)+2F'(k\phi)\frac{v'(k\phi)}{v(k\phi)}\right)=0                                      \\
+     & \frac{e^2{\bm A}^2(k\phi)}{2m}-\frac{e{\bm A(k \phi)}\cdot{\bm p}}{m}+\left(\hbar\omega -\frac{\hbar {\bm k}\cdot{\bm p}}m\right)F'(k\phi)+\frac{\hbar^2k^2}{2m}F'(k\phi)^2-\frac{\hbar^2k^2}{2m}\frac{v''(k\phi)}{v(k\phi)}=0
+\end{align}
+
+The first equation above becomes
+\begin{align}
+     & \frac{v'(k\phi)}{v(k\phi)}\left(\hbar\omega-\frac{\hbar {\bm k}\cdot{\bm p}}{m}+F'(k\phi)\frac{\hbar^2k^2}{m}\right)=-\frac{\hbar^2k^2}{2m}F''(k\phi)                                                                                         \\
+     & -\frac12\frac{F''(k\phi)}{F'(k\phi)+\frac{\hbar ck-\frac{\hbar kp_3}{m}}{\frac{\hbar^2k^2}{m}}}=\frac{v'(k\phi))}{v(k\phi)},\qquad \rightarrow\qquad -\frac12\frac{F''(k\phi)}{F'(k\phi)+\frac{ mc-p_3}{\hbar k}}=\frac{v'(k\phi))}{v(k\phi)}
+\end{align}
+The previous equation admits the  solution
+\begin{align}
+    \ln(v(k\phi))-c_0=-\frac12\ln(F'(k\phi)+\frac{mc-p_3}{\hbar k})
+\end{align}
+or,  in an equivalent form
+\begin{align}
+    v(k\phi)={v_0}\sqrt{\frac{\hbar k}{mc -p_3 +\hbar kF'(k\phi)}}
+\end{align}
+The constant $v_0$ is arbitrary, since $v$ appears as a factor in the expression of $\psi$, so for consistency we can choose it
+\begin{align}
+    v_0=\sqrt{\frac{mc-p}{\hbar k}}
+\end{align}
+and obtain
+\begin{align}
+    v(k\phi) = \sqrt{\frac{mc -p_3}{mc-p_3+\hbar k F'(k\phi)}}=\frac1{\sqrt{1+\frac{\hbar k}{mc-p_3}F'(k\phi)}}
+\end{align}
+Next, in the equation  for $F'$, we divide it by $mc^2$  and define
+\begin{align}
+    \frac{|e|{\bm A}(k\phi)}{mc}=a({\bm k}\phi)
+\end{align}
+The equation becomes
+\begin{align}
+    \frac12{\bm a}^2(k\phi)+{\bm a}(k\phi)\cdot\frac{\bm p}{mc}+\frac{\hbar k}{mc}\left(1-\frac{p_3}{mc}\right)F'(k\phi)+\frac{\hbar^2k^2}{2(mc)^2}F'(k\phi)^2-\frac{\hbar^2k^2}{2(mc)^2}\frac{v''(k\phi)}{v(k\phi)}=0
+\end{align}
+In the previous equation $v''(k\phi)/v(k\phi)$ is of the order of unity, so the term $\frac{\hbar^2k^2}{2(mc)^2}$ can be neglected with respect to ${\bm a}^2$
+\begin{align}
+    \frac{\hbar^2k^2}{2(mc)^2}F'(k\phi)^2 +\frac{\hbar k}{mc}\left(1-\frac{p_3}{mc}\right)F'(k\phi)+   \frac12{\bm a}^2(k\phi)+{\bm a}(k\phi)\cdot\frac{\bm p}{mc}=0
+\end{align}
+The solutions of the previous equations are
+\begin{align}
+    y = \frac{mc}{\hbar k}\left(-1+\frac{p_3}{mc}\pm\sqrt{\left(1-\frac{p_3}{mc}\right)^2-{\bm a}^2(k\phi)-2{\bm a}(k\phi)\cdot\frac{\bm p}{mc}}\right)
+\end{align}
+which can be written as
+\begin{align}
+    y\equiv F'(k\phi)=-\frac{(mc-p_3)}{\hbar k}\pm\frac{mc}{\hbar k}\sqrt{\left(1-\frac{p_3}{mc}\right)^2-{\bm a}^2(k\phi)-2{\bm a}(k\phi)\cdot\frac{\bm p}{mc}}
+\end{align}
+with these, the previous expression of $v(k\phi)$ becomes
+\begin{align}
+    v(k\phi)=\frac1{\sqrt{\pm\frac{mc}{mc-p_3}\sqrt{\left(1-\frac{p_3}{mc}\right)^2-{\bm a}^2(k\phi)-2{\bm a}(k\phi)\cdot\frac{\bm p}{mc}}}}
+\end{align}
+We must use the sign $+$ in order to have a real $v$
+\begin{align}
+    v(k\phi)=\frac1{\left[1-\left(\frac{mc}{mc-p_3}\right)^2\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_\perp}{mc}\right)\right]^{1/4}}
+\end{align}
+Finally, $F(k\phi)$ becomes
+\begin{align}
+    F(k\phi)=\int\limits^{k\phi}{d\chi\left[-\frac{(mc-p_3)}{\hbar k}+\frac{mc}{\hbar k}\sqrt{\left(1-\frac{p_3}{mc}\right)^2-{\bm a}^2(\chi)-2{\bm a}(\chi)\cdot\frac{{\bm p}}{mc}}\right]}
+\end{align}
+It is convenient to use the standard form of the integration variable
+\begin{align}
+    \chi = k\xi, \qquad d\chi=kd\xi
+\end{align}
+and
+\begin{align}
+    F(k\phi) & =k\int\limits^{\phi}{d\xi\left[-\frac{(mc-p_3)}{\hbar k}+\frac{mc}{\hbar k}\sqrt{\left(1-\frac{p_3}{mc}\right)^2-{\bm a}^2(k\xi)-2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}}\right]}\nonumber \\
+             & =-\frac{(mc-p_3)\phi}{\hbar}+\frac{mc-p_3}{\hbar}\int\limits^{\phi}d\xi\sqrt{1-\left(\frac{mc}{mc-p_3}\right)^2\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}
+\end{align}
+
+The final form of the NR Volkov solutions is
+\begin{align}
+    \phi({\bm p};{\bm x},t)= & \frac1{(2\pi\hbar)^{3/2}}\frac1{\left[1-\left(\frac{mc}{mc-p_3}\right)^2\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_\perp}{mc}\right)\right]^{1/4}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}
+    e^{\frac{i(mc-p_3)}{\hbar}\int\limits^{\phi}d\xi\left[\sqrt{1-\left(\frac{mc}{mc-p_3}\right)^2\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}-1\right]}
+\end{align}
+
+Up to the second order in ${\bm p}/(mc)$ or ${\bm a}$ the previous expression is
+\begin{align}
+    \phi({\bm p};{\bm x},t)= & \frac1{(2\pi\hbar)^{3/2}}\frac1{\left[1-\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_\perp}{mc}\right)\right]^{1/4}}e^{-\frac{i}{\hbar}\frac{{\bm p}^2}{2m}t}e^{\frac{i}{\hbar}{\bm p}\cdot{\bm r}}
+    e^{\frac{i(mc-p_3)}{\hbar}\int\limits^{\phi}d\xi\left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p}{mc}\right)}-1\right]}
+\end{align}
+
+

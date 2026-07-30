@@ -1,0 +1,76 @@
+
+
+% Preamble with common LaTeX settings and packages
+
+
+% Language settings
+\usepackage[english]{babel}
+
+% Import management
+\usepackage{import}
+\usepackage{subfiles}
+\usepackage{chngcntr}
+\usepackage{chappg}
+
+
+% Font and encoding
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{calc}
+\usepackage{ulem}
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage{empheq}
+
+
+% Numbering
+\numberwithin{equation}{section}
+\usepackage[style=authoryear, backend=biber]{biblatex}
+
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Colors
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tcolorbox}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% References and citations
+\usepackage[hyperindex,breaklinks=true]{hyperref}
+\usepackage{cleveref}
+
+% Page layout
+\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+
+% Fonts 
+\usepackage{kpfonts}
+\usepackage{eufrak}
+
+% Indentation
+\usepackage{indentfirst}
+
+% Custom commands
+\newcommand{\chapterauthor}[1]{%
+  {\parindent0pt\vspace*{-25pt}%
+      \linespread{1.1}\large\scshape#1%
+      \par\nobreak\vspace*{35pt}}
+  \@afterheading%
+}
+
+% Tikz
+\usepackage{tikz, tikz-3dplot, tikz-feynman}

@@ -1,0 +1,101 @@
+\section{The long distance approximation for the Faraday tensor in the time domain}
+
+$F$ is written as the sum of two terms,
+\begin{align}
+    F^{\alpha\beta}=\overline{F}^{\alpha\beta}+\overline{\overline{F}}^{\alpha\beta}
+\end{align}
+with
+\begin{align}
+     & \overline F^{\alpha\beta}(x)={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-(w\cdot R_0)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}{(u\cdot R_0)^3}\vline}_{\tau=\tau_r} \\
+     & \overline{\overline F}^{\alpha\beta}(x)={\frac{ec}{4\pi\epsilon_0}\frac{(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}{(u\cdot R_0)^3}\vline}_{\tau=\tau_r}.\label{def-F-short}
+\end{align}
+
+In matrix form, the two terms can be written as
+\begin{align}
+     & \overline{F}(x)={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0\otimes w-w\otimes R_0)-(w\cdot R_0)(R_0\otimes u- u \otimes R_0)}{(u\cdot R_0)^3}\vline}_{\tau=\tau_r} \\
+     & \overline{\overline F}(x)={\frac{ec}{4\pi\epsilon_0}\frac{(R_0\otimes u- u \otimes R_0)}{(u\cdot R_0)^3}.\vline}_{\tau=\tau_r}                                                  \\
+     & F(x)=\overline F(x) + \overline{\overline F}(x)
+\end{align}
+In the previous expressions, the temporal component of $R_0$ is calculated from
+\begin{align}
+    R_0^0 = |{\bf R}_0| = |{\bf x}_0-{\bf r}_0|
+\end{align}
+i.e. $\overline F$ and $\overline{\overline F}$ are functions of ${\bf R}_0={\bf x}_0-{\bf r}_0$ only, and we expand it up to the first order in ${\bf r}_0$ around the point ${\bf R}_0\sim{\bf x}_0$.
+We introduce the unit vector of the observation direction with respect to the translated frame (the unit vector of ${\bf x}_0 = {\bf x}-{\boldsymbol{\mathfrak R}}_0$)
+\begin{align}
+    {\bf n}_0=\frac{{\bf x}_0}{|{\bf x}_0|}=\frac{{\bf x}-{\boldsymbol{\mathfrak R}}_0}{|{\bf x}-{\boldsymbol{\mathfrak R}}_0|}
+\end{align}
+we have
+\begin{align}
+    |{\bf x}_0-{\bf r}_0| = & \sqrt{{\bf x}_0^2 +{\bf r}_0^2 -2{\bf x}_0\cdot{\bf r}_0}\approx\sqrt{{\bf x}_0^2  -2{\bf x}_0\cdot{\bf r}_0}=|{\bf x}_0|\sqrt{1-\frac{2{\bf x}_0\cdot{\bf r}_0}{|{\bf x}_0|^2}}\approx|{\bf x}_0|\left(1-\frac{{\bf x}_0\cdot{\bf r}_0}{|{\bf x}_0|^2}\right)\nonumber \\
+    =                       & |{\bf x}_0|\left(1-\frac{{\bf n}_0\cdot{\bf r}_0}{|{\bf x}_0|}\right)
+\end{align}
+
+Then the condition for calculating the retarded time (\ref{deftau_r}) becomes
+\begin{align}
+    ct= r^0(\tau_r)+|{\bf x}_0-{\bf r}_0(\tau)|\rightarrow ct = r^0(\tau_r) + |{\bf x}_0| -{\bf n}_0\cdot{\bf r}_0(\tau_r)\,
+\end{align}
+i.e. the approximate form for the equation of $\tau_r$ is
+\begin{align}
+    ct-|{\bf x}_0| = r^0(\tau_r)-{\bf n}_0\cdot{\bf r}_0(\tau_r).\label{deftar_rap})
+\end{align}
+
+
+Next we define two new four-vectors $X_0$ and ${\cal R}_0$ where
+\begin{align}
+    X_0 = (|{\bf x}_0|, {\bf x}_0) = |{\bf x}_0| n_0, \text{  with   } n_0=(1,{\bf n}_0)
+\end{align}
+and respectively
+\begin{align}
+    {\cal R}_0({\bf x}, t) = ({\bf n}_0 \cdot {\bf r}_0(\tau_r), {\bf r}_0(\tau_r))
+\end{align}
+Note that $X_0$ and $n_0$ are constant vectors, dependent only on the observation point and on the translation of the reference frame; on the other hand, ${\cal R}_0$ depends on time, coordinate and translation of the reference frame, through the argument $\tau_r$ solution of (\ref{deftar_rap}). In the following we shall approximate ${\cal R}_0$ as small  with respect to $X_0$. The vector $R_0$ can be written as
+\begin{align}
+    R_0 = X_0-{\cal R}_0
+\end{align}
+
+
+We write the  total $F(x)$ as an expansion in terms, separated according to their long distance behavior (in powers of $1/|{\bf x}_0|$)
+
+\begin{align}
+    {F}(x)  = & \frac{e}{4\pi\epsilon_0c}\frac{(u\cdot (X_0-{\cal R}_0))\left[(X_0-{\cal R}_0)\otimes w-w\otimes (X_0-{\cal R}_0)\right]-(w\cdot (X_0-{\cal R}_0))\left[(X_0-{\cal R}_0)\otimes u- u \otimes (X_0-{\cal R}_0)\right]}{(u\cdot (X_0-{\cal R}_0))^3} \nonumber \\
+              & +\frac{ec}{4\pi\epsilon_0}\frac{((X_0-{\cal R}_0)\otimes u- u \otimes (X_0-{\cal R}_0))}{(u\cdot (X_0-{\cal R}_0)^3}\nonumber                                                                                                                                        \\
+    \approx   & +\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot X_0)\left(X_0\otimes w-w\otimes X_0\right)-(w\cdot X_0)\left(X_0\otimes u- u \otimes X_0\right)}{(u\cdot X_0)^3}\nonumber                                                                                            \\
+              & -\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot {\cal R}_0)\left(X_0\otimes w-w\otimes X_0\right)-(w\cdot {\cal R}_0)\left(X_0\otimes u- u \otimes X_0\right)}{(u\cdot X_0)^3}\nonumber                                                                              \\
+              & -\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot X_0)\left({\cal R}_0\otimes w-w\otimes {\cal R}_0\right)-(w\cdot X_0)\left({\cal R}_0\otimes u- u \otimes {\cal R}_0\right)}{(u\cdot X_0)^3}\nonumber                                                                \\
+              & +3(u\cdot {\cal R}_0)\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot X_0)\left(X_0\otimes w-w\otimes X_0\right)-(w\cdot X_0)\left(X_0\otimes u- u \otimes X_0\right)}{(u\cdot X_0)^4}\nonumber                                                                        \\
+              & +\frac{ec}{4\pi\epsilon_0}\frac{(X_0\otimes u- u \otimes X_0)}{(u\cdot X_0)^3}
+\end{align}
+where all terms must be evaluated for $\tau=\tau_r$. Using $X_0=|{\bf x}_0|n_0$ in the previous result we have
+\begin{highlightbox}
+\begin{align}
+     & F(x)=F_l(x)+F_s(x)+{\cal O}(|{\bf x}_0|^{-3})                                                                                                                                                                   \\
+     & F_l(x)={\frac1{|{\bf x}_0|}\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot n_0)(n_0\otimes w-w\otimes n_0)-(w\cdot n_0)(n_0\otimes u- u \otimes n_0)}{(u\cdot n_0)^3}\vline}_{\tau=\tau_r}                       \\
+     & F_s(x)=\frac1{|{\bf x}_0|^2}\left\{\frac{ec}{4\pi\epsilon_0}\frac{(n_0\otimes u- u \otimes n_0)}{(u\cdot n_0)^3}\right.\nonumber                                                                                \\
+     & \left.\qquad \qquad \quad+\frac{e}{4\pi\epsilon_0c}\left[-\frac{(u\cdot {\cal R}_0)(n_0\otimes w-w\otimes n_0)-(w\cdot {\cal R}_0)(n_0\otimes u- u \otimes n_0)}{(u\cdot n_0)^3}\right.\right.\nonumber \\
+     & \qquad \qquad\quad-\frac{(u\cdot n_0)({\cal R}_0\otimes w-w\otimes {\cal R}_0)-(w\cdot n_0)({\cal R}_0\otimes u- u \otimes {\cal R}_0)}{(u\cdot n_0)^3}\nonumber                                        \\
+     & {\qquad \qquad\quad-\left.\left.+3(u\cdot {\cal R}_0)\frac{(u\cdot n_0)(n_0\otimes w-w\otimes n_0)-(w\cdot n_0)(n_0\otimes u- u \otimes n_0)}{(u\cdot n_0)^4}\right]\right\}\vline}_{\tau=\tau_r}
+\end{align}
+\end{highlightbox}
+Everything inside the curled bracket  must be evaluated at the retarded time $\tau_r$. For clarity, the definition of $\tau_r$ and  all the notation entering the final result is collected below:
+\begin{highlightbox}
+\begin{align}
+    &r(\tau)=(r^0(\tau),{\bf r}(\tau)),\qquad
+    {\mathfrak R}_0=(0,\pmb{\mathfrak R}_0),\nonumber\\
+    &x=(ct,{\bf x}),\qquad
+    x_0=x-{\mathfrak R}_0=(ct,{\bf x}_0),\qquad
+    {\bf x}_0={\bf x}-\pmb{\mathfrak R}_0,\nonumber\\
+    &r_0(\tau)=r(\tau)-{\mathfrak R}_0=(r^0(\tau),{\bf r}_0(\tau)),\qquad
+    {\bf r}_0(\tau)={\bf r}(\tau)-\pmb{\mathfrak R}_0,\nonumber\\
+    &u(\tau)=\frac{dr_0(\tau)}{d\tau},\qquad
+    w(\tau)=\frac{du(\tau)}{d\tau},\nonumber\\
+    &n_0=(1,{\bf n}_0),\qquad
+    {\bf n}_0=\frac{{\bf x}_0}{|{\bf x}_0|},\qquad
+    n_0\cdot n_0=0,\nonumber\\
+    &{\cal R}_0({\bf x},t)=({\bf n}_0\cdot{\bf r}_0(\tau_r),{\bf r}_0(\tau_r)),\qquad
+    ct-|{\bf x}_0|=r^0(\tau_r)-{\bf n}_0\cdot{\bf r}_0(\tau_r),\nonumber\\
+    &(a\otimes b)^{\alpha\beta}=a^\alpha b^\beta.
+\end{align}
+In the expression above, $\pmb{\mathfrak{R}}_0$ is the initial position of the particle. $r(\tau)$ and $x\equiv(ct,{\bf x})$ are the absolute trajectory and respectively the absolute observation point, while the quantities denoted with the index $_0$ are measured with respect to the initial position according to the equations above.
+
+\end{highlightbox}

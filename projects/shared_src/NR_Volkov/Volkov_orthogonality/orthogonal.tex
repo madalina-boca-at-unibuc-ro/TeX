@@ -1,0 +1,31 @@
+
+\chapter{Proof of orthogonality of NRV solutions}
+We calculate the scalar product of two Volkov solutions in their approximate form
+\begin{align}
+    \langle\psi({\bm p}_1)|\psi({\bm p}_2)\rangle = & \frac1{(2\pi\hbar)^3}e^{-\frac{i}{\hbar}\frac{{\bm p}_2^2-{\bm p}_1^2}{2m}t}\int d{\bm r}_\perp e^{\frac{i}{\hbar}{({\bm p}_{2\perp}-{\bm p}_{1\perp})\cdot{\bm r}_\perp}}\nonumber                                                                                                                                \\
+                                                    & \times\int dz\frac1{\left[1-\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_{2\perp}}{mc}\right)\right]^{1/4}}\frac1{\left[1-\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_{1\perp}}{mc}\right)\right]^{1/4}}e^{\frac{i}{\hbar}(p_{23}-p_{13})\cdot{ z}}\nonumber                              \\
+                                                    & \times e^{\frac{i(mc-p_{23})}{\hbar}\int\limits^{\phi}d\xi\left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{2\perp}}{mc}\right)}-1\right]}e^{-\frac{i(mc-p_{13})}{\hbar}\int\limits^{\phi}d\xi\left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{1\perp}}{mc}\right)}-1\right]}
+\end{align}
+We calculate directly the integral over ${\bm r}_\perp$ and we obtain the simplified form
+\begin{align}
+    \langle\psi({\bm p}_1)|\psi({\bm p}_2)\rangle = & \frac{\delta({\bm p}_{1\perp}-{\bm p}_{2\perp})}{(2\pi\hbar)}e^{-\frac{i}{\hbar}\frac{ p_{23}^2-{ p}_{13}^2}{2m}t}\nonumber                                                                                                                                                                        \\
+                                                    & \times\int dz\frac1{\left[1-\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_{2\perp}}{mc}\right)\right]^{1/2}}e^{\frac{i}{\hbar}(p_{2z}-p_{1z})\left[{ z}+\int\limits^{\phi}d\xi\left[\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{2\perp}}{mc}\right)}-1\right]\right]}
+\end{align}
+The previous expression can be written as
+\begin{align}
+    \langle\psi({\bm p}_1)|\psi({\bm p}_2)\rangle = & \frac{\delta({\bm p}_{1\perp}-{\bm p}_{2\perp})}{(2\pi\hbar)}e^{-\frac{i}{\hbar}\frac{ p_{23}^2-{ p}_{13}^2}{2m}t}e^{-\frac{i}{\hbar}{( p_{23}-{ p}_{13})}ct}\nonumber                                                                                            \\
+                                                    & \times\int dz\frac1{\left[1-\left({\bm a}^2(k\phi)+\frac{2{\bm a}(k\phi)\cdot{\bm p}_{2\perp}}{mc}\right)\right]^{1/2}}e^{\frac{i}{\hbar}(p_{2z}-p_{1z})\int\limits^{\phi}d\xi\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{2\perp}}{mc}\right)}}
+\end{align}
+We perform the change of variable
+\begin{align}
+    y=\int\limits^{\phi}d\xi\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{2\perp}}{mc}\right)}
+\end{align}
+whose jacobian is
+\begin{align}
+    dz = -\frac{dy}{\sqrt{1-\left({\bm a}^2(k\xi)+2{\bm a}(k\xi)\cdot\frac{\bm p_{2\perp}}{mc}\right)}}
+\end{align}
+Since the Jacobian is already formed under the integral, we obtain directly
+\begin{align}
+    \langle\psi({\bm p}_1)|\psi({\bm p}_2)\rangle=\delta({\bm p}_1-{\bm p}_2)
+\end{align}
+

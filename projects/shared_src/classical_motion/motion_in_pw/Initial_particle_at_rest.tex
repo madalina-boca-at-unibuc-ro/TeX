@@ -1,0 +1,120 @@
+\section{The motion of a particle initially at rest}
+
+
+\subsubsection{The motion along the turn-on of the pulse}
+We assume that the initial positions of the particles are all in the plane \(Oxy\), i.e. \({\pmb{\mathfrak R}}_0\cdot{\bf n}=0\). We chose \(t_0 \ll -\sigma\), so that the initial value of the vector potential is \(A_0=(0,0,0,0)\); the initial value of \(\tau\) (the proper time) will be conventionally taken as \(\tau_0 = t_0\).
+Since the particle is initially at rest, the initial four-velocity is \(u_0 = (c,0,0,0)\) and the initial four-momentum is \(p_0 = (mc,0,0,0)\); using \eqref{dphidtau} we can write
+\begin{align}
+    \frac{d\phi}{d\tau} = c.
+\end{align}
+i.e. we can express \(\phi\) as a function of \(\tau\): \(\phi(\tau) = c(\tau-\tau_0)+\phi_0\), with \(\phi_0 = ct_0 = c\tau_0\), and finally
+\begin{align}
+    \phi(\tau) = c\tau
+\end{align}
+with these we can calculate explicitly the 4-momentum \(p\) of the particle as a function of \(\tau\):
+\begin{align}
+    p^3(\tau) = \frac{e^2 {\bf A}^2(c\tau)}{2mc}, \qquad p_{\perp}(\tau) = -e {\bf A}(c\tau).
+\end{align}
+The trajectory of the particle is given by
+\begin{align}
+    {\bf r}_{\perp}(\tau) = \pmb{\mathfrak{R}}_{0\perp}-\frac{e}{mc} \int\limits_{-\infty}^{c\tau} {\bf A}(\chi) d\chi, \qquad z(\tau) ={\mathfrak{R}}_{03}+ \frac{e^2}{2(mc)^2} \int\limits_{-\infty}^{c\tau} A^2(\chi) d\chi.
+\end{align}
+
+\subsubsection{The motion in the monochromatic part of the field}
+
+Now, we can study the motion in the monochromatic part of the field, i.e. for \(\phi\in(0,+\infty)\), using as initial conditions
+\({\bf r}(0)\), \({\bf P}(0)\),calculated at the end of the turn-on of the pulse. The field on the turn=on is
+\begin{align}
+    {\bf  A}(\phi) = A_0 e^{-\frac{\phi^2}{(2\pi \sigma)^2}} \left( {\bf e}_x \zeta_x \cos(k \phi + \Phi_0) + {\bf e}_y \zeta_y \sin(k \phi + \Phi_0) \right).
+\end{align}
+and we have the initial conditions on the monochromatic part of the field
+\begin{align}
+     & \phi(0) = 0                                                                                                                                                                                                                                                       \\
+     & {\bf p}_\perp(0) =-e_0 {\bf A}(0)= -e_0 A_0 \left( {\bf e}_x \zeta_x \cos(\Phi_0) + {\bf e}_y \zeta_y \sin(\Phi_0) \right),\qquad p^3(0) = \frac{e_0^2{\bf A}(0)^2}{2mc} =\frac{e_0^2 A_0^2\left(\zeta_x^2\cos^2(\Phi_0) + \zeta_y^2\sin^2(\Phi_0)\right) }{2mc}.
+\end{align}
+For the initial position one can prove that is \(\sigma\) is large enough, at \(t=0\) the transverse motion is negligible, i.e.
+\begin{align}
+    {\bf r}_{\perp}(0) = {\pmb{\mathfrak R}}_{0\perp}-\frac{e}{mc} \int\limits_{-\infty}^{0} {\bf A}(\chi) d\chi \approx {\pmb{\mathfrak R}}_{0\perp}.
+\end{align}
+Note that \(z(0)\) is not zero, only \(\phi(0)\) is zero, so the initial position of the particle is not in the plane \(Oxy\) but in a plane parallel to it, at a distance \(z(0)\) from it.
+We have
+\begin{align}
+    z(0) = {\mathfrak{R}}_{0z}+ \frac{e^2}{2(mc)^2} \int\limits_{-\infty}^{0} A^2(\chi) d\chi = {\mathfrak{R}}_{0z} + \frac{e^2 A_0^2}{2(mc)^2} \int\limits_{-\infty}^{0} e^{-\frac{\chi^2}{2(\pi \sigma)^2}} \left( \zeta_x^2\cos^2(k \chi + \Phi_0) + \zeta_y^2\sin^2(k \chi + \Phi_0) \right) d\chi.
+\end{align}
+Again, in the limit of large \(\sigma\) we have
+\begin{align}
+    z(0) \approx {\mathfrak{R}}_{0z} + \frac{e^2 A_0^2}{2(mc)^2} \frac{\pi^{3/2}\sigma}{2\sqrt{2}k}= {\mathfrak{R}}_{0z} +\xi_0^2 \frac{\pi^{3/2}\sigma}{4\sqrt{2}k}.
+\end{align}
+Next, we apply the general formulae for the trajectory in the monochromatic part of the field, using the above initial conditions.
+\begin{align}
+    p_0\rightarrow p(0),\quad  A_0 \rightarrow A(0), \quad {\bf r}(0)\rightarrow {\bf r}(0),\quad  \phi_0 \rightarrow \phi(0)=0
+\end{align}
+We calculate the component 0 of the momentum as
+\begin{align}
+    p^0 (0)= \sqrt{(m_0c)^2 + {\bf p}^2} = \sqrt{(m_0c)^2 + {\bf p}_{\perp}^2 + (p^3)^2} = \sqrt{(m_0c)^2 + e_0^2{\bf A}^2(0) + \left(\frac{e_0^2{\bf A}^2(0)}{2mc}\right)^2} = m_0c + \frac{e_0^2{\bf A}^2(0)}{2mc}
+\end{align}
+The previous result is in agreement with the general conservation law for \(n\cdot p_0\), i.e.
+\begin{align}
+    n\cdot p_0 = p^0(0) - p^3(0) = m_0c.
+\end{align}
+
+with the new initial conditions we have the momentum during the flat part of the pulse
+\begin{align}
+     & {\bf p}_\perp(\phi) = -e_0{\pmb{\cal A}}(\phi) = -e_0{\bf A}(\phi)                                                                                                                                                                                                                                                          \\
+     & p^3(\phi) =\frac{e_0^2{\pmb{\cal A}}^2(\phi)}{2n\cdot p_0}-\frac{e_0^2{\pmb{\cal A}}^2_0}{2n\cdot p_0}+p_{0}^3 = \frac{e_0^2{\bf A}^2(\phi)}{2mc}-\frac{{\bf p}_{\perp}^2(0)}{2mc}+p^3(0) = \frac{e_0^2{\bf A}^2(\phi)}{2mc}-\frac{e_0^2{\bf A}^2(0)}{2mc}+\frac{e_0^2{\bf A}^2(0)}{2mc} = \frac{e_0^2{\bf A}^2(\phi)}{2mc} \\
+     & p^0(\phi) = mc + p^3(\phi)
+\end{align}
+which now can be calculated explicitly
+\begin{align}
+     & {\bf p}_\perp(\phi) = -e_0 A_0  \left( {\bf e}_x \zeta_x \cos(k \phi + \Phi_0) + {\bf e}_y \zeta_y \sin(k \phi + \Phi_0) \right), \\
+     & p^3(\phi) =\frac{e_0^2 A_0^2 }{2mc} \left( \zeta_x^2\cos^2(k \phi + \Phi_0) + \zeta_y^2\sin^2(k \phi + \Phi_0) \right).
+\end{align}
+or, as a function of tau, with \(\phi = c\tau\),
+\begin{align}
+     & {\bf p}_\perp(\tau) = -e_0 A_0  \left( {\bf e}_x \zeta_x \cos(k c\tau + \Phi_0) + {\bf e}_y \zeta_y \sin(k c\tau + \Phi_0) \right), \\
+     & p^3(\tau) =\frac{e_0^2 A_0^2 }{2mc} \left( \zeta_x^2\cos^2(k c\tau + \Phi_0) + \zeta_y^2\sin^2(k c\tau + \Phi_0) \right).
+\end{align}
+Now we can write the trajectory explicitly as a function of \(\tau\):
+\begin{align}
+     & {\bf r}_{\perp}(\tau) = {\pmb{\mathfrak R}}_{0\perp}+\int\limits_0^{\tau} d\tau' \frac{{\bf p}_\perp(\tau')}{m} = {\pmb{\mathfrak R}}_{0\perp} - \frac{eA_0}{m}\int\limits_0^\tau d\tau' \left( {\bf e}_x \zeta_x \cos(k c\tau' + \Phi_0) + {\bf e}_y \zeta_y \sin(k c\tau' + \Phi_0) \right),           \\
+     & \qquad = {\pmb{\mathfrak R}}_{0\perp} - \frac{eA_0}{m}\left[ {\bf e}_x \zeta_x \frac{\sin(k c\tau + \Phi_0) - \sin(\Phi_0)}{kc} - {\bf e}_y \zeta_y \frac{\cos(k c\tau + \Phi_0) - \cos(\Phi_0)}{kc} \right]                                                                                   \nonumber \\
+     & \qquad = {\pmb{\mathfrak R}}_{0\perp} - \frac{\xi_0}{k}\left[ {\bf e}_x \zeta_x \left(\sin(k c\tau + \Phi_0) - \sin(\Phi_0)\right) - {\bf e}_y \zeta_y \left(\cos(k c\tau +      \Phi_0) - \cos(\Phi_0)\right) \right],\nonumber
+    \\&\qquad ={\pmb{\mathfrak R}}_{0\perp} + \frac{\xi_0}{k}\left[ {\bf e}_x \zeta_x \sin(\Phi_0) - {\bf e}_y \zeta_y \cos(\Phi_0) \right]-\frac{\xi_0}{k}\left[{\bf e}_x \zeta_x \sin(k c\tau + \Phi_0) - {\bf e}_y \zeta_y \cos(k c\tau + \Phi_0)\right]
+    \\&\qquad = {\bf r}_{i\perp} + \delta {\mathbf r}_\perp(t)
+\end{align}
+\begin{align}
+     & z(\tau) = z(0) + \int\limits_0^\tau d\tau' \frac{p^3(\tau')}{m} = z(0) + \frac{e^2 A_0^2 }{2m^2c} \int\limits_0^\tau d\tau' \left( \zeta_x^2\cos^2(k c\tau' + \Phi_0) + \zeta_y^2\sin^2(k c\tau' + \Phi_0) \right) \nonumber \\
+     & \qquad =  {\mathfrak R}_{0z} + \xi_0^2 \frac{\pi^{3/2}\sigma}{4\sqrt{2}k} + \frac{\xi_0^2}{4}\left[c\tau + \frac{\sin(2k c\tau + 2\Phi_0) - \sin(2\Phi_0)}{2k} \right] \nonumber                                             \\& \qquad = {\mathfrak R}_{0z} + \frac{\xi_0^2}{8k}\left[{\sqrt{2}\pi^{3/2}\sigma - \sin(2\Phi_0)}\right]+\frac{\xi_0^2}{4}c\tau +\frac{\xi_0^2}{8k}\sin(2k c \tau + 2\Phi_0)\nonumber
+    \\&\qquad = z_{i} + \delta z(t)
+\end{align}
+
+The trajectory as a function of $\phi$ is obtained by the substitution \(\phi = c\tau\):
+\begin{align}
+     & {\bf r}_{\perp}(\phi) = {\pmb{\mathfrak R}}_{0\perp} + \frac{\xi_0}{k}\left[ {\bf e}_x \zeta_x \sin(\Phi_0) - {\bf e}_y \zeta_y \cos(\Phi_0) \right]-\frac{\xi_0}{k}\left[{\bf e}_x \zeta_x \sin(k \phi + \Phi_0) - {\bf e}_y \zeta_y \cos(k \phi + \Phi_0)\right], \\
+     & z(\phi) = {\mathfrak R}_{0z} + \frac{\xi_0^2}{8k}\left[{\sqrt{2}\pi^{3/2}\sigma - \sin(2\Phi_0)}\right]+\frac{\xi_0^2}{4}\phi +\frac{\xi_0^2}{8k}\sin(2k \phi + 2\Phi_0).
+\end{align}
+\section{The motion of a particle with an initial momentum along $Oz$}
+
+
+\subsubsection{The motion along the turn-on of the pulse}
+We consider the same field as in the previous section, but now we assume that the particle has an initial momentum \(p_0\equiv (p_0^0,0,0,p_0^3)\) at a moment \(t_0\) sufficiently far in the past, when the pulse has not yet reached the point \({\pmb{\mathfrak R}}_0\). The initial value of the proper time is $\tau_i = -t_0$ and the initial conditions are
+\begin{align}
+     & {\bf r}_0 = {\pmb{\mathfrak R}}_0\qquad \phi(\tau_i) = ct_0 - {\mathfrak R}_{0z} = ct_0, \qquad {\bf p}_\perp(0) = {\bf 0}, \qquad p^3(0) = p_0^3, \qquad p^0(0) = \sqrt{(m_0c)^2 +  (p_0^3)^2}.
+\end{align}
+
+Now, the dependence of $\phi$ on $\tau$ is
+\begin{align}
+    \frac{d\phi}{d\tau} = \frac{n\cdot p_0}{m_0} \qquad \longrightarrow \qquad \phi(\tau) = \frac{n\cdot p_0}{m_0}(\tau-\tau_i)+\phi(\tau_i) = \frac{n\cdot p_0}{m_0}(\tau - t_0) + ct_0.
+\end{align}
+The moment of $\tau$ when the turn-on of the pulse is completed, i.e. when $\phi(\tau) = 0$, is
+\begin{align}
+    \tau_f = t_0 - \frac{m_0}{n\cdot p_0} ct_0 = t_0\left(1 - \frac{m_0 c}{n\cdot p_0}\right).
+\end{align}
+The modified vector potential is
+\begin{align}
+    e_0{\pmb{\cal A}}(\phi) = e_0{\bf A}(\phi) -e_0{\bf A}_0+ {\bf p}_{0\perp} = e_0{\bf A}(\phi)
+\end{align}
+The four-momentum of the particle during the turn-on of the pulse is given by
+\begin{align}
+    {\bf p}_\perp(\phi) = -e_0 {\bf A}(\phi), \qquad p^3(\phi) = \frac{e_0^2 {\bf A}^2(\phi)}{2n\cdot p_0}  + p_0^3, \qquad p^0(\phi) = p^3(\phi) + n\cdot p_0 = \frac{e_0^2 {\bf A}^2(\phi)}{2n\cdot p_0}  + p_0^0
+\end{align}

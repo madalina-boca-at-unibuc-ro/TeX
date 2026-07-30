@@ -1,0 +1,73 @@
+\chapter{The Fourier transforms of the Faraday tensor}
+
+
+\section{The exact results}
+We define the (temporal) Fourier transform as of a function $f({\bf x},r)$
+\begin{align}
+    \tilde f(\omega,{\bf x})=\frac1{2\pi}\int_{-\infty}^{\infty}dt e^{i\omega t}f(t,{\bf x})
+\end{align}
+and the inverse transform as
+\begin{align}
+    f(t,{\bf x})=\frac1{2\pi}\int_{-\infty}^{\infty}d\omega e^{-i\omega t}\tilde f(\omega,{\bf x})
+\end{align}
+
+Now we write the Fourier transform of the Faraday tensor as
+\begin{align}
+    \tilde F^{\alpha\beta}(\omega,{\bf x})=\frac1{2\pi}\int_{-\infty}^{\infty}dt e^{i\omega t}F^{\alpha\beta}(t,{\bf x})
+\end{align}
+where for the Faraday tensor we use the form (\ref{F-covariant})
+\begin{align}
+    F^{\alpha\beta}(x)={\frac{e}{4\pi\epsilon_0c}\left\{\frac1{(u\cdot R_0)}\frac{d}{d\tau}\left[\frac{R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha}}{(R_0\cdot u)}\right]\right\}\vline}_{\tau=\tau_r}\label{F-covariant}
+\end{align}
+It is also convenient to use $k$ as the variable of the Fourier transform instead of $\omega$
+\begin{align}
+    \tilde F^{\alpha\beta}(k,{\bf x})=\frac1{2\pi c}\int_{-\infty}^{\infty}d(ct) e^{ik (ct)}F^{\alpha\beta}(x)
+\end{align}
+We prefer to use the variable of integration the retarded time $\tau_r$. From the definition (\ref{deftau_r}) we have
+\begin{align}
+    ct = r_0^0(\tau_r)+|{\bf x}_0 -{\bf r}_0(\tau_r)| = r_0^0(\tau_r)+|{\bf R}_0|
+\end{align}
+and
+\begin{align}
+    \frac{d(ct)}{d\tau_r} = c\gamma(\tau_r) - {\bf n}_{R_0}\cdot{\bf u}(\tau_r) = n_{R_0}\cdot u(\tau_r)
+\end{align}
+and the Fourier transform of $F$ becomes
+\begin{align}
+    \tilde F^{\alpha\beta}(k,{\bf x}) & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^{\infty}d\tau_r e^{ik (r_0^0(\tau_r) + |{\bf R}_0|)}n_{R_0}\cdot u(\tau_r)F^{\alpha\beta}(\tau_r,{\bf x})\nonumber                                                                                  \\
+                                      & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^{\infty}d\tau_r e^{ik (r_0^0(\tau_r) + |{\bf R}_0|)}\frac{u\cdot n_{R_0}}{(u\cdot R_0)}\frac{d}{d\tau}{\left[\frac{R_0^\alpha u^\beta-R_0^\beta u^\alpha}{(R_0\cdot u)}\right]\vline}_{\tau=\tau_r}
+\end{align}
+now we can rename the variable of integration to $\tau$, since the entire integrand is evaluated for $\tau_r$ (we do not write explicitly the variable $\tau$ in the integrand). More, we use the identity
+\begin{align}
+    u\cdot R_0 = |{\bf R}_0| u\cdot n_{R_0}
+\end{align}
+and the Fourier transform of $F$ becomes
+\begin{align}
+    \tilde F^{\alpha\beta}(k,{\bf x}) & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^{\infty}d\tau_r \frac{e^{ik (r_0^0 + |{\bf R}_0|)}}{|{\bf R}_0|}\frac{d}{d\tau}\left[\frac{n_{R_0}^\alpha u^\beta-n_{R_0}^\beta u^\alpha}{(n_{R_0}\cdot u)}\right]
+\end{align}
+Next we perform an integration by parts and assume that the integrand vanishes at the limits of integration
+\begin{align}
+    \tilde F^{\alpha\beta}(k,{\bf x}) & =-\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^{\infty}d\tau \frac{d}{d\tau}\left[\frac{e^{ik (r_0^0 + |{\bf R}_0|)}}{|{\bf R}_0|}\right]\frac{n_{R_0}^\alpha u^\beta-n_{R_0}^\beta u^\alpha}{(n_{R_0}\cdot u)}
+\end{align}
+From the previous results, we have
+\begin{align}
+     & \frac{d}{d\tau}|{\bf R}_0| = -{\bf u}\cdot{\bf n}_{R_0}                                 \\
+     & \frac{d}{d\tau}\frac1{|{\bf R}_0|} = \frac{{\bf u}\cdot{\bf n}_{R_0}}{|{\bf R}_0|^2}    \\
+     & \frac{e}{d\tau} e^{ik(r_0^0+|{\bf R}_0|)} =i k n_{R_0}\cdot u e^{ik(r_0^0+|{\bf R}_0|)}
+\end{align}
+Then we obtain
+\begin{align}
+    \frac{d}{d\tau} \frac{e^{ik(r_0^0+|{\bf R}_0|)}}{|{\bf R}_0|} =e^{ik(r_0^0+|{\bf R}_0|)}\left(\frac{ik n_{R_0}\cdot u}{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot {\bf u}}{|{\bf R}_0|^2}\right)
+\end{align}
+and the Fourier transform of $F$ becomes
+\begin{align}
+    \tilde F^{\alpha\beta}(k,{\bf x}) & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^\infty d\tau e^{ik(r_0^0+|{\bf R}_0|)}\left(\frac{ik n_{R_0}\cdot u}{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot {\bf u}}{|{\bf R}_0|^2}\right)\frac{n_{R_0}^\alpha u^\beta-n_{R_0}^\beta u^\alpha}{(n_{R_0}\cdot u)}\nonumber \\
+                                      & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^\infty d\tau e^{ik(r_0^0+|{\bf R}_0|)}\left(\frac{ik }{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot {\bf u}}{(n_{R_0}\cdot u)|{\bf R}_0|^2}\right)\left(n_{R_0}^\alpha u^\beta-n_{R_0}^\beta u^\alpha\right)
+\end{align}
+Is we define the direct product
+\begin{align}
+    (a\otimes b)^{\alpha\beta}=a^\alpha b^\beta
+\end{align}
+then the Fourier transform of $F$ becomes
+\begin{align}
+    \tilde F(k,{\bf x}) & =\frac1{2\pi c}\frac{e}{4\pi\epsilon_0c}\int_{-\infty}^\infty d\tau e^{ik(r_0^0+|{\bf R}_0|)}\left(\frac{ik }{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot {\bf u}}{(n_{R_0}\cdot u)|{\bf R}_0|^2}\right)\left(n_{R_0}\otimes u - u \otimes n_{R_0}\right)
+\end{align}

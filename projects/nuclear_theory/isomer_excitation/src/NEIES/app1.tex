@@ -1,0 +1,48 @@
+\appendix
+\chapter{Angular momentum identities}
+
+\section{Plane wave expansion in vector spherical harmonics}
+
+We start from the well known Rayleigh formula
+\begin{align}
+    e^{i{\bf q}\cdot{\bf x}} = \sum\limits_{l=0}^{\infty} \sum_{m=-l}^{l} 4\pi i^l j_l(qx) Y_{lm}^*(\hat{\bf q}) Y_{lm}(\hat{\bf x})
+\end{align}
+where \(j_l(qx)\) are the spherical Bessel functions and \(Y_{lm}(\hat{\bf x})\) are the spherical harmonics.
+We multiply with the polarization vector \(\hat{\bf e}_\lambda\)
+\begin{align}
+    {\bf e}_\mu e^{i{\bf q}\cdot{\bf x}} = \sum\limits_{l=0}^{\infty} \sum_{m=-l}^{l} 4\pi i^l j_l(qx) Y_{lm}^*(\hat{\bf q}) \hat{\bf e}_\mu Y_{lm}(\hat{\bf x})
+\end{align}
+From the definition of the vector spherical harmonics
+\begin{align}
+    {\bf Y}_{JlM}(\hat{\bf x}) = \sum\limits_{m=-l}^{l} \sum_{\mu=-1}^{1} \langle l m 1 \mu | J M \rangle Y_{lm}(\hat{\bf x}) \hat{\bf e}_\mu
+\end{align}
+We multiply the above relation with $\langle JM|lm'\,1\mu'\rangle$ and sum over $J$ and $M$ to get
+\begin{align}
+    \sum\limits_{J=0}^{\infty} \sum_{M=-J}^{J} \langle JM|lm'\,1\mu'\rangle {\bf Y}_{JlM}(\hat{\bf x}) & = \sum\limits_{m=-l}^{l} \sum_{\mu=-1}^{1} Y_{lm}(\hat{\bf x}) \hat{\bf e}_\mu \sum\limits_{J=0}^{\infty} \sum_{M=-J}^{J} \langle l m 1 \mu | J M \rangle\langle JM|lm'\,1\mu'\rangle= \sum\limits_{m=-l}^{l} \sum_{\mu=-1}^{1} Y_{lm}(\hat{\bf x}) \hat{\bf e}_\mu \delta_{mm'}\delta_{\mu\mu'}\nonumber \\
+                                                                                                       & = Y_{lm'}(\hat{\bf x}) \hat{\bf e}_{\mu'}
+\end{align}
+from which we have
+\begin{align}
+    {\bf e}_\mu e^{i{\bf q}\cdot{\bf x}} & =4\pi \sum\limits_{l=0}^{\infty} \sum\limits_{m=-l}^{l} \sum\limits_{J=0}^{\infty} \sum_{M=-J}^{J}  i^l j_l(qx) Y_{lm}^*(\hat{\bf q}) \langle JM|lm\,1\mu\rangle {\bf Y}_{JlM}(\hat{\bf x})
+\end{align}
+or
+\begin{align}
+    {\bf e}_\mu e^{i{\bf q}\cdot{\bf x}} & =4\pi \sum\limits_{l=0}^{\infty}  \sum\limits_{J=0}^{\infty} \sum_{M=-J}^{J}  i^l j_l(qx)  \langle JM|lM-\mu\,1\mu\rangle Y_{lM-\mu}^*(\hat{\bf q}){\bf Y}_{JlM}(\hat{\bf x})\label{pwexpansion}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

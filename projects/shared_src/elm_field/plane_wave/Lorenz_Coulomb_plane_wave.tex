@@ -1,0 +1,53 @@
+\section{The field in the Lorenz Coulomb gauge}\label{section-lorenz_coulomb}
+
+We assume the propagation direction is along $Oz$ and we choose the polarization 4-vector as
+\begin{align}
+    s = (0, \zeta_x e^{i\Phi_0}, \zeta_y e^{i\Phi_0 - i\frac{\pi}{2}}, 0),\qquad \zeta_x^2+\zeta_y^2=1
+\end{align}
+
+With this choice we are in the Lorenz Coulomb gauge and the 3D vector potential becomes
+\begin{importantbox}
+    \begin{equation}
+        {\bf A}(\phi) = A_0 f(k \phi) \left( {\bf e}_x \zeta_x \cos(k \phi + \Phi_0) + {\bf e}_y \zeta_y \sin(k \phi + \Phi_0) \right).
+    \end{equation}
+\end{importantbox}
+
+where $k$ is the wave number $k = \frac{\omega}{c}$, $\sigma$  gives the  width of the Gaussian envelope, $\Phi_0$ is the initial phase and $\zeta_x$, $\zeta_y$ are the polarization amplitudes, obeying the condition $\zeta_x^2 + \zeta_y^2 = 1$.
+
+It is convenient to define the unity vector of the field propagation direction as ${\bf n} = (0,0,1)$ and the four-vector
+\begin{align}
+    n = (1,{\bf n})
+\end{align}
+which in the case of the propagation along the $Oz$ axis becomes $n = (1,0,0,1)$.
+Also the notation for the dimensionless field amplitude is
+\begin{align}
+    \xi_0 = \frac{e_0 A_0}{mc}.
+\end{align}
+
+
+Typically we study the case of  a plane wave field with a Gaussian turn-on.
+\subsection{Monochromatic plane wave with Gaussian turn on}
+If the envelope is chosen as
+\begin{align}
+    f(\chi) = \left\{\begin{array}{ll}
+                         e^{-\frac{(k\chi)^2}{(2\pi \sigma)^2}}, & \chi < \chi_0    \\
+                         1,                                      & \chi \geq \chi_0
+                     \end{array}\right.
+\end{align}
+we have a monochromatic plane wave introduced with a Gaussian turn on, where $\sigma$ gives the width of the Gaussian envelope and $\chi_0$ is the point where the envelope becomes constant. The field is monochromatic for $\chi \geq \chi_0$ and it is turned on with a Gaussian envelope for $\chi < \chi_0$.
+\subsection{Finite Gaussian plane-wave}
+In that case the envelope is chosen as
+\begin{align}
+    f(\chi) = \left\{\begin{array}{ll}
+                         e^{-\frac{(k\chi)^2}{(2\pi \sigma)^2}},            & \chi < \chi_0                \\
+                         1,                                                 & \chi_0 \leq \chi \leq \chi_1 \\
+                         e^{-\frac{(k(\chi - \chi_1))^2}{(2\pi \sigma)^2}}, & \chi > \chi_1
+                     \end{array}\right.
+\end{align}
+If we want a pure Gaussian pulse, without a constant part, we can choose $\chi_0 = \chi_1 = 0$ and the envelope becomes
+\begin{align}
+    f(\chi) = e^{-\frac{(k\chi)^2}{(2\pi \sigma)^2}}.
+\end{align}
+
+
+

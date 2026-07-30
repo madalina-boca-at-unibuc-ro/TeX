@@ -1,0 +1,641 @@
+\chapter{The Fourier series of the emitted field in Thomson scattering - the case of the circular motion}
+
+
+In this chapter we will consider the trajectory
+\begin{align}
+    r(t)=a\left({\bm e}_x\cos\omega_L t+{\bm e}_y\sin\omega_L t\right), \qquad {\boldsymbol{\beta}}(t)=\frac{\omega_L}ca\left(-{\bm e}_x\sin\omega_Lt+{\bm e}_y\cos\omega_Lt\right)
+\end{align}
+with these
+\begin{align}
+     & {\bm r}^2_0(t)=a^2                                                                                                                                       \\
+     & {\bm n}_0\cdot{\bm r}_0(t)=a\sin\theta_0(\cos\phi_0\cos\omega_Lt+\sin\phi_0\sin\omega_Lt)=a\sin\theta_0\cos(\omega_Lt-\phi_0)                            \\
+     & {\bm n}_0\times{\bm r}_0(t)=a(-{\bm e}_x\cos\theta_0\sin(\omega_L t)+{\bm e}_y \cos\theta_0\cos(\omega_L t)-{\bm e}_z\sin\theta_0\cos(\omega_Lt-\phi_0)) \\
+     & |{\bm n}_0\times{\bm r}_0(t)|^2=a^2\left(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\right)
+\end{align}
+\section{The Fourier series of the potentials}
+
+
+
+\subsection{First order expansion}
+
+\subsubsection{The scalar potential}
+\begin{align}
+    \Phi({\bm x}_0,\omega)=\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ik x_0}}{x_0}\int\limits_{-\infty}^{\infty}dt e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}
+\end{align}
+We use the Anger identity
+\begin{align}
+    e^{i z \cos \theta_0} \equiv \sum_{n=-\infty}^{\infty} i^n J_n(z) e^{i n \theta_0}
+\end{align}
+to write
+\begin{align}
+    e^{-ia\sin\theta_0\cos(\omega_Lt-\phi_0)}=\sum_{n=-\infty}^{\infty} i^n J_n(-\frac{\omega a}c\sin\theta_0) e^{i n (\omega_Lt-\phi_0)}
+\end{align}
+Using
+\begin{align}
+    J_n(-z)=J_{-n}(z)
+\end{align}
+we write the previous relation as
+\begin{align}
+    e^{-ia\sin\theta_0\cos(\omega_Lt-\phi_0)}=\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0) e^{-i n (\omega_Lt-\phi_0)}
+\end{align}
+and the scalar potential is
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik x_0}}{x_0}\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t} (-i)^n J_n(\frac{\omega a}c\sin\theta_0) e^{-i n (\omega_Lt-\phi_0)}\nonumber            \\
+                           & =\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik x_0}}{x_0}\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}   e^{-i n \omega_Lt}\nonumber         \\
+                           & =\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik x_0}}{x_0}\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-n\omega_L)=\sum\limits_{n=-\infty}^{\infty}\Phi_n({\bm x})\delta(\omega-n\omega_L)
+\end{align}
+with
+\begin{align}
+    \Phi_n({\bm x})=\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik_n x_0}}{x_0}(-i)^nJ_n(k_na\sin\theta_0)e^{in\phi_0},\qquad k_n=\frac{n\omega_L}c
+\end{align}
+
+\subsubsection{The vector potential}
+\begin{align}
+    {\bm A}({\bm x},\omega)= \frac{e_0}{4\pi\epsilon_0c}\frac1{2\pi}\frac{e^{ik x_0}}{x_0}\int\limits_{-\infty}^{\infty}dt {\boldsymbol{\beta}}(t)e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}
+\end{align}
+We write ${\boldsymbol{\beta}}(t)$ is spherical coordinates
+\begin{align}
+    {\boldsymbol{\beta}}(t)=\frac{\omega_L}c a(-{\bm e}_x\sin(\omega_L t)+{\bm e}_y\cos(\omega_Lt))
+\end{align}
+we use
+\begin{align}
+    {\bm e}_x=\sin\theta_0\cos\phi_0{\bm e}_r+\cos\theta_0\cos\phi_0{\bm e}_\theta-\sin\phi{\bm e}_\phi \\
+    {\bm e}_y=\sin\theta_0\sin\phi_0{\bm e}_r+\cos\theta_0\sin\phi_0{\bm e}_\theta+\cos\phi{\bm e}_\phi
+\end{align}
+In spherical coordinates
+\begin{align}
+    {\boldsymbol{\beta}}(t) = & \frac{\omega_L}c a\left[-(\sin\theta_0\cos\phi_0{\bm e}_r+\cos\theta_0\cos\phi_0{\bm e}_\theta-\sin\phi{\bm e}_\phi )\sin(\omega_L t)\right.\nonumber \\
+                              & \quad\quad + \left.(\sin\theta_0\sin\phi_0{\bm e}_r+\cos\theta_0\sin\phi_0{\bm e}_\theta+\cos\phi{\bm e}_\phi)\cos(\omega_Lt)\right]
+\end{align}
+The spherical components of $\boldsymbol{\beta}$ are
+\begin{align}
+     & \beta_r(t)=-\frac{\omega_L}ca\sin\theta_0(\sin\omega_Lt\cos\phi_0-\cos\omega_Lt\sin\phi_0)=-\frac{\omega_L}{c}a\sin\theta_0\sin(\omega_Lt-\phi_0)      \\
+     & \beta_\theta(t)=-\frac{\omega_L}ca\cos\theta_0(\sin\omega_Lt\cos\phi_0-\cos\omega_Lt\sin\phi_0)=-\frac{\omega_L}{c}a\cos\theta_0\sin(\omega_Lt-\phi_0) \\
+     & \beta_\phi(t)=\frac{\omega_L}{c}a(\cos\omega_Lt\cos\phi_0+\sin\omega_Lt\sin\phi_0)=\frac{\omega_L}ca\cos(\omega_Lt-\phi_0)
+\end{align}
+The spherical components of ${\bm A}$ are
+\begin{align}
+    A_r({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\sin\theta_0\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}   e^{-i n \omega_Lt}\sin(\omega_Lt-\phi_0)\nonumber                                             \\
+                        & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\sin\theta_0\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{4\pi i}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}  \left( e^{-i (n-1) \omega_Lt}e^{-i\phi_0}- e^{-i (n+1) \omega_Lt}e^{i\phi_0}\right)\nonumber \\
+                        & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\sin\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}-\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\nonumber                                          \\
+                        & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\sin\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n-1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n-1)\omega_L)\nonumber                                                                                                       \\
+                        & \quad-                        \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\sin\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n+1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n+1)\omega_L)\nonumber                                                                          \\
+                        & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\sin\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n-1}e^{i(n-1)\phi_0}J_n(\frac{(n-1)\omega_L a}c\sin\theta_0)\delta(\omega-(n-1)\omega_L)\nonumber                                                                                                 \\
+                        & \quad+                        \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\sin\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n+1)\phi_0}J_n(\frac{(n+1)\omega_L a}c\sin\theta_0)\delta(\omega-(n+1)\omega_L)
+\end{align}
+In the previous sums we make a change of summation index $(n-1)\rightarrow n$ in the first line and $(n+1)\rightarrow n$ in the second line.
+\begin{align}
+    A_r({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac12\left(\frac{\omega_L}ca\sin\theta_0\right)\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_n x_0}}{x_0}(-i)^{n}e^{in\phi_0}(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0))\delta(\omega-n\omega_L)
+\end{align}
+We use the identity
+\begin{align}
+    J_{n+1}(x)+J_{n-1}(x)=\frac{2 n}{x} J_n(x)
+\end{align}
+which in our case becomes
+\begin{align}
+    J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)=\frac{2nc}{n\omega_L a\sin\theta_0}J_n(k_na\sin\theta_0)
+\end{align}
+and we have
+\begin{align}
+    A_r({\bm x},\omega)=\sum\limits_{n=-\infty}^{\infty}A_{rn}({\bm x})\delta(\omega-n\omega_L)
+\end{align}
+with
+\begin{align}
+    A_{rn}({\bm x})=    \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n x_0}}{x_0}(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)
+\end{align}
+
+\begin{align}
+    A_\theta({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\cos\theta_0\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}   e^{-i n \omega_Lt}\sin(\omega_Lt-\phi_0)\nonumber                                             \\
+                             & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\cos\theta_0\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{4\pi i}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}  \left( e^{-i (n-1) \omega_Lt}e^{-i\phi_0}- e^{-i (n+1) \omega_Lt}e^{i\phi_0}\right)\nonumber \\
+                             & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\cos\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}-\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\nonumber                                          \\
+                             & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\cos\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n-1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n-1)\omega_L)\nonumber                                                                                                       \\
+                             & \quad-                        \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(-\frac{\omega_L}ca\cos\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n+1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n+1)\omega_L)\nonumber                                                                          \\
+                             & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\cos\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n-1}e^{i(n-1)\phi_0}J_n(\frac{(n-1)\omega_L a}c\sin\theta_0)\delta(\omega-(n-1)\omega_L)\nonumber                                                                                                 \\
+                             & \quad+                        \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\cos\theta_0\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n+1}e^{i(n+1)\phi_0}J_n(\frac{(n+1)\omega_L a}c\sin\theta_0)\delta(\omega-(n+1)\omega_L)
+\end{align}
+After changing the summation indices
+\begin{align}
+    A_\theta({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac12\left(\frac{\omega_L}ca\cos\theta_0\right)\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_n x_0}}{x_0}(-i)^{n}e^{in\phi_0}(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0))\delta(\omega-n\omega_L)
+\end{align}
+with the result
+\begin{align}
+    A_\theta({\bm x},\omega)=\sum\limits_{n=-\infty}^{\infty}A_{\theta n}({\bm x})\delta(\omega-n\omega_L)
+\end{align}
+with
+\begin{align}
+    A_{\theta n}({\bm x})=    \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n x_0}}{x_0}\cot\theta_0(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)
+\end{align}
+
+\begin{align}
+    A_\phi({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{2\pi}\int\limits_{-\infty}^{\infty}dt e^{i\omega t}   e^{-i n \omega_Lt}\cos(\omega_Lt-\phi_0)\nonumber                                            \\
+                           & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\sum\limits_{n=-\infty}^{\infty}(-i)^ne^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\frac1{4\pi }\int\limits_{-\infty}^{\infty}dt e^{i\omega t}  \left( e^{-i (n-1) \omega_Lt}e^{-i\phi_0}+ e^{-i (n+1) \omega_Lt}e^{i\phi_0}\right)\nonumber \\
+                           & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n}e^{in\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}+\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\nonumber                                           \\
+                           & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n}e^{i(n-1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n-1)\omega_L)\nonumber                                                                                                        \\
+                           & \quad+                        \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\frac12\sum\limits_{n=-\infty}^{\infty}(-i)^{n}e^{i(n+1)\phi_0}J_n(\frac{\omega a}c\sin\theta_0)\delta(\omega-(n+1)\omega_L)
+\end{align}
+After the change of summation indices
+\begin{align}
+    A_\phi({\bm x},\omega) & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)\frac12\sum\limits_{n=-\infty}^{\infty}e^{in\phi_0}\left((-i)^{n+1}J_{n+1}(\frac{\omega a}c\sin\theta_0)+(-i)^{n-1}J_{n-1}(\frac{\omega a}c\sin\theta_0)\right)\delta(\omega-n\omega_L)\nonumber \\
+                           & =\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik x_0}}{x_0}\left(\frac{\omega_L}ca\right)(-i)\frac12\sum\limits_{n=-\infty}^{\infty}e^{in\phi_0}(-i)^n\left( J_{n+1}(\frac{\omega a}c\sin\theta_0)-J_{n-1}(\frac{\omega a}c\sin\theta_0)\right)\delta(\omega-n\omega_L)
+\end{align}
+We use the identity
+\begin{align}
+    J_{n+1}(x)-J_{n-1}(x)=-2 \frac{d J_n(x)}{d x}
+\end{align}
+and we obtain
+\begin{align}
+    A_\phi({\bm x},\omega)=\sum\limits_{n=-\infty}^{\infty}A_{\phi n}({\bm x})\delta(\omega-n\omega_L)
+\end{align}
+and
+\begin{align}
+    A_{\phi n}({\bm x})=\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n x_0}}{x_0}\left(i\frac{\omega_L}ca\right)e^{in\phi_0}(-i)^nJ'_n(k_na\sin\theta_0)
+\end{align}
+
+The first order Fourier components of the potentials are
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & \Phi_n({\bm x}_0)=\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)\nonumber                                                           \\
+         & A_{rn}({\bm x}_0)= \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)                                                                  \\
+         & A_{\theta n}({\bm x}_0)= \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}\cot\theta_0J_n(k_na\sin\theta_0)                                                \\
+         & A_{\phi n}({\bm x}_0)=\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}(ik_La)J'_n(k_na\sin\theta_0), \quad \omega_n=n\omega_L, \quad k_n=\frac{\omega_n}c
+    \end{align}
+\end{tcolorbox}
+
+
+
+
+\subsection{The second order expansion}
+
+
+\subsubsection{The scalar potential}
+
+The second order term from the expression pf the scalar potential is
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^2}\int\limits_{-\infty}^{\infty}dt e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}\left({{\bm n}_0\cdot{\bm r}_0(t)}+\frac{i\omega}{2c}{|{\bm n}_0\times{\bm r}_0(t)|^2}       \right)\nonumber                                    \\
+                           & \hspace*{-1cm}=\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^2}\int\limits_{-\infty}^{\infty}dt e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}\left[a\sin\theta_0\cos(\omega_Lt-\phi_0) +\frac{ik}2a^2\left(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+We use the formula
+\begin{align}
+    \cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt-\phi_0)= & \cos^2\theta_0-\sin^2\theta_0\frac14\left(e^{2i(\omega_Lt-\phi_0)}-2+e^{-2i(\omega_Lt-\phi_0)}\right)\nonumber \\
+    =                                                      & \frac12(1+\cos^2\theta_0)-\frac14\sin^2\theta_0(e^{2i(\omega_Lt -\phi_0)}+e^{-2i(\omega_Lt -\phi_0)})
+\end{align}
+and the expansion
+\begin{align}
+    e^{-ia\sin\theta_0\cos(\omega_Lt-\phi_0)}=\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0) e^{-i n (\omega_Lt-\phi_0)}
+\end{align}
+The scalar potential becomes
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{e^{ikx_0}}{x_0^2}\frac1{2\pi}\sum\limits_{n=-\infty}^{\infty}(-i)^nJ_n(\frac{\omega a}c\sin\theta_0)\nonumber                     \\
+                           & \times\left[\frac{a\sin\theta_0}2\int\limits_{-\infty}^{\infty}dt\left(e^{i\omega t-i(n-1)(\omega_Lt-\phi_0)}+e^{i\omega t-i(n+1)(\omega_Lt-\phi_0)}\right)\right.
+    +\frac12(1+\cos^2\theta_0)\int\limits_{-\infty}^{\infty}dte^{i\omega t-in(\omega_Lt-\phi_0)}\nonumber                                                                                       \\
+                           & \left.\quad-\frac14\sin^2\theta_0\int\limits_{-\infty}^{\infty}dt\left(e^{i\omega t-i(n-2)(\omega_Lt-\phi_0)}+e^{i\omega t-i(n+2)(\omega_Lt-\phi_0)}\right)\right]
+\end{align}
+The integrals become delta functions and the expression of the potential becomes
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{e^{ikx_0}}{x_0^2}\sum\limits_{n=-\infty}^{\infty}(-i)^nJ_n(\frac{\omega a}c\sin\theta_0)\nonumber                      \\
+                           & \times\left[\frac{a\sin\theta_0}2\left(\delta(\omega-(n-1)\omega_L)e^{i(n-1)\phi_0}+\delta(\omega-(n+1)\omega_L)e^{i(n+1)\phi_0}\right)\right.\nonumber \\
+                           & \quad+\frac{ika^2}{4}(1+\cos^2\theta_0)\delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                                                                    \\
+                           & \left.\quad-\frac{ika^2}8\sin^2\theta_0\left(\delta(\omega-(n-2)\omega_L)e^{i(n-2)\phi_0}+\delta(\omega-(n+2)\omega_L)e^{i(n+2)\phi_0}\right)\right]
+\end{align}
+We change the summation indices such that we only have $\delta(\omega-n\omega_L)$ in each term. The argument of the $\delta functions$ will be only $ak_n\sin\theta_0$; the exponential $e^{in\phi_0}$ will be a common factor.
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^nJe^{in\phi_0}\delta(\omega-n\omega_L)\nonumber \\
+                           & \times\left[\frac{a\sin\theta_0}2(-i)\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\right.\nonumber                    \\
+                           & \quad+\frac{ik_na^2}{2}J_n(k_na\sin\theta_0)-2\frac{ik_na^2}8\sin^2\theta_0J_n(k_na\sin\theta_0)\nonumber                                \\
+                           & \left.\quad+\frac{ik_na^2}8\sin^2\theta_0\left(J_{n-2}(k_na\sin\theta_0)+J_{n+2}(k_na\sin\theta_0)\right)\right]
+\end{align}
+We use the identities
+\begin{align}
+    J_{n+1}(x)-J_{n-1}(x)=-2J_n'(x),\qquad J_n(x)-J_{n-2}(x)=-2J_{n-1}'(x),\qquad J_{n+2}(x)-J_n(x)=-2J'_{n+1}(x)
+\end{align}
+and write the potential as
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber                       \\
+                           & \times\left[{ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{ik_na^2}{2}J_n(k_na\sin\theta_0)\right.\nonumber                                                   \\
+                           & \quad \left.-\frac{ik_na^2}8\sin^2\theta_0\left(J_n(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)-J_{n+2}(k_na\sin\theta_0)+J_n(k_na\sin\theta_0)\right)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber                                                            \\
+                           & \times\left[{ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{ik_na^2}{2}J_n(k_na\sin\theta_0)+\frac{ik_na^2}4\sin^2\theta_0\left(J'_{n-1}(k_na\sin\theta_0)-J'_{n+1}(k_na\sin\theta_0)\right)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber                   \\
+                           & \times\left[{ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{ik_na^2}{2}J_n(k_na\sin\theta_0)+\frac{ik_na^2}2\sin^2\theta_0J''_{n}(k_na\sin\theta_0)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber     \\
+                           & \times\left[{ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{i}{2k_n}k_n^2a^2\cos^2\theta_0J_n(k_na\sin\theta_0)\right.\nonumber              \\
+                           & \left.\quad+\frac{i}{2k_n}\left(k_n^2a^2\sin^2\theta_0J_n(k_na\sin\theta_0)+{k_n^2a^2}\sin^2\theta_0J''_{n}(k_na\sin\theta_0)\right)\right]
+\end{align}
+The differential equation of the Bessel functions is
+\begin{align}
+    x^2J_n''(x)+xJ_n'(x)+(x^2-n^2)J_n(x)=0
+\end{align}
+i.e.
+\begin{align}
+    x^2J_n''(x)+x^2J_n(x)=n^2J_n(x)-xJ_n'(x)=0
+\end{align}
+With this the scalar potential can be further written as
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber                                                                          \\
+                           & \times\left[{ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{i}{2k_n}k_n^2a^2\cos^2\theta_0J_n(k_na\sin\theta_0)+\frac{i}{2k_n}\left(n^2J_n(k_na\sin\theta_0)-k_na\sin\theta_0J_n'(k_na\sin\theta_0)\right)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber                             \\
+                           & \times\left[{\frac12ia\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\frac{i}{2k_n}k_n^2a^2\cos^2\theta_0J_n(k_na\sin\theta_0)+\frac{i}{2k_n}n^2J_n(k_na\sin\theta_0)\right]
+\end{align}
+
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac{ia}2\sum\limits_{n=-\infty}^{\infty}\frac{e^{ik_nx_0}}{x_0^2}(-i)^ne^{in\phi_0}\delta(\omega-n\omega_L)\nonumber \\
+                           & \qquad \times\left[{\sin\theta_0}J'_{n}(k_na\sin\theta_0)+\left(k_na\cos^2\theta_0+\frac{n^2}{k_na}\right)J_n(k_na\sin\theta_0)\right]
+\end{align}
+
+\subsubsection{The vector potential}
+
+The second order term of the scalar potential is
+\begin{align}
+     & {\bm A}({\bm x}_0,\omega)=\frac1{2\pi}\frac{e_0 e^{i\frac{\omega}c|{\bm x}_0|}}{4\pi\epsilon_0 c}\int\limits_{-\infty}^{\infty}dte^{i\frac{\omega}c\left(ct-{\bm n}_0\cdot{\bm r}_0(t)\right)} {\boldsymbol{\beta}}(t)       \left(\frac{{\bm n}_0\cdot{\bm r}_0(t)}{|{\bm x}_0|^2}+\frac{i\omega}{c}\frac{|{\bm n}_0\times{\bm r}_0(t)|^2}{2|{\bm x}_0|^2}             \right)
+\end{align}
+where the spherical components of the velocity
+\begin{align}
+     & \beta_r(t)=-\frac{\omega_L}ca\sin\theta_0(\sin\omega_Lt\cos\phi_0-\cos\omega_Lt\sin\phi_0)=-\frac{\omega_L}{c}a\sin\theta_0\sin(\omega_Lt-\phi_0)      \\
+     & \beta_\theta(t)=-\frac{\omega_L}ca\cos\theta_0(\sin\omega_Lt\cos\phi_0-\cos\omega_Lt\sin\phi_0)=-\frac{\omega_L}{c}a\cos\theta_0\sin(\omega_Lt-\phi_0) \\
+     & \beta_\phi(t)=\frac{\omega_L}{c}a(\cos\omega_Lt\cos\phi_0-\sin\omega_Lt\sin\phi_0)=\frac{\omega_L}ca\cos(\omega_Lt-\phi_0)
+\end{align}
+and
+\begin{align}
+     & {\bm n}_0\cdot{\bm r}(t)=a\sin\theta_0(\cos\phi_0\cos\omega_Lt+\sin\phi_0\sin\omega_Lt)=a\sin\theta_0\cos(\omega_Lt-\phi_0)                            \\
+     & {\bm n}_0\times{\bm r}(t)=a(-{\bm e}_x\cos\theta_0\sin(\omega_L t)+{\bm e}_y \cos\theta_0\cos(\omega_L t)-{\bm e}_z\sin\theta_0\cos(\omega_Lt-\phi_0)) \\
+     & |{\bm n}_0\times{\bm r}(t)|^2=a^2\left(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\right)
+\end{align}
+We denote $\omega_L/c=k_L$, $\omega/c=k$
+
+The radial component is
+\begin{align}
+    A_r(x_0,\omega)=\frac1{2\pi}\frac{e_0 }{4\pi\epsilon_0 c} & \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}(-k_La\sin\theta_0)\int\limits_{-\infty}^{\infty}dt e^{i\frac{\omega}c\left(ct-{\bm n}_0\cdot{\bm r}_0(t)\right)}\sin(\omega_L t-\phi_0)\nonumber \\
+                                                              & \times\left[a\sin\theta_0\cos(\omega_Lt-\phi_0)+\frac{ika^2}2\left(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_r(x_0,\omega)=\frac1{2\pi}\frac{e_0 }{4\pi\epsilon_0 c} & \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}(-k_La\sin\theta_0)\int\limits_{-\infty}^{\infty}dt e^{i\frac{\omega}c\left(ct-{\bm n}_0\cdot{\bm r}_0(t)\right)}\nonumber     \\
+                                                              & \times\left[\frac{a\sin\theta_0}2\sin2(\omega_Lt-\phi_0)+\frac{ika^2}2\left(\cos^2\theta_0\sin(\omega_Lt-\phi_0)+\sin^2\theta_0\sin^3(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_r(x_0,\omega)=\frac1{2\pi}\frac{e_0 }{4\pi\epsilon_0 c} & \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{-k_La^2\sin\theta_0}2\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)\int\limits_{-\infty}^{\infty}dt  e^{i\omega t-i n (\omega_Lt-\phi_0)}\nonumber \\
+                                                              & \times\left[{\sin\theta_0}\sin2(\omega_Lt-\phi_0)+{ika}\left(\cos^2\theta_0\sin(\omega_Lt-\phi_0)+\sin^2\theta_0\sin^3(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_r(x_0,\omega)=\frac1{2\pi}\frac{e_0 }{4\pi\epsilon_0 c} & \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{-k_La^2\sin\theta_0}2\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)\int\limits_{-\infty}^{\infty}dt  e^{i\omega t-i n (\omega_Lt-\phi_0)}\nonumber \\
+                                                              & \times\left[{\sin\theta_0}\frac1{2i}\left(e^{2i(\omega_Lt-\phi_0)}-e^{-2i(\omega_Lt-\phi_0)}\right)\right.\nonumber                                                                                                  \\
+                                                              & \quad +{ika}\cos^2\theta_0\frac1{2i}\left(e^{i(\omega_Lt-\phi_0)}-e^{-i(\omega_Lt-\phi_0)}\right)\nonumber                                                                                                           \\
+                                                              & \quad\left.-ika\sin^2\theta_0\frac1{8i}\left(e^{3i(\omega_Lt-\phi_0)}-e^{-3i(\omega_Lt-\phi_0)}-3e^{i(\omega_Lt-\phi_0)}+3e^{-i(\omega_Lt-\phi_0)}\right)\right]
+\end{align}
+The integral over time is performed and we obtain
+\begin{align}
+    A_r(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} \frac{ik_La^2\sin\theta_0}4 & \sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\nonumber                                                    \\
+                                                                              & \times\left[{\sin\theta_0}\left(\delta(\omega-(n-2)\omega_L)e^{-2i\phi_0}-\delta(\omega-(n+2)\omega_L)e^{2i\phi_0}\right)\right.\nonumber  \\
+                                                                              & \quad +{ika}\cos^2\theta_0\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}-\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\nonumber           \\
+                                                                              & \quad-ika\sin^2\theta_0\frac1{4}\left(\delta(\omega-(n-3)\omega_L)e^{-3i\phi_0}-\delta(\omega-(n+3)\omega_L)e^{3i\phi_0}\right)  \nonumber \\
+                                                                              & \quad\left.+ika\sin^2\theta_0\frac3{4}\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}-\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\right]
+\end{align}
+Next we change the summation indices
+\begin{align}
+    A_r(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ik_La^2\sin\theta_0}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                                  & \times\left[-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right)\right.\nonumber                                           \\
+                                                  & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                                \\
+                                                  & \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)+J_{n-3}(k_na\sin\theta_0)\right)\nonumber                                          \\
+                                                  & \quad\left.+k_na\sin^2\theta_0\frac3{4}\left(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)\right)\right]
+\end{align}
+
+\begin{align}
+    A_r(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ik_La^2\sin\theta_0}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                               \\
+                                                  & \times\left[-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right)\right. +{k_na}\left(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)\right)\nonumber \\
+                                                  & \left. \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)-J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)+J_{n-3}(k_na\sin\theta_0)\right)\right]
+\end{align}
+We calculate the quantity in the paranthesis
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right) +{k_na}\left(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)\right)\nonumber \\
+             & \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)-J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)+J_{n-3}(k_na\sin\theta_0)\right)
+\end{align}
+Using
+\begin{align}
+     & J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)=\frac{2n}{k_na\sin\theta_0}J_{n}(k_na\sin\theta_0)     \\
+     & J_{n+3}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0)=\frac{2n+4}{k_na\sin\theta_0}J_{n+2}(k_na\sin\theta_0) \\
+     & J_{n-3}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)=\frac{2n-4}{k_na\sin\theta_0}J_{n-2}(k_na\sin\theta_0)
+\end{align}
+we get
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right) +{k_na}\frac{2n}{k_na\sin\theta_0}J_n(k_na\sin\theta_0)\nonumber \\
+             & \quad+k_na\sin^2\theta_0\frac1{4}\frac1{k_na\sin\theta_0}\left((2n+4)J_{n+2}(k_na\sin\theta_0)+(2n-4)J_{n-2}(k_na\sin\theta_0)\right)\nonumber  \\
+             & \quad  -k_na\sin^2\theta_0\frac1{2}(J_{n-1}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0))
+\end{align}
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right) +\frac{2n}{\sin\theta_0}J_n(k_na\sin\theta_0)\nonumber \\
+             & \quad+\sin\theta_0\frac1{2}\left((n+2)J_{n+2}(k_na\sin\theta_0)+(n-2)J_{n-2}(k_na\sin\theta_0)\right)\nonumber                        \\
+             & \quad  -k_na\sin^2\theta_0\frac1{2}(J_{n-1}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0))
+\end{align}
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right) +\frac{2n}{\sin\theta_0}J_n(k_na\sin\theta_0)\nonumber                                    \\
+             & \quad+\sin\theta_0\frac{n}{2}\left(J_{n+2}(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right)+\sin\theta_0(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0))\nonumber \\
+             & \quad  -k_na\sin^2\theta_0\frac1{2}\frac{2n}{k_na\sin\theta_0}J_{n}(k_na\sin\theta_0)
+\end{align}
+\begin{align}
+    {\cal P} & =\frac{2n}{\sin\theta_0}J_n(k_na\sin\theta_0)+\sin\theta_0\frac{n}{2}\left(J_{n+2}(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right)  -n\sin\theta_0J_{n}(k_na\sin\theta_0)
+\end{align}
+\begin{align}
+    {\cal P} & =\frac{2n}{\sin\theta_0}J_n(k_na\sin\theta_0)-n\sin\theta_0\left[J'_{n+1}(k_na\sin\theta_0)-J'_{n-1}(k_na\sin\theta_0)\right]\nonumber \\
+             & =\frac{2n}{\sin\theta_0}J_n(k_na\sin\theta_0)+2n\sin\theta_0J''_{n}(k_na\sin\theta_0)
+\end{align}
+Using the differential equation of the BEssel functions
+\begin{align}
+    x^2 \frac{d^2 y}{d x^2}+x \frac{d y}{d x}+\left(x^2-n^2\right) y=0
+\end{align}
+we have
+\begin{align}
+    k_n^2 a^2\sin^2\theta_0 J_n''(k_na\sin\theta_0)=-k_na\sin\theta_0 J_n'(k_na \sin\theta_0)-(k_n^2a^2\sin^2\theta_0-n^2)J_n(k_na\sin\theta_0)
+\end{align}
+and
+\begin{align}
+    J_n''(k_na\sin\theta_0)=-\frac{k_na\sin\theta_0}{k_n^2 a^2\sin^2\theta_0} J_n'(k_na \sin\theta_0)-(\frac{k_n^2a^2\sin^2\theta_0}{k_n^2 a^2\sin^2\theta_0}-\frac{n^2}{k_n^2 a^2\sin^2\theta_0})J_n(k_na\sin\theta_0)
+\end{align}
+\begin{align}
+    J_n''(k_na\sin\theta_0)=-\frac{1}{k_n a\sin\theta_0} J_n'(k_na \sin\theta_0)-(1-\frac{n^2}{k_n^2 a^2\sin^2\theta_0})J_n(k_na\sin\theta_0)
+\end{align}
+and ${\cal P}$ becomes
+\begin{align}
+    {\cal P} & =J_n(k_na\sin\theta)\left[\frac{2n}{\sin\theta}-2n \sin\theta+\frac{2n^3\sin\theta}{k_n^2a^2\sin^2\theta}\right]-\frac{2n\sin\theta_0}{k_na\sin\theta_0}J_n'(k_na\sin\theta_0)\nonumber \\
+             & =J_n(k_na\sin\theta_0)\frac{2n}{\sin\theta_0}\left[1- \sin^2\theta_0+\frac1{k_L^2a^2}\right]-\frac{2}{k_La}J_n'(k_na\sin\theta_0)\nonumber                                              \\
+             & =J_n(k_na\sin\theta_0)\frac{2n}{\sin\theta_0}\left[\cos^2\theta_0+\frac1{k_L^2a^2}\right]-\frac{2}{k_La}J_n'(k_na\sin\theta_0)
+\end{align}
+The final expression of $A_r$ is
+\begin{align}
+    A_r({\bm x}_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ik_La^2\sin\theta_0}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                                        & \times\left[J_n(k_na\sin\theta_0)\frac{2n}{\sin\theta_0}\left[\cos^2\theta_0+\frac1{k_L^2a^2}\right]-\frac{2}{k_La}J_n'(k_na\sin\theta_0)\right]
+\end{align}
+\begin{align}
+    A_r({\bm x}_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ik_La^2}2 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                                        & \times\left[nJ_n(k_na\sin\theta_0)\left[\cos^2\theta_0+\frac1{k_L^2a^2}\right]-\frac{\sin\theta_0}{k_La}J_n'(k_na\sin\theta_0)\right]
+\end{align}
+\begin{align}
+    A_r({\bm x}_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ia}{2(k_La)} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                                        & \times\left[nJ_n(k_na\sin\theta_0)\left[(k_La)^2\cos^2\theta_0+1\right]-(k_La){\sin\theta_0}J_n'(k_na\sin\theta_0)\right]
+\end{align}
+
+
+Because $\beta_\theta=\beta_r \cot\theta_0$ we can write directly
+\begin{align}
+    A_\theta({\bm x}_0,\omega)= & A_\theta({\bm x}_0,\omega)\cot\theta_0\nonumber                                                                                                                                                                                                                                   \\
+    =                           & \frac{e_0 }{4\pi\epsilon_0 c}\cot\theta_0                                                                                              \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{ia}{2(k_La)} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                & \qquad\times\left[nJ_n(k_na\sin\theta_0)\left[(k_La)^2\cos^2\theta_0+1\right]-(k_La){\sin\theta_0}J_n'(k_na\sin\theta_0)\right]
+\end{align}
+
+
+The azimuthal component is
+\begin{align}
+    A_\phi(x_0,\omega)=\frac1{2\pi} & \frac{e_0 }{4\pi\epsilon_0 c}  \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}(k_La)\int\limits_{-\infty}^{\infty}dt e^{i\frac{\omega}c\left(ct-{\bm n}_0\cdot{\bm r}_0(t)\right)}\cos(\omega_L t-\phi_0)\nonumber \\
+                                    & \times\left[a\sin\theta_0\cos(\omega_Lt-\phi_0)+\frac{ika^2}2\left(\cos^2\theta_0+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_\phi(x_0,\omega)=\frac1{2\pi} & \frac{e_0 }{4\pi\epsilon_0 c}  \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}(k_La)\int\limits_{-\infty}^{\infty}dt e^{i\frac{\omega}c\left(ct-{\bm n}_0\cdot{\bm r}_0(t)\right)}\nonumber     \\
+                                    & \times\left[{a\sin\theta_0}\cos^2(\omega_Lt-\phi_0)+\frac{ika^2}2\left(\cos^2\theta_0\cos(\omega_Lt-\phi_0)+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\cos(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_\phi(x_0,\omega)=\frac1{2\pi} & \frac{e_0 }{4\pi\epsilon_0 c}  \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{k_La^2}2\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)\int\limits_{-\infty}^{\infty}dt  e^{i\omega t-i n (\omega_Lt-\phi_0)}\nonumber \\
+                                    & \times\left[{2\sin\theta_0}\cos^2(\omega_Lt-\phi_0)+{ika}\left(\cos^2\theta_0\cos(\omega_Lt-\phi_0)+\sin^2\theta_0\sin^2(\omega_Lt -\phi_0)\cos(\omega_Lt -\phi_0)\right)\right]
+\end{align}
+\begin{align}
+    A_\phi(x_0,\omega)=\frac1{2\pi}\frac{e_0 }{4\pi\epsilon_0 c} & \frac{e^{i k|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{k_La^2}2\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)\int\limits_{-\infty}^{\infty}dt  e^{i\omega t-i n (\omega_Lt-\phi_0)}\nonumber \\
+                                                                 & \times\left[{\sin\theta_0}\frac1{2}\left(e^{2i(\omega_Lt-\phi_0)}+2+e^{-2i(\omega_Lt-\phi_0)}\right)\right.\nonumber                                                                                    \\
+                                                                 & \quad +{ika}\cos^2\theta_0\frac1{2}\left(e^{i(\omega_Lt-\phi_0)}+e^{-i(\omega_Lt-\phi_0)}\right)\nonumber                                                                                               \\
+                                                                 & \quad\left.-ika\sin^2\theta_0\frac1{8}\left(e^{3i(\omega_Lt-\phi_0)}+e^{-3i(\omega_Lt-\phi_0)}-e^{i(\omega_Lt-\phi_0)}-e^{-i(\omega_Lt-\phi_0)}\right)\right]
+\end{align}
+The integral over time is performed and we obtain
+\begin{align}
+    A_\phi(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} \frac{k_La^2}4 & \sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\nonumber                                                                             \\
+                                                                    & \times\left[{\sin\theta_0}\left(\delta(\omega-(n-2)\omega_L)e^{-2i\phi_0}+2\delta(\omega-n\omega_L)+\delta(\omega-(n+2)\omega_L)e^{2i\phi_0}\right)\right.\nonumber \\
+                                                                    & \quad +{ika}\cos^2\theta_0\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}+\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\nonumber                                    \\
+                                                                    & \quad-ika\sin^2\theta_0\frac1{4}\left(\delta(\omega-(n-3)\omega_L)e^{-3i\phi_0}+\delta(\omega-(n+3)\omega_L)e^{3i\phi_0}\right)  \nonumber                          \\
+                                                                    & \quad\left.+ika\sin^2\theta_0\frac1{4}\left(\delta(\omega-(n-1)\omega_L)e^{-i\phi_0}+\delta(\omega-(n+1)\omega_L)e^{i\phi_0}\right)\right]
+\end{align}
+Next we change the summation indices
+\begin{align}
+    A_\phi(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{k_La^2}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+                                                     & \times\left[-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right)\right.\nonumber       \\
+                                                     & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                   \\
+                                                     & \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)-J_{n-3}(k_na\sin\theta_0)\right)\nonumber                             \\
+                                                     & \quad\left.+k_na\sin^2\theta_0\frac1{4}\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\right]
+\end{align}
+
+\begin{align}
+    A_\phi(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{k_La^2}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                              \\
+                                                     & \times\left[-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right)\right. \nonumber                                   \\
+                                                     & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                                                \\
+                                                     & \left. \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)-J_{n-3}(k_na\sin\theta_0)\right)\right]
+\end{align}
+We calculate the quantity in the paranthesis
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right) \nonumber                                       \\
+             & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                                  \\
+             & \quad+k_na\sin^2\theta_0\frac1{4}\left(J_{n+3}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)-J_{n-3}(k_na\sin\theta_0)\right)
+\end{align}
+Using
+\begin{align}
+     & J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)=-2J'_{n}(k_na\sin\theta_0)                             \\
+     & J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)=\frac{2n}{k_na\sin\theta_0}J_{n}(k_na\sin\theta_0)     \\
+     & J_{n+2}(k_na\sin\theta_0)+J_{n}(k_na\sin\theta_0)=\frac{2n+2}{k_na\sin\theta_0}J_{n+1}(k_na\sin\theta_0)   \\
+     & J_{n}(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)=\frac{2n-2}{k_na\sin\theta_0}J_{n-1}(k_na\sin\theta_0)   \\
+     & J_{n+3}(k_na\sin\theta_0)+J_{n+1}(k_na\sin\theta_0)=\frac{2n+4}{k_na\sin\theta_0}J_{n+2}(k_na\sin\theta_0) \\
+     & J_{n-3}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)=\frac{2n-4}{k_na\sin\theta_0}J_{n-2}(k_na\sin\theta_0)
+\end{align}
+we get
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right) \nonumber                       \\
+             & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                  \\
+             & \quad+k_na\sin^2\theta_0\frac1{4}\frac1{k_na\sin\theta_0}\left((2n+4)J_{n+2}(k_na\sin\theta_0)-(2n-4)J_{n-2}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right) \nonumber \\
+             & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber            \\
+             & \quad+\sin\theta_0\frac1{4}\left((2n+4)J_{n+2}(k_na\sin\theta_0)-(2n-4)J_{n-2}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =-\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)-2J_n(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right) \nonumber                                                            \\
+             & \quad +{k_na}\cos^2\theta_0\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)\nonumber                                                                       \\
+             & \quad+\frac{n\sin\theta_0}{2}\left(J_{n+2}(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right)+\sin\theta_0\left(J_{n+2}(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =2\sin\theta_0J_n(k_na\sin\theta_0) -2{k_na}\cos^2\theta_0J'_{n}(k_na\sin\theta_0)\nonumber                                               \\
+             & \quad+\frac{n\sin\theta_0}{2}\left(J_{n+2}(k_na\sin\theta_0)+J_n(k_na\sin\theta_0)-J_n(k_na\sin\theta_0)-J_{n-2}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =2\sin\theta_0J_n(k_na\sin\theta_0) -2{k_na}\cos^2\theta_0J'_{n}(k_na\sin\theta_0)\nonumber                                         \\
+             & \quad+\frac{n\sin\theta_0}{2}\frac{1}{k_na\sin\theta_0}\left((2n+2)J_{n+1}(k_na\sin\theta_0)-(2n-2)J_{n-1}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =2\sin\theta_0J_n(k_na\sin\theta_0) -2{k_na}\cos^2\theta_0J'_{n}(k_na\sin\theta_0)\nonumber       \\
+             & \quad+\frac{1}{2k_La}\left((2n+2)J_{n+1}(k_na\sin\theta_0)-(2n-2)J_{n-1}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =2\sin\theta_0J_n(k_na\sin\theta_0) -2{k_na}\cos^2\theta_0J'_{n}(k_na\sin\theta_0)\nonumber                                                                         \\
+             & \quad+\frac{n}{k_La}\left(J_{n+1}(k_na\sin\theta_0)-J_{n-1}(k_na\sin\theta_0)\right)+\frac{1}{k_La}\left(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0)\right)
+\end{align}
+\begin{align}
+    {\cal P} & =2\sin\theta_0J_n(k_na\sin\theta_0) -2{k_na}\cos^2\theta_0J'_{n}(k_na\sin\theta_0)-\frac{2n}{k_La}J'_{n}(k_na\sin\theta_0)+\frac{1}{k_La}\frac{2n}{k_na\sin\theta_0}J_{n}(k_na\sin\theta_0)
+\end{align}
+\begin{align}
+    {\cal P} & =\left(\frac{2}{(k_La)^2\sin\theta_0}+2\sin\theta_0\right)J_{n}(k_na\sin\theta_0)-\frac{2n}{k_La}\left((k_La)^2\cos^2\theta_0+1\right)J'_n(k_n a\sin\theta_0)
+\end{align}
+\begin{align}
+    {\cal P} & =\frac{2}{(k_La)^2\sin\theta_0}\left(1+(k_La)^2\sin^2\theta_0\right)J_{n}(k_na\sin\theta_0)-\frac{2n}{k_La}\left((k_La)^2\cos^2\theta_0+1\right)J'_n(k_n a\sin\theta_0)
+\end{align}
+
+The final expression of $A_\phi$ is
+\begin{align}
+    A_\phi(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{k_La^2}4 (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                                                     \\
+                                                     & \times \left[\frac{2}{(k_La)^2\sin\theta_0}\left(1+(k_La)^2\sin^2\theta_0\right)J_{n}(k_na\sin\theta_0)-\frac{2n}{k_La}\left((k_La)^2\cos^2\theta_0+1\right)J'_n(k_n a\sin\theta_0)\right]
+\end{align}
+\begin{align}
+    A_\phi(x_0,\omega)=\frac{e_0 }{4\pi\epsilon_0 c} & \sum_{n=-\infty}^{\infty}\frac{e^{i k_n|{\bm x}_0|}}{|{\bm x}_0|^2}\frac{a}{2k_La\sin\theta_0} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                        \\
+                                                     & \times \left[\frac{1}{(k_La)}\left(1+(k_La)^2\sin^2\theta_0\right)J_{n}(k_na\sin\theta_0)-n\sin\theta_0\left(1+(k_La)^2\cos^2\theta_0\right)J'_n(k_n a\sin\theta_0)\right]
+\end{align}
+The second order Fourier coefficients of the potentials are
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+    \begin{align}
+         & \Phi_n({\bm x}_0)  =\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|^2}(-i)^ne^{in\phi_0}\frac{ia}2\
+        \left[\frac{n}{k_La}\left(1+(k_La)^2\cos^2\theta_0\right)J_n(k_na\sin\theta_0)+{\sin\theta_0}J'_{n}(k_na\sin\theta_0)\right]\nonumber                                                                                                                                              \\
+         & A_{rn}({\bm x}_0)=\frac{e_0 }{4\pi\epsilon_0 c} \frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|^2} (-i)^n e^{in\phi_0}\frac{ia}{2}\left[\frac{n}{k_La}\left(1+(k_La)^2\cos^2\theta_0\right)J_n(k_na\sin\theta_0)-{\sin\theta_0}J_n'(k_na\sin\theta_0)\right]\nonumber                   \\
+         & A_{\theta n}({\bm x}_0)=\frac{e_0 }{4\pi\epsilon_0 c} \frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|^2} (-i)^n e^{in\phi_0}\frac{ia}{2}\cot\theta_0\left[\frac{n}{k_La}\left(1+(k_La)^2\cos^2\theta_0\right)J_n(k_na\sin\theta_0)-{\sin\theta_0}J_n'(k_na\sin\theta_0)\right]\nonumber \\
+         & A_{\phi n}({\bm x}_0)=\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|^2}(-i)^ne^{in\phi_0}\frac{a}{2(k_La)^2\sin\theta_0}\nonumber                                                                                                                           \\
+         & \qquad\qquad\left[\left(1+(k_La)^2\sin^2\theta_0\right)J_{n}(k_na\sin\theta_0)-k_na\sin\theta_0\left(1+(k_La)^2\cos^2\theta_0\right)J'_n(k_n a\sin\theta_0)\right]\nonumber
+    \end{align}
+\end{tcolorbox}
+
+
+\subsection{The third order expansion}
+
+
+\subsubsection{The scalar potential}
+
+The third order term from the expression pf the scalar potential is
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\int\limits_{-\infty}^{\infty}dt e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}\left(\frac32{({\bm n}_0\cdot{\bm r}_0(t))^2}-\frac12{{\bm r}^2_0(t)}+\frac{i\omega}{c}{({\bm n}_0\cdot{\bm r}_0(t))|{\bm n}_0\times{\bm r}_0(t)|^2}       \right)
+\end{align}
+We use the expression
+\begin{align}
+    \frac32{({\bm n}_0\cdot{\bm r}_0(t))^2} & -\frac12{{\bm r}^2_0(t)}+\frac{i\omega}{c}{({\bm n}_0\cdot{\bm r}_0(t))|{\bm n}_0\times{\bm r}_0(t)|^2} =\nonumber                                   \\
+                                            & -\frac{ika^3}8\sin^3\theta_0e^{-3i(\omega t-\phi_0)}-\frac{ika^3}8\sin^3\theta_0e^{3i(\omega t-\phi_0)}\nonumber                                     \\
+                                            & +\frac38a^2\sin^2\theta_0e^{-2i(\omega t-\phi_0)}+\frac38a^2\sin^2\theta_0e^{2i(\omega t-\phi_0)}\nonumber                                           \\
+                                            & +\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{-i(\omega t-\phi_0)}+\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{i(\omega t-\phi_0)}\nonumber \\
+                                            & -\frac18a^2(1+3\cos 2\theta_0)
+\end{align}
+and
+\begin{align}
+    e^{-ia\sin\theta_0\cos(\omega_Lt-\phi_0)}=\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0) e^{-i n (\omega_Lt-\phi_0)}
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\int\limits_{-\infty}^\infty e^{i\omega t-i n \omega_Lt}\nonumber \\
+    \times                 & \left[ -\frac{ika^3}8\sin^3\theta_0e^{-3i(\omega_L t-\phi_0)}-\frac{ika^3}8\sin^3\theta_0e^{3i(\omega_L t-\phi_0)}\nonumber                                     \right.                                       \\
+                           & +\frac38a^2\sin^2\theta_0e^{-2i(\omega_L t-\phi_0)}+\frac38a^2\sin^2\theta_0e^{2i(\omega_L t-\phi_0)}\nonumber                                                                                                \\
+                           & +\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{-i(\omega _Lt-\phi_0)}+\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{i(\omega_L t-\phi_0)}\nonumber                                                      \\
+                           & \left.-\frac18a^2(1+3\cos 2\theta_0)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\nonumber                                                 \\
+    \times                 & \left[ -\delta(\omega-(n+3)\omega_L)\frac{ika^3}8\sin^3\theta_0e^{3i\phi_0}-\delta(\omega-(n-3)\omega_L)\frac{ika^3}8\sin^3\theta_0e^{-3i\phi_0}\nonumber                                     \right. \\
+                           & +\delta(\omega-(n+2)\omega_L)\frac38a^2\sin^2\theta_0e^{2i\phi_0}+\delta(\omega-(n-2)\omega_L)\frac38a^2\sin^2\theta_0e^{-2i\phi_0}\nonumber                                                          \\
+                           & +\delta(\omega-(n+1)\omega_L)\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{i\phi_0}+\delta(\omega-(n-1)\omega_L)\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)e^{-i\phi_0}\nonumber                \\
+                           & \left.-\delta(\omega-n\omega_L)\frac18a^2(1+3\cos 2\theta_0)\right]
+\end{align}
+After changing the summation indices
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\sum_{n=-\infty}^{\infty} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber                                                                  \\
+    \times                 & \left[ -(-i)^{-3}J_{n-3}(\frac{\omega a}c\sin\theta_0)\frac{ika^3}8\sin^3\theta_0-(-i)^3J_{n+3}(\frac{\omega a}c\sin\theta_0)\frac{ika^3}8\sin^3\theta_0\nonumber                                     \right. \\
+                           & +(-i)^{-2}J_{n-2}(\frac{\omega a}c\sin\theta_0)\frac38a^2\sin^2\theta_0+(-i)^{-2}J_{n-2}(\frac{\omega a}c\sin\theta_0)\frac38a^2\sin^2\theta_0\nonumber                                                       \\
+                           & +(-i)^{-1}J_{n-1}(\frac{\omega a}c\sin\theta_0)\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)+(-i)^{-1}J_{n+1}(\frac{\omega a}c\sin\theta_0)\frac{ika^3}{32}(7\sin\theta_0+3\sin3\theta_0)\nonumber           \\
+                           & \left.-J_{n}(\frac{\omega a}c\sin\theta_0)\frac18a^2(1+3\cos 2\theta_0)\right]
+\end{align}
+\begin{align}
+    \Phi({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\frac{a^2}8\sum_{n=-\infty}^{\infty} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+    \times                 & \left[-{k_na}\sin^3\theta_0(J_{n+3}(k_na\sin\theta_0)-J_{n-3}(k_na\sin\theta_0))\nonumber                                     \right.                   \\
+                           & 3\sin^2\theta_0(J_{n+2}(k_na\sin\theta_0)+J_{n-2}(k_na\sin\theta_0))\nonumber                                                                           \\
+                           & -\frac{k_na}{4}(7\sin\theta_0+3\sin3\theta_0)(J_{n+1}(k_na\sin\theta_0)+J_{n-1}(k_na\sin\theta_0))\nonumber                                             \\
+                           & \left.-J_{n}(k_na\sin\theta_0)(1+3\cos 2\theta_0)\vphantom{\frac12}\right]
+\end{align}
+
+\subsubsection{The vector potential}
+
+We need to calculate only the radial component of the vector potential
+
+The corresponding term is
+\begin{align}
+    A_r({\bm x}_0,\omega)  =-\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}k_La\sin\theta_0\int\limits_{-\infty}^{\infty}dt & e^{i\omega t-i\frac{\omega}ca\sin\theta_0\cos(\omega_Lt-\phi_0)}\sin(\omega_Lt-\phi_0)\nonumber                                                                          \\
+                                                                                                                                           & \times\left(\frac32{({\bm n}_0\cdot{\bm r}_0(t))^2}-\frac12{{\bm r}^2_0(t)}+\frac{i\omega}{c}{({\bm n}_0\cdot{\bm r}_0(t))|{\bm n}_0\times{\bm r}_0(t)|^2}       \right)
+\end{align}
+We use the expression
+\begin{align}
+    \sin(\omega_Lt-\phi_0) & \left(\frac32{({\bm n}_0\cdot{\bm r}_0(t))^2}  -\frac12{{\bm r}^2_0(t)}+\frac{i\omega}{c}({\bm n}_0\cdot{\bm r}_0(t))|{\bm n}_0\times{\bm r}_0(t)|^2 \right)=\nonumber \\
+                           & \frac{ka^3}{16}\sin^3\theta_0e^{-4i(\omega t-\phi_0)}-\frac{ka^3}{16}\sin^3\theta_0e^{4i(\omega t-\phi_0)}\nonumber                                                    \\
+                           & +\frac{3i}{16}a^2\sin^2\theta_0e^{-3i(\omega t-\phi_0)}-\frac{3i}{16}a^2\sin^2\theta_0e^{2i(\omega t-\phi_0)}\nonumber                                                 \\
+                           & -\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{-2i(\omega t-\phi_0)}+\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{2i(\omega t-\phi_0)}\nonumber                     \\
+                           & -\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{-2i(\omega t-\phi_0)}+\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{2i(\omega t-\phi_0)}
+\end{align}
+and
+\begin{align}
+    e^{-ia\sin\theta_0\cos(\omega_Lt-\phi_0)}=\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0) e^{-i n (\omega_Lt-\phi_0)}
+\end{align}
+\begin{align}
+    A_r({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}k_La\sin\theta_0\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\int\limits_{-\infty}^\infty e^{i\omega t-i n \omega_Lt}\nonumber \\
+    \times                & \left[ \frac{ka^3}{16}\sin^3\theta_0e^{-4i(\omega_L t-\phi_0)}-\frac{ka^3}{16}\sin^3\theta_0e^{4i(\omega_L t-\phi_0)}\right.\nonumber                                                                                         \\
+                          & +\frac{3i}{16}a^2\sin^2\theta_0e^{-3i(\omega_L t-\phi_0)}-\frac{3i}{16}a^2\sin^2\theta_0e^{2i(\omega_L t-\phi_0)}\nonumber                                                                                                    \\
+                          & -\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{-2i(\omega_L t-\phi_0)}+\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{2i(\omega+L t-\phi_0)}\nonumber                                                                        \\
+                          & \left.-\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{-i(\omega+L t-\phi_0)}+\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{i(\omega_L t-\phi_0)}\right]
+\end{align}
+\begin{align}
+    A_r({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}k_La\sin\theta_0\sum_{n=-\infty}^{\infty} (-i)^n J_n(\frac{\omega a}c\sin\theta_0)e^{in\phi_0}\nonumber                \\
+    \times                & \left[  \frac{ka^3}{16}\sin^3\theta_0e^{4i\phi_0}\delta(\omega-(n+4)\omega_L)-\frac{ka^3}{16}\sin^3\theta_0e^{-4i\phi_0}\delta(\omega-(n-4)\omega_L)\right.\nonumber                 \\
+                          & +\frac{3i}{16}a^2\sin^2\theta_0e^{3i\phi_0}\delta(\omega-(n+3)\omega_L)-\frac{3i}{16}a^2\sin^2\theta_0e^{-3i\phi_0}\delta(\omega-(n-3)\omega_L)\nonumber                             \\
+                          & -\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{2i\phi_0}\delta(\omega-(n+2)\omega_L)+\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)e^{-2i\phi_0}\delta(\omega-(n-2)\omega_L)\nonumber \\
+                          & \left.-\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{i\phi_0}\delta(\omega-(n+1)\omega_L)+\frac{ia^2}{32}(5+3\cos 2\theta_0)e^{-i\phi_0}\delta(\omega-(n-1)\omega_L)\right]
+\end{align}
+After changing the summation indices
+\begin{align}
+    A_r({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}k_La\sin\theta_0\sum_{n=-\infty}^{\infty} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber         \\
+    \times                & \left[  (-i)^{-4}\frac{ka^3}{16}\sin^3\theta_0J_{n-4}(k_na\sin\theta_0)-(-i)^4\frac{ka^3}{16}\sin^3\theta_0J_{n+4}(k_na\sin\theta_0)\right.\nonumber                 \\
+                          & +(-i)^{-3}\frac{3i}{16}a^2\sin^2\theta_0J_{n-3}(k_na\sin\theta_0)-(-i)^3\frac{3i}{16}a^2\sin^2\theta_0J_{n+3}(k_na\sin\theta_0)\nonumber                             \\
+                          & -(-i)^{-2}\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)J_{n-2}(k_na\sin\theta_0)+(-i)^2\frac{ka^3}{32}(5\sin\theta_0+\sin3\theta_0)J_{n+2}(k_na\sin\theta_0)\nonumber \\
+                          & \left.-(-i)^{-1}\frac{ia^2}{32}(5+3\cos 2\theta_0)J_{n-1}(k_na\sin\theta_0)+(-i)\frac{ia^2}{32}(5+3\cos 2\theta_0)J_{n+1}(k_na\sin\theta_0)\right]
+\end{align}
+\begin{align}
+    A_r({\bm x}_0,\omega) & =\frac{e_0}{4\pi\epsilon_0}\frac1{2\pi}\frac{e^{ikx_0}}{x_0^3}\frac{k_La^3}{16}\sin\theta_0\sum_{n=-\infty}^{\infty} (-i)^n \delta(\omega-n\omega_L)e^{in\phi_0}\nonumber \\
+    \times                & \left[ k_La\sin^3\theta_0(J_{n-4}(k_na\sin\theta_0)-J_{n-4}(k_na\sin\theta_0))\right.\nonumber                                                                            \\
+                          & +3\sin^2\theta_0(J_{n-3}(k_na\sin\theta_0)-J_{n+3}(k_na\sin\theta_0))\nonumber                                                                                            \\
+                          & +\frac{ka}{2}(5\sin\theta_0+\sin3\theta_0)(J_{n-2}(k_na\sin\theta_0)-J_{n+2}(k_na\sin\theta_0))\nonumber                                                                  \\
+                          & \left.+\frac{1}{2}(5+3\cos 2\theta_0)(J_{n-1}(k_na\sin\theta_0)-J_{n+1}(k_na\sin\theta_0))
+    \right]
+\end{align}
+
+
+\section{The Fourier series of the fields}
+
+\subsection{The first order expansion}
+
+We start from the first order expansion of the potentials
+\begin{align}
+     & \Phi_n({\bm x}_0)=\frac{e_0}{4\pi\epsilon_0}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)                                                                    \\
+     & A_{rn}({\bm x}_0)= \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}J_n(k_na\sin\theta_0)                                                                  \\
+     & A_{\theta n}({\bm x}_0)= \frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}\cot\theta_0J_n(k_na\sin\theta_0)                                                \\
+     & A_{\phi n}({\bm x}_0)=\frac{e_0}{4\pi\epsilon_0c}\frac{e^{ik_n |{\bm x}_0|}}{|{\bm x}_0|}(-i)^ne^{in\phi_0}(ik_La)J'_n(k_na\sin\theta_0), \quad \omega_n=n\omega_L, \quad k_n=\frac{\omega_n}c
+\end{align}
+
+We use the substitution rule
+\begin{align}
+    \frac{d}{dt}\rightarrow-i\omega_n=-ick_n
+\end{align}
+The gradient and curls in spherical coordinates are
+\begin{align}
+     & {\boldsymbol{\nabla}}\Phi={\bm e}_r\partial_r\Phi+{\bm e}_\theta\frac1r\partial_\theta\Phi+{\bm e}_\phi\frac1{r\sin\theta}\partial_\phi\Phi \\
+     & {\boldsymbol{\nabla}}\times={\bm e}_r\partial_r+{\bm e}_\theta\frac1r\partial_\theta+{\bm e}_\phi\frac1{r\sin\theta}\partial_\phi
+\end{align}
+The electric field is
+\begin{align}
+    a
+\end{align}

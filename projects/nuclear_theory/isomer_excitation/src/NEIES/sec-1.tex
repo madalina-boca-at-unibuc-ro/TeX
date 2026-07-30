@@ -1,0 +1,220 @@
+\section{The transition amplitude for NEIES}
+
+The diagram of the process in the lowest order is shown in Fig. \ref{fig:neies-diagram}.
+
+
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|a\rangle \)};
+                \vertex [right=3cm of e_in] (p_in) {\(|\alpha\rangle\)};
+
+                % Interaction vertices (Middle)
+                \vertex [above=2cm of e_in, xshift=0cm] (v_top);
+                \vertex [above=2cm of p_in, xshift=-0cm] (v_bot);
+
+                % Top vertices (Final state)
+                \vertex [above=2cm of v_top, xshift=-0cm] (e_out) {\(|b\rangle\)};
+                \vertex [above=2cm of v_bot, xshift=0cm] (x_out) {\(|\beta\rangle\)};
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (v_top) -- [fermion, green!40!blue] (e_out),
+                (v_top) -- [photon, edge label=\(\gamma\), blue] (v_bot),
+                (p_in) -- [fermion, very thick] (v_bot) -- [fermion, very thick] (x_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+    \end{center}
+
+    \caption{Feynman diagram for nuclear excitation by inelastic electron scattering (NEIES)\label{fig:neies-diagram}}.
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{feynman}
+                % Bottom vertices (Initial state)
+                \vertex (e_in) {\(|e_i\rangle \)};
+ %               \vertex [right=3cm of e_in] (p_in) {\(|\alpha\rangle\)};
+                \vertex [above left=1cm and 3cm of e_in] (nuc) {\(O\)};
+                \vertex [above=1cm of e_in] (i) {\(.\)};
+                \draw  [draw=red, fill=red, fill opacity=0.3, thick] (nuc) circle (0.1cm);
+                
+                % Interaction vertices (Middle)
+                \vertex [above=2cm of e_in, xshift=0cm] (v_top);
+                \vertex [above=2cm of p_in, xshift=-0cm] (v_bot);
+
+                % Top vertices (Final state)
+                \vertex [above=2cm of v_top, xshift=-0cm] (e_out) {\(|e_f\rangle\)};
+%                \vertex [above=2cm of v_bot, xshift=0cm] (x_out) {\(|\beta\rangle\)};
+
+                \diagram* {
+                (e_in) -- [fermion, green!40!blue] (v_top) -- [fermion, green!40!blue] (e_out),
+                  (v_top) -- [photon, momentum, edge label=\(\gamma\), blue] (v_bot),
+                  (nuc) --[photon, red] (i),
+%                (p_in) -- [fermion, very thick] (v_bot) -- [fermion, very thick] (x_out),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+    \end{center}
+
+
+\end{figure}
+The transition amplitude is
+\begin{align}
+    S_{f\leftarrow i} & = \langle f|\int d^4x d^4 X j^{(e),I}_{\mu}(x) D^{\mu\nu}(x-X) j^{(N),I}_{\nu}(X)|i\rangle   = \int d^4x d^4 X \langle b|j^{(e),I}_{\mu}(x)|a\rangle D^{\mu\nu}(x-X) \langle \beta|j^{(N),I}_{\nu}(X)|\alpha\rangle
+\end{align}
+The propagator in the Feynman gauge is
+\begin{align}
+    D^{\mu\nu}(x-X) & = \int \frac{d^4 q}{(2\pi)^4} \frac{-i g^{\mu\nu}}{q^2 + i\epsilon} e^{-i q \cdot (x - X)}
+\end{align}
+The density current operators in the interaction picture are
+\begin{align}
+    j^{(e),I}_{\mu}(x) & = e^{i H_0 x^0} j^{(e)}_{\mu} e^{-i H_0 x^0} \quad \text{and} \quad j^{(N),I}_{\nu}(X) = e^{i H_0 X^0} j^{(N)}_{\nu} e^{-i H_0 X^0}
+\end{align}
+where \(H_0\) is the free Hamiltonian of the system. The transition amplitude can be rewritten as
+\begin{align}
+    S_{f\leftarrow i} & = \int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{-i g^{\mu\nu}}{q^2 + i\epsilon} e^{-i q \cdot (x - X)} \langle b|e^{i H_0 x^0} j^{(e)}_{\mu}({\bf x}) e^{-i H_0 x^0}|a\rangle \langle \beta|e^{i H_0 X^0} j^{(N)}_{\nu}({\bf X}) e^{-i H_0 X^0}|\alpha\rangle
+\end{align}
+Using the time evolution of the states free initial and final states, we have
+\begin{align}
+    S_{f\leftarrow i} & =  \int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{-i g^{\mu\nu}}{q_0^2 -{\bf q}^2+ i\epsilon} e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})} \langle b| j^{(e)}_{\mu} ({\bf x})|b\rangle \langle \beta| j^{(N)}_{\nu}({\bf X}) |\alpha\rangle\nonumber \\
+                      & =\int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{-i\langle b| j^{(e)}_{\mu} |b\rangle  g^{\mu\nu}\langle \beta| j^{(N)}_{\nu} |\alpha\rangle}{q_0^2 -{\bf q}^2+ i\epsilon} e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})}
+\end{align}
+\subsection{Separation of the Coulomb and transverse contributions}
+We define
+\begin{align}
+    \delta^{ij} = (\delta^{ij} - \frac{{q}^i {q}^j}{{\bf q}^2}) + \frac{{q}^i {q}^j}{\bf q}^2\equiv \delta^{ij}_T + \delta^{ij}_L
+\end{align}
+Then we have
+\begin{align}
+    \frac{-i\langle b| j^{(e)}_{\mu} |b\rangle  g^{\mu\nu}\langle \beta| j^{(N)}_{\nu} |\alpha\rangle}{q_0^2 -{\bf q}^2+ i\epsilon} = \frac{-i\langle b| j^{(e)}_{0} |b\rangle  \langle \beta| j^{(N)}_{0} |\alpha\rangle}{q_0^2 -{\bf q}^2+ i\epsilon} - \frac{-i\langle b| j^{(e)}_{i}  q_i|b\rangle  \langle \beta| j^{(N)}_{j} q_j |\alpha\rangle}{{\bf q}^2(q_0^2 -{\bf q}^2+ i\epsilon)}+ \frac{-i\langle b| j^{(e)}_{i}  q_i|b\rangle  \langle \beta| j^{(N)}_{j} q_j |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T
+\end{align}
+But the current conservation implies
+\begin{align}
+    q_{\mu} \langle b| j^{(e)}_{\mu} |b\rangle & = 0 \quad \text{and} \quad q_{\nu} \langle \beta| j^{(N)}_{\nu} |\alpha\rangle = 0
+\end{align}
+which means
+\begin{align}
+    \langle b| j^{(e)}_{i} q^i |b\rangle & = -{\langle b| j^{(e)}_{0}  |b\rangle}q_0 \quad \text{and} \quad \langle \beta| j^{(N)}_{j} q^j |\alpha\rangle = -{\langle \beta| j^{(N)}_{0}  |\alpha\rangle} q_0
+\end{align}
+so the previous result become
+\begin{align}
+    \frac{-i\langle b| j^{(e)}_{\mu} |b\rangle  g^{\mu\nu}\langle \beta| j^{(N)}_{\nu} |\alpha\rangle}{q_0^2 -{\bf q}^2+ i\epsilon} & = \frac{-i\langle b| j^{(e)}_{0} |b\rangle  \langle \beta| j^{(N)}_{0}  |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)} \left(1-\frac{q_0^2}{{\bf q}^2}    \right) + \frac{-i\langle b| j^{(e)}_{i}  q_i|b\rangle  \langle \beta| j^{(N)}_{j} q_j |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T \nonumber \\
+                                                                                                                                    & = \frac{i\langle b| j^{(e)}_{0} |b\rangle  \langle \beta| j^{(N)}_{0}  |\alpha\rangle}{{\bf q}^2}  + \frac{-i\langle b| j^{(e)}_{i}  q_i|b\rangle  \langle \beta| j^{(N)}_{j} q_j |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T
+\end{align}
+The first term in the previous expression gives the contribution of the instantaneous Coulomb interaction, while the second term gives the contribution of the transverse interaction. The transition amplitude can be rewritten as
+\begin{align}
+    S_{f\leftarrow i} & = S_{f\leftarrow i}^{Coul} + S_{f\leftarrow i}^{Trans}
+\end{align}
+where
+\begin{align}
+    S_{f\leftarrow i}^{Coul} & = \int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{i\langle b| j^{(e)}_{0} |b\rangle  \langle \beta| j^{(N)}_{0}  |\alpha\rangle}{{\bf q}^2} e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})}
+\end{align}
+and
+\begin{align}
+    S_{f\leftarrow i}^{Trans} & = \int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{-i\langle b| j^{(e)}_{i}  q_i|b\rangle  \langle \beta| j^{(N)}_{j} q_j |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})}
+\end{align}
+\subsection{Explicit calculation of the Coulomb contribution}
+The Coulomb contribution can be calculated as
+\begin{align}
+    S_{f\leftarrow i}^{Coul} & = \int d^4x d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{i\langle b| j^{(e)}_{0}({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{0} ({\bf X}) |\alpha\rangle}{{\bf q}^2} e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})}\nonumber \\
+                             & =(2\pi)i\delta(E_a-E_{b}+E_\alpha-E_{\beta})\int{d^3{\bf x}}\int d^3{\bf X} \int \frac{d^3 {\bf q}}{(2\pi)^3} \frac{\langle b| j^{(e)}_{0}({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{0}({\bf X})  |\alpha\rangle}{{\bf q}^2} e^{i{\bf q}\cdot({\bf x} - {\bf X})}
+\end{align}
+Using
+\begin{align}
+    \int \frac{d^3 {\bf q}}{(2\pi)^3} \frac{e^{i{\bf q}\cdot({\bf x} - {\bf X})}}{{\bf q}^2} & = \frac{1}{4\pi |{\bf x} - {\bf X}|}
+\end{align}
+we get the well known result for the Coulomb contribution
+\begin{align}
+    S_{f\leftarrow i}^{Coul} & =(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \frac{1}{4\pi}\int{d^3{\bf x}}\int d^3{\bf X} \frac{\langle b| j^{(e)}_{0}({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{0} ({\bf X})  |\alpha\rangle}{|{\bf x} - {\bf X}|}
+\end{align}
+and if we also denote the matrix elements of the curent operators as
+\begin{align}
+     & \langle b|{\bf j}^{(e)}({\bf x})|a \rangle = {\bf j}^{(e)}_{ba}({\bf x})                   \\
+     & \langle \beta|{\bf j}^{(N)}({\bf X})|\alpha \rangle = {\bf j}^{(N)}_{\beta\alpha}({\bf X}) \\
+\end{align}
+
+we can write the Coulomb contribution as
+\begin{align}
+    S_{f\leftarrow i}^{Coul} & =(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \frac{1}{4\pi}\int{d^3{\bf x}}\int d^3{\bf X} \frac{j^{(e)}_{0,ba}({\bf x})  j^{(N)}_{0,\beta\alpha} ({\bf X})}{|{\bf x} - {\bf X}|}
+\end{align}
+\subsection{Explicit calculation of the transverse contribution}
+In the expression of the transverse contribution
+\begin{align}
+    S_{f\leftarrow i}^{Trans} & = \int d^4x\int d^4 X \int \frac{d^4 q}{(2\pi)^4} \frac{-i\langle b| j^{(e)}_{i} ({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{j}({\bf X})  |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T e^{-i q_0 \cdot (x_0 - X_0)} e^{i{\bf q}\cdot({\bf x} - {\bf X})} e^{-ix^0(E_e-E_{e'})}e^{-iX^0(E_\alpha-E_{\beta})}
+\end{align}
+we calculate explicitly the integrals over $x^0$ and $X^0$ to get
+\begin{align}
+    S_{f\leftarrow i}^{Trans}=\int d^3{\bf x} d^3{\bf X} \int \frac{d^4 q}{(2\pi)^4} \frac{-i\langle b| j^{(e)}_{i} ({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{j}({\bf X})  |\alpha\rangle}{(q_0^2 -{\bf q}^2+ i\epsilon)}\delta^{ij}_T e^{i{\bf q}\cdot({\bf x} - {\bf X})}(2\pi)^2\delta(E_a-E_{b}-q^0)\delta(E_\alpha-E_{\beta}-q_0)
+\end{align}
+Using one of the delta functions to perform the integral over $q^0$,and with the notation
+\begin{align}
+    \omega = E_\beta - E_\alpha = E_e - E_{e'},
+\end{align} we get
+\begin{align}
+    S_{f\leftarrow i}^{Trans} & = -(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta})\int d^3{\bf x} d^3{\bf X} \int \frac{d^3 {\bf q}}{(2\pi)^3} \frac{\langle b| j^{(e)}_{i}({\bf x}) |b\rangle  \langle \beta| j^{(N)}_{j}({\bf X})  |\alpha\rangle}{(\omega^2 -{ \bf q}^2+ i\epsilon)}\delta^{ij}_T e^{i{\bf q}\cdot({\bf x} - {\bf X})}
+\end{align}
+We write explicitly the transverse Kronecker delta as
+\begin{align}
+    \delta^{ij}_T & =\sum\limits_{\mu = \pm1} \xi^{i}_{\mu} \xi^{*j}_{\mu}
+\end{align}
+where $\{\pmb{\xi}_{\mu}\}$ for $\mu = \pm 1$ are the two transverse spherical vectors.
+With this the previous result can be rewritten as
+\begin{align}
+    S_{f\leftarrow i}^{Trans} & = -(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta})\sum\limits_{\mu = \pm1} \int d^3{\bf x} d^3{\bf X} \int \frac{d^3 {\bf q}}{(2\pi)^3} \frac{\langle b| {\bf j}^{(e)}({\bf x})\cdot{\boldsymbol\xi}_{\mu}e^{i{\bf q}\cdot{\bf x}} |b\rangle  \langle \beta| {\bf j}^{(N)}({\bf X}) \cdot \left({\boldsymbol\xi}_{\mu} e^{i{\bf q}\cdot{\bf X}}\right)^*|\alpha\rangle}{(\omega^2 -{ \bf q}^2+ i\epsilon)}
+\end{align}
+Next  we expand the two plane waves in ${\bf x}$ and ${\bf X}$ in electric and magnetic multipoles.
+We start from  the case when the direction of $k$ is along the $z$ axis, when we have
+\begin{align}
+    {\pmb \xi}_\mu e^{iqz} = -\mu \sqrt{2\pi} \sum\limits_{L=1}^{\infty} \sqrt{2L+1} i^L \left[{\bf A}_{L\mu}(q,{\bf r}) + i\mu {\bf B}_{L\mu}(q,{\bf r})\right]
+\end{align}
+where ${\bf A}_{L\mu}(q,{\bf r})$ and ${\bf B}_{L\mu}(q,{\bf r})$ are the electric and magnetic multipoles. In order to get the expansion for a general direction of ${\bf q}$, we perform a rotation to the previous result and we get
+\begin{align}
+    {\pmb \xi}_\mu e^{i{\bf q}\cdot{\bf x}} & = -\mu \sqrt{2\pi} \sum\limits_{L_1=1}^{\infty} \sum\limits_{M_1=-L_1}^{L_1} \sqrt{2L_1+1} i^{L_1} \left[{\bf A}_{L_1M_1}(q,{\bf x};E) + i\mu {\bf A}_{L_1M_1}(q,{\bf x};M)\right] D^{L_1}_{M_1 \mu}(\hat{\bf q})
+\end{align}
+where $D^L_{M_1 \mu}(\hat{\bf q})$ is the Wigner D-matrix.
+Also
+\begin{align}
+    \left({\pmb \xi}_\mu e^{i{\bf q}\cdot{\bf X}}\right)^* & = -\mu \sqrt{2\pi} \sum\limits_{L_2=1}^{\infty} \sum\limits_{M_2=-L_2}^{L_2} (-1)^{M_2}\sqrt{2L_2+1} (-i)^{L_2} \left[{\bf A}_{L_2,-M_2}(q,{\bf X};E) - i\mu {\bf A}_{L_2,-M_2}(q,{\bf X};M)\right] (D^{L_2}_{M_2 \mu}(\hat{\bf q}))^*
+\end{align}
+The integral over $\hat{\bf q}$ can be performed using the orthogonality of the Wigner D-matrix
+\begin{align}
+    \int d{\hat{\bf q}} D^{L_1}_{M_1 \mu}(\hat{\bf q}) (D^{L_2}_{M_2 \mu}(\hat{\bf q}))^* & = \frac{4\pi}{2L_1+1}\delta_{L_1 L_2}\delta_{M_1 M_2}
+\end{align}
+and we also denote the matrix elements of the curent operators as
+\begin{align}
+     & \langle b|{\bf j}^{(e)}({\bf x})|a \rangle = {\bf j}^{(e)}_{ba}({\bf x})                   \\
+     & \langle \beta|{\bf j}^{(N)}({\bf X})|\alpha \rangle = {\bf j}^{(N)}_{\beta\alpha}({\bf X}) \\
+\end{align}
+With this we get the following expression for the transverse contribution
+\begin{align}
+    S_{f\leftarrow i}^{Trans} & = -(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta})  \sum\limits_{\mu = \pm1} \sum\limits_{L,M} (-1)^M\frac1{(2\pi)^2} \int d^3{\bf x} d^3{\bf X} \int \frac{q^2 dq}{(\omega^2 -{ q}^2+ i\epsilon)}\nonumber                                                 \\
+                              & \left({\bf j}^{(e)}_{ba}({\bf x})\cdot\left[{\bf A}_{LM}(q,{\bf x};E) + i\mu {\bf A}_{LM}(q,{\bf x};M)\right]\right) \left({\bf j}^{(N)}_{\beta\alpha}({\bf X}) \cdot \left[{\bf A}_{L,-M}(q,{\bf X};E) - i\mu {\bf A}_{L,-M}(q,{\bf X};M)\right]\right)
+\end{align}
+In the previous expression, the integral over $q$ contains a product of two Bessel functions.  The result is \cite{watson_treatise_nodate}
+\begin{align}
+    \int\limits_0^{\infty} \frac{q^2 dq}{\omega^2 + i \epsilon - q^2} = \frac{i\pi \omega}{2}j_L(\omega x_<) h_L^{(+)}(\omega x_>)
+\end{align}
+For a direct calculation of this integral, see also Appendix \ref{sec:integral-bessel}.
+If the electron is outside the nucleus, we have $x_> = x$ and $x_< = X$; we also define  the multipoles of the type ${\bf B}_{LM}(q,{\bf r})$, as completetly similar to the electric multipoles, but with the spherical Bessel functions replaced by the spherical Hankel functions of the first kind $h_L^{(+)}$. Also the summation over $\mu$ eliminates the interference between the electric and magnetic multipoles, and we get the final result for the transverse contribution
+\begin{align}
+     & S_{f\leftarrow i}^{Trans    }  = -(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \sum\limits_{L,M}(-1)^M \frac{i\pi \omega}{(2\pi)^2} \nonumber                                                                                                                                                                                                                                                                                             \\
+     & \hspace*{-1cm}\left\{ \left( \int d^3{\bf x} {\bf j}^{(e)}_{ba}({\bf x})\cdot{\bf A}_{LM}(\omega,{\bf x};E)\right) \left(\int d^3{\bf X}{\bf j}^{(N)}_{\beta\alpha}({\bf X}) \cdot {\bf B}_{L,-M}(\omega,{\bf X};E)\right)+\left( \int d^3{\bf x} {\bf j}^{(e)}_{ba}({\bf x})\cdot{\bf A}_{LM}(\omega,{\bf x};M)\right) \left(\int d^3{\bf X}{\bf j}^{(N)}_{\beta\alpha}({\bf X}) \cdot {\bf B}_{L,-M}(\omega,{\bf X};M)\right)  \right\}
+\end{align}
+i.e.
+\begin{align}
+     & S_{f\leftarrow i}^{Trans    }=-(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \sum\limits_{L,M,\lambda}(-1)^M \frac{i\pi \omega}{(2\pi)^2} \left( \int d^3{\bf x} {\bf j}^{(e)}_{ba}({\bf x})\cdot{\bf A}_{LM}(\omega,{\bf x};\lambda)\right) \left(\int d^3{\bf X}{\bf j}^{(N)}_{\beta\alpha}({\bf X}) \cdot {\bf B}_{L,-M,\lambda}(\omega,{\bf X};E)\right)
+\end{align}
+
+
+
+Finally, the total result for the transition amplitude is
+\begin{align}
+     & S_{f\leftarrow i} = S_{f\leftarrow i}^{Coul} + S_{f\leftarrow i  } ^{Trans}                                                                                                                                                                                                                                                                                          \\
+     & S_{f\leftarrow i}^{Coul} = (2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \frac{1}{4\pi}\int{d^3{\bf x}}\int d^3{\bf X} \frac{j^{(e)}_{0,ba}({\bf x})  j^{(N)}_{0,\beta\alpha} ({\bf X})}{|{\bf x} - {\bf X}|}  \nonumber                                                                                                                                              \\
+     & S_{f\leftarrow i}^{Trans    }=-(2\pi i)\delta(E_a-E_{b}+E_\alpha-E_{\beta}) \sum\limits_{L,M,\lambda}(-1)^M \frac{i\pi \omega}{(2\pi)^2} \left( \int d^3{\bf x} {\bf j}^{(e)}_{ba}({\bf x})\cdot{\bf A}_{LM}(\omega,{\bf x};\lambda)\right) \left(\int d^3{\bf X}{\bf j}^{(N)}_{\beta\alpha}({\bf X}) \cdot {\bf B}_{L,-M,\lambda}(\omega,{\bf X};E)\right)\nonumber
+\end{align}

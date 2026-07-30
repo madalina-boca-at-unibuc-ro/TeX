@@ -1,0 +1,267 @@
+\section{General formulas}
+
+\subsection{Notations}
+
+We denote the proper time of the particle by $\tau$. The 3-vector of the observation point is denoted by ${\bf x}$. We assume that the particle moves along the 4-trajectory
+\begin{align}
+    r(\tau) = (r^0(\tau),{\bf r}(\tau))
+\end{align}
+We assume that the spatial trajectory of the particle is about the point $\pmb{\mathfrak R}_0$ (${\pmb{\mathfrak R}}_0$ could be chosen as the center of oscillation) and we define
+\begin{align}
+     & {\bf r}_0(\tau) = {\bf r}(\tau) - \pmb{\mathfrak R}_0 \\
+     & {\bf x}_0 = {\bf x}-\pmb{\mathfrak R}_0
+\end{align}
+For completeness, xe define four vectors
+\begin{align}
+     & x = (ct,{\bf x})                          \\
+     & x_0 = (ct,{\bf x}_0)                      \\
+     & {\mathfrak R}_0 = (0,\pmb{\mathfrak R}_0)
+\end{align}
+such that
+\begin{align}
+     & x_0 = x -{\mathfrak R}_0 = (ct, {\bf x}-\pmb{\mathfrak R}_0),                            \\
+     & r_0(\tau) = r(\tau) -{\mathfrak R}_0 = (r^0(\tau), {\bf r}(\tau) - \pmb{\mathfrak R}_0),
+\end{align}
+We also note that
+\begin{align}
+     & r_0^0(\tau) = r^0(\tau), \\
+     & x_0^0 = x^0 = ct
+\end{align}
+
+The particle four-velocity is
+\begin{align}
+    u(\tau)=\frac{dr_0(\tau)}{d\tau}=(\gamma(\tau)c,\gamma{\bf v}(\tau)),\quad \gamma=\frac1{\sqrt{1-\frac{{\bf v}^2}{c^2}}}
+\end{align}
+and the four acceleration
+\begin{align}
+    w(\tau) = \frac{du(\tau)}{d\tau}
+\end{align}
+
+\subsection{The charge and current density of a point like particle}
+\subsubsection{The non-covariant formalism}
+In the {\bf non covariant formalism}, we consider a particle of mass $m$ and electric charge $e$, moving along the trajectory ${\bf r}(t)$ with the velocity ${\bf v}(t)$ generates a charge density and current given by
+\begin{align}
+    \rho({\bf x},t)=e\delta({\bf x}-{\bf r}(t)),\quad {\bf j}({\bf x},t)=e{\bf v}(t)\delta({\bf x}-{\bf r}(t))\label{def-J-NR}
+\end{align}
+With the notations introduced in the previous section, which means in fact that ${\bf r}_0(t)$ and ${\bf x}_0$ are  the trajectory and the observation point measured with respect to a reference frame translated by ${\boldsymbol{\mathfrak R}}_0$ with respect to the laboratory frame.
+
+With these the charge and current densities become
+\begin{align}
+    \rho({\bf x},t)=e\delta({\bf x}_0-{\bf r}_0(t)),\quad {\bf j}({\bf x},t)=e{\bf v}(t)\delta({\bf x}_0-{\bf r}_0(t))\label{def-J-NR-mod}
+\end{align}
+Note also that the velocity ${\bf v}$
+\begin{align}
+    {\bf v}(t) =\frac{d{\bf r}(t)}{dt} = \frac{d{\bf r}_0(t)}{dt}
+\end{align}
+is the same as the time derivative of the translated trajectory ${\bf r}_0(t)$.
+The corresponding continuity equation is checked by direct calculation
+\begin{align}
+    \frac{\partial {\rho}({\bf x},t)}{\partial t} & =e\frac{\partial}{\partial t}\left[\delta({ x}_0-r_{0x}(t))\delta({ y}_0-r_{0y}(t))\delta({ z}_0-r_{0z}(t))\right]=\nonumber                                                             \\
+                                                  & =-e\left[v_x(t)\delta'({ r}_{0x}-x_0(t))\delta({ r}_{0y}-y_0(t))\delta({ r}_{0z}-z_0(t))+v_y(t)\delta({ x}_0-r_{0x}(t))\delta'({ y}_0-r_{0y}(t))\delta({ z}_0-r_{0z}(t))\right.\nonumber \\
+                                                  & \quad+\left.v_z(t)\delta({ x}_0-r_{0z}(t))\delta({ y}_0-r_{0y}(t))\delta'({ z}_0-r_{0z}(t))\right]
+\end{align}
+\begin{align}
+    {\boldsymbol \nabla}_{\bf x}\cdot{\bf j}({\bf x},t) & =e\left[v_x(t)\delta'({ r}_{0x}-x_0(t))\delta({ r}_{0y}-y_0(t))\delta({ r}_{0z}-z_0(t))+v_y(t)\delta({ x}_0-r_{0x}(t))\delta'({ y}_0-r_{0y}(t))\delta({ z}_0-r_{0z}(t))\right.\nonumber \\
+                                                        & \quad+\left.v_z(t)\delta({ x}_0-r_{0z}(t))\delta({ y}_0-r_{0y}(t))\delta'({ z}_0-r_{0z}(t))\right]
+\end{align}
+i.e.
+\begin{align}
+    \frac{\partial \rho({\bf x},t)}{\partial t}+{\boldsymbol \nabla}_{\bf x}\cdot{\bf j}({\bf x},t)=0
+\end{align}
+\subsubsection{The covariant formalism}
+The density four-vector is
+\begin{align}
+    j(x)=e\left(c\rho({\bf x},t),{\bf j}({\bf x},t)\right),\quad x=(ct,{\bf x})
+\end{align}
+{\bf In a covariant form} it can be written in terms of relativistic four-vectors parametrizing the trajectory in terms of proper time $\tau$ with an extra $\delta$ function
+\begin{align}
+    j^{\mu}(x)=ec \int d\tau u^{\mu}(\tau)\delta(ct-r^0(\tau))\delta({\bf x}_0-{\bf r}_0(\tau))=ec \int d\tau u^{\mu}(\tau)\delta(x_0-r_0(\tau))\label{def-J-inv}
+\end{align}
+In the above equation we use  the four-vectors $x_0$, $r_0(\tau)$ defined before, and the four-vector $j$ can be written as
+\begin{align}
+    j(x)=ec\int d\tau (\gamma(\tau)c, \gamma(\tau)  {\bf v})\delta({\bf x}_0-{\bf r}_0(\tau))\delta(\tau-\tilde\tau(r^0))\frac1{\vline\frac{dr^0(\tau)}{d\tau}\vline}
+\end{align}
+where $\tilde\tau$ is the proper time, solution of the equation in $\tau$
+\begin{align}
+    ct-r^{0}(\tau)=0
+\end{align}
+and
+\begin{align}
+    {\frac{dr^0(\tau)}{d\tau}\vline}_{\tau=\tilde\tau}=\gamma(\tilde\tau)
+\end{align}
+With these, we obtain the equivalent expression of (\ref{def-J-inv}) as
+\begin{align}
+    j(x)=e (1,  {\bf v})\delta({\bf x}_0-{\bf r}_0(\tau))
+\end{align}
+which is the same as (\ref{def-J-NR}).
+\subsection{The Lienard-Wiechert potentials}
+
+The Maxwell equations for the electromagnetic potentials are
+\begin{align}
+    \Box\Phi(x)=\frac{\rho(x)}{\epsilon_0},\quad \Box{\bf A}(x)=\mu_0{\bf j}(x)
+\end{align}
+or, in covariant form
+\begin{align}
+    \Box A(x)=\Box\left(\frac{\Phi(x)}c,{\bf A}(x)\right)=\left(\frac{\rho(x)}{c\epsilon_0},\mu_0{\bf j}(x)\right)=\mu_0\left(\frac{\rho(x)}{c\epsilon_0\mu_0},{\bf j}(x)\right)=\mu_0\left(c\rho(x),{\bf j}(x)\right)=\mu_0 j( x)
+\end{align}
+We can write $A(x)$ using the Green function of the electromagnetic field
+\begin{align}
+    A(x)=\int dx'G(x,x')\mu_0j(x')
+\end{align}
+and, with the charge density (\ref{def-J-inv}) we have
+\begin{align}
+    A_{\mu}(x) & =\frac1{2\pi}\mu_0\int dx' \theta(x^0-x'^0)\delta[(x-x')^2]ec \int d\tau u^{\mu}(\tau)\delta(x'^0-r^0(\tau))\delta({\bf x}'-{\bf r}(\tau))\nonumber \\
+               & =\frac{ec\mu_0}{2\pi}\int d\tau u_{\mu}(\tau)\theta(x^0-r^0(\tau))\delta[(x-r(\tau))^2]\label{A_mu_int}
+\end{align}
+The condition imposed by the $\delta$ function is
+\begin{align}
+    (x-r(\tau))^2=(x^0-r^0(\tau))^2-|{\bf x}-{\bf r}(\tau)|^2=0\label{def_taur}
+\end{align}
+i.e.
+\begin{align}
+    x^0 \equiv ct=r^0(\tau)\pm|{\bf x}-{\bf r}(\tau)|
+\end{align}
+because of the supplementary condition imposed by the Heaviside function, we are left with
+\begin{importantbox}
+    \begin{align}
+        ct= r^0(\tau_r)+|{\bf x}-{\bf r}(\tau_r)|\equiv r_0^0(\tau_r)+|{\bf x}_0-{\bf r}_0(\tau_r)|\label{deftau_r}
+    \end{align}
+\end{importantbox}
+The solution
+\begin{align}
+    \tau_r(x)\equiv\tau_r({\bf x},t)\equiv \tau_r({\bf x}_0, r)\equiv \tau_r(x_0)\label{deftaur}
+\end{align}
+of the above equation in $\tau_r$ is named the retarded proper time.
+The integral over $\tau$ in (\ref{A_mu_int}) can be calculated using
+\begin{align}
+    \frac{d}{d\tau}(x_0-r_0(\tau))^2=-2\frac{dr_0(\tau)}{d\tau}\cdot(x_0-r_0(\tau))=-2u(\tau)\cdot(x_0-r_0(\tau))
+\end{align}
+and the transformation of the $\delta$ function
+\begin{align}
+    \theta(x_0^0-r_0^0(\tau))\delta[(x_0-r_0(\tau))^2]=\frac{\delta(\tau-\tau_r)}{2u(\tau_r)\cdot(x_0-r_0(\tau_r))}
+\end{align}
+with the result
+\begin{importantbox}
+    \begin{align}
+        A(x) & =\frac{ec\mu_0}{4\pi}\frac{u(\tau_r)}{u(\tau_r)\cdot(x_0-r_0(\tau_r))}=\frac{e}{4\pi\epsilon_0c}\frac{u(\tau_r)}{u(\tau_r)\cdot(x_0-r_0(\tau_r))}\label{A_mu_cov}
+    \end{align}
+\end{importantbox}
+
+Next we check the Lorenz gauge condition $\partial_{\mu}A^{\mu}(x)=0$. In order to do this we calculate first the derivative of the proper time, starting from its definition (\ref{def_taur})
+\begin{align}
+    0=\partial_{\mu}(x_0-r_0(\tau_r))^2=\partial_{\mu}\left[x_{0\nu}x_0^{\nu}-2x_0^{\nu}r_{0\nu}(\tau_r)+r_{0\nu}(\tau_r)r_0^{\nu}(\tau_r)\right]\label{dtaur-e1}
+\end{align}
+We have
+\begin{align}
+     & \partial_{\mu}x_0^{\nu}x_{0\nu}=2x_{0\mu}                                                                \\
+     & \partial_{\mu}2x_0^{\nu}r_{0\nu}(\tau_r)=2r_{0\mu}(\tau_r)+2x_0^{\nu}u_{\nu}(\tau_r)\partial_{\mu}\tau_r \\
+     & \partial_{\mu}r_{0\nu}(\tau_r)r_0^{\nu}(\tau_r)=2r_{0\nu}(\tau_r)u^{\nu}(\tau_r)\partial_{\mu}\tau_r
+\end{align}
+and the condition (\ref{dtaur-e1}) becomes
+\begin{align}
+    x_{0\mu}-r_{0\mu}(\tau_r)-x_0\cdot u(\tau_r)\partial_{\mu}\tau_r+r_0(\tau_r)\cdot u(\tau_r)\partial_{\mu}\tau_r=0
+\end{align}
+\begin{align}
+    \partial_{\mu}\tau_r=\frac{x_{0\mu}-r_{0\mu}(\tau_r)}{(x_0-r_0(\tau_r))\cdot u(\tau_r)}\quad\Rightarrow\quad u_{\mu}\partial^{\mu}\tau_r=1
+\end{align}
+and
+\begin{align}
+    \partial_{\mu}A^{\mu}(x) & =\frac{e}{4\pi\epsilon_0c}\left[\frac{w^{\mu}(\tau_r)\partial_{\mu}\tau_r}{u(\tau_r)\cdot(x_0-r_0(\tau_r))}-\frac{u_{\mu}(\tau_r)w(\tau_r)\cdot(x_0-r_0(\tau_r))\partial^{\mu}\tau_r+u_{\mu}(\tau_r)u^{\mu}(\tau_r)-u(\tau_r)\cdot u(\tau_r)\partial_{\mu}\tau_ru^{\mu}(\tau_r)}{(u(\tau_r)\cdot(x_0-r_0(\tau_r)))^2}\right]\nonumber \\
+                             & =\frac{e}{4\pi\epsilon_0c}\left[\frac{w(\tau_r)\cdot(x_0-r_0(\tau_r))}{(u(\tau_r)\cdot(x_0-r_0(\tau_r)))^2}-\frac{w(\tau_r)\cdot(x_0-r_0(\tau_r))}{(u(\tau_r)\cdot(x_0-r_0(\tau_r)))^2}\right]=0.\label{lorenzzemitted}
+\end{align}
+where $w$ is the four acceleration.
+
+Next we calculate the electromagnetic tensor $F^{\mu\nu}$, starting from the definition
+\begin{align}
+    F^{\mu\nu}(x)=\partial^{\mu}A^{\nu}(x)-\partial^{\nu}A^{\mu}(x)\label{def-F-rad}
+\end{align}
+In order to simplify the equations we introduce the notations
+\begin{align}
+    R_0(\tau_r)=(x_0-r_0(\tau_r)) = (ct - r_0^0(\tau_r), {\bf x}_0-{\bf r}_0(\tau_r))\equiv (ct - r^0(\tau_r), {\bf x}-{\bf r}(\tau_r))\label{def_{R_0}}
+\end{align}
+From the definition of the retarded time
+\ref{deftau_r}, \ref{deftaur}, we have
+\begin{align}
+    R_0(\tau_r)\cdot R_0(\tau_r)=0
+\end{align}
+It might be convenient to write $R_0$ in terms of a zero norm unity 4-vector
+\begin{align}
+    R_0=|{\bf R}_0|n_{R_0},\quad {\bf R}_0={\bf x}_0-{\bf r}_0(\tau_r),\quad n_{R_0}=(1,{\bf n}_{R_0}),\quad {\bf n}_{R_0}=\frac{{\bf x}_0-{\bf r}_0(\tau_r)}{|{\bf x}_0-{\bf r}_0(\tau_r)|}\label{defnr}
+\end{align}
+Also we do not indicate explicitly the dependence on $\tau_r$, $r$ , $x$ of each term in the following calculation.
+We have
+\begin{align}
+    A(x)={\frac{e}{4\pi\epsilon_0c}\frac{u}{u\cdot R_0}\vline}_{\tau=\tau_r},\quad \partial^{\alpha} \tau=\frac{R_0^{\alpha}}{u\cdot R_0},\quad \partial^{\alpha}R_0^{\beta}=g^{\alpha\beta}-\frac{R_0^{\alpha}u^{\beta}}{u\cdot R_0},\quad \partial^{\alpha} u^{\beta}=\frac{R^{\alpha}w^{\beta}}{u\cdot R_0}
+\end{align}
+With these we have
+\begin{align}
+    \partial^{\alpha}A^{\beta} & ={\frac{e}{4\pi\epsilon_0c}\left[\frac{\partial^{\alpha}u^{\beta}}{u\cdot R_0}-\frac{(\partial^{\alpha}u^{\mu})R_{0\mu}u^{\beta}+(\partial^{\alpha}R_0^{\mu})u_{\mu}u^{\beta}}{(u\cdot R_0)^2}\right]\vline}_{\tau=\tau_r}=\nonumber                       \\
+                               & ={\frac{e}{4\pi\epsilon_0c}\left[\frac{R_0^{\alpha}w^{\beta}}{(u\cdot R_0)^2}-\frac{R_0^{\alpha}w^{\mu}R_{0\mu}u^{\beta}+\left((u\cdot R_0)g^{\alpha\mu}-R_0^{\alpha}u^{\mu}\right)u_{\mu}u^{\beta}}{(u\cdot R_0)^3}\right]\vline}_{\tau=\tau_r}=\nonumber \\
+                               & ={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-u^{\alpha}u^{\beta})-((w\cdot R_0)-c^2)R_0^{\alpha}u^{\beta}}{(u\cdot R_0)^3}	\vline}_{\tau=\tau_r}
+\end{align}
+The electromagnetic four tensor becomes
+\begin{importantbox}
+    \begin{align}
+        F^{\alpha\beta}(x) & =\partial^{\alpha}A^{\beta}(x)-\partial^{\beta}A^{\alpha}(x) ={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}{(u\cdot R_0)^3}	\vline}_{\tau=\tau_r}
+    \end{align}
+\end{importantbox}
+As mentioned before, in the above formula $u$, $w$ are functions of $\tau$ and must be evaluated for $\tau=\tau_r$, also $R_0$ is a function of $r$ and $\tau_r$ and $x$
+
+The comparison with equation (14.11) in the book by Jackson~\cite{jackson_classical_2009} gives
+\begin{importantbox}
+    \begin{align}
+        F^{\alpha\beta}(x)={\frac{e}{4\pi\epsilon_0c}\frac1{(u\cdot R_0)}\frac{d}{d\tau}\left[\frac{R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha}}{(R_0\cdot u)}\right]\vline}_{\tau=\tau_r}\label{F-covariant-oc1}
+    \end{align}
+\end{importantbox}
+By direct calculation, using
+\begin{align}
+    \frac{dR_0}{d\tau}=-u,\quad \frac{du}{d\tau}=w
+\end{align}
+Jackson's formula becomes
+\begin{align}
+    F^{\alpha\beta}(x)={\frac{e}{4\pi\epsilon_0c}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}{(u\cdot R_0)^3}\vline}_{\tau=\tau_r}
+\end{align}
+identical to Eq. (\ref{F-covariant-oc1}).
+
+
+\section{Summary of the main results}
+
+The retarded proper time $\tau_r$ is determined implicitly by
+\begin{highlightbox}
+    \begin{align}
+        ct= r^0(\tau_r)+|{\bf x}-{\bf r}(\tau_r)|
+        \equiv r_0^0(\tau_r)+|{\bf x}_0-{\bf r}_0(\tau_r)|.\label{ct-taur-rel}
+    \end{align}
+\end{highlightbox}
+
+The covariant Lienard--Wiechert four-potential is
+\begin{highlightbox}
+    \begin{align}
+        A(x)=\frac{ec\mu_0}{4\pi}\frac{u(\tau_r)}{u(\tau_r)\cdot(x_0-r_0(\tau_r))}
+        =\frac{e}{4\pi\epsilon_0c}\frac{u(\tau_r)}{u(\tau_r)\cdot(x_0-r_0(\tau_r))}.
+    \end{align}
+\end{highlightbox}
+
+With $R_0=x_0-r_0(\tau_r)$, the electromagnetic field tensor is
+\begin{highlightbox}
+    \begin{align}
+        F^{\alpha\beta}(x)
+        =\left.\frac{e}{4\pi\epsilon_0c}
+        \frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
+            -((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+        {(u\cdot R_0)^3}\right|_{\tau=\tau_r}.
+    \end{align}
+\end{highlightbox}
+
+Equivalently, the field tensor can be written in Jackson's form as
+\begin{highlightbox}
+    \begin{align}\label{JacksonF}
+        F^{\alpha\beta}(x)
+        =\left.\frac{e}{4\pi\epsilon_0c}\frac1{u\cdot R_0}
+        \frac{d}{d\tau}\left[
+            \frac{R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha}}{R_0\cdot u}
+            \right]\right|_{\tau=\tau_r}.
+    \end{align}
+\end{highlightbox}
+
+

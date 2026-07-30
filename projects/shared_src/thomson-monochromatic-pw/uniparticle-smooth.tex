@@ -1,24 +1,5 @@
 
 
-\section{The monochromatic field with a Gaussian turn-on}
-We study the motion of a charged particle in a plane wave field with a Gaussian turn-on.\\
-We define the envelope as
-\begin{align}
-  f(\chi)= \begin{cases}e^{-\frac{\chi^{2}}{(2 \pi \sigma)^{2}}}, & \chi<\chi_{0}  \label{I.1.3.1}\\ 1, & \chi \geq \chi_{0}\end{cases}
-\end{align}
-and the vector potential in the Lorentz-Coulomb gauge as
-\begin{align}
-  \mathbf{A}(\phi)=A_{0} f(k \phi)\left(\mathbf{e}_{x} \zeta_{x} \cos \left(k \phi+\Phi_{0}\right)+\mathbf{e}_{y} \zeta_{y} \sin \left(k \phi+\Phi_{0}\right)\right) . \label{I.1.3.2}
-\end{align}
-where $k$ is the wave number $k=\frac{\omega}{c}, \sigma$ gives the width of the Gaussian envelope, $\Phi_{0}$ is the initial phase and $\zeta_{x}, \zeta_{y}$ are the polarization amplitudes, obeying the condition $\zeta_{x}^{2}+\zeta_{y}^{2}=1$.
-It is convenient to define the unity vector of the field propagation direction as $\mathbf{n}=(0,0,1)$ and the four-vector
-\begin{align}
-  n=(1, \mathbf{n}) \label{I.1.3.3}
-\end{align}
-which in the case of the propagation along the $O z$ axis becomes $n=(1,0,0,1)$. Also the notation for the dimensionless field amplitude is
-\begin{align}
-  \xi_{0}=\frac{e_{0} A_{0}}{m c} . \label{I.1.3.4}
-\end{align}
 
 \section{Initial conditions}
 We denote the initial moment in the laboratory frame by $t_{0}$ and the initial position of the particle by $\boldsymbol{\mathcal { R }}_{0}$. We assume that at $t_{0}$ the particle velocity is $\mathbf{v}_{0}$; the corresponding four-velocity will be denoted by $u_{0}$, and the four-momentum by $p_{0}$. The field propagates along the $\mathbf{n}$ direction, chosen parallel to $O z$, and is described by the potential $A(\phi)$, where $\phi=c t-z$. We denote by $A_{0}$ the value of the potential $A$ in the initial position of the particle $p m b \mathcal{R}_{0}$ at the initial moment $t_{0}$ i.e.
@@ -78,7 +59,7 @@ and, then, from Eqs. (\ref{II.2.3.3}) and (\ref{II.2.3.9})
 \end{align}
 with
 \begin{align}
-  e_{0} \mathcal{A}(\phi)=\left(e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}_{0}+\mathbf{p}_{0 \perp}\right) . \label{II.2.3.12}
+  e_{0} {\boldsymbol{\mathcal{A}}}(\phi)=\left(e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}_{0}-\mathbf{p}_{0 \perp}\right) . \label{II.2.3.12}
 \end{align}
 from which we get the solution
 \begin{align}
@@ -106,7 +87,8 @@ with the solution
 
 
 \subsection{The case of a particle initially at rest}
-The motion along the turn-on of the pulse\\
+
+\subsubsection{The motion along the turn-on of the pulse}
 We assume that the initial positions of the particles are all in the plane $O x y$, i.e. $\mathbf{R}_{0} \cdot \mathbf{n}=0$. We chose $t_{0} \ll-\sigma$, so that the initial value of the vector potential is $A_{0}=(0,0,0,0)$; the initial value of $\tau$ (the proper time) will be conventionally taken as $\tau_{0}=t_{0}$. Since the particle is initially at rest, the initial four-velocity is $u_{0}=(c, 0,0,0)$ and the initial four-momentum is $p_{0}=(m c, 0,0,0)$; using (\ref{II.2.3.6}) we can write
 \begin{align}
   \frac{d \phi}{d \tau}=c . \label{II.2.4.1}
@@ -123,7 +105,7 @@ The trajectory of the particle is given by
 \begin{align}
   \mathbf{r}_{\perp}(\tau)=\mathbf{k}_{0 \perp}-\frac{e}{m c} \int_{-\infty}^{c \tau} \mathbf{A}(\chi) d \chi, \quad z(\tau)=\mathcal{K}_{03}+\frac{e^{2}}{2(m c)^{2}} \int_{-\infty}^{c \tau} A^{2}(\chi) d \chi \label{II.2.4.4}
 \end{align}
-The motion in the monochromatic part of the field\\
+\subsubsection{The motion in the monochromatic part of the field}
 Now, we can study the motion in the monochromatic part of the field, i.e. for $\phi \in(0,+\infty)$, using as initial conditions $\mathbf{r}(0)$, $\mathbf{P}(0)$,calculated at the end of the turn-on of the pulse. The field on the turn=on is
 \begin{align}
   \mathbf{A}(\phi)=A_{0} e^{-\frac{\phi^{2}}{(2 \pi \sigma)^{2}}}\left(\mathbf{e}_{x} \zeta_{x} \cos \left(k \phi+\Phi_{0}\right)+\mathbf{e}_{y} \zeta_{y} \sin \left(k \phi+\Phi_{0}\right)\right) . \label{II.2.4.5}
@@ -196,21 +178,21 @@ The trajectory as a function of $\phi$ is obtained by the substitution $\phi=c \
 
 \subsection{The case of a particle with an initial momentum along $O z$}
 The motion along the turn-on of the pulse\\
-We consider the same field as in the previous section, but now we assume that the particle has an initial momentum $p_{0} \equiv\left(p_{0}^{0}, 0,0, p_{0}^{3}\right)$ at a moment $t_{0}$ sufficiently far in the past, when the pulse has not yet reached the point $\boldsymbol{K}_{0}$. The initial value of the proper time is $\tau_{i}=-t_{0}$ and the initial conditions are
+We consider the same field as in the previous section, but now we assume that the particle has an initial momentum $p_{0} \equiv\left(p_{0}^{0}, 0,0, p_{0}^{3}\right)$ at a moment $t_{0}$ sufficiently far in the past, when the pulse has not yet reached the point $\boldsymbol{K}_{0}$. The initial value of the proper time is $\tau_{i}=t_{0}$ and the initial conditions are
 \begin{align}
-  \mathbf{r}_{0}=\mathbf{k}_{0} \quad \phi\left(\tau_{i}\right)=c t_{0}-\mathcal{R}_{0 z}=c t_{0}, \quad \mathbf{p}_{\perp}(0)=\mathbf{0}, \quad p^{3}(0)=p_{0}^{3}, \quad p^{0}(0)=\sqrt{\left(m_{0} c\right)^{2}+\left(p_{0}^{3}\right)^{2}} . \label{II.2.5.1}
+  \mathbf{r}_{0}=\boldsymbol{\mathfrak {R}}_{0} \quad \phi\left(\tau_{i}\right)=c t_{0}-\mathcal{R}_{0 z}\equiv \phi_{0}, \quad \mathbf{p}_{\perp}(0)=\mathbf{0}, \quad p^{3}(0)=p_{0}^{3}, \quad p^{0}(0)=\sqrt{\left(m_{0} c\right)^{2}+\left(p_{0}^{3}\right)^{2}} . \label{II.2.5.1}
 \end{align}
 Now, the dependence of $\phi$ on $\tau$ is
 \begin{align}
-  \frac{d \phi}{d \tau}=\frac{n \cdot p_{0}}{m_{0}} \quad \longrightarrow \quad \phi(\tau)=\frac{n \cdot p_{0}}{m_{0}}\left(\tau-\tau_{i}\right)+\phi\left(\tau_{i}\right)=\frac{n \cdot p_{0}}{m_{0}}\left(\tau-t_{0}\right)+c t_{0} . \label{II.2.5.2}
+  \frac{d \phi}{d \tau}=\frac{n \cdot p_{0}}{m_{0}} \quad \longrightarrow \quad \phi(\tau)=\frac{n \cdot p_{0}}{m_{0}}\left(\tau-\tau_{i}\right)+\phi\left(\tau_{i}\right)=\frac{n \cdot p_{0}}{m_{0}}\left(\tau-t_{0}\right)+\phi_{0} . \label{II.2.5.2}
 \end{align}
-The moment  $\tau$ when the turn-on of the pulse is completed, i.e. when $\phi(\tau)=0$, is
+The proper time value  $\tau$ when the turn-on of the pulse is completed, i.e. when $\phi(\tau)=0$, is
 \begin{align}
-  \tau_{f}=t_{0}-\frac{m_{0}}{n \cdot p_{0}} c t_{0}=t_{0}\left(1-\frac{m_{0} c}{n \cdot p_{0}}\right) . \label{II.2.5.3}
+  \tau_{f}=t_{0}-\frac{m_{0}}{n \cdot p_{0}} \phi_{0}=t_{0}-\frac{\phi_{0}}{n \cdot u_{0}} . \label{II.2.5.3}
 \end{align}
 The modified vector potential is
 \begin{align}
-  e_{0} \mathcal{A}(\phi)=e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}_{0}+\mathbf{p}_{0 \perp}=e_{0} \mathbf{A}(\phi) \label{II.2.5.4}
+  e_{0} \boldsymbol{\mathcal{A}}(\phi)=e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}_{0}-\mathbf{p}_{0 \perp}=e_{0} \mathbf{A}(\phi) \label{II.2.5.4}
 \end{align}
 The four-momentum of the particle during the turn-on of the pulse is given by
 \begin{align}
@@ -236,6 +218,61 @@ and
 
 The position of the particle at $\phi=0$ will be, using (\ref{II.2.3.19}, \ref{II.2.3.20})
 \begin{align}
-   & \mathbf{r}_{\perp}(0)=\boldsymbol{R}_{0 \perp}-\frac{1}{n \cdot p_{0}} \int_{-\infty}^{0} e_{0} \boldsymbol{\mathcal { A }}(\chi) d \chi  \sim \boldsymbol{R}_{0 \perp}                                                                \\
-   & z=\mathcal{R}_{0}^{3}+\int_{\phi_{0}}^{c t-z} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)-e_{0}^{2} \boldsymbol{\mathcal { A }}_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right] \\
+   & \mathbf{r}_{\perp}(0)=\boldsymbol{\mathfrak{R}}_{0 \perp}-\frac{1}{n \cdot p_{0}} \int\limits_{-\phi_0}^{0} e_{0} \boldsymbol{\mathcal { A }}(\chi) d \chi  \sim \boldsymbol{\mathfrak R}_{0 \perp}                                         \\
+   & z(0)=\mathfrak{R}_{0}^{3}+\int\limits_{\phi_0}^{0} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)-e_{0}^{2} \boldsymbol{\mathcal { A }}_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right]
+\end{align}
+According to the previous results, ${\boldsymbol{\mathcal A}}_0 = {\bf A}(0) =0$,  and ${\boldsymbol{\mathcal A}}(\phi) = {\bf A}(\phi) $. In the expression of ${\bf r}_\perp(0)$ we can extend the integration limit to $-\infty$, since we assumed anyway that the initial conditions are such that the field is negligible for the initial value of $\phi$. The integral vanishes if the Gaussian wing is long enough (this is equivalent to the adiabatic turn-on condition). Similarly, for the expression of $z(0)$, in the first integral over $\chi$ we can assume the integration limit is $-\infty$, if $\phi_0$ is sufficiently negative. The second integral needs to include an explicit $\phi_0$, and we have
+\begin{align}
+  z(0) = \mathfrak{R}_{0}^{3}+\int\limits_{\phi_0}^{0} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right] = \mathfrak{R}_{0}^{3} + \frac{p_0^3}{n\cdot p_0}(-\phi_0) + \int\limits_{-\infty}^{0} d \chi\frac{e_{0}^{2} {\bf A }^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}}
+\end{align}
+The remaining integral can be evaluated explicitly and we have (see the attached Mathematica notebook). Its leading term in the limit $\sigma\gg 1$ is
+\begin{align}
+  \int\limits_{-\infty}^{0} d \chi\frac{e_{0}^{2} {\bf A }^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}} = \frac{e_0^2A_0^2}{2(n\cdot p_0)^2}\sigma\left(\frac{\pi}2\right)^{3/2}=\frac{\xi_0^2 c^2}{4(n\cdot u_0)^2}\sigma\left(\frac{\pi}2\right)^{3/2}
+\end{align}
+In the end, the position of the particle at $\phi=0$ (the beginning of the monochromatic part of the pulse) is
+\begin{align}
+  \phi_0 = 0,\qquad {\bf r}_{\perp0}  = {\boldsymbol{\mathfrak R}}_{0 \perp}, \quad z_0 = \mathfrak{R}_{0}^{3} + \frac{p_0^3}{n\cdot p_0}(-\phi_0) + \frac{\xi_0^2 c^2}{4(n\cdot u_0)^2}\sigma\left(\frac{\pi}2\right)^{3/2}
+\end{align}
+
+\begin{highlightbox}
+  Note that for electrons experiencing different local intensity parameter $\xi_0$, the initial position $z_0$ will be different, and this will lead to a spread in the longitudinal position of the electrons at the beginning of the monochromatic part of the pulse. This spread is proportional to $\xi_0^2\sigma$, and it can be significant for large $\sigma$ and high intensity pulses. However, in the head-on collision geometry the denominator $(n\cdot u_0)^2$ is large, and this spread can be reduced. The spread in the initial position will lead to a spread in the phase of the oscillation of the electrons in the monochromatic part of the pulse, which can affect the coherence of the emitted radiation.
+\end{highlightbox}
+
+In the second stage of calculation, we can determine the trajectory of the particle in the monochromatic part of the pulse, using as initial conditions the values of momentum and position at $\phi=0$ (the end of the turn-on). For simplicity we assume that we can neglect the intensity dependent term in the initial position. Also the initial $\mathfrak{R}_{0}^{3}$ can be  chose such that the position at $\phi=0$ is at the origin of the coordinate system. To obtain this we have
+\begin{align}
+  {\mathfrak R}_0^3+\frac{p_0^3}{n\cdot p_0}({\mathfrak{R}}_0^3 - ct_0) =0
+\end{align}
+i.e.
+\begin{align}
+  \gamma(c - v_0+v_0) {\mathfrak{R}}_0^3 = \gamma v_0 ct_0 \quad \Rightarrow \quad {\mathfrak{R}}_0^3 = \frac{v_0}{c} ct_0
+\end{align}
+as it was to expected, we need to choose the initial position of the electron at the distance $v_0 t_0$ from the origin, so that at $t=0$ the electron is at the origin.
+
+\subsubsection{The trajectory along the constant part of the pulse}
+
+With the simplifying assumptions above, we can write the initial conditions for the monochromatic part of the pulse as
+\begin{align}
+   & \phi(0) = 0, \quad \widetilde{\bf r}_{\perp0}={\bf r}_{\perp}(0) = {\boldsymbol{\mathfrak R}}_{0 \perp}, \quad \widetilde z_0=z(0) = 0\nonumber                         \\
+   & \widetilde p_0=p(0) = (p_0^0 + \frac{e_{0}^{2} \mathbf{A}^{2}(0)}{2 n \cdot p_{0}},-e_0A_x(0), -e_0A_y(0), p_0^3 + \frac{e_{0}^{2} \mathbf{A}^{2}(0)}{2 n \cdot p_{0}})
+\end{align}
+Note that $n\cdot p_0 = n\cdot  \widetilde p_0$, and  the  the modified vector potential is
+\begin{align}
+  e_{0} \boldsymbol{\mathcal{A}}(\phi)=e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}_{0}-\widetilde{\mathbf{p}}_{0 \perp}=e_{0} \mathbf{A}(\phi)-e_{0} \mathbf{A}(0)+e_0 {\mathbf{A}}(0) = e_{0} \mathbf{A}(\phi)
+\end{align}
+and the trajectory of the particle in the monochromatic part of the pulse is given by
+\begin{align}
+   & \mathbf{p}_{\perp}(\phi)=-e_{0} \boldsymbol{\mathcal { A }}(\phi) =-e_{0} \mathbf{A}(\phi)                                                                                                                                                                                                                                                                                                         \\
+   & p^{3}(\phi)=\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}^{2}(\phi)}{2 n \cdot p_{0}}-\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}_{0}^{2}}{2 n \cdot p_{0}}+\widetilde p_{0}^{3}=\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{3}                                                                                                                                                      \\
+   & p^{0}(\phi)=p^{3}(\phi)+n \cdot p_{0} =\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{0}                                                                                                                                                                                                                                                                                            \\
+   & \mathbf{r}_{\perp}(\phi)=\boldsymbol{\mathfrak{R}}_{0 \perp}-\frac{1}{n \cdot p_{0}} \int_{\phi_{0}}^{\phi} e_{0} \boldsymbol{\mathcal {A }}(\chi) d \chi = -\frac{1}{n \cdot p_{0}} \int_{0}^{\phi} e_{0} \mathbf{A}(\chi) d \chi                                                                                                                                                                 \\
+   & z(\phi)=\mathcal{R}_{0}^{3}+\int_{\phi_{0}}^{\phi} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)-e_{0}^{2} \boldsymbol{\mathcal { A }}_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}+\frac{\widetilde p_{0}^{3}}{n \cdot p_{0}}\right] = \int_{0}^{\phi} d \chi\left[\frac{e_{0}^{2} \mathbf{A}^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right]
+\end{align}
+
+
+Using the explicit form of the vector potential (\ref{I.1.3.2}) we can write the trajectory as
+\begin{align}
+  \mathbf{r}_{\perp}(\phi) & =-\frac{e_{0} A_{0}}{n \cdot p_{0}} \int_{0}^{\phi} d \chi\left(\mathbf{e}_{x} \zeta_{x} \cos \left(k \chi+\Phi_{0}\right)+\mathbf{e}_{y} \zeta_{y} \sin \left(k \chi+\Phi_{0}\right)\right)\nonumber                                                        \\
+                           & = -\frac{e_{0} A_{0}}{n \cdot p_{0}}\left[\mathbf{e}_{x} \zeta_{x} \frac{\sin \left(k \phi+\Phi_{0}\right)-\sin \left(\Phi_{0}\right)}{k}-\mathbf{e}_{y} \zeta_{y} \frac{\cos \left(k \phi+\Phi_{0}\right)-\cos \left(\Phi_{0}\right)}{k}\right]             \\
+  z(\phi)                  & =\int_{0}^{\phi} d \chi\left[\frac{e_{0}^{2} A_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}\left(\zeta_{x}^{2} \cos ^{2}\left(k \chi+\Phi_{0}\right)+\zeta_{y}^{2} \sin ^{2}\left(k \chi+\Phi_{0}\right)\right)+\frac{p_{0}^{3}}{n \cdot p_{0}}\right]\nonumber \\
+                           & = \frac{e_{0}^{2} A_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}} \int_{0}^{\phi} d \chi\left(\zeta_{x}^{2} \cos ^{2}\left(k \chi+\Phi_{0}\right)+\zeta_{y}^{2} \sin ^{2}\left(k \chi+\Phi_{0}\right)\right)+ \frac{p_{0}^{3}}{n \cdot p_{0}}\phi
 \end{align}

@@ -1,7 +1,7 @@
 
 
 
-\section{Initial conditions}
+\section{Initial conditions}\label{sec:initial-conditions}
 We denote the initial moment in the laboratory frame by $t_{0}$ and the initial position of the particle by $\boldsymbol{\mathcal { R }}_{0}$. We assume that at $t_{0}$ the particle velocity is $\mathbf{v}_{0}$; the corresponding four-velocity will be denoted by $u_{0}$, and the four-momentum by $p_{0}$. The field propagates along the $\mathbf{n}$ direction, chosen parallel to $O z$, and is described by the potential $A(\phi)$, where $\phi=c t-z$. We denote by $A_{0}$ the value of the potential $A$ in the initial position of the particle $p m b \mathcal{R}_{0}$ at the initial moment $t_{0}$ i.e.
 \begin{align}
   A_{0} \equiv\left(0, \mathbf{A}_{\mathbf{0}}\right)=A\left(\phi_{0}\right), \quad \phi_{0}=c t_{0}-\mathbf{k}_{0} \cdot \mathbf{n} . \label{II.2.2.1}
@@ -13,7 +13,7 @@ For the case of a pulse, the most natural choice for $t_{0}$ is a moment suffici
   \item We will combine the two cases into a general one, corresponding to a field with a gaussian turn-on, followed by a monochromatic oscillation of infinite length. The initial conditions are the same as in the previous case (1).
 \end{enumerate}
 
-\section[The trajectory for arbitrary initial conditions]{The trajectory for arbitrary initial conditions}
+\section[The trajectory for arbitrary initial conditions]{The trajectory for arbitrary initial conditions}\label{sec:smooth-mono-trajectory}
 In the relativistic case the equations of motion are
 \begin{align}
   \frac{d p^{\mu}}{d \tau}=e_{0} F^{\mu v} u_{v}, \quad u=\frac{d x}{d \tau}, \quad p=m_{0} u, \label{II.2.3.1}
@@ -261,11 +261,11 @@ Note that $n\cdot p_0 = n\cdot  \widetilde p_0$, and  the  the modified vector p
 \end{align}
 and the trajectory of the particle in the monochromatic part of the pulse is given by
 \begin{align}
-   & \mathbf{p}_{\perp}(\phi)=-e_{0} \boldsymbol{\mathcal { A }}(\phi) =-e_{0} \mathbf{A}(\phi)                                                                                                                                                                                                                                                                                                         \\
-   & p^{3}(\phi)=\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}^{2}(\phi)}{2 n \cdot p_{0}}-\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}_{0}^{2}}{2 n \cdot p_{0}}+\widetilde p_{0}^{3}=\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{3}                                                                                                                                                      \\
-   & p^{0}(\phi)=p^{3}(\phi)+n \cdot p_{0} =\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{0}                                                                                                                                                                                                                                                                                            \\
-   & \mathbf{r}_{\perp}(\phi)=\boldsymbol{\mathfrak{R}}_{0 \perp}-\frac{1}{n \cdot p_{0}} \int_{\phi_{0}}^{\phi} e_{0} \boldsymbol{\mathcal {A }}(\chi) d \chi = -\frac{1}{n \cdot p_{0}} \int_{0}^{\phi} e_{0} \mathbf{A}(\chi) d \chi                                                                                                                                                                 \\
-   & z(\phi)=\mathcal{R}_{0}^{3}+\int_{\phi_{0}}^{\phi} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)-e_{0}^{2} \boldsymbol{\mathcal { A }}_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}+\frac{\widetilde p_{0}^{3}}{n \cdot p_{0}}\right] = \int_{0}^{\phi} d \chi\left[\frac{e_{0}^{2} \mathbf{A}^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right]
+   & \mathbf{p}_{\perp}(\phi)=-e_{0} \boldsymbol{\mathcal { A }}(\phi) =-e_{0} \mathbf{A}(\phi)                                                                                                                                                  \nonumber                                                                                                                                                                                   \\
+   & p^{3}(\phi)=\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}^{2}(\phi)}{2 n \cdot p_{0}}-\frac{e_{0}^{2} {\boldsymbol{\mathcal{A}}}_{0}^{2}}{2 n \cdot p_{0}}+\widetilde p_{0}^{3}=\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{3}                                                                                                                                             \nonumber                                     \\
+   & p^{0}(\phi)=p^{3}(\phi)+n \cdot p_{0} =\frac{e_{0}^{2} \mathbf{A}^{2}(\phi)}{2 n \cdot p_{0}}+p_{0}^{0}                                                                                                                                             \nonumber                                                                                                                                                                           \\
+   & \mathbf{r}_{\perp}(\phi)=\boldsymbol{\mathfrak{R}}_{0 \perp}-\frac{1}{n \cdot p_{0}} \int_{\phi_{0}}^{\phi} e_{0} \boldsymbol{\mathcal {A }}(\chi) d \chi = -\frac{1}{n \cdot p_{0}} \int_{0}^{\phi} e_{0} \mathbf{A}(\chi) d \chi                  \nonumber                                                                                                                                                                           \\
+   & z(\phi)=\mathcal{R}_{0}^{3}+\int_{\phi_{0}}^{\phi} d \chi\left[\frac{e_{0}^{2} \boldsymbol{\mathcal { A }}^{2}(\chi)-e_{0}^{2} \boldsymbol{\mathcal { A }}_{0}^{2}}{2\left(n \cdot p_{0}\right)^{2}}+\frac{\widetilde p_{0}^{3}}{n \cdot p_{0}}\right] = \int_{0}^{\phi} d \chi\left[\frac{e_{0}^{2} \mathbf{A}^{2}(\chi)}{2\left(n \cdot p_{0}\right)^{2}}+\frac{p_{0}^{3}}{n \cdot p_{0}}\right]\label{trajectory_mono_gamma_head_on}
 \end{align}
 
 

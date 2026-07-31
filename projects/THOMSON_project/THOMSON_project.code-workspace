@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../shared_src"
+		},
+		{
+			"path": "../../bibliography"
 		}
 	],
 	"settings": {

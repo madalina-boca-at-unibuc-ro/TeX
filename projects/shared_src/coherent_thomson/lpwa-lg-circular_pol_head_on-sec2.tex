@@ -1,0 +1,91 @@
+
+\section{The trajectory of a particle in a circularly polarized plane wave}
+
+The monochromatic circularly polarized plane wave is simulated as a smooth turn-on, as in the Section \ref{sec:smooth-mono-field}, to mimic a realistic scenario.
+
+We consider a monochromatic plane  wave field, circularly polarized, propagating along ohe $Oz$ direction and with a smooth turn-on, as in the Section \ref{sec:smooth-mono-field}. The initial phase $\Phi_0$ is chosen to mimic the interaction of a particle with a LG beam of indices $(p,m)$, with the initial position of the particle in the $Oxy$ plane, at cylindrical coordinates $(\rho_0,\varPhi_0)$. In our case the initial phase is chosen as $\Phi_0=-m\varPhi_0$.
+
+The trajectory used in the simulation is the trajectory along the flat region of the field, as derived in the Section \ref{sec:smooth-mono-trajectory}, with the initial conditions in \ref{sec:initial-conditions}
+
+The trajectory, explicitly as a function of $\phi$ is given by (\ref{trajectory_mono_gamma_head_on}); for the (now monochromatic) field
+\begin{align}
+  {\bf A}(\phi)=A_0\left({\bf e}_x\zeta_x\cos(k_L\phi-m_L\varPhi_0)+{\bf e}_y\zeta_y\sin(k_L\phi-m_L\varPhi_0)\right), \qquad \zeta_x^2+\zeta_y^2=1
+\end{align}
+\tocheck{the consistency of the sign of $m_L$ vs $\phi$ with the sign of $m$ vs $\phi$ in the definition of the LG beam.}
+Using the transverse trajectory in Eq.~(\ref{trajectory_mono_gamma_head_on}), we obtain
+\begin{align}
+  & {\bf r}_{\perp}(\phi)= {\boldsymbol{\mathfrak R}}_{0\perp}-\frac{e_0 A_0}{k_L(n\cdot p_0)}
+  \left\{
+    {\bf e}_x\zeta_x\left[\sin(k_L\phi-m_L\varPhi_0)-\sin(-m_L\varPhi_0)\right]
+    -{\bf e}_y\zeta_y\left[\cos(k_L\phi-m_L\varPhi_0)-\cos(-m_L\varPhi_0)\right]
+  \right\},\nonumber       \\
+  & z(\phi)=\left[\frac{p_0^3}{n\cdot p_0}+\frac{e_0^2A_0^2}{4(n\cdot p_0)^2}\right]\phi+\frac{e_0^2A_0^2(\zeta_x^2-\zeta_y^2)}{8k_L(n\cdot p_0)^2}
+  \left[\sin(2k_L\phi-2m_L\varPhi_0)+\sin(2m_L\varPhi_0)\right].
+\end{align}
+
+\begin{importantbox}
+  Here we introduce the {\bf dressed momentum} of the particle in the field, defined as
+  \begin{align}
+    q_0 = p_0 + \frac{e_0^2A_0^2}{4(n\cdot p_0)}n_L, \qquad n_L=(1,{\bf e}_z)
+  \end{align}
+  with the properties $q_0^2=m_0^2c^2(1+\frac12\xi^2)$, $q_0\cdot n_L=p_0\cdot n_L$, and $\xi=\frac{e_0A_0}{mc}$.
+\end{importantbox}
+\begin{importantbox}
+  For consistency with previous approximations we should neglect terms of order $\xi^2$ in the trajectory, and keep only the linear terms in $\xi$. This is consistent with the assumption of a not too intense field, and with the approximation of a monochromatic field. However, we keep them for the moment in the definition of $q$.
+\end{importantbox}
+
+\begin{warningbox}{}
+  Here only the circular polarization will be discussed for simplicity, so we use  $\zeta_x=\zeta_y=\frac{1}{\sqrt{2}}$.
+\end{warningbox}
+
+With these, we have
+\begin{align}
+  & {\bf r}_{\perp}(\phi)
+  = {\boldsymbol{\mathfrak R}}_{0\perp}
+  -\frac{e_0 A_0}{\sqrt{2}k_L(n\cdot p_0)}
+  \left\{
+    {\bf e}_x\left[\sin(k_L\phi-m_L\varPhi_0)-\sin(-m_L\varPhi_0)\right]-{\bf e}_y\left[\cos(k_L\phi-m_L\varPhi_0)-\cos(-m_L\varPhi_0)\right]
+  \right\},\nonumber       \\
+  & z(\phi)=\frac{q_0^3}{n\cdot q_0}\phi
+\end{align}
+The constant contributions ${\bf e}_x\sin(m_L\varPhi_0)+{\bf e}_y\cos(m_L\varPhi_0)$ can be absorbed in the initial position of the particle
+\begin{align}
+  {\boldsymbol{\mathfrak{R}}}_0\rightarrow{\boldsymbol{\mathfrak{R}}}_0-\frac{e_0 A_0}{\sqrt{2}k_L(n\cdot p_0)}\left[{\bf e}_x\sin(m_L\varPhi_0)+{\bf e}_y\cos(m_L\varPhi_0)\right]
+\end{align}
+and we define the center of oscillation as
+\begin{align}
+  {\bm r}_0 = {\boldsymbol{\mathfrak R}}_0
+\end{align}
+in the $Oxy$ plane. We denote by $(\rho_0, \varPhi_0)$ the cylindrical coordinates of the initial position of the particle and define
+\begin{align}
+  {\bm r}_0={\bm r}-{\boldsymbol{\mathfrak{R}}_0}
+\end{align}
+\begin{align}
+  \xi = \frac{-e A_0}{mc}
+\end{align}
+and we have
+\begin{importantbox}
+  \begin{align}
+    & {\bm r}_{0\perp}(\chi)=\frac{\xi (mc)}{k_L(n_L\cdot q_0)}\left[{\bm e}_x\sin(k_L\chi-m_L\varPhi_0)-{\bm e}_y\cos(k_L\chi-m_L\varPhi_0)\right]                                                  \\
+    & z_0(\chi)=\frac{q_0^3}{n\cdot q_0}\chi
+  \end{align}
+\end{importantbox}
+\begin{warningbox}{}
+  The previous expression reduce to the formulas used in the previous section, for a particle in circular motion
+\end{warningbox}
+The particle velocity is
+\begin{align}
+  & {\boldsymbol\beta}=\frac{d{\bm r}(\phi)}{d\phi}\frac{d\phi}{d (ct)}=\frac{d{\bm r}(\phi)}{d\phi}(1-\beta_z) \\
+  & \beta_z =\frac{q_0^3}{(n\cdot q_0)}(1-\beta_z)
+\end{align}
+i.e.
+\begin{importantbox}
+  \begin{align}
+    & \beta_z(\phi) =\frac{q_0^3}{q_0^0} \\
+    & {\boldsymbol{\beta}}_\perp(\phi)=\xi\frac{mc}{n_L\cdot q_0}\left[{\bm e}_x\zeta_x\cos(k_L\phi-m_L\varPhi_0)+{\bm e}_y\zeta_y\sin(k_L\phi-m_L\varPhi_0)\right]
+  \end{align}
+\end{importantbox}
+
+\begin{warningbox}{}
+  Note that $\frac{q_0^3}{q_0^0}$ is the equivalent of the factor $\frac{F(\phi)}{1+F(\phi)}$ and represents the longitudinal component of the particle velocity.
+\end{warningbox}

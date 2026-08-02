@@ -103,6 +103,12 @@
     right=12pt,
     top=10pt,
     bottom=10pt,
+    before upper={%
+        \setlength{\abovedisplayskip}{4pt}%
+        \setlength{\abovedisplayshortskip}{2pt}%
+        \setlength{\belowdisplayskip}{4pt}%
+        \setlength{\belowdisplayshortskip}{2pt}%
+    },
     #1
 }
 
@@ -118,4 +124,44 @@
     top=8pt,
     bottom=8pt,
     #1
+}
+
+% Draft annotations
+% Change this to \draftnotesfalse for a clean final document.
+\newif\ifdraftnotes
+\draftnotestrue
+
+\definecolor{missingcolor}{HTML}{B3261E}
+\definecolor{todocolor}{HTML}{D97706}
+\definecolor{checkcolor}{HTML}{1769AA}
+\definecolor{questioncolor}{HTML}{7B2CBF}
+\definecolor{notecolor}{HTML}{666666}
+
+\newcommand{\draftmark}[3]{%
+    \ifdraftnotes
+        \textcolor{#1}{\textsf{\textbf{[#2:} #3\textbf{]}}}%
+    \fi
+}
+
+\newcommand{\missing}[1]{\draftmark{missingcolor}{MISSING}{#1}}
+\newcommand{\todo}[1]{\draftmark{todocolor}{TODO}{#1}}
+\newcommand{\tocheck}[1]{\draftmark{checkcolor}{CHECK}{#1}}
+\newcommand{\question}[1]{\draftmark{questioncolor}{QUESTION}{#1}}
+\newcommand{\draftnote}[1]{\draftmark{notecolor}{NOTE}{#1}}
+
+% Use the optional argument to select a category color, for example:
+% \begin{warningbox}[checkcolor]{CHECK} ... \end{warningbox}
+\newtcolorbox{warningbox}[2][missingcolor]{%
+    enhanced,
+    breakable,
+    colback=#1!5!white,
+    colframe=#1,
+    boxrule=0.8pt,
+    arc=1mm,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    left=6pt,
+    right=6pt,
+    top=5pt,
+    bottom=5pt
 }

@@ -22,6 +22,11 @@ work/TeX/
 `../preamble-report.tex` through the tracked `preamble-report.tex` symlink,
 and reads the bibliography from `../../bibliography/main`.
 
+The document content selected for compilation is listed in
+`profiles/all.inc`. To create a smaller build, copy that profile, remove the
+unneeded parts, chapters, or source inputs, and select the new profile in
+`main.tex`.
+
 Git commands issued here operate on the parent `projects` repository.
 
 ## Build

@@ -1,0 +1,42 @@
+
+
+\section{Fourier analysis of the emitted fields - long distance approximation only}
+
+We consider only the lowest order approximation of the electromagnetic fields emitted by a particle of charge $e_0$
+
+\begin{align}
+  {\bm E}({\bm x},t)={\frac{e_0}{4\pi\epsilon_0|{\bm x}_0|}\frac{{\bm n}_{0}\times[({\bm n}_{0}-{\boldsymbol\beta})\times {\bm a}]}{c^2(1-{\boldsymbol\beta}\cdot{\bm n}_{0})^3}\,\vline}_{\,t=t_r},\qquad {\bm B}({\bm x},t) = \frac1c{\bm n}_0\times{\bm E}({\bm x},t)
+\end{align}
+where
+\begin{align}
+  {\bm x}_0={\bm x}-{\boldsymbol{\mathfrak{R}}}_0,\qquad {\bm n}_0=\frac{{\bm x}_0}{|{\bm x}_0|}
+\end{align}
+We define the Fourier transform
+\begin{align}
+  {\bm E}({\bm x},k) = \frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty} d (ct) {\bm E}({\bm x},t)e^{ik  (ct)}=\frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty} d (ct) {\frac{q}{4\pi\epsilon_0|{\bm x}_0|}\frac{{\bm n}_{0}\times[({\bm n}_{0}-{\boldsymbol\beta})\times {\bm a}]}{c^2(1-{\boldsymbol\beta}\cdot{\bm n}_{0})^3}\,\vline}_{\,t=t_r}e^{ik(ct)}
+\end{align}
+we use the retarded time as a integration variable
+\begin{align}
+  t=t_r+\frac{|{\bm x}_0-{\bm r}_0|}c\approx t_r+\frac{|{\bm x}_0|}c-\frac{{\bm n}_0\cdot{\bm r}_0}c,\qquad dt=dt_r(1-{\boldsymbol{\beta}}\cdot{\bm n}_{R_0})\approx dt_r(1-{\boldsymbol{\beta}}\cdot{\bm n}_0)
+\end{align}
+with these we obtain
+\begin{align}
+  {\bm E}({\bm x},k) = \frac{q}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty}d(ct_r) \frac{{\bm n}_{0}\times[({\bm n}_{0}-{\boldsymbol\beta})\times {\bm a}]}{c^2(1-{\boldsymbol\beta}\cdot{\bm n}_{0})^2}e^{ik((ct_r)+|{\bm x}_0|-{\bm n}_0\cdot{\bm r}_0)}
+\end{align}
+
+Next we use the identity
+\begin{align}
+  \frac{d}{dt}\frac{{\bm n}_0\times({\bm n}_0\times{\boldsymbol\beta})}{1-{\boldsymbol{\beta}\cdot{\bm n}_0}}
+  & =\frac{{\bm n}_0\times({\bm n}_0\times{\bm a})}{c(1-{\boldsymbol{\beta}\cdot{\bm n}_0})}+\frac{{\bm n}_0\times({\bm n}_0\times{\boldsymbol \beta})}{c(1-{\boldsymbol{\beta}\cdot{\bm n}_0})^2}({\bm n_0}\cdot{\bm a})\nonumber                                                                                                                                          \\
+  & =\frac1{c({1-{\boldsymbol{\beta}\cdot{\bm n}_0}})^2}\left[\left({\bm n}_0\times({\bm n}_0\times{\bm a})\right)(1-{\boldsymbol{\beta}\cdot{\bm n}_0})+{\bm n}_0\times({\bm n}_0\times{\boldsymbol{\beta}})({\bm n}_0\cdot{\bm a})\right]\nonumber                                                                                                                        \\
+  & = \frac1{c({1-{\boldsymbol{\beta}\cdot{\bm n}_0}})^2}\left[\left({\bm n}_0({\bm n}_0\cdot{\bm a})-{\bm a}\right)(1-{\boldsymbol{\beta}\cdot{\bm n}_0})+({\bm n}_0({\bm n}_0\cdot{\boldsymbol{\beta}})-{\boldsymbol{\beta}})({\bm n}_0\cdot{\bm a})\right]\nonumber                                                                                                      \\
+  & = \frac1{c({1-{\boldsymbol{\beta}\cdot{\bm n}_0}})^2}\left[{\bm n}_0({\bm n}_0\cdot{\bm a})-{\bm a}+{\bm a}({\boldsymbol{\beta}}\cdot{\bm n}_0)-{\boldsymbol{\beta}}({\bm n}_0\cdot{\bm a})\right]                                                 =\frac{{\bm n}_{0}\times[({\bm n}_{0}-{\boldsymbol\beta})\times {\bm a}]}{c(1-{\boldsymbol\beta}\cdot{\bm n}_{0})^2}
+\end{align}
+Then we obtain
+\begin{align}
+  {\bm E}({\bm x},k) = \frac{e_0}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty}d(ct_r)c\frac{d}{d(ct_r)}\left[\frac{{\bm n}_0\times({\bm n}_0\times{\boldsymbol\beta}(t_r))}{c(1-{\boldsymbol{\beta}(t_r)\cdot{\bm n}_0)}}\right]e^{i k(ct_r+|{\bm x}_0|-{\bm n}_0\cdot{\bm r}_0(t_r))}
+\end{align}
+After an integration by parts we have
+\begin{align}
+  {\bm E}({\bm x},k) =\frac{-i k e_0 e^{ik |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty}d(ct)\left[{{\bm n}_0\times({\bm n}_0\times{\boldsymbol\beta}(t))}\right]e^{ik(ct-{\bm n}_0\cdot{\bm r}_0(t))}
+\end{align}

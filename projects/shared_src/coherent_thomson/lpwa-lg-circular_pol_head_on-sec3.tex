@@ -92,171 +92,81 @@ Then the terms in ${\bf E}_K({\bm x},k)$ can be written as
 
 \begin{align}
   E_{\pm1}({\bm x},k) = & \xi\frac{mc}{n_L\cdot q_0}\frac1{2\sqrt{2}}{\boldsymbol{\nu}_{\pm}}   \frac{-i k e_0 e^{ik |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\int\limits_{-\infty}^{\infty}d\phi  e^{ik\phi\frac{n_0\cdot q_0}{n_L\cdot q_0}}\sum\limits_{n=-\infty}^{\infty}e^{in\phi_0}J_n(k\Gamma_0)e^{-i(n\pm1)k_L\phi}e^{i(n\pm1)m_L\varPhi_0}\nonumber          \\
-= & \xi\frac{mc}{n_L\cdot q_0}\frac1{2\sqrt{2}}{\boldsymbol{\nu}_{\pm}}   \frac{-i k e_0 e^{ik |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\sum\limits_{n=-\infty}^{\infty}e^{in\phi_0}J_n(k\Gamma_0)e^{i(n\pm1)m_L\varPhi_0}2\pi\delta(k\frac{n_0\cdot q_0}{n_L\cdot q_0}-(n\pm1)k_L))\nonumber          \\
+  = & \xi\frac{mc}{n_L\cdot q_0}\frac1{2\sqrt{2}}{\boldsymbol{\nu}_{\pm}}   \frac{-i k e_0 e^{ik |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\sum\limits_{n=-\infty}^{\infty}e^{in\phi_0}J_n(k\Gamma_0)e^{i(n\pm1)m_L\varPhi_0}2\pi\delta(k\frac{n_0\cdot q_0}{n_L\cdot q_0}-(n\pm1)k_L)\nonumber          \\
+  =& \xi\frac{mc}{n_L\cdot q_0}\frac1{2\sqrt{2}}{\boldsymbol{\nu}_{\pm}}   \frac{-i k e_0 e^{ik |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}\frac1{\sqrt{2\pi}}\sum\limits_{n=-\infty}^{\infty}e^{i{n\mp1}\phi_0}J_{n\mp1}(k\Gamma_0)e^{inm_L\varPhi_0}2\pi\delta(k\frac{n_0\cdot q_0}{n_L\cdot q_0}-nk_L)
 \end{align}
 With the notations
 \begin{align}
-k_N = N\frac{k_L}{\alpha},\qquad \alpha = 1+\frac{\xi^2}4n_0\cdot n_L
+  k_N = Nk_L\frac{n_L\cdot q_0}{n_0\cdot q_0},
 \end{align}We obtained
 \begin{align}
-\boxed{
-  {\bm E}({\bm x},k)=\sum\limits_{N=-\infty}^{\infty}\tilde{\bm E}_N({\bm x})\delta(k-N \frac{k_L}{\alpha}),\label{Encirc}
-}
+  \boxed{
+    {\bm E}({\bm x},k)=\sum\limits_{N=-\infty}^{\infty}\tilde{\bm E}_N({\bm x})\delta(k-k_N),\label{Encirc-1}
+  }
 \end{align}
 with
 \begin{align}
-\boxed{
-  \begin{aligned}
-    \tilde{\bm E}_N({\bm x}) = & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|\alpha}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\frac{\xi}{2}\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+{\boldsymbol{\nu}}_{-}\frac{\xi}{2}\tilde J_{N+1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\right.\nonumber \\
-    & \left.{\boldsymbol{\nu}}_{0z}\left(\frac{\xi^2}4\tilde J_N(k_N;\gamma_0,\Gamma_0,\Delta_0)+\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N+2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right],
-  \end{aligned}
-}
+  \boxed{
+    \begin{aligned}
+      \tilde{\bm E}_N({\bm x}) = & \frac{-i k_N  e_0 e^{ik_N |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|\alpha}\frac{n_L\cdot q_0}{n_0\cdot q_0}\frac{\sqrt{2\pi}}{2\sqrt{2}}e^{iNm_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\xi\frac{mc}{n_L\cdot q_0}\tilde J_{N-1}(k_N\Gamma_0)e^{i(N-1)\phi_0}+{\boldsymbol{\nu}}_{-}\xi\frac{mc}{n_L\cdot q_0}J_{N+1}(k_N\Gamma_0)e^{i(N+1)\phi_0}+\right.\nonumber \\
+      & \left.{\boldsymbol{\nu}}_{0z}\frac{q_0^3}{q_0^0}J_N(k_N\Gamma_0)e^{iN\phi_0}\right],
+    \end{aligned}
+  }
 \end{align}
 
-In the same approximation, the magnetic field  is
-\begin{align}
-\boxed{
-{\bm B}({\bm x},k) = \frac1c{\bm n}_0\times{\bm E}({\bm x},k)=\sum\limits_{N=-\infty}^{\infty}\tilde {\bm B}_N({\bm x})\delta(k-N\frac{k_L}{\alpha})}\label{Bncirc}
-\end{align}
-with
-\begin{equation}
-\boxed{
-  \begin{aligned}
-    \tilde{\bm B}_N({\bm x}) = & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|c\alpha}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left[{\boldsymbol{\mu}}_{+}\frac{\xi}{2}\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+{\boldsymbol{\mu}}_{-}\frac{\xi}{2}\tilde J_{N+1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\right.\nonumber \\
-    & \left.{\boldsymbol{\mu}}_{0z}\left(\frac{\xi^2}4\tilde J_N(k_N;\gamma_0,\Gamma_0,\Delta_0)+\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N+2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right],\nonumber
-\end{aligned}}
-\end{equation}
-
-\begin{align}
-\boxed{
-  \begin{aligned}
-    & {\bm e}_{\pm} = \zeta_x{\bm e}_x\pm i \zeta_y {\bm e}_y                                                                                                                                                                                                                                                                               \\
-    & {\boldsymbol{\nu}}_{\pm} = {\bm n}_0\times\left({\bm n}_0\times{\bm e}_{\pm}\right)=-{\bm{n}}_0\times{\boldsymbol{\mu}_{\pm}},\qquad {                                                                       \boldsymbol{\nu}}_z={\bm n}_0\times\left({\bm n}_0\times{\bm e}_{z}\right)=-{\bm n}_0\times{\boldsymbol{\mu}}_z\nonumber \\
-    & {\boldsymbol{\mu}}_{\pm}={\bm n}_0\times{\boldsymbol{\nu}}_{\pm}=-{\bm n}_0\times{\bm e}_{\pm},\qquad {\boldsymbol{\mu}}_{0z}={\bm n}_0\times{\boldsymbol{\nu}}_{0z}=-{\bm n}_0\times{\bm e}_z                                                                                                                 \nonumber              \\
-    & \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(M+2p)\gamma_0}J_{M+2p}(k\Gamma_0)J_p(k\Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(M-2p)\gamma_0}J_{M-2p}(k\Gamma_0)J_p(k\Delta_0) (-1)^p,\nonumber                                                                                             \\
-    & \gamma_0=\arctan\left(\frac{\sin\phi_0\zeta_y}{\cos\phi_0\zeta_x}\right),\qquad \Gamma_0=\frac{\xi}{k_L}\sin\theta_0\sqrt{\cos^2\phi_0\zeta_x^2+\sin^2\phi_0\zeta_y^2},\qquad \Delta_0 = n_L\cdot n_0\frac{\xi^2}{8k_L}(\zeta_x^2-\zeta_y^2)\nonumber                                                                                 \\
-    & (1-\cos\theta_0)z_i = n_L\cdot n_0 \frac{\xi^2}4\frac{\zeta_x^2-\zeta_y^2}{2k_L}\sin(2m_L\varPhi_0)=Z_0\nonumber
-\end{aligned}}
-\end{align}
 The conservation law is consistent with the general formula of non-linear Thomson scattering
 \begin{align}
-N k_L\cdot q = k\cdot  q,\qquad q = p + mc\frac{\xi^2}4 n_L
+  k_N = N k_L\frac{n_L\cdot q_0}{n_0\cdot q_0}
 \end{align}
-which for the case of an electron initially at rest becomes
+
+We can easily prove that
 \begin{align}
-N k_L mc = k mc (1+\frac{\xi^2}4n_0\cdot n_L),\qquad k = \frac{Nk_L}{1+\frac{\xi^2}4n_0\cdot n_L}
+  {\bm E}_{-N}({\bm x}) = (E_N({\bm x}))^*,\qquad
 \end{align}
-The previous result shows that if the retardation is included the emitted frequency depends on the direction; however, for the geometry considered in our case the dependence is very weak.
 
-Properties of the generalized Bessel functions
+\section{Approximate expression of the emitted field in the head-on geometry}
+
+In our calculation $\theta_0$ is of the order of $\frac{\lambda}{w_0}$, we consider only the terms of the lowest order in $\theta_0$; since
 \begin{align}
-\tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0)   & = \sum\limits_{p=-\infty}^{\infty}e^{i(M+2p)\gamma_0}J_{M+2p}(k\Gamma_0)J_p(k\Delta_0)                                                                                                       \\
-\tilde J_{-M}(-k;\gamma_0,\Gamma_0,\Delta_0) & = \sum\limits_{p=-\infty}^{\infty}e^{i(-M+2p)\gamma_0}J_{-M+2p}(-k\Gamma_0)J_p(-k\Delta_0)=\sum\limits_{p=-\infty}^{\infty}e^{i(-M+2p)\gamma_0}J_{M-2p}(k\Gamma_0)J_{-p}(k\Delta_0)\nonumber \\
-& =\sum\limits_{p=-\infty}^{\infty}e^{-i(M+2p)\gamma_0}J_{M+2p}(k\Gamma_0)J_{p}(k\Delta_0)=[\tilde J_{M}(k;\gamma_0,\Gamma_0,\Delta_0)]^*
+  & J_n(x)\approx \frac{x^n}{2^n n!}\quad {\text{for   }}n\ge0 ,\qquad J_{-n}(x)=(-1)^n J_n(x)
 \end{align}
-Then we can easily prove that
-\begin{align}
-{\bm E}_{-N}({\bm x}) = (E_N({\bm x}))^*,\qquad {\bm B}_{-N}({\bm x}) = (B_N({\bm x}))^*
-\end{align}
-
-\section{Approximated formulas}
-
-In our calculation $\theta_0$ is of the order of $\frac{\lambda}{w_0}$, we consider only the terms of the lowest order in $\theta_0$.
-\begin{align}
-\Gamma_0 = \frac{\xi}{k_L} \theta_0\sqrt{cos^2\phi_0\zeta_x^2+\sin^2\phi_0\zeta_y^2},\qquad \Delta_0=\frac{\xi^2}{8k_L}(\zeta_x^2-\zeta_y^2)(1-\cos\theta_0 ) = \frac{\xi^2}{16k_L}\theta_0^2(\zeta_x^2-\zeta_y^2)
-\end{align}
-
-\subsubsection{Approximation of the generalized Bessel function}
-
-\begin{align}
-& \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(M+2p)\gamma_0}J_{M+2p}(k\Gamma_0)J_p(k\Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(M-2p)\gamma_0}J_{M-2p}(k\Gamma_0)J_p(k\Delta_0) (-1)^p,\nonumber \\
-& J_n(x)\approx \frac{x^n}{2^n n!}\quad {\text{for   }}n\ge0 ,\qquad J_{-n}(x)=(-1)^n J_n(x)
-\end{align}
-\begin{enumerate}
-
-\item the case $M=-1$
-  \begin{align}
-    \tilde J_{-1}(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(-1+2p)\gamma_0}J_{-1+2p}(k\Gamma_0)J_p(k\Delta_0)
-  \end{align}
-  the lowest order term is the term with $p=0$
-  \begin{align}
-    \tilde J_{-1}(k;\gamma_0, \Gamma_0, \Delta_0) = e^{i(-1)\gamma_0}J_{-1}(k\Gamma_0)=- \frac{e^{-i\gamma_0}}2(k\Gamma_0)
-  \end{align}
-\item the case $M=0$
-  \begin{align}
-    \tilde J_0(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{2ip\gamma_0}J_{2p}(k\Gamma_0)J_p(k\Delta_0)\approx 1
-  \end{align}
-\item the case $M=1$
-  \begin{align}
-    \tilde J_1(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(1-2p)\gamma_0}J_{1-2p}(k\Gamma_0)J_p(k\Delta_0) (-1)^p
-  \end{align}
-  The lowest order term is the term with $p=0$
-  \begin{align}
-    \tilde J_1(k;\gamma_0, \Gamma_0, \Delta_0) \approx e^{i\gamma_0}J_{1}(k\Gamma_0)\approx  \frac{e^{i\gamma_0}}{2}(k\Gamma_0)
-  \end{align}
-\item the case $M\ge2$
-  \begin{align}
-    \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) = \sum\limits_{p=-\infty}^{\infty}e^{i(M-2p)\gamma_0}J_{M-2p}(k\Gamma_0)J_p(k\Delta_0) (-1)^p
-  \end{align}
-  To the previous sum contribute the terms with $p\le M/2$
-  \begin{align}
-    \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) \approx & \sum\limits_{p=0}^{M/2}e^{i(M-2p)\gamma_0}\frac{(k\Gamma_0)^{M-2p}}{2^{M-2p}(M-2p)!}\frac{(k\Delta_0)^p}{2^p p!}(-1)^p\nonumber                                                           \\
-    =                                                  & \xi^M\theta_0^M\sum\limits_{p=0}^{M/2}\frac{e^{i(M-2p)\gamma_0}(-1)^p(k/k_L)^{M-p}}{2^{M+3p}(M-2p)!p!}({\cos^2\phi_0\zeta_x^2+\sin^2\phi_0\zeta_y^2})^{(M-2p)/2}(\zeta_x^2-\zeta_y^2)^{p}
-  \end{align}
-
-\end{enumerate}
-
-\subsubsection{Approximation ofthe unity vectors}
-
-We also approximate the unity vectors $\mu_{\pm}$, $\nu_{\pm}$, $\mu_z$, $\nu_z$. Up to the lowest order in $\theta_0$ we have
-\begin{align}
-& {\boldsymbol \mu}_+=[i\zeta_y,-\zeta_x,0]+{\cal O}(\theta_0)                           \\
-& {\boldsymbol \mu}_-=[-i\zeta_y,-\zeta_x,0]+{\cal O}(\theta_0)                          \\
-& {\boldsymbol \mu}_{0z}=[-\theta_0\sin\phi_0,\theta_0\cos\phi_0,0]+{\cal O}(\theta_0^2) \\
-& {\boldsymbol \nu}_+=[-\zeta_x,-i\zeta_y,0]+{\cal O}(\theta_0)                          \\
-& {\boldsymbol \nu}_-=[-\zeta_x,i\zeta_y,0]+{\cal O}(\theta_0)                           \\
-& {\boldsymbol \nu}_{0z}=[\theta_0\cos\phi_0,\theta_0\sin\phi_0,0]+{\cal O}(\theta_0^2)
-\end{align}
+then the dominant term is the term with $J_{N-1}$.
 
 Within this approximation, up to the lowest order in  $\theta_0$, the emitted field becomes for $N\ge2$
 
-\begin{empheq}[box=\fbox]{align}
-\tilde{\bm E}_N({\bm x}) = & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\frac{\xi}{2}\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+{\boldsymbol{\nu}}_{0z}\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\nonumber\\
-& \qquad\;\left[{\bm e}_x\left(-\zeta_x\frac{\xi}2J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\theta_0\cos\phi_0\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right.\nonumber                                                                                                        \\
-& \qquad +\left.{\bm e}_y\left(-i\zeta_y\frac{\xi}2J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\theta_0\sin\phi_0\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right]
-\end{empheq}
-\begin{empheq}[box=\fbox]{align}
-\tilde{\bm B}_N({\bm x}) = & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0| c}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left[{\boldsymbol{\mu}}_{+}\frac{\xi}{2}\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+{\boldsymbol{\mu}}_{0z}\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\nonumber\\
-& \qquad\;\left[{\bm e}_x\left(i\zeta_y\frac{\xi}2J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)-\theta_0\sin\phi_0\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right.\nonumber                                                                                                          \\
-& \qquad +\left.{\bm e}_y\left(-\zeta_x\frac{\xi}2J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)+\theta_0\cos\phi_0\frac{\xi^2}8(\zeta_x^2-\zeta_y^2)\tilde J_{N-2}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)\right]\nonumber                                                                                                          \\
-& =\frac1c{\bm e}_z\times \tilde{\bm E}_N({\bm x})
-\end{empheq}
+\begin{align}
+  \boxed{
+    \begin{aligned}
+      \tilde{\bm E}_N({\bm x}) \approx & \frac{-i k_N  e_0 e^{ik_N |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|\alpha}\frac{n_L\cdot q_0}{n_0\cdot q_0}\frac{\sqrt{2\pi}}{2\sqrt{2}}e^{iNm_L\varPhi_0}{\boldsymbol{\nu}}_{+}\xi\frac{mc}{n_L\cdot q_0}\tilde J_{N-1}(k_N\Gamma_0)e^{i(N-1)\phi_0}
+    \end{aligned}
+  }
+\end{align}
 
 and for $N=1$
 \begin{empheq}[box=\fbox]{align}
-\tilde{\bm E}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(-\zeta_x\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(-i\zeta_y\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]
+  \tilde{\bm E}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(-\zeta_x\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(-i\zeta_y\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]
 \end{empheq}
 \begin{empheq}[box=\fbox]{align}
-\tilde{\bm B}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|c}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\mu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(i\zeta_y\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(\zeta_x\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]\nonumber                                                                                                          \\
-& =\frac1c{\bm e}_z\times \tilde{\bm E}_1({\bm x})
+  \tilde{\bm B}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|c}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\mu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(i\zeta_y\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(\zeta_x\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]\nonumber                                                                                                          \\
+  & =\frac1c{\bm e}_z\times \tilde{\bm E}_1({\bm x})
 \end{empheq}
 where
 \begin{align}
-k_N = {Nk_L}({1-\frac{\xi^2}{8}\theta_0^2})\approx{Nk_L}
+  k_N = {Nk_L}({1-\frac{\xi^2}{8}\theta_0^2})\approx{Nk_L}
 \end{align}
 
 \subsection{Circular Polarization}
 In the circular polarization case the previous formulas reduce to
 \begin{align}
-\tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) \approx  \xi^M\theta_0^M\frac{e^{iM\gamma_0}(k/k_L)^{M}}{2^{3M/2}M!},\qquad Z_0=0
+  \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) \approx  \xi^M\theta_0^M\frac{e^{iM\gamma_0}(k/k_L)^{M}}{2^{3M/2}M!},\qquad Z_0=0
 \end{align}
 \begin{align}
-\tilde{\bm E}_N({\bm x}) \approx & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(-\zeta_x{\bm e}_x-i\zeta_y{\bm e}_y\right)\frac{\xi}2\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)\nonumber                    \\
-\approx                          & \frac{i k_N  e_0 e^{ik_N |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(\zeta_x{\bm e}_x+i\zeta_y{\bm e}_y\right)\frac{\xi^N}2 \theta_0^{N-1}\frac{e^{i(N-1)\gamma_0}N^{N-1}}{2^{3(N-1)/2}(N-1)!}\nonumber \\
-=                                & \frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\xi^N\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\label{approx-e-n-circ}
+  \tilde{\bm E}_N({\bm x}) \approx & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(-\zeta_x{\bm e}_x-i\zeta_y{\bm e}_y\right)\frac{\xi}2\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)\nonumber                    \\
+  \approx                          & \frac{i k_N  e_0 e^{ik_N |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(\zeta_x{\bm e}_x+i\zeta_y{\bm e}_y\right)\frac{\xi^N}2 \theta_0^{N-1}\frac{e^{i(N-1)\gamma_0}N^{N-1}}{2^{3(N-1)/2}(N-1)!}\nonumber \\
+  =                                & \frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\xi^N\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\label{approx-e-n-circ}
 \end{align}
 \begin{align}
-\tilde{\bm B}_N({\bm x})= \frac1c{\bm e}_z\times\tilde{\bm E}_N({\bm x})
+  \tilde{\bm B}_N({\bm x})= \frac1c{\bm e}_z\times\tilde{\bm E}_N({\bm x})
 \end{align}
 
 \section{Integration over the initial electron distribution}
@@ -266,106 +176,106 @@ We consider the case of a charge distributed uniformly with the charge density $
 A particle with the initial position $\rho_0, \varPhi_0$ will interact with the field
 
 \begin{align}
-& E_x({\bm r},t) = E_0\Re\left\{\zeta_x u_{p_Lm_L}(\rho_0)e^{-i(\omega t-k_Lz-m_L\varPhi_0}\right\},\qquad
-  E_y({\bm r},t) = E_0\Re\left\{\zeta_y u_{p_Lm_L}(\rho_0)e^{-i(\omega t-k_Lz-m_L\varPhi_0)}\right\}          \\
-  & {\bm B}({\bm r},t) = {\bm e}_z\times{\bm E}({\bm r},t)
-\end{align}
-with
-\begin{align}
-  u_{pm}(\rho_0,\varPhi_0) = N_{pm}\left(\frac{\sqrt{2}}{w_0}\right)^{|m|}\rho_0^{|m|}e^{-\frac{x^2+y^2}{w_0^2}}\, _1F_1(-p, |m|+1, \frac{2\rho_0^2}{w_0^2})
-  \qquad      N_{pm} = \frac{\sqrt{2}}{|m|!}\sqrt{\frac{(p+|m|)!}{p!}}
-\end{align}
+  & E_x({\bm r},t) = E_0\Re\left\{\zeta_x u_{p_Lm_L}(\rho_0)e^{-i(\omega t-k_Lz-m_L\varPhi_0}\right\},\qquad
+    E_y({\bm r},t) = E_0\Re\left\{\zeta_y u_{p_Lm_L}(\rho_0)e^{-i(\omega t-k_Lz-m_L\varPhi_0)}\right\}          \\
+    & {\bm B}({\bm r},t) = {\bm e}_z\times{\bm E}({\bm r},t)
+  \end{align}
+  with
+  \begin{align}
+    u_{pm}(\rho_0,\varPhi_0) = N_{pm}\left(\frac{\sqrt{2}}{w_0}\right)^{|m|}\rho_0^{|m|}e^{-\frac{x^2+y^2}{w_0^2}}\, _1F_1(-p, |m|+1, \frac{2\rho_0^2}{w_0^2})
+    \qquad      N_{pm} = \frac{\sqrt{2}}{|m|!}\sqrt{\frac{(p+|m|)!}{p!}}
+  \end{align}
 
-Then the field emitted by this distribution will be calculated as the superposition of the fields emitted by the charge in each surface element within the disk.
+  Then the field emitted by this distribution will be calculated as the superposition of the fields emitted by the charge in each surface element within the disk.
 
-\begin{align}
-  {\bm E}_{tot}({\bm x},t) = \int \limits_{\Sigma} da {\bm E}({\bm x},t)
-\end{align}
-and the Fourier transform becomes
-\begin{align}
-  {\bm E}_{tot}({\bm x},\omega) = \sum\limits_{N=-\infty}^{\infty} \tilde{\bm E}_{N,tot}({\bm x})\delta(\omega-N\omega_L)
-\end{align}
-where
-\begin{align}
-  \tilde {\bm E}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm E}_N({\bm x})\label{int-En}
-\end{align}
-Similarly, the Fourier transform of the total magnetic field radiated is
-\begin{align}
-  {\bm B}_{tot}({\bm x},\omega) = \sum\limits_{N=-\infty}^{\infty} \tilde{\bm B}_{N,tot}({\bm x})\delta(\omega-N\omega_L) ,\qquad    \tilde {\bm B}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm B}_N({\bm x})
-\end{align}
-In the equations above $\tilde{\bm E}_N$, $\tilde {\bm B}_N$ are in (\ref{Encirc},\ref{Bncirc}) above.
+  \begin{align}
+    {\bm E}_{tot}({\bm x},t) = \int \limits_{\Sigma} da {\bm E}({\bm x},t)
+  \end{align}
+  and the Fourier transform becomes
+  \begin{align}
+    {\bm E}_{tot}({\bm x},\omega) = \sum\limits_{N=-\infty}^{\infty} \tilde{\bm E}_{N,tot}({\bm x})\delta(\omega-N\omega_L)
+  \end{align}
+  where
+  \begin{align}
+    \tilde {\bm E}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm E}_N({\bm x})\label{int-En}
+  \end{align}
+  Similarly, the Fourier transform of the total magnetic field radiated is
+  \begin{align}
+    {\bm B}_{tot}({\bm x},\omega) = \sum\limits_{N=-\infty}^{\infty} \tilde{\bm B}_{N,tot}({\bm x})\delta(\omega-N\omega_L) ,\qquad    \tilde {\bm B}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm B}_N({\bm x})
+  \end{align}
+  In the equations above $\tilde{\bm E}_N$, $\tilde {\bm B}_N$ are in (\ref{Encirc},\ref{Bncirc}) above.
 
-The  energy passing through a surface $\Sigma$ is
-\begin{align}
-  W_{\Sigma} & =\int\limits_{-\infty}^\infty dt \int\limits_\Sigma d{\bm a}\cdot{\bm S}({\bm x},t)\nonumber                                                                                                                                                                \\
-  & = \int\limits_\Sigma d{\bm a}\cdot\int\limits_{-\infty}^\infty dt\frac1{\mu_0}{\bm E({\bm x},t)}\times{\bm B}^*({\bm x},t)\nonumber                                                                                                                         \\
-  & = \int\limits_\Sigma d{\bm a}\cdot\int\limits_{-\infty}^\infty dt\frac1{\mu_0}\frac1{2\pi}\int \limits_{-\infty}^\infty d\omega \int \limits_{-\infty}^\infty d\omega' e^{i\omega t} e^{-i\omega' t}{\bm E({\bm x},\omega)}\times{\bm B}^*({\bm x},\omega')
-\end{align}
-In the previous equations we have used that fact that the fields are real, so ${\bm B}^*={\bm B}$. Next we change the order of integration and use the $\delta$ function representation
-\begin{align}
-  \delta(\omega-\omega')=\frac1{2\pi}\int\limits_{-\infty}^{\infty} dt e^{i(\omega-\omega')t}
-\end{align}
-with the result
-\begin{align}
-  W_{\Sigma} & =\int\limits_{\Sigma} d{\bm a}\int\limits_{-\infty}^{\infty} d\omega \frac1{\mu_0}E({\bm x},\omega)\times{\bm B}({\bm x},\omega)=\int\limits_{\Sigma} d{\bm a}\int\limits_{-\infty}^{\infty} d\omega \sum\limits_{N}\sum\limits_{N'}\frac1{\mu_0}{\bm E}_N({\bm x})\times{\bm B}^*_{N'}({\bm x})\delta(\omega-N\omega L)\delta(\omega-N'\omega_L)\nonumber \\
-  & =\sum\limits_N W^{(N)}_{\Sigma} T_t
-\end{align}
-with
-\begin{align}
-  W^{(N)}_\Sigma = \int\limits_{\Sigma} d{\bm a}\frac1{\mu_0} {\bm E}_N({\bm x})\times{\bm B}^*_N({\bm x})
-\end{align}
-and $T_t$ the total duration of interaction.
+  The  energy passing through a surface $\Sigma$ is
+  \begin{align}
+    W_{\Sigma} & =\int\limits_{-\infty}^\infty dt \int\limits_\Sigma d{\bm a}\cdot{\bm S}({\bm x},t)\nonumber                                                                                                                                                                \\
+    & = \int\limits_\Sigma d{\bm a}\cdot\int\limits_{-\infty}^\infty dt\frac1{\mu_0}{\bm E({\bm x},t)}\times{\bm B}^*({\bm x},t)\nonumber                                                                                                                         \\
+    & = \int\limits_\Sigma d{\bm a}\cdot\int\limits_{-\infty}^\infty dt\frac1{\mu_0}\frac1{2\pi}\int \limits_{-\infty}^\infty d\omega \int \limits_{-\infty}^\infty d\omega' e^{i\omega t} e^{-i\omega' t}{\bm E({\bm x},\omega)}\times{\bm B}^*({\bm x},\omega')
+  \end{align}
+  In the previous equations we have used that fact that the fields are real, so ${\bm B}^*={\bm B}$. Next we change the order of integration and use the $\delta$ function representation
+  \begin{align}
+    \delta(\omega-\omega')=\frac1{2\pi}\int\limits_{-\infty}^{\infty} dt e^{i(\omega-\omega')t}
+  \end{align}
+  with the result
+  \begin{align}
+    W_{\Sigma} & =\int\limits_{\Sigma} d{\bm a}\int\limits_{-\infty}^{\infty} d\omega \frac1{\mu_0}E({\bm x},\omega)\times{\bm B}({\bm x},\omega)=\int\limits_{\Sigma} d{\bm a}\int\limits_{-\infty}^{\infty} d\omega \sum\limits_{N}\sum\limits_{N'}\frac1{\mu_0}{\bm E}_N({\bm x})\times{\bm B}^*_{N'}({\bm x})\delta(\omega-N\omega L)\delta(\omega-N'\omega_L)\nonumber \\
+    & =\sum\limits_N W^{(N)}_{\Sigma} T_t
+  \end{align}
+  with
+  \begin{align}
+    W^{(N)}_\Sigma = \int\limits_{\Sigma} d{\bm a}\frac1{\mu_0} {\bm E}_N({\bm x})\times{\bm B}^*_N({\bm x})
+  \end{align}
+  and $T_t$ the total duration of interaction.
 
-The $W^{(N)}_\Sigma$ is the flux of the $\omega_N$ component of the radiated field.
+  The $W^{(N)}_\Sigma$ is the flux of the $\omega_N$ component of the radiated field.
 
-\subsection{Analytical estimation of the phase of the emitted field in the circular polarization case}
+  \subsection{Analytical estimation of the phase of the emitted field in the circular polarization case}
 
-We consider the expression of the total emitted electric field of given harmonic index $N$ (\ref{int-En})
-\begin{align}
-  \tilde {\bm E}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm E}_N({\bm x})
-\end{align}
-and use here the approximation of $\tilde{\bm E}_N$ (\ref{approx-e-n-circ})
-\begin{align}
-  \tilde {\bm E}_{N,tot}({\bm x}) & =\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0  \frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\xi(\rho_0)^N\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber \\
-  & =\frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\int\limits_0^{\rho_m}d\rho_0\rho_0\xi^N(\rho_0)\int\limits_0^{2\pi}d\varPhi_0  \frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber \\
-\end{align}
-Next we analyze  the integral over $\varPhi_0$; let us denote the coordinates of the observation point by
-\begin{align}
-  {\bm x}=R\cos\phi{\bm e}_x+R\cos\phi{\bm e}_y+Z{\bm e}_z
-\end{align}
-In a typical calculation $Z$ is fixed and $R$, $\phi$ changes (we record the radiation on a screen perpendicular on the beam propagation direction at the distance $Z$ from the focal plane).
-The variable $|x_0|$  becomes
-\begin{align}
-  |{\bm x}_0|=\sqrt{(R\cos\phi-\rho_0\cos\varPhi_0)^2+(R\cos\phi-\rho_0\cos\varPhi_0)^2+Z^2}
-\end{align}
-as $e^{iNk_L|{\bm x}_0|}$ is a very fast oscillating function we can use the stationary phase method for estimating the integral.
-We use the general formula \cite{ref2}
-\begin{align}
-  {\cal I}_{\varPhi_0}= \int d\varPhi_0 e^{if(\varPhi_0)} g(\varPhi_0)\approx\sum\limits_{x_0}\sqrt\frac{2\pi}{|f''(x_0)|}g(x_0)e^{if(x_0)+i\sigma\frac{\pi}4}
-\end{align}
-where $x_0$ {are} the stationary points of $f(\varPhi_0)$
-\begin{align}
-  f'(x_0)=0
-\end{align}
-and $\sigma$ is the sign of the second derivative $f''(x_0)$
+  We consider the expression of the total emitted electric field of given harmonic index $N$ (\ref{int-En})
+  \begin{align}
+    \tilde {\bm E}_{N,tot}({\bm x})=\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0 \tilde{\bm E}_N({\bm x})
+  \end{align}
+  and use here the approximation of $\tilde{\bm E}_N$ (\ref{approx-e-n-circ})
+  \begin{align}
+    \tilde {\bm E}_{N,tot}({\bm x}) & =\int\limits_0^{\rho_m}d\rho_0\rho_0\int\limits_0^{2\pi}d\varPhi_0  \frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\xi(\rho_0)^N\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber \\
+    & =\frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\int\limits_0^{\rho_m}d\rho_0\rho_0\xi^N(\rho_0)\int\limits_0^{2\pi}d\varPhi_0  \frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber \\
+  \end{align}
+  Next we analyze  the integral over $\varPhi_0$; let us denote the coordinates of the observation point by
+  \begin{align}
+    {\bm x}=R\cos\phi{\bm e}_x+R\cos\phi{\bm e}_y+Z{\bm e}_z
+  \end{align}
+  In a typical calculation $Z$ is fixed and $R$, $\phi$ changes (we record the radiation on a screen perpendicular on the beam propagation direction at the distance $Z$ from the focal plane).
+  The variable $|x_0|$  becomes
+  \begin{align}
+    |{\bm x}_0|=\sqrt{(R\cos\phi-\rho_0\cos\varPhi_0)^2+(R\cos\phi-\rho_0\cos\varPhi_0)^2+Z^2}
+  \end{align}
+  as $e^{iNk_L|{\bm x}_0|}$ is a very fast oscillating function we can use the stationary phase method for estimating the integral.
+  We use the general formula \cite{ref2}
+  \begin{align}
+    {\cal I}_{\varPhi_0}= \int d\varPhi_0 e^{if(\varPhi_0)} g(\varPhi_0)\approx\sum\limits_{x_0}\sqrt\frac{2\pi}{|f''(x_0)|}g(x_0)e^{if(x_0)+i\sigma\frac{\pi}4}
+  \end{align}
+  where $x_0$ {are} the stationary points of $f(\varPhi_0)$
+  \begin{align}
+    f'(x_0)=0
+  \end{align}
+  and $\sigma$ is the sign of the second derivative $f''(x_0)$
 
-In our case the derivative of  $f(\varPhi_0)$ is
-\begin{align}
-  f'(\varPhi_0)=-\frac{k R \rho \sin(\phi-\varPhi_0)}{\sqrt{R^2+Z^2+\rho^2-2 R \rho \cos(\phi-\varPhi_0)}}
-\end{align}
-whose zeroes are
-\begin{align}
-  \Phi_0^{(1)} = \phi,\qquad \Phi^{(2)}_0=\phi+\pi
-\end{align}
-and the integral over $\varPhi_0$ becomes
-\begin{align}
-  & {\cal I}_{\varPhi_0}=e^{i(m_LN\phi+\epsilon(N-1)\phi)}h(\rho_0),\nonumber                                                                                                              \\
-  & h(\rho_0)=\sqrt{2\pi i}\left[e^{iNk_L\sqrt{Z^2+(R-\rho_0)^2}}\left(\frac{R-\rho_0}{\sqrt{Z^2+(R-\rho_0)^2}}\right)^N\sqrt{\frac{\sqrt{Z^2+(R-\rho_0)^2}}{Nk_LR\rho_0}}\right.\nonumber \\
-  & \qquad\qquad\left.-i(-1)^{Nm_L}e^{iNk_L\sqrt{Z^2+(R+\rho_0)^2}}\left(\frac{R+\rho_0}{\sqrt{Z^2+(R+\rho_0)^2}}\right)^N\sqrt{\frac{\sqrt{Z^2+(R+\rho_0)^2}}{Nk_LR\rho_0}}\right]
-\end{align}
-and $\epsilon$ is the helicity of the circular polarization $\epsilon={\mathrm sgn}(\zeta_x/\zeta_y)$
+  In our case the derivative of  $f(\varPhi_0)$ is
+  \begin{align}
+    f'(\varPhi_0)=-\frac{k R \rho \sin(\phi-\varPhi_0)}{\sqrt{R^2+Z^2+\rho^2-2 R \rho \cos(\phi-\varPhi_0)}}
+  \end{align}
+  whose zeroes are
+  \begin{align}
+    \Phi_0^{(1)} = \phi,\qquad \Phi^{(2)}_0=\phi+\pi
+  \end{align}
+  and the integral over $\varPhi_0$ becomes
+  \begin{align}
+    & {\cal I}_{\varPhi_0}=e^{i(m_LN\phi+\epsilon(N-1)\phi)}h(\rho_0),\nonumber                                                                                                              \\
+    & h(\rho_0)=\sqrt{2\pi i}\left[e^{iNk_L\sqrt{Z^2+(R-\rho_0)^2}}\left(\frac{R-\rho_0}{\sqrt{Z^2+(R-\rho_0)^2}}\right)^N\sqrt{\frac{\sqrt{Z^2+(R-\rho_0)^2}}{Nk_LR\rho_0}}\right.\nonumber \\
+    & \qquad\qquad\left.-i(-1)^{Nm_L}e^{iNk_L\sqrt{Z^2+(R+\rho_0)^2}}\left(\frac{R+\rho_0}{\sqrt{Z^2+(R+\rho_0)^2}}\right)^N\sqrt{\frac{\sqrt{Z^2+(R+\rho_0)^2}}{Nk_LR\rho_0}}\right]
+  \end{align}
+  and $\epsilon$ is the helicity of the circular polarization $\epsilon={\mathrm sgn}(\zeta_x/\zeta_y)$
 
-With these the expression of the total  electric field measured in ${\bm x}$ is
-\begin{align}
-  \tilde {\bm E}_{N,tot}({\bm x}) & =\frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{\pi}({\bm e}_x+i \epsilon{\bm e}_y)\int\limits_0^{\rho_m}d\rho_0\rho_0\xi^N(\rho_0)\int\limits_0^{2\pi}d\varPhi_0  \frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber
-\end{align}
+  With these the expression of the total  electric field measured in ${\bm x}$ is
+  \begin{align}
+    \tilde {\bm E}_{N,tot}({\bm x}) & =\frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{\pi}({\bm e}_x+i \epsilon{\bm e}_y)\int\limits_0^{\rho_m}d\rho_0\rho_0\xi^N(\rho_0)\int\limits_0^{2\pi}d\varPhi_0  \frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\nonumber
+  \end{align}

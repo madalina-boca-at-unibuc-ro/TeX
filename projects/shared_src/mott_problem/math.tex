@@ -1,0 +1,57 @@
+\section{general analytical results}
+
+\subsection{useful identities}
+\begin{align}
+  & \int\limits_{-\infty}^{\infty}dx e^{-\lambda x^2} = \sqrt{\frac{\pi}{\lambda}}\\
+  & \int\limits_{-\infty}^{\infty}dx  e^{-\lambda x^2} e^{ikx}  = \sqrt{\frac{\pi}{\lambda}} e^{-\frac{k^2}{4\lambda}}
+\end{align}
+
+\subsection{normalization of the Gaussian wave packet}
+
+consider the Gaussian wave packet
+\begin{align}
+  \psi(X,t=0) = N e^{-\frac{X^2}{2\sigma_\alpha^2}}
+\end{align}
+where $\sigma_\alpha$ is the initial width of the wave packet. we normalize the wave function using the condition
+\begin{align}
+  \int_{-\infty}^{\infty} |\psi(x,t)|^2 dx = 1
+\end{align}
+we can find the normalization constant by substituting the Gaussian function into the normalization condition:
+\begin{align}
+  N^2 \int_{-\infty}^{\infty} e^{-\frac{x^2}{\sigma_\alpha^2}} dx = 1
+\end{align}
+using
+\begin{align}
+  \int_{-\infty}^{\infty} e^{-\frac{x^2}{\sigma_\alpha^2}} dx = \sqrt{\pi}\sigma_\alpha
+\end{align}
+thus,
+\begin{align}
+  N = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}
+\end{align}
+and
+\begin{align}
+  \psi(X,t=0) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}e^{-\frac{X^2}{\sigma_\alpha^2}}
+\end{align}
+
+\section{normalization of the symmetric bimodal wavepacket}
+
+the bimodal wavepacket is a superposition of two gaussian wavepackets with mean momenta $\pm p_0$, and is given by
+\begin{align}
+  \psi(X,t=0) = N e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)
+\end{align}
+where
+\begin{align}
+  N = \frac1{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}
+\end{align}
+
+\subsection{the Fourier transform of the Gaussian potential}
+
+considering the Gaussian interaction potential
+\begin{align}
+  V(y) = V_0 e^{-\frac{y^2}{\sigma_V^2}}
+\end{align}
+its Fourier transform is given by
+\begin{align}
+  \tilde V(q) = \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dy e^{\frac{i}{\hbar}py}V(y)=
+  \frac{\sigma_V V_0}{\sqrt{\hbar}}e^{-\frac{\sigma_V^2 p^2}{2\hbar^2}}
+\end{align}

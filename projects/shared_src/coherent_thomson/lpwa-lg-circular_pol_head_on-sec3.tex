@@ -52,7 +52,7 @@ we can write
 \end{align}
 Define
 \begin{align}
-  & \Gamma_0=\frac{\xi (mc)}{\sqrt{2}k_L(n_L\cdot)}\sin\theta_0,
+  & \Gamma_0=\frac{\xi (mc)}{\sqrt{2}k_L(n_L\cdot q_0)}\sin\theta_0,
 \end{align}
 \begin{align}
   \phi+({\bm n}_L-{\bm n}_0)\cdot{\bm r}_0(\phi)= & \phi\left(1+n_L\cdot n_0\frac{q_0^3}{n_L\cdot q_0}\right)-\Gamma_0\sin(k_L\phi-m_L\varPhi_0-\phi_0)
@@ -142,26 +142,12 @@ Within this approximation, up to the lowest order in  $\theta_0$, the emitted fi
   }
 \end{align}
 
-and for $N=1$
-\begin{empheq}[box=\fbox]{align}
-  \tilde{\bm E}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\nu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(-\zeta_x\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(-i\zeta_y\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]
-\end{empheq}
-\begin{empheq}[box=\fbox]{align}
-  \tilde{\bm B}_1({\bm x}) = & \frac{-i k_1  e_0 e^{ik_1 (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|c}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\boldsymbol{\mu}}_{+}\frac{\xi}{2}\tilde J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right],\nonumber \\&=\frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|+Z_0)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{im_L\varPhi_0}\left[{\bm e}_x\left(i\zeta_y\frac{\xi}2J_{0}(k_N;\gamma_0,\Gamma_0,\Delta_0)\right)+{\bm e}_y\left(\zeta_x\frac{\xi}2J_{0}(k_1;\gamma_0,\Gamma_0,\Delta_0)\right)\right]\nonumber                                                                                                          \\
-  & =\frac1c{\bm e}_z\times \tilde{\bm E}_1({\bm x})
-\end{empheq}
-where
+In the limit of small emission angles the previous formulas reduce to
 \begin{align}
-  k_N = {Nk_L}({1-\frac{\xi^2}{8}\theta_0^2})\approx{Nk_L}
-\end{align}
-
-\subsection{Circular Polarization}
-In the circular polarization case the previous formulas reduce to
-\begin{align}
-  \tilde J_M(k;\gamma_0, \Gamma_0, \Delta_0) \approx  \xi^M\theta_0^M\frac{e^{iM\gamma_0}(k/k_L)^{M}}{2^{3M/2}M!},\qquad Z_0=0
+  J_N(k_N\Gamma_0) \approx  \frac{1}{2^N N!}\left(\frac{k_N\xi (mc)\theta_0}{\sqrt{2}(n_L\cdot q_0)}\right)^N
 \end{align}
 \begin{align}
-  \tilde{\bm E}_N({\bm x}) \approx & \frac{-i k_N  e_0 e^{ik_N (|{\bm x}_0|)}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(-\zeta_x{\bm e}_x-i\zeta_y{\bm e}_y\right)\frac{\xi}2\tilde J_{N-1}(k_N;\gamma_0,\Gamma_0,\Delta_0)\nonumber                    \\
+  \tilde{\bm E}_N({\bm x}) \approx & \frac{i k_N  e_0 e^{ik_N (|{\bm x}_0|)}}{4\pi\epsilon_0|{\bm x}_0|}\frac{mc}{n_L\cdot q_0}\frac{\xi\sqrt{2\pi}}{2\sqrt{2}}e^{iNm_L\varPhi_0}\left({\bm e}_x+i{\bm e}_y\right)e^{i(N-1)\phi_0}\frac{1}{2^{N-1} (N-1)!}\left(\frac{k_N\xi (mc)\theta_0}{\sqrt{2}(n_L\cdot q_0)}\right)^{N-1}\nonumber\\
   \approx                          & \frac{i k_N  e_0 e^{ik_N |{\bm x}_0|}}{4\pi\epsilon_0|{\bm x}_0|}{\sqrt{2\pi}}e^{iNm_L\varPhi_0}\left(\zeta_x{\bm e}_x+i\zeta_y{\bm e}_y\right)\frac{\xi^N}2 \theta_0^{N-1}\frac{e^{i(N-1)\gamma_0}N^{N-1}}{2^{3(N-1)/2}(N-1)!}\nonumber \\
   =                                & \frac{i k_L  e_0}{4\pi\epsilon_0}\frac{N^N}{(N-1)!2^{3N/2-1/2}}\sqrt{2\pi}(\zeta_x{\bm e}_x+i \zeta_y{\bm e}_y)\frac{e^{iNk_L|{\bm x}_0|}}{|{\bm x}_0|}\xi^N\theta_0^{N-1}e^{i(Nm_L\varPhi_0+(N-1)\gamma_0)}\label{approx-e-n-circ}
 \end{align}

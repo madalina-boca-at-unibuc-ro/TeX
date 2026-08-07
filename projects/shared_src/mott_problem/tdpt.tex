@@ -1,0 +1,106 @@
+\section{time dependent perturbation theory - general results}
+
+\subsection{notations}
+
+consider an isolated system described by the Hamiltonian $H_0$, subject to the perturbation $H_I(t)$.
+the eigenstates of $H_0$ are denoted by $|\gamma\rangle$, with energy eigenvalues $E_\gamma$
+\begin{align}
+  H_0 |\gamma\rangle = E_\gamma|\gamma\rangle
+\end{align}
+normalized in the generalized sense
+\begin{align}
+  \langle \gamma'|\gamma\rangle=\delta_{\gamma\gamma'}
+\end{align}
+at $t = 0$, the system is in the state $\psi_0$, which is not necessarily an eigenstate of $H_0$, but a superposition of them.
+\begin{align}
+  |\psi(t=t_i)\rangle \equiv |\psi_i\rangle= \sum_\gamma c^{(i)}_\gamma|\gamma\rangle
+\end{align}
+the final state is given by
+\begin{align}
+  |\psi(t=t_f)\rangle \equiv |\psi_f\rangle =  \sum_\gamma c^{(f)}_\gamma|\gamma\rangle
+\end{align}
+we will consider the  {\it Mott case} when the final state is just a single state $|\gamma_f\rangle$, with energy $E_{\gamma_f}$, and the interaction Hamiltonian is time-independent, $H_I(t) = H_I$.
+
+\subsection{the Dyson series of the time evolution operator}
+the Dyson series of the time evolution operator in the Schrodinger picture is
+\begin{align}
+  &U(t_f,t_i) = \sum\limits_{n\ge0}U^{(n)}(t_f,t_i); \quad
+  U^{(0)}(t_f,t_i) = e^{-\frac{i}{\hbar}(t_f-t_i)H_0};\nonumber\\
+  &U^{(n)}(t_f,t_i)=\int\limits_{t_i}^{t_f}dt_n \int\limits_{t_i}^{t_{n}}dt_{n-1} \dots \int\limits_{t_i}^{t_{2}}dt_1 e^{-\frac{i}{\hbar}(t_f-t_n)H_0} H_I(t_n)e^{-\frac{i}{\hbar}(t_{n}-t_{n-1})H_0} \ldots e^{-\frac{i}{\hbar}(t_2-t_1)H_0}H_I(t_1)e^{-\frac{i}{\hbar}(t_1-t_i)H_0};
+\end{align}
+
+\subsection{the transition amplitude}
+the transition amplitude for the transition from the initial state $|\psi_i\rangle$ to the final state $|\psi_f\rangle$ is given by
+\begin{align}
+  \langle \psi_f | U(t_f,t_i) | \psi_i \rangle = \sum\limits_{n\ge0}\langle \psi_f | U^{(n)}(t_f,t_i) | \psi_i \rangle
+\end{align}
+
+\subsection{the first order transition amplitude in the general case}
+the first order transition amplitude is
+\begin{align}
+  {\cal A}_{fi}^{(1)} = &\langle \psi_f | U^{(1)}(t_f,t_i) | \psi_i \rangle = \frac{1}{i\hbar} \int\limits_{t_i}^{t_f}dt_1 \langle \psi_f | e^{-iH_0(t_f-t_1)/\hbar} H_I(t_1) e^{-iH_0(t_1-t_i)/\hbar} | \psi_i \rangle\nonumber\\
+  & = \frac{1}{i\hbar} \sum\limits_{\gamma}\sum\limits_{\gamma_f}c_{\gamma_f}^{(f)*} c_{\gamma}^{(i)}\int\limits_{t_i}^{t_f}dt_1e^{-\frac{i}{\hbar}E_{\gamma_f} (t_f-t_1)}e^{-\frac{i}{\hbar}E_{\gamma}(t_1-t_i)}\langle \gamma_f |H_I(t_1)| \gamma\rangle\nonumber\\
+  &=\frac{1}{i\hbar} \sum\limits_{\gamma}\sum\limits_{\gamma_f}c_{\gamma_f}^{(f)*} c_{\gamma}^{(i)}e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i}\int\limits_{t_i}^{t_f}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma})t_1}\langle \gamma_f |H_I(t_1)| \gamma\rangle
+\end{align}
+
+\subsection{the first order transition amplitude in the Mott case}
+in the Mott case, the interaction hamiltonian is independent of time, so its matrix elements \(\langle \gamma' |H_I| \gamma\rangle\) can be taken out of the integral:
+\begin{align}
+  {\cal A}_{fi}^{(1)} = \frac{1}{i\hbar} \sum\limits_{\gamma} c_{\gamma}^{(i)}e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i} \langle \gamma_f|H_I|\gamma\rangle\int\limits_{t_i}^{t_f}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma} )t_1}
+\end{align}
+with the notation
+\begin{align}
+  E_{\gamma_f}-E_{\gamma} = \hbar\omega_{\gamma_f \gamma};\quad \omega_{\gamma_f \gamma} = \frac{E_{\gamma_f}-E_{\gamma}}{\hbar}
+\end{align}
+the integral reduces to
+\begin{align}
+  \int_{t_i}^{t_f}dt_1 e^{i\omega_{\gamma_f \gamma}t_1} = \frac{e^{i\omega_{\gamma_f \gamma}t_f}-e^{i\omega_{\gamma_f \gamma}t_i}}{i\omega_{\gamma_f \gamma}}
+\end{align}
+and the transition amplitude becomes
+\begin{align}
+  {\cal A}_{fi}^{(1)} = \sum_\gamma \frac{c_\gamma^{(i)}}{-\hbar\omega_{\gamma_f \gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(e^{i\omega_{\gamma_f \gamma}t_f}-e^{i\omega_{\gamma_f \gamma}t_i}\right)e^{-\frac{i}{\hbar}(E_{\gamma_f} t_f-E_{\gamma} t_i)}
+\end{align}
+which can be rewritten as
+\begin{align}
+  {\cal A}_{fi}^{(1)} &= \sum_\gamma \frac{c_\gamma^{(i)}}{\hbar\omega_{\gamma_f \gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)} - e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}\right)=e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\sum_\gamma \frac{c_\gamma^{(i)}}{\hbar\omega_{\gamma_f \gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(1-e^{i\omega_{\gamma_f \gamma}(t_f-t_i)} \right)
+\end{align}
+
+\subsection{the first order transition probability in the Mott case}
+
+the first order transition probability in the time interval $t_i\rightarrow t_f$ is given by
+\begin{align}
+  p_{fi}^{(1)} = \left| \mathcal{A}_{fi}^{(1)} \right|^2 = \left| \sum_\gamma \frac{c_\gamma^{(i)}}{\hbar\omega_{\gamma_f \gamma}} \langle \gamma_f|H_I|\gamma\rangle \left(1 - e^{i\omega_{\gamma_f \gamma}(t_f-t_i)}\right)\right|^2
+\end{align}
+
+\subsection{the second order transition amplitude in the general case}
+the second order transition amplitude is
+\begin{align}
+  {\cal A}_{fi}^{(2)} = &\langle \psi_f | U^{(2)}(t_f,t_i) | \psi_i \rangle = \left(\frac{1}{i\hbar}\right)^2 \int\limits_{t_i}^{t_f}dt_2 \int\limits_{t_i}^{t_2}dt_1 \langle \psi_f | e^{-iH_0(t_f-t_2)/\hbar} H_I(t_2) e^{-iH_0(t_2-t_1)/\hbar} H_I(t_1) e^{-iH_0(t_1-t_i)/\hbar} | \psi_i \rangle\nonumber\\
+  & = \frac{1}{i\hbar} \sum\limits_{\gamma,\gamma_f,\gamma_1}c_{\gamma_f}^{(f)*} c_{\gamma}^{(i)}\int\limits_{t_i}^{t_f}dt_2\int\limits_{t_i}^{t_2}dt_1e^{-\frac{i}{\hbar}E_{\gamma_f} (t_f-t_2)}e^{-\frac{i}{\hbar}E_{\gamma_1}(t_2-t_1)}e^{-\frac{i}{\hbar}E_{\gamma}(t_1-t_i)}\langle \gamma_f |H_I(t_2)| \gamma_1\rangle\langle \gamma_1 |H_I(t_1)| \gamma\rangle\nonumber\\
+  &=\frac{1}{i\hbar} \sum\limits_{\gamma,\gamma_f,\gamma_1}c_{\gamma_f}^{(f)*} c_{\gamma}^{(i)}e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i}\int\limits_{t_i}^{t_f}dt_2\int\limits_{t_i}^{t_2}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_1}\langle \gamma_f |H_I(t_2)| \gamma_1\rangle\langle \gamma_1 |H_I(t_1)| \gamma\rangle
+\end{align}
+
+\subsection{the second order transition amplitude in the Mott case}
+
+in the Mott case the final state is an eigenstate if the free hamiltonian $c_{\gamma}^{(f)}=\delta_{\gamma\gamma_f}$ and the interaction Hamiltonian is time independent
+\begin{align}
+  {\cal A}_{fi}^{(2)} = &\frac{1}{(i\hbar)^2} \sum\limits_{\gamma,\gamma_1}c_{\gamma}^{(i)}e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i}\int\limits_{t_i}^{t_f}dt_2\int\limits_{t_i}^{t_2}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_1}\langle \gamma_f |H_I| \gamma_1\rangle\langle \gamma_1 |H_I| \gamma\rangle\nonumber\\
+  =&\frac{1}{(i\hbar)^2} \sum\limits_{\gamma,\gamma_1}c_{\gamma}^{(i)}e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i}\langle \gamma_f |H_I| \gamma_1\rangle\langle \gamma_1 |H_I| \gamma\rangle\int\limits_{t_i}^{t_f}dt_2\int\limits_{t_i}^{t_2}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_1}\label{defa2}
+\end{align}
+the integrals over time can be calculated
+\begin{align}
+  &\int\limits_{t_i}^{t_f}dt_2e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}\int\limits_{t_i}^{t_2}dt_1e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_1}\nonumber\\
+  &\qquad =\int\limits_{t_i}^{t_f}dt_2e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}\left(e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_2}-e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_i}\right)\nonumber\\
+  &\qquad =\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}\int\limits_{t_i}^{t_f}dt_2 e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma})t_2}-\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_i}\int\limits_{t_i}^{t_f}dt_2e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}\nonumber\\
+  &\qquad =\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}\frac{\hbar}{i(E_{\gamma_f}-E_{\gamma})}\left(e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma})t_f}-e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma})t_i}\right)-\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_i}\frac{\hbar}{i(E_{\gamma_f}-E_{\gamma_1})}\left(e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_f}-e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_i}\right)\nonumber\\
+\end{align}
+including also the exponentials in front of the exponentials from (\ref{defa2})
+\begin{align}
+  &e^{-\frac{i}{\hbar}E_{\gamma_f} t_f}e^{\frac{i}{\hbar}E_{\gamma} t_i}\int\limits_{t_i}^{t_f}dt_2\int\limits_{t_i}^{t_2}dt_1e^{\frac{i}{\hbar}(E_{\gamma_f}-E_{\gamma_1})t_2}e^{\frac{i}{\hbar}(E_{\gamma_1}-E_{\gamma})t_1}\nonumber\\
+  &\qquad =\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}\frac{\hbar}{i(E_{\gamma_f}-E_{\gamma})}\left(e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)-\frac{\hbar}{i(E_{\gamma_1}-E_{\gamma})}\frac{\hbar}{i(E_{\gamma_f}-E_{\gamma_1})}\left(e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)
+\end{align}
+the final form of the transition maplitude is
+\begin{align}
+  {\cal A}_{fi}^{(2)} = &\sum_{\gamma, \gamma_1} c_{\gamma}^{(i)}\langle\gamma_f|H_I|\gamma_1\rangle \langle\gamma_1|H_I|\gamma\rangle\frac{1}{(E_{\gamma_1}-E_{\gamma})} \nonumber\\
+  &\times\left[ \frac{1}{(E_{\gamma_f}-E_{\gamma})}\left(e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)-\frac{1}{(E_{\gamma_f}-E_{\gamma_1})}\left(e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right) \right]
+\end{align}

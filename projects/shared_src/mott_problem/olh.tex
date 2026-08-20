@@ -1,0 +1,24 @@
+\section{the harmonic 1D oscillator in the position representation}
+
+the Hamiltonian of the HLO is given by
+\begin{align}
+  H_0 = \frac{p^2}{2m} + \frac{1}{2}m\omega_0^2x^2
+\end{align}
+the eigenvalues and the eigenvectors of the HLO are
+\begin{align}
+  E_n = \hbar\omega_0\left(n+\frac{1}{2}\right)
+\end{align}
+we use the notations
+\begin{align}
+  \alpha = \sqrt{\frac{m\omega_0}{\hbar}},\qquad \beta = \sqrt{\frac{1}{m\omega\hbar}}
+\end{align}
+the energy eigenfunctions in the position representation are given by
+\begin{align}
+  u_n(x) = \langle x|n\rangle = \sqrt{\frac{\alpha}{2^n n!\sqrt{\pi}}}e^{-\frac{\alpha^2x^2}{2}}H_n(\alpha x)
+\end{align}
+where $H_n(x)$ are the Hermite polynomials.
+
+the energy eigenfunctions in the momentum representation are given by
+\begin{align}
+  u_n(p) = \langle p|n\rangle = \frac{1}{\sqrt{2\pi\hbar}}\int\limits_{-\infty}^{\infty}\mathrm{d}x e^{-\frac{i}{\hbar}px}u_n(x) = (-i)^n\sqrt{\frac{\beta}{2^n n!\sqrt{\pi}}}e^{-\frac{\beta^2p^2}{2}}H_n(\beta p)
+\end{align}

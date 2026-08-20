@@ -1,0 +1,342 @@
+\section{matrix element of $e^\frac{(x-X)^2}{2\sigma_\alpha^2}$ in the displaced harmonic oscillator basis}
+\label{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}
+\subsection{definition}
+consider the displaced  harmonic-oscillator eigenfunctions
+\begin{align}
+    u_n(x)
+    =
+    \sqrt\frac{\alpha}{\sqrt{\pi}2^n n!}
+    H_n(\alpha x)
+    \exp\left(-\frac{\alpha^2x^2}{2}\right),
+\end{align}
+where $\alpha = \sqrt{M\omega/\hbar}$.
+we want to calculate the matrix elements
+\begin{align}
+    V_{nm}(X,\sigma)
+    =
+    \left\langle u_n\left|V_0
+    \exp\left[-\frac{(x-X)^2}{2\sigma^2}\right]
+    \right|u_m\right\rangle .
+\end{align}
+explicitly,
+\begin{align}
+    V_{nm}
+    =
+    V_0 \frac{\alpha}{\sqrt{\pi}\sqrt{2^{n+m}n!m!}}
+    \int_{-\infty}^{\infty} dx\,
+    H_n(\alpha x)H_m(\alpha x)
+    \exp\left(-\alpha^2 x^2\right)
+    \exp\left[-\frac{(x-X)^2}{2\sigma^2}\right].
+\end{align}
+it is convenient to introduce
+\begin{align}
+    D=\frac{1}{\alpha^2}+2\sigma^2.
+\end{align}
+
+\subsection{generating-function representation}
+the generating function for the Hermite polynomials is
+\begin{align}
+    \exp(2zt-t^2)
+    =
+    \sum_{n=0}^{\infty}H_n(z)\frac{t^n}{n!},
+\end{align}
+or equivalently
+\begin{align}
+    H_n(z)
+    =
+    \left.
+    \frac{\partial^n}{\partial t^n}
+    \exp(2zt-t^2)
+    \right|_{t=0}.
+\end{align}
+using two auxiliary variables $s$ and $t$,
+\begin{align}
+    H_n(\alpha x)
+     & =
+    \left.
+    \partial_s^n
+    \exp\left({2\alpha sx}-s^2\right)
+    \right|_{s=0}, \\
+    H_m(\alpha x)
+     & =
+    \left.
+    \partial_t^m
+    \exp\left(2\alpha tx-t^2\right)
+    \right|_{t=0}.
+\end{align}
+the Gaussian integral that appears after inserting these representations is
+\begin{align}
+    \frac{\alpha}{\sqrt{\pi}}
+    \int_{-\infty}^{\infty}dx\,
+    \exp\left[
+    -{\alpha^2 x^2}
+    -\frac{(x-X)^2}{2\sigma^2}
+    +2\alpha x(s+t)
+    -s^2-t^2
+    \right].
+\end{align}
+performing the integral gives the generating function
+\begin{align}
+    \boxed{
+        \mathcal G(s,t)
+        =
+        \sqrt{\frac{2\sigma^2}{D}}\,
+        \exp\left(-\frac{X^2}{D}\right)
+        \exp\left[
+            \frac{2X}{\alpha D}(s+t)
+            -\frac{1}{\alpha^2D}(s^2+t^2)
+            +\frac{4\sigma^2}{D}st
+            \right].
+    }
+\end{align}
+therefore,
+\begin{align}
+    \boxed{
+        V_{nm}
+        =
+        V_0  \frac{1}{\sqrt{2^{n+m}n!m!}}
+        \left.
+        \frac{\partial^{n+m}}
+        {\partial s^n\partial t^m}
+        \mathcal G(s,t)
+        \right|_{s=t=0}.
+    }
+\end{align}
+
+\subsection{explicit finite-sum expression}
+define
+\begin{align}
+    p=\frac{2X}{\alpha D},
+    \qquad
+    q=-\frac{1}{\alpha^2 D},
+    \qquad
+    r=\frac{4\sigma^2}{D}.
+\end{align}
+then
+\begin{align}
+    \mathcal G(s,t)
+    =
+    C\exp\left[p(s+t)+q(s^2+t^2)+rst\right],
+\end{align}
+where
+\begin{align}
+    C=
+    \sqrt{\frac{2\sigma^2}{D}}
+    \exp\left(-\frac{X^2}{D}\right).
+\end{align}
+expanding all exponentials gives
+\begin{align}
+    \boxed{
+        V_{nm}
+        =  V_0      \sqrt{\frac{2\sigma^2}{D}}\,
+        e^{-X^2/D}
+        \frac{\sqrt{n!m!}}{2^{(n+m)/2}}
+    \sum_{\substack{i,j,k\ge0 \\2i+k\le n\\2j+k\le m}}
+        \frac{
+            q^{i+j}r^k
+            p^{n+m-2i-2j-2k}
+        }{
+            i!\,j!\,k!\,
+            (n-2i-k)!\,
+            (m-2j-k)!
+        }.
+    }
+\end{align}
+
+
+\subsection{recurrence relations}
+for numerical calculations it is useful to avoid repeated evaluation of
+Hermite polynomials or the explicit finite sum. define the unnormalized
+coefficients
+\begin{align}
+    A_{nm}
+    =
+    \left.
+    \partial_s^n\partial_t^m\mathcal G(s,t)
+    \right|_{s=t=0}.
+\end{align}
+they are related to the normalized matrix elements by
+\begin{align}
+    V_{nm}
+    =
+    V_0 \frac{A_{nm}}{\sqrt{2^{n+m}n!m!}}.
+\end{align}
+since
+\begin{align}
+    \frac{\partial\mathcal G}{\partial s}
+    =
+    (p+2qs+rt)\mathcal G,
+\end{align}
+application of $\partial_s^n\partial_t^m$ followed by setting $s=t=0$
+gives
+\begin{align}
+    \boxed{
+        A_{n+1,m}
+        =
+        pA_{nm}
+        +
+        2qnA_{n-1,m}
+        +
+        rmA_{n,m-1}.
+    }
+\end{align}
+similarly,
+\begin{align}
+    \boxed{
+        A_{n,m+1}
+        =
+        pA_{nm}
+        +
+        2qmA_{n,m-1}
+        +
+        rnA_{n-1,m}.
+    }
+\end{align}
+using the normalization relation, the first recurrence becomes
+\begin{align}
+    \boxed{
+        \sqrt{n+1}\,V_{n+1,m}
+        =
+        \frac{p}{\sqrt{2}}V_{nm}
+        +
+        q\sqrt{n}\,V_{n-1,m}
+        +
+        \frac{r}{2}\sqrt{m}\,V_{n,m-1}.
+    }
+\end{align}
+in terms of the physical parameters,
+\begin{align}
+    \boxed{
+        \sqrt{n+1}\,V_{n+1,m}
+        =
+        \frac{\sqrt{2}\,X}{\alpha D}V_{nm}
+        -
+        \frac{1}{\alpha^2 D}\sqrt{n}\,V_{n-1,m}
+        +
+        \frac{2\sigma^2}{D}\sqrt{m}\,V_{n,m-1}.
+    }
+\end{align}
+since the operator is real and the oscillator eigenfunctions may be chosen
+real,
+\begin{align}
+    \boxed{
+        V_{nm}=V_{mn}.
+    }
+\end{align}
+the corresponding recurrence in the second index is
+\begin{align}
+    \boxed{
+        \sqrt{m+1}\,V_{n,m+1}
+        =
+        \frac{\sqrt{2}\,X}{\alpha D}V_{nm}
+        -
+        \frac{1}{\alpha^2 D}\sqrt{m}\,V_{n,m-1}
+        +
+        \frac{2\sigma^2}{D}\sqrt{n}\,V_{n-1,m}.
+    }
+\end{align}
+
+\subsubsection{initialization and construction of the matrix}
+the starting value is
+\begin{align}
+    V_{00}
+    =
+    V_0 \sqrt{\frac{2\sigma^2}{D}}
+    \exp\left(-\frac{X^2}{D}\right).
+\end{align}
+the first element in the first column is
+\begin{align}
+    V_{10}
+    =
+    \frac{\sqrt{2}\,X}{\alpha D}V_{00}.
+\end{align}
+setting $m=0$ in the recurrence gives a simple three-term recurrence for
+the first column:
+\begin{align}
+    \boxed{
+        V_{n+1,0}
+        =
+        \frac{1}{\sqrt{n+1}}
+        \left[
+            \frac{\sqrt{2}\,X}{\alpha D}V_{n0}
+            -
+            \frac{1}{\alpha^2 D}\sqrt{n}\,V_{n-1,0}
+            \right].
+    }
+\end{align}
+the first row follows from symmetry,
+\begin{align}
+    V_{0m}=V_{m0}.
+\end{align}
+once this boundary is known, the complete matrix can be generated using
+\begin{align}
+    \boxed{
+        V_{n+1,m}
+        =
+        \frac{1}{\sqrt{n+1}}
+        \left[
+            \frac{\sqrt{2}\,X}{\alpha D}V_{nm}
+            -
+            \frac{1}{\alpha^2 D}\sqrt{n}\,V_{n-1,m}
+            +
+            \frac{2\sigma^2}{D}\sqrt{m}\,V_{n,m-1}
+            \right].
+    }
+\end{align}
+for $X=0$, the recurrence preserves the parity selection rule
+\begin{align}
+    V_{nm}=0
+    \qquad\text{for }n+m\text{ odd}.
+\end{align}
+\subsection{simple checks}
+for the ground state,
+\begin{align}
+    \boxed{
+        V_{00}
+        =
+        V_0 \sqrt{\frac{2\sigma^2\alpha^2}{1+2\sigma^2\alpha^2}}\,
+        \exp\left[
+            -\frac{\alpha^2X^2}{1+2\sigma^2\alpha^2}
+            \right].
+    }
+\end{align}
+the first off-diagonal element is
+\begin{align}
+    \boxed{
+        V_{10}=V_{01}
+        =
+        \frac{\sqrt{2}\,X}{\alpha D}V_{00}.
+    }
+\end{align}
+the element $V_{11}$ is
+\begin{align}
+    \boxed{
+        V_{11}
+        =
+        \left[
+            \frac{2X^2}{D^2\alpha^2}
+            +
+            \frac{2\sigma^2}{D}
+            \right]V_{00}.
+    }
+\end{align}
+for a centered Gaussian, $X=0$, parity implies
+\begin{align}
+    \boxed{
+        V_{nm}=0
+        \qquad\text{if }n+m\text{ is odd}.
+    }
+\end{align}
+in the broad-Gaussian limit,
+\begin{align}
+    \lim_{\sigma\to\infty}
+    \exp\left[-\frac{(x-X)^2}{2\sigma^2}\right]=1,
+\end{align}
+and consequently
+\begin{align}
+    \boxed{
+        \lim_{\sigma\to\infty}V_{nm}=V_0\delta_{nm}.
+    }
+\end{align}
+
+

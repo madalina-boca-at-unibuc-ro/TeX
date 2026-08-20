@@ -1,0 +1,73 @@
+\section{numerical solution of the TDSE for one absorber}
+
+For the numerical solution of the Time-Dependent Schrödinger Equation (TDSE) with a single absorber located at $x=a_1$, we solve the TDSE directly:
+\begin{align}
+  i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = H |\psi(t)\rangle
+\end{align}
+where the Hamiltonian in the coordinate representation is:
+\begin{align}
+  H = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2} - \frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + \frac{1}{2}m\omega_0^2(x-a_1)^2 + V_0 e^{-\frac{(x-X)^2}{2\sigma_V^2}}
+\end{align}
+the wave function is represented as a superposition of the Fock states of the harmonic oscillator
+\begin{align}
+  \psi(X,x,t) = \sum\limits_{n\ge0}\Psi_n(X,t)|n(a_1)\rangle
+\end{align}
+then
+\begin{align}
+  i\hbar\frac{\partial\Psi_n(X,t)}{\partial t} = \sum\limits_{n\ge0}i\hbar\frac{\partial\Psi_n(X,t)}{\partial t}|n(a_1)\rangle
+\end{align}
+and
+\begin{align}
+  H\psi(x,X,t) =\sum\limits_{n\ge0}\left[-\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_n(X,t) + (\hbar\omega (n+\frac{1}{2}))\Psi_n(X,t)\right]|n(a)\rangle + \sum\limits_{n\ge0}V_0e^{-\frac{(x-X)^2}{2\sigma_V^2}}\Psi_n(X,t)|n(a)\rangle
+\end{align}
+The TDSE becomes a system of coupled partial differential equations for the coefficients $\Psi_n(X,t)$:
+\begin{align}
+  i\hbar\frac{\partial\Psi_n(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_n(X,t) + (\hbar\omega (n+\frac{1}{2}))\Psi_n(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_m(X,t)
+\end{align}
+where the coupling matrix elements $V_{nm}(X)$ are given by:
+\begin{align}
+  V_{nm}(X) = \langle n(a_1)|V_0 e^{-\frac{(x-X)^2}{2\sigma_V^2}}|m(a_1)\rangle
+\end{align}
+and they are calculated in Appendix \ref{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}. The initial condition is given by the wave packet
+\begin{align}
+  \Psi_n(X,0) = \langle 0(a_1)|\psi_0(X,0)\rangle\delta_{n,0}
+\end{align}
+i.e. the absorber is in the ground state. The spatial part of the wave function is the Gaussian wave packet described in Section \ref{sec:the-model-description-notations}.
+
+
+For the following numerical calculation it is convenient to write the  wave packet in the form
+\begin{align}
+  \psi_n(X) = \psi_{n,+}(X)e^{\frac{i}{\hbar}P_0X} + \psi_{n,-}(X)e^{-\frac{i}{\hbar}P_0X}
+\end{align}
+the two terms obey independent TDSEs (or system of coupled TDSEs); to derive them we use
+\begin{align}
+  -i\hbar\frac{\partial}{\partial X}\psi_{n,+}e^{\frac{i}{\hbar}P_0X} = (-i\hbar\frac{\partial}{\partial X}+P_0)\psi_{n,+}e^{\frac{i}{\hbar}P_0X}, \quad P\psi_{n,-}e^{-\frac{i}{\hbar}P_0X} = (P-P_0)\psi_{n,-}e^{-\frac{i}{\hbar}P_0X}
+\end{align}
+and the coupled systems differential equations for the two components are
+\begin{align}
+   & i\hbar\frac{\partial\Psi_{n,+}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,+}(X,t) - \frac{i\hbar P_0}{M}\frac{\partial}{\partial X}\Psi_{n,+}(X,t) + \left(\frac{P_0^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,+}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,+}(X,t) \\
+   & i\hbar\frac{\partial\Psi_{n,-}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,-}(X,t) + \frac{i\hbar P_0}{M}\frac{\partial}{\partial X}\Psi_{n,-}(X,t) + \left(\frac{P_0^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,-}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,-}(X,t)
+\end{align}
+The initial condition is now given by (see \eqref{psi(X_0)-tdse_tdpt})
+\begin{align}
+  \Psi_{n,+}(X,0) = \Psi_{n,-}(X,0) =\frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\frac12\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
+\end{align}
+or, for large $P_0$ (see \eqref{C(P)-one-atom-approx})
+\begin{align}
+  \Psi_{n,+}(X,0) = \Psi_{n,-}(X,0) =\frac{1}{\sqrt{2\sigma_\alpha\sqrt{\pi}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
+\end{align}
+
+\subsection{numerical method}
+
+the numerical method used to solve the TDSE is the split-operator method, which is based on the Trotter-Suzuki decomposition of the time-evolution operator. The time-evolution operator for a small time step $\Delta t$ can be approximated as:
+\begin{align}
+  U(\Delta T)= e^{-\frac{i}{\hbar}H\Delta t} \approx e^{-\frac{i}{\hbar}V\frac{\delta   t}2} e^{-\frac{i}{\hbar}T\delta t} e^{-\frac{i}{\hbar}V\delta t}\ldots e^{-\frac{i}{\hbar}T\delta t} e^{-\frac{i}{\hbar}V\frac{\delta t}2}
+\end{align}
+where $T$ is the kinetic energy operator and $V$ is the potential energy operator.
+
+the kinetic energy operator is multiplicative in the momentum space and diagonal, so we can efficiently apply it using the Fast Fourier Transform (FFT) to switch between position and momentum representations.
+
+the potential energy operator is multiplicative in the position space, so we can apply it directly in that representation, but it is not diagonal.
+
+to apply it, we need first to calculate the matrix ${\cal V}(X)$ of the potential energy operator in the harmonic oscillator basis (see Appendix \ref{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}). The matrix elements $V_{nm}(X)$ are calculated for each value of $X$ on the spatial grid, and then the matrix ${\cal V}(X)$ is diagonalized to obtain its eigenvalues and eigenvectors. The potential energy operator can then be applied in the diagonal basis, and the wave function can be transformed back to the original basis using the eigenvectors.
+

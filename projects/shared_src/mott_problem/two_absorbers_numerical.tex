@@ -1,0 +1,40 @@
+\section{numerical solution of the TDSE for two absorbers}
+
+For the two-absorber system, the coordinate space is 3D, represented by the coordinates $(X, x_1, x_2)$, where $X$ is the alpha particle coordinate, and $x_1, x_2$ are the coordinates of the two atoms. The TDSE is:
+\begin{align}
+  i\hbar \frac{\partial}{\partial t}\psi(X, x_1, x_2, t) = H \psi(X, x_1, x_2, t)
+\end{align}
+where the Hamiltonian is:
+\begin{align}
+  H = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2} - \sum_{i=1}^2 \frac{\hbar^2}{2m}\frac{\partial^2}{\partial x_i^2} + \sum_{i=1}^2 \frac{1}{2}m\omega_0^2(x_i-a_i)^2 + \sum_{i=1}^2 V_0 e^{-\frac{(x_i-X)^2}{2\sigma_V^2}}
+\end{align}
+
+we solve as in the previous case, where the wave function is represented as a superposition of the Fock states of the harmonic oscillator, but now the basis is the tensor product of the Fock states of the two harmonic oscillators:
+\begin{align}
+  \psi(X,x,t) = \sum\limits_{n_1\ge0}\sum\limits_{n_2\ge0}\Psi_{n_1n_2}(X,t)|n_1(a_1)\rangle|n_2(a_2)\rangle
+\end{align}
+then the system of coupled TDSEs for the coefficients $\Psi_{n_1n_2}(X,t)$ is:
+\begin{align}
+  i\hbar\frac{\partial\Psi_{n_1n_2}(X,t)}{\partial t} = \sum\limits_{n_1\ge0}\sum\limits_{n_2\ge0}i\hbar\frac{\partial\Psi_{n_1n_2}(X,t)}{\partial t}|n_1(a_1)\rangle|n_2(a_2)\rangle
+\end{align}
+and
+\begin{align}
+  H\psi(X,x,t) = & \sum\limits_{n_1\ge0}\sum\limits_{n_2\ge0}\left[-\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n_1n_2}(X,t) + (\hbar\omega (n_1+n_2+1))\Psi_{n_1n_2}(X,t)\right]|n_1(a_1)\rangle|n_2(a_2)\rangle \nonumber \\
+                 & + \sum\limits_{n_1\ge0}\sum\limits_{n_2\ge0}(V_0e^{-\frac{(x_1-X)^2}{2\sigma_V^2}}+V_0e^{-\frac{(x_2-X)^2}{2\sigma_V^2}})\Psi_{n_1n_2}(X,t)|n_1(a_1)\rangle|n_2(a_2)\rangle
+\end{align}
+The TDSE becomes a system of coupled partial differential equations for the coefficients $\Psi_{n_1n_2}(X,t)$:
+\begin{align}
+  i\hbar\frac{\partial\Psi_{n_1n_2}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n_1n_2}(X,t) + (\hbar\omega (n_1+n_2+1))\Psi_{n_1n_2}(X,t) + \sum\limits_{m_1\ge0}\sum\limits_{m_2\ge0}V_{n_1n_2,m_1m_2}(X)\Psi_{m_1m_2}(X,t)
+\end{align}
+where the coupling matrix elements $V_{n_1n_2,m_1m_2}(X)$ are given by:
+\begin{align}
+  V_{n_1n_2,m_1m_2}(X) = \langle n_1(a_1)|V_0 e^{-\frac{(x_1-X)^2}{2\sigma_V^2}}|m_1(a_1)\rangle \delta_{n_2m_2}+\langle n_2(a_2)|V_0 e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}|m_2(a_2)\rangle\delta_{n_1m_1}
+\end{align}
+and the one absorber matrix elements are calculated in Appendix \ref{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}. The initial condition is given by the wave packet
+\begin{align}
+  \Psi_{n_1n_2}(X,0) = | 0(a_1)\rangle |0(a_2)\rangle|\psi_0(X,0)\rangle\delta_{n_1,0}\delta_{n_2,0}
+\end{align}
+i.e. both absorbers are in the ground state. The spatial part of the wave function is the same as in the one absorber case, given by \eqref{psi(X_0)-tdse_tdpt}.
+
+
+The numerical calculation is similar to the one absorber, except that now the number of coupled equations is $N^2$, where $N$ is the number of Fock states used in the expansion. The basis for the channels, having two indices in the range $0\le n_1,n_2\le N-1$, has to be flattened into a single index for the numerical solution.

@@ -1,0 +1,175 @@
+\newpage
+\section{ numerically stable form of the second-order expression energy factor}
+
+Consider the expression
+\begin{align}
+    {\cal F}(E_{\gamma_f}, E_{\gamma_1}, E_\gamma)= \frac{1}{E_{\gamma_1}-E_\gamma} \left[
+        \frac{e^{-\frac{i}{\hbar}E_\gamma(t_f-t_i)}
+            -e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}}
+        {E_{\gamma_f}-E_\gamma}
+        -
+        \frac{e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}
+            -e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}}
+        {E_{\gamma_f}-E_{\gamma_1}}
+        \right].
+\end{align}
+
+Although this expression is finite when two or more of the energies
+coincide, its direct numerical evaluation is problematic because the
+individual terms contain removable singularities and differences of
+nearly equal quantities.
+
+We derive forms based on the sinc function that are better suited for
+numerical evaluation.
+
+\subsection{ Notation}
+
+Define
+
+\begin{align}\Delta t=t_f-t_i, \qquad
+    \tau=\frac{\Delta t}{\hbar},\end{align}
+
+and abbreviate
+
+
+\begin{align}    {\cal F}(E_{\gamma_f}, E_{\gamma_1}, E_\gamma)= \frac{1}{E_{\gamma_1}-E_\gamma} \left[
+        \frac{e^{-i\tau E_\gamma}-e^{-i\tau E_{\gamma_f}}}{E_{\gamma_f}-E_\gamma}
+        -
+        \frac{e^{-i\tau E_{\gamma_1}}-e^{-i\tau E_{\gamma_f}}}{E_{\gamma_f}-E_{\gamma_1}}
+        \right].\end{align}
+
+Throughout, the mathematical $\operatorname{sinc}$ function is defined by
+
+\begin{align}\operatorname{sinc}z=\frac{\sin z}{z}, \qquad
+    \operatorname{sinc}(0)=1.\end{align}
+
+\subsection{ First $\operatorname{sinc}$ transformation}
+
+Use the identity
+\begin{align} e^{-ix}-e^{-iy} = -i(x-y)e^{-i(x+y)/2}\operatorname{sinc}\left(\frac{x-y}{2}\right).\end{align}
+
+It follows that
+
+\begin{align}\frac{e^{-i\tau E_a}-e^{-i\tau E_b}}{E_b-E_a} = i\tau
+    e^{-i\tau(E_a+E_b)/2} \operatorname{sinc} \left[
+        \frac{\tau(E_a-E_b)}{2}
+        \right].\end{align}
+
+Therefore,
+
+\begin{align}\boxed{
+        {\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)
+        =
+        \frac{i\tau}{E_{\gamma_1}-E_\gamma}
+        \left[
+            e^{-i\tau(E_\gamma+E_{\gamma_f})/2}
+            \operatorname{sinc}
+            \left(\frac{\tau(E_\gamma-E_{\gamma_f})}{2}\right)
+            -
+            e^{-i\tau(E_{\gamma_1}+E_{\gamma_f})/2}
+            \operatorname{sinc}
+            \left(\frac{\tau(E_{\gamma_1}-E_{\gamma_f})}{2}\right)
+            \right].
+    }\end{align}
+
+This form explicitly removes the apparent singularities at
+
+\begin{align} E_{\gamma_f}\to E_\gamma \qquad\text{and}\qquad
+    E_{\gamma_f}\to E_{\gamma_1}.\end{align}
+
+However, it still contains an apparent difference quotient when
+$E_{\gamma_1}\to E_\gamma$.
+
+\subsection{ Limit $E_{\gamma_1}\to E_\gamma$}
+
+Define
+
+\begin{align} g(E, E_{\gamma_f})= e^{-i\tau(E+E_{\gamma_f})/2} \operatorname{sinc}
+    \left[
+        \frac{\tau(E-E_{\gamma_f})}{2}
+        \right].\end{align}
+
+Then
+
+\begin{align}\mathcal A = i\tau
+    \frac{g(E_\gamma, E_{\gamma_f})-g(E_{\gamma_1},E_{\gamma_f})}{E_{\gamma_1}-E_\gamma}.\end{align}
+
+When $E_{\gamma_1}\to E_\gamma=E$,
+
+\begin{align}\frac{g(E_\gamma,E_{\gamma_f})-g(E_{\gamma_1},E_{\gamma_f})}{E_{\gamma_1}-E_\gamma} \longrightarrow -\frac{\partial g(E_\gamma,E_{\gamma_f})}{\partial E_\gamma}.
+\end{align}
+
+Let
+
+\begin{align} z=\frac{\tau(E_\gamma-E_{\gamma_f})}{2}. \end{align}
+
+Differentiating $g(E_\gamma ,E_{\gamma_f})$ gives
+
+\begin{align} \frac{\partial g(E_\gamma,E_{\gamma_f})}{\partial E_\gamma} = \frac{\tau}{2} e^{-i\tau(E+E_{\gamma_f})/2} \left[
+        \operatorname{sinc}'z
+        -i\operatorname{sinc}z
+        \right].\end{align}
+
+Hence
+
+\begin{align}\boxed{
+        {\cal F} (E_\gamma,E_\gamma,E_{\gamma_f})
+        =
+        -\frac{\tau^2}{2}
+        e^{-i\tau(E_\gamma+E_{\gamma_f})/2}
+        \left[
+            \operatorname{sinc}z
+            +i\,\operatorname{sinc}'z
+            \right]
+        ,\quad z= \frac{\tau(E_\gamma-E_{\gamma_f})}{2},\quad \operatorname{sinc}'z = \frac{z\cos z-\sin z}{z^2},\quad \operatorname{sinc}'(0)=0}\end{align}
+
+Here
+
+\subsection {Completely degenerate case}
+
+If
+\begin{align} E_\gamma=E_{\gamma_1}=E_{\gamma_f}, \end{align}
+then $z=0$, and therefore
+\begin{align}\operatorname{sinc}(0)=1, \qquad
+    \operatorname{sinc}'(0)=0.\end{align}
+
+The expression reduces to
+\begin{align}\boxed{
+        \mathcal A
+        =
+        -\frac{\tau^2}{2}e^{-i\tau E_\gamma}
+        =
+        -\frac{(t_f-t_i)^2}{2\hbar^2}
+        e^{-iE_\gamma(t_f-t_i)/\hbar}.
+    }\end{align}
+Thus the apparent singularity when all three energies coincide is
+completely removable.
+
+\subsection{Fully regular integral representation}
+
+A representation with no energy denominators at all is
+\begin{align}\boxed{
+        {\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)    =
+        -\tau^2
+        \int_0^1 ds\,
+        (1-s)\,
+        \exp\left\{
+        -i\tau
+        \left[
+            \frac{1-s}{2}(E_\gamma+E_{\gamma_1})+sE_{\gamma_f}
+            \right]
+        \right\}
+        \operatorname{sinc}
+        \left[
+            \frac{\tau(1-s)(E_{\gamma_1}-E_\gamma)}{2}
+            \right].
+    }\end{align}
+This identity is exact. It contains no divisions by $ (E_{\gamma_1}-E_\gamma)$, $(E_{\gamma_f}-E_\gamma)$, $(E_{\gamma_f}-E_{\gamma_1}), $
+and all factors remain regular when any or all of these differences
+vanish.
+
+In particular,
+\begin{align}\operatorname{sinc}(0)=1, \end{align}
+so no special treatment of a zero argument is required provided that the
+numerical implementation of $\operatorname{sinc}$ itself is stable.
+

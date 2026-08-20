@@ -1,0 +1,67 @@
+
+
+\section{matrix element of \texorpdfstring{$e^{-iqx}$}{e\textsuperscript{-iqx}} in the harmonic oscillator basis}
+
+the matrix element $\langle n | e^{-iqx} | m \rangle$ for the one-dimensional quantum harmonic oscillator eigenfunctions $|n\rangle$ and $|m\rangle$ is given in closed form by:
+
+\begin{align}
+  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i q \alpha }{\sqrt{2}}\right)^{n_> - n_<} e^{-\frac{q^2 \alpha ^2}{4}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{q^2 \alpha ^2}{2}\right)\label{me-ho}
+\end{align}
+
+\noindent where:
+\begin{itemize}
+  \item $\alpha  = \sqrt{\dfrac{\hbar}{m\omega}}$ is the characteristic oscillator length scale,
+  \item $n_< = \min(n, m)$ and $n_> = \max(n, m)$,
+  \item $L_k^{(\alpha)}(z)$ is the associated (generalized) Laguerre polynomial.
+\end{itemize}
+
+\subsection{derivation}
+
+\subsubsection{1. ladder operator representation}
+express the position operator $x$ in terms of the creation ($a^\dagger$) and annihilation ($a$) operators:
+\begin{align}
+  x = \frac{\alpha }{\sqrt{2}} (a + a^\dagger)
+\end{align}
+
+defining the dimensionless parameter $\lambda = \dfrac{q \alpha }{\sqrt{2}}$, the exponent becomes $-i q x = -i \lambda (a + a^\dagger)$.
+
+\subsubsection{2. operator disentangling (Baker--Campbell--Hausdorff)}
+since $[a, a^\dagger] = 1$, the operator exponential factors as:
+\begin{align}
+  e^{-i \lambda (a + a^\dagger)} = e^{-i \lambda a^\dagger} e^{-i \lambda a} e^{-\frac{1}{2} \lambda^2}
+\end{align}
+
+\subsubsection{3. evaluation of matrix elements}
+inserting this factorized form into the matrix element yields:
+\begin{align}
+  \langle n | e^{-iqx} | m \rangle = e^{-\frac{\lambda^2}{2}} \langle n | e^{-i \lambda a^\dagger} e^{-i \lambda a} | m \rangle
+\end{align}
+
+expanding both exponentials in power series:
+\begin{align}
+  e^{-i \lambda a} |m\rangle          & = \sum_{k=0}^{m} \frac{(-i\lambda)^k}{k!} \sqrt{\frac{m!}{(m-k)!}} |m-k\rangle  \\
+  \langle n| e^{-i \lambda a^\dagger} & = \sum_{l=0}^{n} \frac{(-i\lambda)^l}{l!} \sqrt{\frac{n!}{(n-l)!}} \langle n-l|
+\end{align}
+
+taking the inner product $\langle n-l | m-k \rangle = \delta_{n-l, m-k}$ sets $l = k + n - m$. Assuming $n \ge m$ (so $n_> = n$ and $n_< = m$):
+\begin{align}
+  \langle n | e^{-iqx} | m \rangle = e^{-\frac{\lambda^2}{2}} \sum_{k=0}^{m} \frac{(-i\lambda)^k}{k!} \frac{(-i\lambda)^{k + n - m}}{(k + n - m)!} \frac{\sqrt{n!\, m!}}{(m - k)!}
+\end{align}
+
+factoring out $(-i\lambda)^{n-m}$:
+\begin{align}
+  \langle n | e^{-iqx} | m \rangle = e^{-\frac{\lambda^2}{2}} (-i\lambda)^{n-m} \sqrt{\frac{m!}{n!}} \sum_{k=0}^{m} \frac{(-1)^k \lambda^{2k}}{k! (m-k)!} \frac{n!}{(k + n - m)!}
+\end{align}
+
+\subsubsection{4. connection to Laguerre polynomials}
+using the explicit series definition of the associated Laguerre polynomial,
+\begin{align}
+  L_m^{(\alpha)}(z) = \sum_{k=0}^{m} (-1)^k \binom{m+\alpha}{m-k} \frac{z^k}{k!} = \sum_{k=0}^{m} \frac{(-1)^k z^k}{k! (m-k)!} \frac{(m+\alpha)!}{(k+\alpha)!}
+\end{align}
+
+with $\alpha = n - m$ and $z = \lambda^2 = \dfrac{q^2 \alpha ^2}{2}$, the sum simplifies to:
+\begin{align}
+  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{m!}{n!}} \left(-\frac{i q \alpha }{\sqrt{2}}\right)^{n-m} e^{-\frac{q^2 \alpha ^2}{4}} L_m^{(n-m)}\!\left(\frac{q^2 \alpha ^2}{2}\right)
+\end{align}
+
+extending to arbitrary $n$ and $m$ by defining $n_<$ and $n_>$ completes the proof.

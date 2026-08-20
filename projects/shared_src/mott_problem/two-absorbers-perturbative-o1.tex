@@ -1,0 +1,22 @@
+\newpage
+\section{first-order perturbative approach for two absorbers}
+
+we consider the case of two atoms, located at $x_1=a_1$ and $x_2=a_2$. The perturbation Hamiltonian is:
+\begin{align}
+    H_I = V_0 e^{-\frac{(x_1-X)^2}{2\sigma_V^2}} + V_0 e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}
+\end{align}
+the initial state is given by the alpha particle wave packet and both oscillators in their ground state:
+\begin{align}
+    |\psi_i\rangle = \int\limits_{-\infty}^{\infty}dP C(P)|P\rangle\otimes|0(a_1)\rangle\otimes|0(a_2)\rangle
+\end{align}
+the final state where one or both oscillators are excited has the form:
+\begin{align}
+    |\psi_f\rangle = |P_f, n_1, n_2\rangle = |P_f\rangle\otimes|n_1(a_1)\rangle\otimes|n_2(a_2)\rangle
+\end{align}
+we calculate the first order transition amplitude to find the probability of one-atom excitation
+
+starting point: the general formula (\ref{first_order_transition_amplitude})
+\begin{align}
+    {\cal A}_{fi}^{(1)} & =e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\sum_\gamma \frac{c_\gamma^{(i)}}{{E_{\gamma_f}- E_\gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(1-e^{\frac{i}{\hbar}({E_{\gamma_f}- E_\gamma})(t_f-t_i)} \right)\label{first_order_transition_amplitude-used}
+\end{align}
+

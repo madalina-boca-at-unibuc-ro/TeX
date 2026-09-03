@@ -6,6 +6,7 @@
 \chapter{the projectile wave packet}
 \input{\srcpath/mott_problem/part1_general/projectile_wavepacket.tex}
 
+\setcounter{chapter}{0}
 \part{continuous-position atoms: the linear oscillator}\label{part-continuous-atoms}
 
 \chapter{the one-dimensional harmonic oscillator}

@@ -10,6 +10,8 @@
 \input{\srcpath/mott_problem/one_absorber_numerical.tex}
 
 \part{the two-absorber system}
+\chapter{general description}
+\input{\srcpath/mott_problem/two_absorber_description.tex}
 
 \chapter{perturbative approach}
 \input{\srcpath/mott_problem/two-absorbers-perturbative-o1.tex}

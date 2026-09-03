@@ -1,22 +1,122 @@
 \newpage
-\section{first-order perturbative approach for two absorbers}
+\section{first-order perturbative approach for two absorbers}\label{section-two-absorbers-o1}
 
-we consider the case of two atoms, located at $x_1=a_1$ and $x_2=a_2$. The perturbation Hamiltonian is:
+we consider the case of two atoms, located at $x_1=a_1$ and $x_2=a_2$. The perturbation Hamiltonian is the sum of two terms:
 \begin{align}
-    H_I = V_0 e^{-\frac{(x_1-X)^2}{2\sigma_V^2}} + V_0 e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}
+  H_I = H_I^{(1)}(X-x_1) +H_I^{(2)}(X-x_2)
+\end{align}
+For the initial test the interaction Hamiltonian caa be chosen as
+\begin{align}
+  H_I(y)=V_0 e^{-\frac{y^2}{2\sigma_V^2}}
 \end{align}
 the initial state is given by the alpha particle wave packet and both oscillators in their ground state:
 \begin{align}
-    |\psi_i\rangle = \int\limits_{-\infty}^{\infty}dP C(P)|P\rangle\otimes|0(a_1)\rangle\otimes|0(a_2)\rangle
+  |\psi_i\rangle = \int\limits_{-\infty}^{\infty}dP C(P)|P\rangle\otimes|0(a_1)\rangle\otimes|0(a_2)\rangle
 \end{align}
-the final state where one or both oscillators are excited has the form:
+here $C(P)$ is give by (\ref{C(P)-two-atom}) and the approximation (\ref{C(P)-two-atom-approx}).
+\begin{importantbox}
+  \begin{align}
+    C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-two-atom-used-o1}
+  \end{align}
+
+  Note that for $P_0 \gg \hbar/\sigma_\alpha$, the second term in the brackets at the denominator is negligible, and we can approximate $C(P)$ as:
+  \begin{align}
+    C(P) \approx \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}+ e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-two-atom-approx-used-o1}
+  \end{align}
+\end{importantbox}
+the final state where  oscillators are excited has the form:
 \begin{align}
-    |\psi_f\rangle = |P_f, n_1, n_2\rangle = |P_f\rangle\otimes|n_1(a_1)\rangle\otimes|n_2(a_2)\rangle
+  |\psi_f\rangle = |P_f, n_1, n_2\rangle = |P_f\rangle\otimes|n_1(a_1)\rangle\otimes|n_2(a_2)\rangle
 \end{align}
-we calculate the first order transition amplitude to find the probability of one-atom excitation
+we calculate the first order transition amplitude to find the probability of one-atom excitation (note that the first order calculation can predict only one atom excitation)
 
 starting point: the general formula (\ref{first_order_transition_amplitude})
 \begin{align}
-    {\cal A}_{fi}^{(1)} & =e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\sum_\gamma \frac{c_\gamma^{(i)}}{{E_{\gamma_f}- E_\gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(1-e^{\frac{i}{\hbar}({E_{\gamma_f}- E_\gamma})(t_f-t_i)} \right)\label{first_order_transition_amplitude-used}
+  {\cal A}_{fi}^{(1)} & =\sum_\gamma {c_\gamma^{(i)}} \langle \gamma_f|H_I|\gamma\rangle  {\cal E}(E_{\gamma_f},E_\gamma)\label{first_order_transition_amplitude-used}
 \end{align}
 
+We apply it for our situation
+We start from the general calculation
+\begin{align}
+  \langle \gamma_1|H_I|\gamma_2\rangle = \langle n^{(1)}_1(a_1)n_1^{(2)}(a_2);P_1|H_{I}^{(1)}+H_{I}^{(2)}|n_2^{(1)}(a_1)n_2^{(2)}(a_2);P_2\rangle
+\end{align}
+the one oscillator interaction matrix element will be denoted as
+\begin{importantbox}
+  \begin{align}
+    \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle={\cal V}(n_1,n_2; P_1, P_2; a)\label{one-absorber-matrix-element}
+  \end{align}
+\end{importantbox}
+and they are calculated in Sect \ref{cal-V_olh-basis}
+\begin{importantbox}
+  \begin{align}
+    {\cal V}(n_1,n_2;P_1,P_2;a)&= \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle  \nonumber\\
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{cal-V_n1n2p1p2-use}
+  \end{align}
+  where $n_<$ and $n_>$ are smaller/larger between $n_1$ and $n_2$
+  For $P_1=P_2$, the expression containing the power of $P_1-P_2$
+  should be evaluated through its limiting value.  Using the
+  orthonormality of the harmonic-oscillator eigenfunctions gives
+  \begin{align}
+    {\cal V}(n_1,n_2;P,P;a)
+    = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
+    \delta_{n_1n_2}.\label{cal-V_n1n2p1p2-spec-use}
+  \end{align}
+\end{importantbox}
+with the results above the matrix element $ \langle \gamma_1|H_I{(i)}|\gamma_2\rangle$ can be written as
+\begin{align}
+  \langle \gamma_1|H_I|\gamma_2\rangle = \delta_{n_1^{(2)}n_2^{(2)}}{\cal V}(n_1^{(1)},n_2^{(1)};P_1,P_2,a_1)+\delta_{n_1^{(1)}n_2^{(1)}}{\cal V}(n_1^{(2)},n_2^{(2)};P_1,P_2,a_2)
+\end{align}
+For the calculation of the transition amplitude we have
+\begin{align}
+  &\gamma\rightarrow |P;0(a_1),0(a_2)\rangle,\qquad E_\gamma = \frac{P^2}{2M}+\hbar\omega\\
+  & \gamma_f\rightarrow|P_f;n_f^{(1)},n_f^{(2)}\rangle\qquad E_{\gamma_f} = \frac{P_f^2}{2M}+\hbar\omega(n_f^{(1)}+n_f^{(2)}+1)
+\end{align}
+and the transition amplitude becomes
+\begin{importantbox}
+  \begin{align}
+    {\cal A}_{fi}^{(1)} (P_f;n_f^{(1)},n_f^{(2)})= \int\limits_{-\infty}^{\infty}dPC(P)\left[\delta_{n_f^{(2)}0}{\cal V}(n_f^{(1)},0;P_f,P;a_1)+\delta_{n_f^{(1)}0}{\cal V}(n_f^{(2)},0; P_f,P;a_2)\right] {\cal E}(E_{\gamma_f},E_\gamma)
+  \end{align}
+\end{importantbox}
+the factor ${\cal E}$ is calculated in Sect. \ref{sect-numerical-stable-first-order} and is
+\begin{importantbox}
+  \begin{align} {\cal E}(E_{\gamma_f},E_\gamma)=\frac{e^{-i\tau E_{\gamma_f}}-e^{-i\tau E_\gamma}}{E_{\gamma_f}-E_\gamma} = -i\tau
+    e^{-i\tau(E_{\gamma_f}+E_\gamma)/2}        \operatorname{sinc} \left[
+      \frac{\tau(E_{\gamma_f}-E_{\gamma})}{2}
+    \right].\qquad \tau = \frac{t_f-t_i}{\hbar}\label{regularized-E-used}
+  \end{align}
+\end{importantbox}
+
+The matrix element $ {\cal V}$ has a simplified form since one of the indices is zero
+\begin{importantbox}
+  \begin{align}
+    {\cal V}(n_f,0;P_f,P;a)&= \langle n_f(a) P_f|H_I|0 P\rangle  \nonumber\\
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_f-P)}e^{-\frac{(P_f-P)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{1}{n_f!}} \left(-\frac{i (P_f-P)  }{\sqrt{2}\hbar\alpha}\right)^{n_f} e^{-\frac{(P_f-P)^2 }{4\hbar^2\alpha^2}} \label{cal-V_n1n2p1p2-use-n0}
+  \end{align}
+  For $P_1=P_2$, the expression containing the power of $P_f-P$
+  should be evaluated through its limiting value.  Using the
+  orthonormality of the harmonic-oscillator eigenfunctions gives
+  \begin{align}
+    {\cal V}(n_f,0;P,P;a)
+    = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
+    \delta_{n_f0}.\label{cal-V_n1n2p1p2-spec-use-n0}
+  \end{align}
+  and $\alpha$ is
+  \begin{align}
+    \alpha=\sqrt{\frac{m\omega}\hbar}
+  \end{align}
+\end{importantbox}
+The numerical observable is the differential density probability
+\begin{importantbox}
+  \begin{align}
+    {\cal P}(P_f, n_f^{(1)}, n_f^{(2)}) = \left|{\cal A}_{fi}^{(1)} (P_f;n_f^{(1)},n_f^{(2)})\right|^2
+  \end{align}
+\end{importantbox}
+
+\begin{importantbox}
+  in the numerical calculation there are two regimes:
+  \begin{enumerate}
+    \item $M\gg m \sim 1$ au. The velocity $v$ of the alpha particle is of the order of 10 au (it has to be smaller that $c = 137.036$ au). In that case the momentum $P_0$ is very large; there will be two regions of interest for $P_f$, in two disconnected stripes around $\pm P_0$, with width of the order of $\sqrt{\frac{\hbar^2 }{\sigma_V^2 + \frac1{2\alpha^2}}}$
+
+    \item $M\sim m\sim1$ au. In that case the velocity of the alpha particle $v$ remains the same, but the momentum will be much lower, and the two stripes from the previous point become a single stripe.
+  \end{enumerate}
+\end{importantbox}

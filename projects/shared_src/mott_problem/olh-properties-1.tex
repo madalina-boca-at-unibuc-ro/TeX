@@ -5,14 +5,14 @@
 the matrix element $\langle n | e^{-iqx} | m \rangle$ for the one-dimensional quantum harmonic oscillator eigenfunctions $|n\rangle$ and $|m\rangle$ is given in closed form by:
 
 \begin{align}
-  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i q \alpha }{\sqrt{2}}\right)^{n_> - n_<} e^{-\frac{q^2 \alpha ^2}{4}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{q^2 \alpha ^2}{2}\right)\label{me-ho}
+  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i q }{\sqrt{2}\alpha }\right)^{n_> - n_<} e^{-\frac{q^2 }{4\alpha ^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{q^2 }{2\alpha ^2}\right)\label{me-ho}
 \end{align}
 
 \noindent where:
 \begin{itemize}
-  \item $\alpha  = \sqrt{\dfrac{\hbar}{m\omega}}$ is the characteristic oscillator length scale,
+  \item $\alpha  = \sqrt{\frac{m\omega}{\hbar}}$ is the oscillator parameter $[\alpha]=L^{-1}$,
   \item $n_< = \min(n, m)$ and $n_> = \max(n, m)$,
-  \item $L_k^{(\alpha)}(z)$ is the associated (generalized) Laguerre polynomial.
+  \item $L_k^{(\rho)}(z)$ is the associated (generalized) Laguerre polynomial.
 \end{itemize}
 
 \subsection{derivation}
@@ -20,10 +20,10 @@ the matrix element $\langle n | e^{-iqx} | m \rangle$ for the one-dimensional qu
 \subsubsection{1. ladder operator representation}
 express the position operator $x$ in terms of the creation ($a^\dagger$) and annihilation ($a$) operators:
 \begin{align}
-  x = \frac{\alpha }{\sqrt{2}} (a + a^\dagger)
+  x = \frac{1}{\sqrt{2} \alpha } (a + a^\dagger)
 \end{align}
 
-defining the dimensionless parameter $\lambda = \dfrac{q \alpha }{\sqrt{2}}$, the exponent becomes $-i q x = -i \lambda (a + a^\dagger)$.
+defining the dimensionless parameter $\lambda = \dfrac{q }{\sqrt{2}\alpha }$, the exponent becomes $-i q x = -i \lambda (a + a^\dagger)$.
 
 \subsubsection{2. operator disentangling (Baker--Campbell--Hausdorff)}
 since $[a, a^\dagger] = 1$, the operator exponential factors as:
@@ -56,12 +56,63 @@ factoring out $(-i\lambda)^{n-m}$:
 \subsubsection{4. connection to Laguerre polynomials}
 using the explicit series definition of the associated Laguerre polynomial,
 \begin{align}
-  L_m^{(\alpha)}(z) = \sum_{k=0}^{m} (-1)^k \binom{m+\alpha}{m-k} \frac{z^k}{k!} = \sum_{k=0}^{m} \frac{(-1)^k z^k}{k! (m-k)!} \frac{(m+\alpha)!}{(k+\alpha)!}
+  L_m^{(\rho)}(z) = \sum_{k=0}^{m} (-1)^k \binom{m+\rho}{m-k} \frac{z^k}{k!} = \sum_{k=0}^{m} \frac{(-1)^k z^k}{k! (m-k)!} \frac{(m+\rho)!}{(k+\rho)!}
 \end{align}
 
-with $\alpha = n - m$ and $z = \lambda^2 = \dfrac{q^2 \alpha ^2}{2}$, the sum simplifies to:
+with $\rho = n - m$ and $z = \lambda^2 = \dfrac{q^2 }{2\alpha^2}$, the sum simplifies to:
 \begin{align}
-  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{m!}{n!}} \left(-\frac{i q \alpha }{\sqrt{2}}\right)^{n-m} e^{-\frac{q^2 \alpha ^2}{4}} L_m^{(n-m)}\!\left(\frac{q^2 \alpha ^2}{2}\right)
+  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{m!}{n!}} \left(-\frac{i q }{\sqrt{2}\alpha }\right)^{n-m} e^{-\frac{q^2 }{4\alpha ^2}} L_m^{(n-m)}\!\left(\frac{q^2 }{2\alpha ^2}\right)
 \end{align}
 
 extending to arbitrary $n$ and $m$ by defining $n_<$ and $n_>$ completes the proof.
+\newpage
+
+\section{Calculation of the matrix element ${\cal V}$ in the displaced harmonic oscillator basis}\label{cal-V_olh-basis}
+
+we need to calculate the matrix element
+\begin{align}
+  {\cal V}(n_1,n_2;P_1,P_2;a)= \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle
+\end{align}
+for the interaction Hamiltonian
+\begin{align}
+  H_I(y) = V_0 e^{-\frac{y^2}{2\sigma_V^2}}
+\end{align}
+which will be used for $y = X-x$.
+
+by direct calculation we have
+\begin{align}
+  \langle n_1(a), P_1|H_I|n_2(a),P_2\rangle & = \frac{V_0}{2\pi\hbar}\int \limits_{-\infty}^{\infty} dx\int \limits_{-\infty}^{\infty} dX e^{-\frac{i}{\hbar}X(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a)e^{-\frac{(X-x)^2}{2\sigma_V^2}}\nonumber                         \\
+  & =\frac{V_0}{2\pi\hbar}\int \limits_{-\infty}^{\infty} dx\int \limits_{-\infty}^{\infty} dX e^{-\frac{i}{\hbar}(X-x)(P_1-P_2)}e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a)e^{-\frac{(X-x)^2}{2\sigma_V^2}}
+\end{align}
+after the change of variable $X-x=y$ the previous matrix element becomes
+\begin{align}
+  \langle n_1(a), P_1|H_I|n_2(a),P_2\rangle & = \frac{V_0}{2\pi\hbar}\int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}}\int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a)
+\end{align}
+The integral over $y$ can be calculated using (\ref{usefulid2}), with $\lambda = \frac1{2\sigma_V^2}$ and $k = \frac{P_1-P_2}{\hbar}$
+\begin{align}
+  \int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}} = \sqrt{{2\pi\sigma_V^2}} e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}
+\end{align}
+The integral over $x$ is calculated after a further change of variable $x-a=z$
+\begin{align}
+  \int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a) = e^{-\frac{i}{\hbar}a(P_1-P_2)}\int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z)
+\end{align}
+The remaining integral can be computed using (\ref{me-ho}), with $q = \frac{P_1-P_2}{\hbar}$ and $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
+\begin{align}
+  \int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z) = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)
+\end{align}
+and the final result is
+\begin{importantbox}
+  \begin{align}
+    {\cal V}(n_1,n_2;P_1,P_2;a)&= \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle  \nonumber\\
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{cal-V_n1n2p1p2}
+  \end{align}
+  where $n_<$ and $n_>$ are smaller/larger between $n_1$ and $n_2$
+  For $P_1=P_2$, the expression containing the power of $P_1-P_2$
+  should be evaluated through its limiting value.  Using the
+  orthonormality of the harmonic-oscillator eigenfunctions gives
+  \begin{align}
+    {\cal V}(n_1,n_2;P,P;a)
+    = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
+    \delta_{n_1n_2}.\label{cal-V_n1n2p1p2-spec}
+  \end{align}
+\end{importantbox}

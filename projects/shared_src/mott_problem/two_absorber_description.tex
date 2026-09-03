@@ -1,34 +1,34 @@
 \section{the model description; notations}
-\label{sec:the-model-description-notations}
-we consider the system consisting of the free alpha particle and one atom, described as a 1D harmonic oscillator, located at $x=a_1$.
+\label{sec:the-model-description-notations-two-atoms}
+we consider the system consisting of the free alpha particle and two atoms, described as 1D harmonic oscillators, located at $x=a_1$, $x=a_2$.
 
 the system Hamiltonian is
 \begin{align}
-  H=\frac{P_X^2}{2M}+\frac{P_x^2}{2m}+\frac{1}{2}m\omega_0^2(x-a_1)^2+V_0e^{-\frac{(x-X)^2}{2\sigma^2}}=H_0+H_I
+  H=\frac{P_X^2}{2M}+H^{(1)}_0(x_1, a_1)+H^{(2)}_0(x_2, a_2)+H_I^{(1)}(X-x_1)+H_I^{(2)}(X-x_2)
 \end{align}
-where the unperturbed Hamiltonian is given by
+where the $H^{(i)}_0(x,a)$ is the Hamiltonian of an unperturbed displaced oscillator
 \begin{align}
-  H_0=\frac{P_X^2}{2M}+\frac{P_x^2}{2m}+\frac{1}{2}m\omega_0^2(x-a_1)^2
+  H^{(i)}_0(x_i,a_i)=\frac{P_{x_i}^2}{2m}+\frac{1}{2}m\omega^2(x_i-a_i)^2
 \end{align}
 and the perturbation is given by
 \begin{align}
-  H_I=V_0e^{-\frac{(x-X)^2}{2\sigma^2}}
+  H_I^{(i)}(X-x_i)=V_0e^{-\frac{(X-x_i)^2}{2\sigma_V^2}}
 \end{align}
 The energy eigenvectors of $H_0$ are
 \begin{align}
-  H_0|n(a_1),P\rangle = (\hbar\omega_0(n+1/2)+\frac{P^2}{2M})|n(a_1),P\rangle
+  H_0|n^{(1)}(a_1),n^{(2)}(a_2);P\rangle = (\hbar\omega(n^{(1)}+n^{(2)}+1)+\frac{P^2}{2M})|n^{(1)}(a_1),n^{(2)}(a_2);P\rangle
 \end{align}
 in the position representations they are given by
 \begin{align}
-  \langle x,X|n(a_1),P\rangle = u_n(x-a_1)\frac{1}{\sqrt{2\pi\hbar}}e^{\frac{i}{\hbar}PX}
+  \langle x_1,x_2,X|n^{(1)}(a_1)n^{(2)}(a_2),P\rangle = u_{n^{(1)}}(x_1-a_1)u_{n^{(2)}}(x_2-a_2)\frac{1}{\sqrt{2\pi\hbar}}e^{\frac{i}{\hbar}PX}
 \end{align}
 the initial state of the system in the position representation is given by
 \begin{align}
-  \langle x,X|\psi_i\rangle = u_0(x-a_1) \psi_\alpha(X)
+  \langle x_1,x_2,X|\psi_i\rangle = u_0(x_1-a_1)u_0(x_2-a_2) \psi_\alpha(X)
 \end{align}
-where $\psi_\alpha(X)$ is the bimodal  wave packet of the alpha particle with initial momentum $P_0$ and initial width $\sigma_0$ described in Sect. \ref{sect_bimodal}
+where $\psi_\alpha(X)$ is the bimodal  wave packet of the alpha particle with initial momentum $P_0$ and initial width $\sigma_\alpha$ described in Sect. \ref{sect_bimodal}
 \begin{align}
-  \psi_\alpha(X) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)\label{psi(X_0)-tdse_tdpt}
+  \psi_\alpha(X) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)\label{psi(X_0)-tdse_tdpt-two}
 \end{align}
 the energy eigenfunctions expansion of $\psi_\alpha$ is
 \begin{align}
@@ -50,11 +50,11 @@ Using $\cos(u) = \frac{1}{2}(e^{iu} + e^{-iu})$, we can evaluate the integral:
 Substituting this back into the expression for $C(P)$ and simplifying the coefficients, we obtain the final result:
 \begin{importantbox}
   \begin{align}
-    C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-one-atom}
+    C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-two-atom}
   \end{align}
 
-  Note that for $P_0 \gg \hbar/\sigma_\alpha$, the second term in the brackets is negligible, and we can approximate $C(P)$ as:
+  Note that for $P_0 \gg \hbar/\sigma_\alpha$, the second term in the brackets at the denominator  is negligible, and we can approximate $C(P)$ as:
   \begin{align}
-    C(P) \approx \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}+ e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-one-atom-approx}
+    C(P) \approx \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}+ e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-two-atom-approx}
   \end{align}
 \end{importantbox}

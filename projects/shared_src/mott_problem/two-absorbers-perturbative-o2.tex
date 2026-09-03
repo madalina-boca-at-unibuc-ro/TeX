@@ -15,60 +15,39 @@ the final state where one or both oscillators are excited has the form:
 \end{align}
 we calculate the  second-order transition amplitudes to find the probability of double excitation.
 
-
 starting point: the general formula from (\ref{transition-second-order})
 
 \begin{align}
-  {\cal A}_{fi}^{(2)} = & \sum_{\gamma, \gamma_1} c_{\gamma}^{(i)}\langle\gamma_f|H_I|\gamma_1\rangle \langle\gamma_1|H_I|\gamma\rangle\frac{1}{(E_{\gamma_1}-E_{\gamma})} \nonumber                                                                                                                                   \\
-                        & \times\left[ \frac{1}{(E_{\gamma_f}-E_{\gamma})}\left(e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)-\frac{1}{(E_{\gamma_f}-E_{\gamma_1})}\left(e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right) \right]
+  &{\cal A}_{fi}^{(2)} =  \sum_{\gamma, \gamma_1} c_{\gamma}^{(i)}\langle\gamma_f|H_I|\gamma_1\rangle \langle\gamma_1|H_I|\gamma\rangle{\cal F}(E_{\gamma_f}, E_{\gamma_1},E_\gamma)\\
+  &{\cal F}(E_{\gamma_f}, E_{\gamma_1},E_\gamma)= \frac{1}{(E_{\gamma_1}-E_{\gamma})} \left[ \frac{1}{(E_{\gamma_f}-E_{\gamma})}\left(e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)-\frac{1}{(E_{\gamma_f}-E_{\gamma_1})}\left(e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right) \right]
 \end{align}\label{a2sumgen}
+the evaluation of ${\cal F}$ is presented explicitly in (\ref{second-regularization}).
+
 in the previous expression the indices are
-\begin{align}
-   & \gamma\rightarrow\left\{P\in({-\infty},\infty), \;0(a_1), \;0(a_2)\right\}                              \nonumber          \\
-   & \gamma_1\rightarrow\left\{P_1\in({-\infty},\infty), \;m_1(a_1)\in{\mathbb{N}}, \;m_2(a_2)\in{\mathbb{N}}\right\} \nonumber \\
-   & \gamma_f\rightarrow\left\{P_f,\; n_{f_1}(a_1)\in{\mathbb{N}}, \;n_{f_2}(a_2)\in{\mathbb{N}}\right\}
-\end{align}
+\begin{importantbox}
+  \begin{align}
+    & \gamma\rightarrow\left\{P\in({-\infty},\infty), \;0(a_1), \;0(a_2)\right\}                              \nonumber          \\
+    & \gamma_1\rightarrow\left\{P_1\in({-\infty},\infty), \;m_1(a_1)\in{\mathbb{N}}, \;m_2(a_2)\in{\mathbb{N}}\right\} \nonumber \\
+    & \gamma_f\rightarrow\left\{P_f,\; n_{f_1}(a_1)\in{\mathbb{N}}, \;n_{f_2}(a_2)\in{\mathbb{N}}\right\}
+  \end{align}
+  the energies appearing in (\ref{a2sumgen}) are
+  \begin{align}
+    E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad E_{\gamma_1} = \hbar\omega(m_1 + m_2 +1)+\frac{P_1^2}{2M},\quad E_{\gamma_f} = \hbar\omega(n_{f_1}+n_{f_2}+1)+\frac{P_f^2}{2M}
+  \end{align}
+  the coefficient $c_{\gamma}^{(i)}$ is given in (\ref{C(P)-one-atom})
+  \begin{align}
+    c_\gamma^{(i)}\rightarrow C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\
+  \end{align}
+\end{importantbox}
 
 the matrix elements are
-\begin{align}
-  \langle\gamma_f|H_i|\gamma_1\rangle & =\langle n_{f_1}(a_1))n_{f_2}(a_2) P_f|V_0 e^{-\frac{(x_1-X)^2}{2\sigma_V^2}} + V_0 e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}|m_1(a_1)m_2(a_2)P_1\rangle\nonumber                                                                                                                     \\
-                                      & =\frac{V_0}{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX\int\limits_{-\infty}^{\infty}dx_1\int\limits_{\infty}^{\infty}dx_2e^{\frac{i}{\hbar}X(P_1-P_f)}e^{-\frac{(x_1-X)^2}{2\sigma_V^2}}u_{n_{f_1}}(x_1-a_1)u_{n_{f_2}}(x_2-a_2)u_{m_2}(x_2-a_2)u_{m_1}(x_1-a_1)\nonumber      \\
-                                      & \quad+\frac{V_0}{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX\int\limits_{-\infty}^{\infty}dx_1\int\limits_{\infty}^{\infty}dx_2e^{\frac{i}{\hbar}X(P_1-P_f)}e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}u_{n_{f_1}}(x_1-a_1)u_{n_{f_2}}(x_2-a_2)u_{m_2}(x_2-a_2)u_{m_1}(x_1-a_1)\nonumber \\
-                                      & =\delta_{n_{f_2}m_2}\frac{V_0}{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX\int\limits_{-\infty}^{\infty}dx_1e^{\frac{i}{\hbar}X(P_1-P_f)}e^{-\frac{(x_1-X)^2}{2\sigma_V^2}}u_{n_{f_1}}(x_1-a_1)u_{m_1}(x_1-a_1)\nonumber                                                        \\
-                                      & \quad+\delta_{n_{f_1}m_1}\frac{V_0}{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX\int\limits_{\infty}^{\infty}dx_2e^{\frac{i}{\hbar}X(P_1-P_f)}e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}u_{n_{f_1}}(x_2-a_2)u_{m_2}(x_2-a_2)\label{gammafhgammai}
-\end{align}
-the remaining one-particle matrix elements are already calculated in Sect. \ref{section-perturbative-one-particle}
-\begin{align}
-  \langle n_1(a) P_1|H_i(a)|n_2(a) P_2\rangle = \frac{V_0}{2\pi\hbar} e^{\frac{i}{\hbar}(P_2-P_1)a}\sqrt{2\pi\sigma_v^2}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}}\left(-\frac{i(P_2-P_2)}{\sqrt{2}\hbar\alpha}\right)^{n_>-n_<}e^{-\frac{(P_1-P_2)^2}{4\alpha^2\hbar^2}}L_{n<}^{(n_>-n_<)}\left(\frac{(P_1-P_2)^2}{2\hbar^2\alpha^2}\right)
-\end{align}
-where $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
-for simplicity we introduce the notation
-\begin{align}
-  {
-  \langle n_1(a) P_1|H_i(a)|n_2(a) P_2\rangle={\cal V}(n_1,n_2; P_1, P_2; a)
-  }
-\end{align}
-with the notation, the matrix element in (\ref{gammafhgammai}) is
-\begin{align}
-  \langle\gamma_f|H_i|\gamma_1\rangle = \delta_{n_{f_2}m_2}{\cal V}(n_{f_1},m_1;P_{f},P_1;a_1)+\delta_{n_{f_1}m_1}{\cal V}(n_{f_2},m_2;P_f,P_1;a_2)
-\end{align}
-Similarly, we have
-\begin{align}
-  \langle \gamma_1|H_i\gamma \rangle & = \langle m_1(a_1)m_2(a_2) P_1|V_0 e^{-\frac{(x_1-X)^2}{2\sigma_V^2}} + V_0 e^{-\frac{(x_2-X)^2}{2\sigma_V^2}}|0(a_1)0(a_2) P\rangle\nonumber \\
-                                     & =\delta_{m_20}{\cal V}(m_1,0;P_1,P;a_1)+\delta_{m_10}{\cal V}(m_2,0;P_1,P;a_2)
-\end{align}
-
-
-the energies appearing in (\ref{a2sumgen}) are
-\begin{align}
-  E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad E_{\gamma_1} = \hbar\omega(m_1 + m_2 +1)+\frac{P_1^2}{2M},\quad E_{\gamma_f} = \hbar(n_{f_1}+n_{f_2}+1)+\frac{P_f^2}{2M}
-\end{align}
-
-
-the coefficient $c_{\gamma}^{(i)}$ is given in (\ref{C(P)-one-atom})
-\begin{align}
-  c_\gamma^{(i)}\rightarrow C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\
-\end{align}
+\begin{importantbox}
+  \begin{align}
+    &\langle\gamma_f|H_i|\gamma_1\rangle = \delta_{n_{f_2}m_2}{\cal V}(n_{f_1},m_1;P_{f},P_1;a_1)+\delta_{n_{f_1}m_1}{\cal V}(n_{f_2},m_2;P_f,P_1;a_2)\\
+    &\langle \gamma_1|H_I|\gamma \rangle   =\delta_{m_20}{\cal V}(m_1,0;P_1,P;a_1)+\delta_{m_10}{\cal V}(m_2,0;P_1,P;a_2)
+  \end{align}
+\end{importantbox}
+where the ${\cal V}$ matrix elements are presented in  Sect. \ref{section-two-absorbers-o1}
 
 from the product in the expression  of the second order transition amplitude we get 4 terms. two of them correspond to the second order transition of only one particle; the remaining two are combined into the simultaneous excitation of both atoms.
 
@@ -76,7 +55,6 @@ from the product in the expression  of the second order transition amplitude we 
   {\cal A}_{fi}^{(2)} = {\cal A}_{fi}^{(2)}(a_1^{(2)}, a_2^{(0)})+{\cal A}_{fi}^{(2)}(a_1^{(0)}, a_2^{(2)})+{\cal A}_{fi}^{(2)}(a_1^{(1)}, a_2^{(1)})
 \end{align}
 we calculate separately each term
-
 
 \subsubsection{the calculation of $ {\cal A}_{fi}^{(2)}(a_1^{(2)}, a_2^{(0)})$}
 
@@ -86,12 +64,29 @@ we calculate separately each term
 after using the kronecker delta in the previous result we are left with
 \begin{align}
   {\cal A}_{fi}^{(2)}(a_1^{(2)}, a_2^{(0)}) = & \delta_{n_{f_2}0}\sum\limits_{m_1}\int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P){\cal V}(m_1,0;P_1,P,a_1){\cal V}(n_{f_1},m_1;P_f,P_1;a_1){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)\nonumber \\
-                                              & \qquad E_{\gamma_f} = \frac{P_f^2}{2M}+\hbar\omega(n_{f_1}+1),\quad E_{\gamma_1} = \frac{P_1^2}{2M}+\hbar\omega(m_{1}+1),\quad E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad
+  & \qquad E_{\gamma_f} = \frac{P_f^2}{2M}+\hbar\omega(n_{f_1}+1),\quad E_{\gamma_1} = \frac{P_1^2}{2M}+\hbar\omega(m_{1}+1),\quad E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad
 \end{align}
 
 \subsubsection{the calculation of $ {\cal A}_{fi}^{(2)}(a_1^{(0)}, a_2^{(2)})$}
 The calculation is similar and we can write directly the result, after $1\leftrightarrow2$
 \begin{align}
   {\cal A}_{fi}^{(1)}(a_1^{(0)}, a_2^{(2)}) = & \delta_{n_{f_1}0}\sum\limits_{m_2}\int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P){\cal V}(m_2,0;P_1,P,a_2){\cal V}(n_{f_2},m_2;P_f,P_1;a_1){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)\nonumber \\
-                                              & \qquad E_{\gamma_f} = \frac{P_f^2}{2M}+\hbar\omega(n_{f_2}+1),\quad E_{\gamma_1} = \frac{P_1^2}{2M}+\hbar\omega(m_{2}+1),\quad E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad
+  & \qquad E_{\gamma_f} = \frac{P_f^2}{2M}+\hbar\omega(n_{f_2}+1),\quad E_{\gamma_1} = \frac{P_1^2}{2M}+\hbar\omega(m_{2}+1),\quad E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad
 \end{align}
+
+\subsubsection{the calculation of $ {\cal A}_{fi}^{(2)}(a_1^{(1)}, a_2^{(1)})$}
+
+there are two terms contributing to this case
+\begin{align}
+  {\cal A}_{fi}^{(2),1}(a_1^{(1)}, a_2^{(1)}) = & \sum\limits_{m_1,m_2}\int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P)\delta_{m_20}{\cal V}(m_1,0;P_1,P,a_1)\delta_{n_{f_1}m_1}{\cal V}(n_{f_2},m_2;P_f,P_1;a_2){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)\nonumber\\
+  {\cal A}_{fi}^{(2),2}(a_1^{(1)}, a_2^{(1)}) = & \sum\limits_{m_1,m_2}\int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P)\delta_{m_10}{\cal V}(m_2,0;P_1,P;a_2)\delta_{n_{f_2}m_2}{\cal V}(n_{f_1},m_1;P_f,P_1;a_1){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)
+\end{align}
+and after using the Kronecker delta symbols
+\begin{align}
+  {\cal A}_{fi}^{(2),1}(a_1^{(1)}, a_2^{(1)}) = & \int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P){\cal V}(n_{f_1},0;P_1,P,a_1){\cal V}(n_{f_2},0;P_f,P_1;a_2){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)\nonumber\\
+  &E_{\gamma_1}=\frac{P_1^2}{2M} + \hbar\omega(n_{f_1}+1)\quad E_{\gamma_f} =\frac{P_f^2}{2M} + \hbar\omega(n_{f_1}+n_{f_2}+1),\quad E_\gamma = \frac{P^2}{2M} + \hbar\omega\\
+  {\cal A}_{fi}^{(2),2}(a_1^{(1)}, a_2^{(1)}) =&\int\limits_{-\infty}^{\infty}dP\int\limits_{-\infty}^{\infty}dP_1 C(P){\cal V}(n_{f_2},0;P_1,P;a_2){\cal V}(n_{f_1},0;P_f,P_1;a_1){\cal F}(E_{\gamma_f},E_{\gamma_1},E_\gamma)\nonumber\\
+  &E_{\gamma_1}=\frac{P_1^2}{2M} + \hbar\omega(n_{f_2}+1)\quad E_{\gamma_f} =\frac{P_f^2}{2M} + \hbar\omega(n_{f_1}+n_{f_2}+1),\quad E_\gamma = \frac{P^2}{2M} + \hbar\omega
+\end{align}
+
+The contribution to the two integrals over $P$ are centered as before in the stripes around $\pm P_0$ or a unique stripe if $P_0$ ($M$) are small.

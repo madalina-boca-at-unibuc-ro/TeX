@@ -1,0 +1,33 @@
+\section{the two -level atom}
+
+the free hamiltonian of a two levele atom placed at $X=a$ is (in the basis of its own energy eigenvectors)
+\begin{align}
+    H_0(a) = \left(
+        \begin{array}{cc}E_0&0\\0&E_1
+    \end{array}\right)
+\end{align}
+
+\section{the momentum selective coupling}
+we choose a  selective momentum coupling interaciton model for the interaction Hamiltonian with the alpha particle
+\begin{align}
+    H_I = \left(
+        \begin{array}{cc}0&V(a)\\V^\dag(a)&0
+    \end{array}\right)
+\end{align}
+where $V(a)$ in the position representation of the alphe particle is
+\begin{align}
+    &\langle X|V(a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')\\
+    &\langle X|V^\dag (a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c^*_{+} e^{-\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c^*_{-} e^{\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')
+\end{align}
+
+\section{calculation of the plane wave matrix element of the two level absorber}
+
+the fundamental matrix element is
+\begin{align}
+    \langle n_1 P_1|H_I|n_2 P_2\rangle
+\end{align}
+and it is different from zero if $n_1=0, n_2=1$ of $n_1=1$, $n_2=0$
+\begin{align}
+    \langle n_1 P_1|H_I|n_2 P_2\rangle =\delta_{n_1,0}\delta_{n_2,1}(H_I)_{10}(P_1,P_2)+\delta_{n_1,1}\delta_{n_2,0}(H_I)_{01}(P_1,P_2)
+\end{align}
+where

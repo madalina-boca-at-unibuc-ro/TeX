@@ -27,11 +27,16 @@
 \input{\srcpath/mott_problem/part2_continuous_atoms/two-absorbers-perturbative-o2.tex}
 \input{\srcpath/mott_problem/part2_continuous_atoms/two_absorbers_numerical.tex}
 
+\setcounter{chapter}{0}
 \part{discrete-position atoms: two-level and few-level systems}\label{part-discrete-atoms}
 
 \chapter{overview}
 \input{\srcpath/mott_problem/part3_discrete_atoms/overview.tex}
 
+\chapter{the two level atom description}
+\input{\srcpath/mott_problem/part3_discrete_atoms/two-level-atom_description.tex}
+
+\setcounter{chapter}{0}
 \part{appendix}
 \appendix
 

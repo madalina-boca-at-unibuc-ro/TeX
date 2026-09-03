@@ -12,11 +12,11 @@ we choose a  selective momentum coupling interaciton model for the interaction H
 \begin{align}
     H_I = \left(
         \begin{array}{cc}0&V(a)\\V^\dag(a)&0
-    \end{array}\right)
+    \end{array}\right)\qquad V(a) = (H_I)_{01}\quad V^\dag(a) = (H_I)_{10}
 \end{align}
 where $V(a)$ in the position representation of the alphe particle is
 \begin{align}
-    &\langle X|V(a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')\\
+    &\langle X|V(a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')\\
     &\langle X|V^\dag (a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c^*_{+} e^{-\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c^*_{-} e^{\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')
 \end{align}
 
@@ -28,6 +28,13 @@ the fundamental matrix element is
 \end{align}
 and it is different from zero if $n_1=0, n_2=1$ of $n_1=1$, $n_2=0$
 \begin{align}
-    \langle n_1 P_1|H_I|n_2 P_2\rangle =\delta_{n_1,0}\delta_{n_2,1}(H_I)_{10}(P_1,P_2)+\delta_{n_1,1}\delta_{n_2,0}(H_I)_{01}(P_1,P_2)
+    \langle n_1 P_1|H_I|n_2 P_2\rangle =\delta_{n_1,0}\delta_{n_2,1}(H_I)_{01}(P_1,P_2)+\delta_{n_1,1}\delta_{n_2,0}(H_I)_{10}(P_1,P_2)
 \end{align}
 where
+\begin{align}
+    H_{01}(P_1,P_2)=\frac1{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX e^{-\frac{i}{\hbar}(P_1-P_2)X}V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)
+\end{align}
+we make the change of variable $X_a=y$ and we get the simpler form
+\begin{align}
+    H_{01}(P_1,P_2)=V_0\frac{1}{2\pi\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\int\limits_{-\infty}^{\infty}dy e^{-\frac{i}{\hbar}(P_1-P_2)y} e^{-\frac{y^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}y}+c_{-} e^{-\frac{i}\hbar P_{{-}}y}\right)
+\end{align}

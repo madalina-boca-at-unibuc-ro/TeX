@@ -1,0 +1,39 @@
+\newpage
+\section{the initial wave packet of the projectile}\label{sect_bimodal}
+
+the results of this chapter depend only on the free particle (the ``projectile'', coordinate $X$, mass $M$) and not on the internal structure of the atom(s) it scatters from. They are therefore used unchanged in Part~\ref{part-continuous-atoms} (continuous-position atoms) and in Part~\ref{part-discrete-atoms} (discrete-position atoms).
+
+the projectile is prepared, at $t=t_i$, in the symmetric bimodal wave packet
+\begin{align}
+  \psi_\alpha(X) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)\label{psi_alpha-X}
+\end{align}
+i.e.\ a superposition of two Gaussian packets of width $\sigma_\alpha$ with mean momenta $\pm P_0$, normalized so that $\int|\psi_\alpha(X)|^2dX=1$ (see Sect.~\ref{sec:gaussian-normalization} and Sect.~\ref{sec:bimodal-normalization} for the normalization details).
+
+the energy eigenfunction (momentum) expansion of $\psi_\alpha$ is
+\begin{align}
+  \psi_\alpha(X)=\frac1{\sqrt{2\pi\hbar}}\int\limits_{-\infty}^{\infty}dP\, C(P)e^{\frac{iPX}{\hbar}}
+\end{align}
+where
+\begin{align}
+  C(P) = \langle P|\psi_\alpha\rangle = \frac{1}{\sqrt{2\pi\hbar}}\int\limits_{-\infty}^{\infty}dX\, e^{-\frac{i}{\hbar}PX}\psi_\alpha(X)
+\end{align}
+Substituting the explicit form of $\psi_\alpha(X)$ yields:
+\begin{align}
+  C(P) = \frac{1}{\sqrt{2\pi\hbar}}\frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}\int\limits_{-\infty}^{\infty}dX\, e^{-\frac{i}{\hbar}PX}e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)
+\end{align}
+Using $\cos(u) = \frac{1}{2}(e^{iu} + e^{-iu})$, we can evaluate the integral:
+\begin{align}
+  \int\limits_{-\infty}^{\infty}dX\, e^{-\frac{i}{\hbar}PX}e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right) & = \frac{1}{2}\int\limits_{-\infty}^{\infty}dX\, e^{-\frac{X^2}{2\sigma_\alpha^2}}\left[ e^{-\frac{i}{\hbar}(P-P_0)X} + e^{-\frac{i}{\hbar}(P+P_0)X} \right] \nonumber \\
+  & = \frac{1}{2}\sqrt{2\pi\sigma_\alpha^2}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]
+\end{align}
+Substituting this back into the expression for $C(P)$ and simplifying the coefficients, we obtain the final result:
+\begin{importantbox}
+  \begin{align}
+    C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-projectile}
+  \end{align}
+
+  Note that for $P_0 \gg \hbar/\sigma_\alpha$, the second term in the brackets is negligible, and we can approximate $C(P)$ as:
+  \begin{align}
+    C(P) \approx \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}+ e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\label{C(P)-projectile-approx}
+  \end{align}
+\end{importantbox}

@@ -6,7 +6,7 @@
      & \int\limits_{-\infty}^{\infty}dx  e^{-\lambda x^2} e^{ikx}  = \sqrt{\frac{\pi}{\lambda}} e^{-\frac{k^2}{4\lambda}}\label{usefulid2}
 \end{align}
 
-\subsection{normalization of the Gaussian wave packet}
+\subsection{normalization of the Gaussian wave packet}\label{sec:gaussian-normalization}
 
 consider the Gaussian wave packet
 \begin{align}
@@ -33,7 +33,7 @@ and
     \psi(X,t=0) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
 \end{align}
 
-\subsection{normalization of the symmetric bimodal wavepacket}\label{sect_bimodal}
+\subsection{normalization of the symmetric bimodal wavepacket}\label{sec:bimodal-normalization}
 
 the bimodal wavepacket is a superposition of two gaussian wavepackets with mean momenta $\pm p_0$, and is given by
 \begin{align}
@@ -43,22 +43,8 @@ where
 \begin{align}
     N = \frac1{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}
 \end{align}
+this is the projectile wave packet used throughout; its momentum-space form $C(P)$ is derived in Part~\ref{part-general-tdpt}, Sect.~\ref{sect_bimodal}.
 
-\subsection{the Fourier transform of the bimodal wavepacket}
-
-the plane wave expanssion of the bimodal wavepacket is given by
-\begin{align}
-    \psi_\alpha(X,t=0) = \frac1{\sqrt{2\pi\hbar}}\int\limits_{-\infty}^{\infty}dP C(P)e^{\frac{iPX}{\hbar}}
-\end{align}
-where
-\begin{align}
-    C(P) = \langle P|\psi_\alpha\rangle = \frac{1}{\sqrt{2\pi\hbar}}\int\limits_{-\infty}^{\infty}dX e^{-\frac{i}{\hbar}PX}\psi_\alpha(X)
-\end{align}
-by direct calculation we get
-\begin{align}
-    C(P) & = \frac1{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}\frac{\sigma_\alpha}{2\sqrt{\hbar}} e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}\left(1+e^{-\frac{2P P_0\sigma_\alpha^2}{\hbar^2}}\right)\nonumber \\
-         & = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}}}\sqrt{\frac{1}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}} \left(e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}}+e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}}\right)
-\end{align}
 \subsection{the Fourier transform of the Gaussian potential}
 
 considering the Gaussian interaction potential

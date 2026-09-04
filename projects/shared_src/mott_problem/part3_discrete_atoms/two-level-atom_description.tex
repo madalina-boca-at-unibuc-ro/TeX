@@ -1,40 +1,77 @@
-\section{the two -level atom}
+\section{the two-level atom}\label{sect:tls-two-level-atom}
 
-the free hamiltonian of a two levele atom placed at $X=a$ is (in the basis of its own energy eigenvectors)
+the free hamiltonian of a two-level atom placed at $X=a$ is (in the basis of its own energy eigenvectors)
 \begin{align}
     H_0(a) = \left(
         \begin{array}{cc}E_0&0\\0&E_1
     \end{array}\right)
 \end{align}
 
-\section{the momentum selective coupling}
-we choose a  selective momentum coupling interaciton model for the interaction Hamiltonian with the alpha particle
+\section{the interaction Hamiltonian}\label{sec:tls-interaction}
+the interaction Hamiltonian has both a diagonal (elastic) block and an off-diagonal (excitation/de-excitation) block
 \begin{align}
     H_I = \left(
-        \begin{array}{cc}0&V(a)\\V^\dag(a)&0
-    \end{array}\right)\qquad V(a) = (H_I)_{01}\quad V^\dag(a) = (H_I)_{10}
-\end{align}
-where $V(a)$ in the position representation of the alphe particle is
-\begin{align}
-    &\langle X|V(a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')\\
-    &\langle X|V^\dag (a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c^*_{+} e^{-\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c^*_{-} e^{\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')
+        \begin{array}{cc}W_0(a)&V(a)\\V^\dag(a)&W_1(a)
+    \end{array}\right)\qquad V(a) = (H_I)_{01}\quad V^\dag(a) = (H_I)_{10}\quad W_n(a) = (H_I)_{nn}
 \end{align}
 
-\section{calculation of the plane wave matrix element of the two level absorber}
+\subsection{the elastic diagonal terms}\label{sec:tls-elastic}
+the diagonal terms let the projectile scatter off the atom without changing its internal state. we take them to be the same short-range Gaussian coupling used throughout this document, modulated by an elastic momentum-selectivity scale $P_e$ in direct analogy with the off-diagonal coupling of Sect.~\ref{sec:tls-momentum-selective}:
+\begin{align}
+    \langle X|W_n(a)|X'\rangle = w_n V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\cos\!\left(\frac{P_e(X-a)}{\hbar}\right)\delta(X-X'),\qquad n=0,1.
+\end{align}
+$W_n(a)$ is automatically Hermitian for any real $P_e$, since it is a real function times $\delta(X-X')$; unlike the off-diagonal block, no separate conjugate coupling is needed. $w_0=w_1=1$ remains the default (the atom presents the same profile to the projectile in either internal state; $w_0\ne w_1$ is available later to model a state-dependent polarizability). only $W_0$ contributes at first order, since the atom starts in its ground state (Sect.~\ref{sec:proj-wavepacket}); $W_1$ only enters as an intermediate elastic step at second order. writing $\cos(P_e y/\hbar)=\frac12(e^{iP_ey/\hbar}+e^{-iP_ey/\hbar})$ and repeating the Fourier-transform steps of Sect.~\ref{sec:tls-matrix-element} for $V(a)$ gives
+\begin{importantbox}
+    \begin{align}
+        W_n(P_1,P_2) = w_n\frac{V_0\sigma_V}{2\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\left[e^{-\frac{\sigma_V^2(P_1-P_2-P_e)^2}{2\hbar^2}}+e^{-\frac{\sigma_V^2(P_1-P_2+P_e)^2}{2\hbar^2}}\right]\label{eq:tls-Wn}
+    \end{align}
+\end{importantbox}
+$P_e$ is left as a free parameter, to be fixed numerically. $P_e=0$ collapses the two lobes into $w_n\frac{V_0\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{\sigma_V^2(P_1-P_2)^2}{2\hbar^2}}$, the ordinary forward-peaked elastic coupling; for $w_n=1$ this coincides with the harmonic-oscillator ground-state elastic matrix element $\mathcal V(0,0;P_1,P_2;a)$, eq.~\eqref{eq:osc-V-n1n2} with $n_1=n_2=0$, so the elastic channel behaves identically in the continuous- and discrete-atom models when $P_e=0$. $P_e=2P_\alpha$ instead peaks the coupling at the momentum transfer for full backscattering off either lobe of the projectile wave packet (Sect.~\ref{sec:proj-wavepacket}), making the atom act as a reflector rather than a soft scatterer; intermediate or other values interpolate or probe different regimes.
+
+\subsection{the momentum-selective coupling}\label{sec:tls-momentum-selective}
+we choose a  selective momentum coupling interaction model for the off-diagonal block, so that excitation and de-excitation preferentially transfer a chosen momentum to the projectile, in the same spirit as the elastic $P_e$ of Sect.~\ref{sec:tls-elastic} but with independent scales for each direction, since absorption and emission are not symmetric under $P\to-P$ the way elastic scattering is. $V(a)$ in the position representation of the alpha particle is
+\begin{align}
+    &\langle X|V(a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')\\
+    &\langle X|V^\dag (a)|X'\rangle = V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c^*_{+} e^{-\frac{i}\hbar {P_{+}}(X-a)}+c^*_{-} e^{\frac{i}\hbar P_{{-}}(X-a)}\right)\delta(X-X')
+\end{align}
+we will mostly use the symmetric default $P_+=P_-\equiv P_c$, $c_+=c_-=\frac12$ (with $P_c$ a momentum scale distinct from the projectile's characteristic momentum $P_\alpha$ of Sect.~\ref{sec:proj-wavepacket}): this gives the absorption and emission channels one energy-favoured and one energy-disfavoured momentum-transfer lobe each, with equal weight, as made explicit at the end of Sect.~\ref{sec:tls-matrix-element} below. Taking $P_+\ne P_-$ or $c_+\ne c_-$ breaks that symmetry and lets absorption and emission preferentially transfer different momenta.
+
+\section{calculation of the plane wave matrix element of the two level absorber with momentum selective coupling}\label{sec:tls-matrix-element}
 
 the fundamental matrix element is
 \begin{align}
     \langle n_1 P_1|H_I|n_2 P_2\rangle
 \end{align}
-and it is different from zero if $n_1=0, n_2=1$ of $n_1=1$, $n_2=0$
-\begin{align}
-    \langle n_1 P_1|H_I|n_2 P_2\rangle =\delta_{n_1,0}\delta_{n_2,1}(H_I)_{01}(P_1,P_2)+\delta_{n_1,1}\delta_{n_2,0}(H_I)_{10}(P_1,P_2)
-\end{align}
+and it is different from zero only if $n_1=n_2$ (elastic, Sect.~\ref{sec:tls-elastic}), or $n_1=0,n_2=1$, or $n_1=1,n_2=0$
+\begin{importantbox}
+    \begin{align}
+        \langle n_1 P_1|H_I|n_2 P_2\rangle =\delta_{n_1n_2}W_{n_1}(P_1,P_2)+\delta_{n_1,0}\delta_{n_2,1}(H_I)_{01}(P_1,P_2)+\delta_{n_1,1}\delta_{n_2,0}(H_I)_{10}(P_1,P_2)\label{eq:tls-full-matrix-element}
+    \end{align}
+\end{importantbox}
 where
 \begin{align}
-    H_{01}(P_1,P_2)=\frac1{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX e^{-\frac{i}{\hbar}(P_1-P_2)X}V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}{\hbar}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)
+    H_{01}(P_1,P_2)=\frac1{2\pi\hbar}\int\limits_{-\infty}^{\infty}dX e^{-\frac{i}{\hbar}(P_1-P_2)X}V_0 e^{-\frac{(X-a)^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}(X-a)}+c_{-} e^{-\frac{i}\hbar P_{{-}}(X-a)}\right)
 \end{align}
-we make the change of variable $X_a=y$ and we get the simpler form
+we make the change of variable $X-a=y$ and we get the simpler form
 \begin{align}
-    H_{01}(P_1,P_2)=V_0\frac{1}{2\pi\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\int\limits_{-\infty}^{\infty}dy e^{-\frac{i}{\hbar}(P_1-P_2)y} e^{-\frac{y^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}y}+c_{-} e^{-\frac{i}\hbar P_{{-}}y}\right)
+    H_{01}(P_1,P_2)&=V_0\frac{1}{2\pi\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\int\limits_{-\infty}^{\infty}dy e^{-\frac{i}{\hbar}(P_1-P_2)y} e^{-\frac{y^2}{2\sigma_V^2}}\left(c_{+} e^{\frac{i}\hbar {P_{+}}y}+c_{-} e^{-\frac{i}\hbar P_{{-}}y}\right)\nonumber\\
+    &=V_0\frac{1}{2\pi\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\left[c_{+} \int\limits_{-\infty}^{\infty}dy e^{-\frac{i}{\hbar}(P_1-P_2-P_+)y} e^{-\frac{y^2}{2\sigma_V^2}}+c_{-} \int\limits_{-\infty}^{\infty}dy e^{-\frac{i}{\hbar}(P_1-P_2+P_-)y} e^{-\frac{y^2}{2\sigma_V^2}}\right]\nonumber\\
 \end{align}
+and using (\ref{eq:app-gaussian-fourier-integral}) for
+\begin{align}
+    k=-\frac{P_1-P_2\mp P_{\pm}}{\hbar},\quad \lambda=\frac1{2\sigma_V^2}
+\end{align}
+we get
+\begin{importantbox}
+    \begin{align}
+        H_{01}(P_1,P_2) = V_0\frac{\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\left[c_+e^{-\frac{\sigma_V^2(P_1-P_2-P_+)^2}{2\hbar^2}}+c_-e^{-\frac{\sigma_V^2(P_1-P_2+P_-)^2}{2\hbar^2}}\right]
+    \end{align}
+\end{importantbox}
+similarly the other matrix element is
+\begin{importantbox}
+    \begin{align}
+        H_{10}(P_1,P_2) = V_0\frac{\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_1-P_2)}\left[c_+^*e^{-\frac{\sigma_V^2(P_1-P_2+P_+)^2}{2\hbar^2}}+c_-^*e^{-\frac{\sigma_V^2(P_1-P_2-P_-)^2}{2\hbar^2}}\right]
+    \end{align}
+\end{importantbox}
+
+$H_{10}$ is the absorption matrix element ($n_1=1\leftarrow n_2=0$: the atom gains $\hbar\omega_0=E_1-E_0$, so energy conservation favours the projectile losing momentum); its $c_+$ lobe, peaked at $P_1-P_2=-P_+$, is the energy-favoured one, while its $c_-$ lobe, peaked at $P_1-P_2=+P_-$, is disfavoured. Conversely $H_{01}$ is emission ($n_1=0\leftarrow n_2=1$: the atom releases $\hbar\omega_0$, favouring the projectile gaining momentum), so its roles are reversed: the $c_+$ lobe, peaked at $P_1-P_2=+P_+$, is now the favoured one. In the symmetric default $P_+=P_-=P_c$, $c_+=c_-=\frac12$ (Sect.~\ref{sec:tls-momentum-selective}), each process is given its favoured and disfavoured lobe with equal weight; which lobe actually survives in a transition amplitude is decided once these matrix elements are combined with the energy-conserving factor $\mathcal E$ or $\mathcal F$ from Part~\ref{part:general-tdpt}.

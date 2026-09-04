@@ -2,11 +2,11 @@
 
 \subsection{useful identities}
 \begin{align}
-     & \int\limits_{-\infty}^{\infty}dx e^{-\lambda x^2} = \sqrt{\frac{\pi}{\lambda}}\label{usefulid1}                                     \\
-     & \int\limits_{-\infty}^{\infty}dx  e^{-\lambda x^2} e^{ikx}  = \sqrt{\frac{\pi}{\lambda}} e^{-\frac{k^2}{4\lambda}}\label{usefulid2}
+    & \int\limits_{-\infty}^{\infty}dx e^{-\lambda x^2} = \sqrt{\frac{\pi}{\lambda}}\label{eq:app-gaussian-integral}                                     \\
+    & \int\limits_{-\infty}^{\infty}dx  e^{-\lambda x^2} e^{ikx}  = \sqrt{\frac{\pi}{\lambda}} e^{-\frac{k^2}{4\lambda}}\label{eq:app-gaussian-fourier-integral}
 \end{align}
 
-\subsection{normalization of the Gaussian wave packet}\label{sec:gaussian-normalization}
+\subsection{normalization of the Gaussian wave packet}\label{sec:app-gaussian-normalization}
 
 consider the Gaussian wave packet
 \begin{align}
@@ -33,17 +33,17 @@ and
     \psi(X,t=0) = \frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
 \end{align}
 
-\subsection{normalization of the symmetric bimodal wavepacket}\label{sec:bimodal-normalization}
+\subsection{normalization of the symmetric bimodal wavepacket}\label{sec:app-bimodal-normalization}
 
 the bimodal wavepacket is a superposition of two gaussian wavepackets with mean momenta $\pm p_0$, and is given by
 \begin{align}
-    \psi_\alpha(X,t=0) = N e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_0 X}{\hbar}\right)
+    \psi_\alpha(X,t=0) = N e^{-\frac{X^2}{2\sigma_\alpha^2}}\cos\left(\frac{P_\alpha X}{\hbar}\right)
 \end{align}
 where
 \begin{align}
-    N = \frac1{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}
+    N = \frac1{\sqrt{\sigma_\alpha\sqrt{\pi}}}\sqrt{\frac{2}{1+e^{-\frac{P_\alpha^2\sigma_\alpha^2}{\hbar^2}}}}
 \end{align}
-this is the projectile wave packet used throughout; its momentum-space form $C(P)$ is derived in Part~\ref{part-general-tdpt}, Sect.~\ref{sect_bimodal}.
+this is the projectile wave packet used throughout; its momentum-space form $C(P)$ is derived in Part~\ref{part:general-tdpt}, Sect.~\ref{sec:proj-wavepacket}.
 
 \subsection{the Fourier transform of the Gaussian potential}
 
@@ -56,4 +56,3 @@ its Fourier transform is given by
     \tilde V(q) = \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dy e^{\frac{i}{\hbar}py}V(y)=
     \frac{\sigma_V V_0}{\sqrt{\hbar}}e^{-\frac{\sigma_V^2 p^2}{2\hbar^2}}
 \end{align}
-

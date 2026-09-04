@@ -1,4 +1,4 @@
-\part{general time-dependent perturbation theory}\label{part-general-tdpt}
+\part{general time-dependent perturbation theory}\label{part:general-tdpt}
 
 \chapter{the Dyson series and transition amplitudes}
 \input{\srcpath/mott_problem/part1_general/tdpt.tex}
@@ -7,7 +7,7 @@
 \input{\srcpath/mott_problem/part1_general/projectile_wavepacket.tex}
 
 \setcounter{chapter}{0}
-\part{continuous-position atoms: the linear oscillator}\label{part-continuous-atoms}
+\part{continuous-position atoms: the linear oscillator}\label{part:continuous-atoms}
 
 \chapter{the one-dimensional harmonic oscillator}
 \input{\srcpath/mott_problem/part2_continuous_atoms/olh.tex}
@@ -28,13 +28,18 @@
 \input{\srcpath/mott_problem/part2_continuous_atoms/two_absorbers_numerical.tex}
 
 \setcounter{chapter}{0}
-\part{discrete-position atoms: two-level and few-level systems}\label{part-discrete-atoms}
+\part{discrete-position atoms: two-level and few-level systems}\label{part:discrete-atoms}
 
 \chapter{overview}
 \input{\srcpath/mott_problem/part3_discrete_atoms/overview.tex}
 
 \chapter{the two level atom description}
 \input{\srcpath/mott_problem/part3_discrete_atoms/two-level-atom_description.tex}
+
+\chapter{the one absorber system}
+\input{\srcpath/mott_problem/part3_discrete_atoms/one-absorber-description.tex}
+\input{\srcpath/mott_problem/part3_discrete_atoms/one-absorber-perturbative.tex}
+
 
 \setcounter{chapter}{0}
 \part{appendix}

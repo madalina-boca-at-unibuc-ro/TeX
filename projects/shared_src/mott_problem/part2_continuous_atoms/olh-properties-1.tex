@@ -5,7 +5,7 @@
 the matrix element $\langle n | e^{-iqx} | m \rangle$ for the one-dimensional quantum harmonic oscillator eigenfunctions $|n\rangle$ and $|m\rangle$ is given in closed form by:
 
 \begin{align}
-  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i q }{\sqrt{2}\alpha }\right)^{n_> - n_<} e^{-\frac{q^2 }{4\alpha ^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{q^2 }{2\alpha ^2}\right)\label{me-ho}
+  \langle n | e^{-iqx} | m \rangle = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i q }{\sqrt{2}\alpha }\right)^{n_> - n_<} e^{-\frac{q^2 }{4\alpha ^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{q^2 }{2\alpha ^2}\right)\label{eq:osc-me-expiqx}
 \end{align}
 
 \noindent where:
@@ -67,7 +67,7 @@ with $\rho = n - m$ and $z = \lambda^2 = \dfrac{q^2 }{2\alpha^2}$, the sum simpl
 extending to arbitrary $n$ and $m$ by defining $n_<$ and $n_>$ completes the proof.
 \newpage
 
-\section{Calculation of the matrix element ${\cal V}$ in the displaced harmonic oscillator basis}\label{cal-V_olh-basis}
+\section{Calculation of the matrix element ${\cal V}$ in the displaced harmonic oscillator basis}\label{sec:osc-V-matrix-element}
 
 we need to calculate the matrix element
 \begin{align}
@@ -88,7 +88,7 @@ after the change of variable $X-x=y$ the previous matrix element becomes
 \begin{align}
   \langle n_1(a), P_1|H_I|n_2(a),P_2\rangle & = \frac{V_0}{2\pi\hbar}\int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}}\int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a)
 \end{align}
-The integral over $y$ can be calculated using (\ref{usefulid2}), with $\lambda = \frac1{2\sigma_V^2}$ and $k = \frac{P_1-P_2}{\hbar}$
+The integral over $y$ can be calculated using (\ref{eq:app-gaussian-fourier-integral}), with $\lambda = \frac1{2\sigma_V^2}$ and $k = \frac{P_1-P_2}{\hbar}$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}} = \sqrt{{2\pi\sigma_V^2}} e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}
 \end{align}
@@ -96,7 +96,7 @@ The integral over $x$ is calculated after a further change of variable $x-a=z$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a)u_{n_2}(x-a) = e^{-\frac{i}{\hbar}a(P_1-P_2)}\int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z)
 \end{align}
-The remaining integral can be computed using (\ref{me-ho}), with $q = \frac{P_1-P_2}{\hbar}$ and $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
+The remaining integral can be computed using (\ref{eq:osc-me-expiqx}), with $q = \frac{P_1-P_2}{\hbar}$ and $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z) = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)
 \end{align}
@@ -104,7 +104,7 @@ and the final result is
 \begin{importantbox}
   \begin{align}
     {\cal V}(n_1,n_2;P_1,P_2;a)&= \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle  \nonumber\\
-    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{cal-V_n1n2p1p2}
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{eq:osc-V-n1n2}
   \end{align}
   where $n_<$ and $n_>$ are smaller/larger between $n_1$ and $n_2$
   For $P_1=P_2$, the expression containing the power of $P_1-P_2$
@@ -113,6 +113,6 @@ and the final result is
   \begin{align}
     {\cal V}(n_1,n_2;P,P;a)
     = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
-    \delta_{n_1n_2}.\label{cal-V_n1n2p1p2-spec}
+    \delta_{n_1n_2}.\label{eq:osc-V-n1n2-diag}
   \end{align}
 \end{importantbox}

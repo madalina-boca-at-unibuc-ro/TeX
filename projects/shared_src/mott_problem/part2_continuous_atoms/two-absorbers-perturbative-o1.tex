@@ -1,5 +1,5 @@
 \newpage
-\section{first-order perturbative approach for two absorbers}\label{section-two-absorbers-o1}
+\section{first-order perturbative approach for two absorbers}\label{sec:osc-two-absorber-o1}
 
 we consider the case of two atoms, located at $x_1=a_1$ and $x_2=a_2$. The perturbation Hamiltonian is the sum of two terms:
 \begin{align}
@@ -13,16 +13,16 @@ the initial state is given by the alpha particle wave packet and both oscillator
 \begin{align}
   |\psi_i\rangle = \int\limits_{-\infty}^{\infty}dP C(P)|P\rangle\otimes|0(a_1)\rangle\otimes|0(a_2)\rangle
 \end{align}
-here $C(P)$ is the projectile momentum coefficient of Part~\ref{part-general-tdpt}, Sect.~\ref{sect_bimodal}, given by (\ref{C(P)-projectile}) and, for $P_0\gg\hbar/\sigma_\alpha$, approximated by (\ref{C(P)-projectile-approx}).
+here $C(P)$ is the projectile momentum coefficient of Part~\ref{part:general-tdpt}, Sect.~\ref{sec:proj-wavepacket}, given by (\ref{eq:proj-CP}) and, for $P_\alpha\gg\hbar/\sigma_\alpha$, approximated by (\ref{eq:proj-CP-approx}).
 the final state where  oscillators are excited has the form:
 \begin{align}
   |\psi_f\rangle = |P_f, n_1, n_2\rangle = |P_f\rangle\otimes|n_1(a_1)\rangle\otimes|n_2(a_2)\rangle
 \end{align}
 we calculate the first order transition amplitude to find the probability of one-atom excitation (note that the first order calculation can predict only one atom excitation)
 
-starting point: the general formula (\ref{first_order_transition_amplitude})
+starting point: the general formula (\ref{eq:gen-first-order-amplitude})
 \begin{align}
-  {\cal A}_{fi}^{(1)} & =\sum_\gamma {c_\gamma^{(i)}} \langle \gamma_f|H_I|\gamma\rangle  {\cal E}(E_{\gamma_f},E_\gamma)\label{first_order_transition_amplitude-used}
+  {\cal A}_{fi}^{(1)} & =\sum_\gamma {c_\gamma^{(i)}} \langle \gamma_f|H_I|\gamma\rangle  {\cal E}(E_{\gamma_f},E_\gamma)\label{eq:osc-first-order-amplitude-restated}
 \end{align}
 
 We apply it for our situation
@@ -33,14 +33,14 @@ We start from the general calculation
 the one oscillator interaction matrix element will be denoted as
 \begin{importantbox}
   \begin{align}
-    \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle={\cal V}(n_1,n_2; P_1, P_2; a)\label{one-absorber-matrix-element}
+    \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle={\cal V}(n_1,n_2; P_1, P_2; a)\label{eq:osc-V-notation}
   \end{align}
 \end{importantbox}
-and they are calculated in Sect \ref{cal-V_olh-basis}
+and they are calculated in Sect \ref{sec:osc-V-matrix-element}
 \begin{importantbox}
   \begin{align}
     {\cal V}(n_1,n_2;P_1,P_2;a)&= \langle n_1(a) P_1|H_I|n_2(a) P_2\rangle  \nonumber\\
-    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{cal-V_n1n2p1p2-use}
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_1-P_2)}e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)\label{eq:osc-V-n1n2-restated}
   \end{align}
   where $n_<$ and $n_>$ are smaller/larger between $n_1$ and $n_2$
   For $P_1=P_2$, the expression containing the power of $P_1-P_2$
@@ -49,7 +49,7 @@ and they are calculated in Sect \ref{cal-V_olh-basis}
   \begin{align}
     {\cal V}(n_1,n_2;P,P;a)
     = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
-    \delta_{n_1n_2}.\label{cal-V_n1n2p1p2-spec-use}
+    \delta_{n_1n_2}.\label{eq:osc-V-n1n2-diag-restated}
   \end{align}
 \end{importantbox}
 with the results above the matrix element $ \langle \gamma_1|H_I{(i)}|\gamma_2\rangle$ can be written as
@@ -67,12 +67,12 @@ and the transition amplitude becomes
     {\cal A}_{fi}^{(1)} (P_f;n_f^{(1)},n_f^{(2)})= \int\limits_{-\infty}^{\infty}dPC(P)\left[\delta_{n_f^{(2)}0}{\cal V}(n_f^{(1)},0;P_f,P;a_1)+\delta_{n_f^{(1)}0}{\cal V}(n_f^{(2)},0; P_f,P;a_2)\right] {\cal E}(E_{\gamma_f},E_\gamma)
   \end{align}
 \end{importantbox}
-the factor ${\cal E}$ is calculated in Sect. \ref{sect-numerical-stable-first-order} and is
+the factor ${\cal E}$ is calculated in Sect. \ref{sec:app-stable-first-order} and is
 \begin{importantbox}
   \begin{align} {\cal E}(E_{\gamma_f},E_\gamma)=\frac{e^{-i\tau E_{\gamma_f}}-e^{-i\tau E_\gamma}}{E_{\gamma_f}-E_\gamma} = -i\tau
     e^{-i\tau(E_{\gamma_f}+E_\gamma)/2}        \operatorname{sinc} \left[
       \frac{\tau(E_{\gamma_f}-E_{\gamma})}{2}
-    \right].\qquad \tau = \frac{t_f-t_i}{\hbar}\label{regularized-E-used}
+    \right].\qquad \tau = \frac{t_f-t_i}{\hbar}\label{eq:osc-E-factor-restated}
   \end{align}
 \end{importantbox}
 
@@ -80,7 +80,7 @@ The matrix element $ {\cal V}$ has a simplified form since one of the indices is
 \begin{importantbox}
   \begin{align}
     {\cal V}(n_f,0;P_f,P;a)&= \langle n_f(a) P_f|H_I|0 P\rangle  \nonumber\\
-    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_f-P)}e^{-\frac{(P_f-P)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{1}{n_f!}} \left(-\frac{i (P_f-P)  }{\sqrt{2}\hbar\alpha}\right)^{n_f} e^{-\frac{(P_f-P)^2 }{4\hbar^2\alpha^2}} \label{cal-V_n1n2p1p2-use-n0}
+    &= \frac{V_0}{2\pi\hbar}\sqrt{{2\pi\sigma_V^2}} e^{-\frac{i}{\hbar}a(P_f-P)}e^{-\frac{(P_f-P)^2\sigma_V^2}{2\hbar^2}}\sqrt{\frac{1}{n_f!}} \left(-\frac{i (P_f-P)  }{\sqrt{2}\hbar\alpha}\right)^{n_f} e^{-\frac{(P_f-P)^2 }{4\hbar^2\alpha^2}} \label{eq:osc-V-n0}
   \end{align}
   For $P_1=P_2$, the expression containing the power of $P_f-P$
   should be evaluated through its limiting value.  Using the
@@ -88,7 +88,7 @@ The matrix element $ {\cal V}$ has a simplified form since one of the indices is
   \begin{align}
     {\cal V}(n_f,0;P,P;a)
     = \frac{V_0}{2\pi\hbar}\sqrt{2\pi\sigma_V^2}\,
-    \delta_{n_f0}.\label{cal-V_n1n2p1p2-spec-use-n0}
+    \delta_{n_f0}.\label{eq:osc-V-n0-diag}
   \end{align}
   and $\alpha$ is
   \begin{align}
@@ -105,7 +105,7 @@ The numerical observable is the differential density probability
 \begin{importantbox}
   in the numerical calculation there are two regimes:
   \begin{enumerate}
-    \item $M\gg m \sim 1$ au. The velocity $v$ of the alpha particle is of the order of 10 au (it has to be smaller that $c = 137.036$ au). In that case the momentum $P_0$ is very large; there will be two regions of interest for $P_f$, in two disconnected stripes around $\pm P_0$, with width of the order of $\sqrt{\frac{\hbar^2 }{\sigma_V^2 + \frac1{2\alpha^2}}}$
+    \item $M\gg m \sim 1$ au. The velocity $v$ of the alpha particle is of the order of 10 au (it has to be smaller that $c = 137.036$ au). In that case the momentum $P_\alpha$ is very large; there will be two regions of interest for $P_f$, in two disconnected stripes around $\pm P_\alpha$, with width of the order of $\sqrt{\frac{\hbar^2 }{\sigma_V^2 + \frac1{2\alpha^2}}}$
 
     \item $M\sim m\sim1$ au. In that case the velocity of the alpha particle $v$ remains the same, but the momentum will be much lower, and the two stripes from the previous point become a single stripe.
   \end{enumerate}

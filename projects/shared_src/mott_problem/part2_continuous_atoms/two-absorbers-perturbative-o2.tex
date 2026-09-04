@@ -15,13 +15,13 @@ the final state where one or both oscillators are excited has the form:
 \end{align}
 we calculate the  second-order transition amplitudes to find the probability of double excitation.
 
-starting point: the general formula from (\ref{transition-second-order})
+starting point: the general formula from (\ref{eq:gen-second-order-amplitude})
 
 \begin{align}
   &{\cal A}_{fi}^{(2)} =  \sum_{\gamma, \gamma_1} c_{\gamma}^{(i)}\langle\gamma_f|H_I|\gamma_1\rangle \langle\gamma_1|H_I|\gamma\rangle{\cal F}(E_{\gamma_f}, E_{\gamma_1},E_\gamma)\\
   &{\cal F}(E_{\gamma_f}, E_{\gamma_1},E_\gamma)= \frac{1}{(E_{\gamma_1}-E_{\gamma})} \left[ \frac{1}{(E_{\gamma_f}-E_{\gamma})}\left(e^{-\frac{i}{\hbar}E_{\gamma}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right)-\frac{1}{(E_{\gamma_f}-E_{\gamma_1})}\left(e^{-\frac{i}{\hbar}E_{\gamma_1}(t_f-t_i)}-e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\right) \right]
-\end{align}\label{a2sumgen}
-the evaluation of ${\cal F}$ is presented explicitly in (\ref{second-regularization}).
+\end{align}\label{eq:osc-two-absorber-o2-general}
+the evaluation of ${\cal F}$ is presented explicitly in (\ref{sec:app-stable-second-order}).
 
 in the previous expression the indices are
 \begin{importantbox}
@@ -30,13 +30,13 @@ in the previous expression the indices are
     & \gamma_1\rightarrow\left\{P_1\in({-\infty},\infty), \;m_1(a_1)\in{\mathbb{N}}, \;m_2(a_2)\in{\mathbb{N}}\right\} \nonumber \\
     & \gamma_f\rightarrow\left\{P_f,\; n_{f_1}(a_1)\in{\mathbb{N}}, \;n_{f_2}(a_2)\in{\mathbb{N}}\right\}
   \end{align}
-  the energies appearing in (\ref{a2sumgen}) are
+  the energies appearing in (\ref{eq:osc-two-absorber-o2-general}) are
   \begin{align}
     E_{\gamma} = \frac{P^2}{2M}+\hbar\omega,\quad E_{\gamma_1} = \hbar\omega(m_1 + m_2 +1)+\frac{P_1^2}{2M},\quad E_{\gamma_f} = \hbar\omega(n_{f_1}+n_{f_2}+1)+\frac{P_f^2}{2M}
   \end{align}
-  the coefficient $c_{\gamma}^{(i)}$ is given in (\ref{C(P)-projectile})
+  the coefficient $c_{\gamma}^{(i)}$ is given in (\ref{eq:proj-CP})
   \begin{align}
-    c_\gamma^{(i)}\rightarrow C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_0)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_0)^2\sigma_\alpha^2}{2\hbar^2}} \right]\
+    c_\gamma^{(i)}\rightarrow C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_\alpha^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_\alpha)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_\alpha)^2\sigma_\alpha^2}{2\hbar^2}} \right]\
   \end{align}
 \end{importantbox}
 
@@ -47,7 +47,7 @@ the matrix elements are
     &\langle \gamma_1|H_I|\gamma \rangle   =\delta_{m_20}{\cal V}(m_1,0;P_1,P;a_1)+\delta_{m_10}{\cal V}(m_2,0;P_1,P;a_2)
   \end{align}
 \end{importantbox}
-where the ${\cal V}$ matrix elements are presented in  Sect. \ref{section-two-absorbers-o1}
+where the ${\cal V}$ matrix elements are presented in  Sect. \ref{sec:osc-two-absorber-o1}
 
 from the product in the expression  of the second order transition amplitude we get 4 terms. two of them correspond to the second order transition of only one particle; the remaining two are combined into the simultaneous excitation of both atoms.
 
@@ -89,4 +89,4 @@ and after using the Kronecker delta symbols
   &E_{\gamma_1}=\frac{P_1^2}{2M} + \hbar\omega(n_{f_2}+1)\quad E_{\gamma_f} =\frac{P_f^2}{2M} + \hbar\omega(n_{f_1}+n_{f_2}+1),\quad E_\gamma = \frac{P^2}{2M} + \hbar\omega
 \end{align}
 
-The contribution to the two integrals over $P$ are centered as before in the stripes around $\pm P_0$ or a unique stripe if $P_0$ ($M$) are small.
+The contribution to the two integrals over $P$ are centered as before in the stripes around $\pm P_\alpha$ or a unique stripe if $P_\alpha$ ($M$) are small.

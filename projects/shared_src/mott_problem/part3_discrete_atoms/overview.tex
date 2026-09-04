@@ -1,17 +1,17 @@
 \section{motivation}
 
-Part~\ref{part-continuous-atoms} treats the atom as a one-dimensional harmonic oscillator: a continuous-position system with an infinite tower of equally spaced levels. This is physically motivated, but it forces every calculation --- matrix elements, selection rules, numerical propagation --- through Hermite/Laguerre machinery and an infinite (numerically truncated) basis.
+Part~\ref{part:continuous-atoms} treats the atom as a one-dimensional harmonic oscillator: a continuous-position system with an infinite tower of equally spaced levels. This is physically motivated, but it forces every calculation --- matrix elements, selection rules, numerical propagation --- through Hermite/Laguerre machinery and an infinite (numerically truncated) basis.
 
-Here the atom is replaced by a discrete-level system, starting with the simplest non-trivial case: a two-level atom (ground state $|g\rangle$, excited state $|e\rangle$, energy splitting $\hbar\omega_0$). This removes the continuous-position structure entirely, so the general TDPT results of Part~\ref{part-general-tdpt} apply directly to a finite-dimensional internal Hilbert space. The goal is the same Mott-type question --- correlating projectile deflection with atomic excitation --- with less analytical and numerical overhead, so that the essential physics (energy--momentum correlation, first- vs.\ second-order excitation channels, the one-absorber vs.\ two-absorber comparison) can be isolated from the oscillator-specific bookkeeping.
+Here the atom is replaced by a discrete-level system, starting with the simplest non-trivial case: a two-level atom (ground state $|g\rangle$, excited state $|e\rangle$, energy splitting $\hbar\omega_0$). This removes the continuous-position structure entirely, so the general TDPT results of Part~\ref{part:general-tdpt} apply directly to a finite-dimensional internal Hilbert space. The goal is the same Mott-type question --- correlating projectile deflection with atomic excitation --- with less analytical and numerical overhead, so that the essential physics (energy--momentum correlation, first- vs.\ second-order excitation channels, the one-absorber vs.\ two-absorber comparison) can be isolated from the oscillator-specific bookkeeping.
 
 \section{planned structure}
 
-This part will mirror the chapter structure of Part~\ref{part-continuous-atoms}:
+This part will mirror the chapter structure of Part~\ref{part:continuous-atoms}:
 
 \begin{itemize}
-  \item \textbf{the two-level atom.} Model description: the interaction Hamiltonian $H_I$ expressed directly through its matrix elements between $|g(a)\rangle$ and $|e(a)\rangle$ at position $a$ (the discrete-atom analogue of $\mathcal V(n,m;P_1,P_2;a)$ of Sect.~\ref{cal-V_olh-basis}), together with the free Hamiltonian $H_0=\frac{P_X^2}{2M}+\frac{\hbar\omega_0}{2}\sigma_z$.
-  \item \textbf{the one-absorber system.} First-order transition amplitude for $g\to e$ excitation, using the general result of Sect.~\ref{first_order_transition_amplitude} and the projectile wave packet of Sect.~\ref{sect_bimodal}.
-  \item \textbf{the two-absorber system.} First- and second-order amplitudes for one or both atoms excited, in direct analogy with Sects.~\ref{section-two-absorbers-o1} and the second-order two-absorber chapter, but with the sums over intermediate oscillator states collapsing to a single intermediate term ($|e\rangle$) instead of an infinite sum over $r$.
+  \item \textbf{the two-level atom.} Model description: the interaction Hamiltonian $H_I$ expressed directly through its matrix elements between $|g(a)\rangle$ and $|e(a)\rangle$ at position $a$ (the discrete-atom analogue of $\mathcal V(n,m;P_1,P_2;a)$ of Sect.~\ref{sec:osc-V-matrix-element}), together with the free Hamiltonian $H_0=\frac{P_X^2}{2M}+\frac{\hbar\omega_0}{2}\sigma_z$.
+  \item \textbf{the one-absorber system.} First-order transition amplitude for $g\to e$ excitation, using the general result of Sect.~\ref{eq:gen-first-order-amplitude} and the projectile wave packet of Sect.~\ref{sec:proj-wavepacket}.
+  \item \textbf{the two-absorber system.} First- and second-order amplitudes for one or both atoms excited, in direct analogy with Sects.~\ref{sec:osc-two-absorber-o1} and the second-order two-absorber chapter, but with the sums over intermediate oscillator states collapsing to a single intermediate term ($|e\rangle$) instead of an infinite sum over $r$.
   \item \textbf{extension to $N$-level atoms.} Once the two-level case is in place, generalizing to three (or $N$) equally- or unequally-spaced levels is a matter of enlarging the internal Hilbert space; this section will record what changes and what does not.
 \end{itemize}
 

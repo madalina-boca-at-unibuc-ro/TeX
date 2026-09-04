@@ -28,31 +28,31 @@ where the coupling matrix elements $V_{nm}(X)$ are given by:
 \begin{align}
   V_{nm}(X) = \langle n(a_1)|V_0 e^{-\frac{(x-X)^2}{2\sigma_V^2}}|m(a_1)\rangle
 \end{align}
-and they are calculated in Appendix \ref{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}. The initial condition is given by the wave packet
+and they are calculated in Appendix \ref{sec:osc-Vnm-displaced-basis}. The initial condition is given by the wave packet
 \begin{align}
   \Psi_n(X,0) = \langle 0(a_1)|\psi_0(X,0)\rangle\delta_{n,0}
 \end{align}
-i.e. the absorber is in the ground state. The spatial part of the wave function is the Gaussian wave packet described in Section \ref{sec:the-model-description-notations}.
+i.e. the absorber is in the ground state. The spatial part of the wave function is the Gaussian wave packet described in Section \ref{sec:osc-one-absorber}.
 
 
 For the following numerical calculation it is convenient to write the  wave packet in the form
 \begin{align}
-  \psi_n(X) = \psi_{n,+}(X)e^{\frac{i}{\hbar}P_0X} + \psi_{n,-}(X)e^{-\frac{i}{\hbar}P_0X}
+  \psi_n(X) = \psi_{n,+}(X)e^{\frac{i}{\hbar}P_\alpha X} + \psi_{n,-}(X)e^{-\frac{i}{\hbar}P_\alpha X}
 \end{align}
 the two terms obey independent TDSEs (or system of coupled TDSEs); to derive them we use
 \begin{align}
-  -i\hbar\frac{\partial}{\partial X}\psi_{n,+}e^{\frac{i}{\hbar}P_0X} = (-i\hbar\frac{\partial}{\partial X}+P_0)\psi_{n,+}e^{\frac{i}{\hbar}P_0X}, \quad P\psi_{n,-}e^{-\frac{i}{\hbar}P_0X} = (P-P_0)\psi_{n,-}e^{-\frac{i}{\hbar}P_0X}
+  -i\hbar\frac{\partial}{\partial X}\psi_{n,+}e^{\frac{i}{\hbar}P_\alpha X} = (-i\hbar\frac{\partial}{\partial X}+P_\alpha)\psi_{n,+}e^{\frac{i}{\hbar}P_\alpha X}, \quad P\psi_{n,-}e^{-\frac{i}{\hbar}P_\alpha X} = (P-P_\alpha)\psi_{n,-}e^{-\frac{i}{\hbar}P_\alpha X}
 \end{align}
 and the coupled systems differential equations for the two components are
 \begin{align}
-   & i\hbar\frac{\partial\Psi_{n,+}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,+}(X,t) - \frac{i\hbar P_0}{M}\frac{\partial}{\partial X}\Psi_{n,+}(X,t) + \left(\frac{P_0^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,+}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,+}(X,t) \\
-   & i\hbar\frac{\partial\Psi_{n,-}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,-}(X,t) + \frac{i\hbar P_0}{M}\frac{\partial}{\partial X}\Psi_{n,-}(X,t) + \left(\frac{P_0^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,-}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,-}(X,t)
+   & i\hbar\frac{\partial\Psi_{n,+}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,+}(X,t) - \frac{i\hbar P_\alpha}{M}\frac{\partial}{\partial X}\Psi_{n,+}(X,t) + \left(\frac{P_\alpha^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,+}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,+}(X,t) \\
+   & i\hbar\frac{\partial\Psi_{n,-}(X,t)}{\partial t} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial X^2}\Psi_{n,-}(X,t) + \frac{i\hbar P_\alpha}{M}\frac{\partial}{\partial X}\Psi_{n,-}(X,t) + \left(\frac{P_\alpha^2}{2M} + \hbar\omega (n+\frac{1}{2})\right)\Psi_{n,-}(X,t) + \sum\limits_{m\ge0}V_{nm}(X)\Psi_{m,-}(X,t)
 \end{align}
-The initial condition is now given by (see \eqref{psi_alpha-X})
+The initial condition is now given by (see \eqref{eq:proj-psi-alpha})
 \begin{align}
-  \Psi_{n,+}(X,0) = \Psi_{n,-}(X,0) =\frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\frac12\sqrt{\frac{2}{1+e^{-\frac{P_0^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
+  \Psi_{n,+}(X,0) = \Psi_{n,-}(X,0) =\frac{1}{\sqrt{\sigma_\alpha\sqrt{\pi}}}\frac12\sqrt{\frac{2}{1+e^{-\frac{P_\alpha^2\sigma_\alpha^2}{\hbar^2}}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
 \end{align}
-or, for large $P_0$ (see \eqref{C(P)-projectile-approx})
+or, for large $P_\alpha$ (see \eqref{eq:proj-CP-approx})
 \begin{align}
   \Psi_{n,+}(X,0) = \Psi_{n,-}(X,0) =\frac{1}{\sqrt{2\sigma_\alpha\sqrt{\pi}}}e^{-\frac{X^2}{2\sigma_\alpha^2}}
 \end{align}
@@ -69,5 +69,5 @@ the kinetic energy operator is multiplicative in the momentum space and diagonal
 
 the potential energy operator is multiplicative in the position space, so we can apply it directly in that representation, but it is not diagonal.
 
-to apply it, we need first to calculate the matrix ${\cal V}(X)$ of the potential energy operator in the harmonic oscillator basis (see Appendix \ref{sec:matrix-element-of-efracx-x2-2sigma_alpha2-in-the-displaced-harmonic-oscillator-basis}). The matrix elements $V_{nm}(X)$ are calculated for each value of $X$ on the spatial grid, and then the matrix ${\cal V}(X)$ is diagonalized to obtain its eigenvalues and eigenvectors. The potential energy operator can then be applied in the diagonal basis, and the wave function can be transformed back to the original basis using the eigenvectors.
+to apply it, we need first to calculate the matrix ${\cal V}(X)$ of the potential energy operator in the harmonic oscillator basis (see Appendix \ref{sec:osc-Vnm-displaced-basis}). The matrix elements $V_{nm}(X)$ are calculated for each value of $X$ on the spatial grid, and then the matrix ${\cal V}(X)$ is diagonalized to obtain its eigenvalues and eigenvectors. The potential energy operator can then be applied in the diagonal basis, and the wave function can be transformed back to the original basis using the eigenvectors.
 

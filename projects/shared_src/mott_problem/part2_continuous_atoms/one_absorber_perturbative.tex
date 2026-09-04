@@ -1,4 +1,4 @@
-\section{the one absorber system in the perturbative regime}\label{section-perturbative-one-particle}
+\section{the one absorber system in the perturbative regime}\label{sec:osc-one-absorber-perturbative}
 
 we consider the case of only one atom, located at $x=a_1$. we can write the initial state as
 \begin{align}
@@ -19,7 +19,7 @@ after the change of variable $X-x=y$ the previous matrix element becomes
 \begin{align}
   \langle n_1(a_1), P_1|H_I|n_2(a_1),P_2\rangle & = \frac{V_0}{2\pi\hbar}\int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}}\int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a_1)u_{n_2}(x-a_1)
 \end{align}
-The integral over $y$ can be calculated using (\ref{usefulid2}), with $\lambda = \frac1{2\sigma_V^2}$ and $k = \frac{P_1-P_2}{\hbar}$
+The integral over $y$ can be calculated using (\ref{eq:app-gaussian-fourier-integral}), with $\lambda = \frac1{2\sigma_V^2}$ and $k = \frac{P_1-P_2}{\hbar}$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dy e^{-\frac{i}{\hbar}y(P_1-P_2)}e^{-\frac{y^2}{2\sigma_V^2}} = \sqrt{{2\pi\sigma_V^2}} e^{-\frac{(P_1-P_2)^2\sigma_V^2}{2\hbar^2}}
 \end{align}
@@ -27,12 +27,12 @@ The integral over $x$ is calculated after a further change of variable $x-a_1=z$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dx e^{-\frac{i}{\hbar}x(P_1-P_2)}u_{n_1}(x-a_1)u_{n_2}(x-a_1) = e^{-\frac{i}{\hbar}a_1(P_1-P_2)}\int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z)
 \end{align}
-The remaining integral can be computed using (\ref{me-ho}), with $q = \frac{P_1-P_2}{\hbar}$ and $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
+The remaining integral can be computed using (\ref{eq:osc-me-expiqx}), with $q = \frac{P_1-P_2}{\hbar}$ and $\alpha = \sqrt{\frac{m\omega}{\hbar}}$
 \begin{align}
   \int \limits_{-\infty}^{\infty} dz e^{-\frac{i}{\hbar}z(P_1-P_2)}u_{n_1}(z)u_{n_2}(z) = \sqrt{\frac{n_<!}{n_>!}} \left(-\frac{i (P_1-P_2)  }{\sqrt{2}\hbar\alpha}\right)^{n_> - n_<} e^{-\frac{(P_1-P_2)^2 }{4\hbar^2\alpha^2}} \, L_{n_<}^{(n_> - n_<)}\!\left(\frac{(P_1-P_2)^2 }{2\hbar^2\alpha^2}\right)
 \end{align}
 
-The transition amplitude to calculate is (\ref{first_order_transition_amplitude})
+The transition amplitude to calculate is (\ref{eq:gen-first-order-amplitude})
 \begin{align}
   {\cal A}_{fi}^{(1)} & =e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}\sum_\gamma \frac{c_\gamma^{(i)}}{{E_{\gamma_f}- E_\gamma}} \langle \gamma_f|H_I|\gamma\rangle  \left(1-e^{\frac{i}{\hbar}({E_{\gamma_f}- E_\gamma})(t_f-t_i)} \right)
 \end{align}
@@ -45,12 +45,12 @@ which in our case is
 since the Laguerre polynomial reduces to 1, the  result is
 \begin{align}
   \langle P_f,n_f |H_I|P,0\rangle = \frac{V_0\sigma_V}{\sqrt{2\pi}\hbar {\sqrt{n_f!}}}e^{-\frac{\left(P_f-P\right)^2 }{2\hbar ^2}(\sigma_V^2 +
-      \frac{1}{2\alpha^2})}e^{-\frac{i}{\hbar}a_1(P_f-P)}\left(-\frac{i (P_f-P)  }{\sqrt{2}\hbar\alpha}\right)^{n_f}\label{matrix_element_one_atom}
+      \frac{1}{2\alpha^2})}e^{-\frac{i}{\hbar}a_1(P_f-P)}\left(-\frac{i (P_f-P)  }{\sqrt{2}\hbar\alpha}\right)^{n_f}\label{eq:osc-one-absorber-matrix-element}
 \end{align}
 
 Finally, the transition amplitude is given by (up to an irrelevant factor of $e^{-\frac{i}{\hbar}E_{\gamma_f}(t_f-t_i)}$)
 \begin{align}
-  \label{A1_one_atom_2}    {\cal A}_{fi}^{(1)} & =\int\limits_{-\infty}^{\infty}dP C(P) \langle P_f,n_f |H_I|P,0\rangle  \frac{1-e^{\frac{i}{\hbar}(n_f\hbar\omega+\frac{P_f^2-P^2}{2m})(t_f-t_i)}}{n_f\hbar\omega+\frac{P_f^2-P^2}{2m}}
+  \label{eq:osc-one-absorber-amplitude}    {\cal A}_{fi}^{(1)} & =\int\limits_{-\infty}^{\infty}dP C(P) \langle P_f,n_f |H_I|P,0\rangle  \frac{1-e^{\frac{i}{\hbar}(n_f\hbar\omega+\frac{P_f^2-P^2}{2m})(t_f-t_i)}}{n_f\hbar\omega+\frac{P_f^2-P^2}{2m}}
 \end{align}
-where $C(P)$ is given in eq. (\ref{C(P)-projectile}) and $\langle P_f,n_f |H_I|P,0\rangle$ is given in eq. (\ref{matrix_element_one_atom}).
+where $C(P)$ is given in eq. (\ref{eq:proj-CP}) and $\langle P_f,n_f |H_I|P,0\rangle$ is given in eq. (\ref{eq:osc-one-absorber-matrix-element}).
 

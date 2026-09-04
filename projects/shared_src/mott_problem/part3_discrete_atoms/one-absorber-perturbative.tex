@@ -1,11 +1,11 @@
 \section{perturbative description of the one absorber system}\label{sect:tls-one-absorber-perturbative}
 
-we consider a system consisting the the alpha particle described as in Sect. \ref{sec:proj-wavepacket} in interaction with a two-level system placed at $X=a$, described as in Sect. \ref{sec:tls-one-absorber}. The interaction hamiltonian is in Sect \ref{sect:tls-two-level-atom}
+we consider a system consisting of the alpha particle described as in Sect.~\ref{sec:proj-wavepacket}, in interaction with a two-level system placed at $X=a$, described as in Sect.~\ref{sec:tls-one-absorber}. The interaction Hamiltonian is given in Sect.~\ref{sec:tls-interaction}.
 
-we can calculate the probability of escitation; the initial state is
+we can calculate the probability of excitation; the initial state is
 \begin{importantbox}
     \begin{align}
-        |\psi_i\rangle = \int\limits_{-\infty}^{\infty} dP C(P)|P\rangle\times|0(a)\rangle
+        |\psi_i\rangle = \int\limits_{-\infty}^{\infty} dP\, C(P)|P\rangle\times|0(a)\rangle
     \end{align}
 \end{importantbox}
 with $C(P)$ the projectile momentum coefficient of Part~\ref{part:general-tdpt}, Sect.~\ref{sec:proj-wavepacket}, eq.~\eqref{eq:proj-CP}.
@@ -15,4 +15,164 @@ and the final state is
         |\psi_f\rangle = |P_f\rangle\times|1(a)\rangle
     \end{align}
 \end{importantbox}
-and the first order transition amplitude according to Part~\ref{part:general-tdpt}, eq.~\eqref{eq:gen-first-order-amplitude},
+and the first order transition amplitude according to Part~\ref{part:general-tdpt}, eq.~\eqref{eq:gen-first-order-amplitude}, is obtained by identifying, in that formula,
+\begin{align}
+    \gamma = (P,0),\qquad \gamma_f = (P_f,1),\qquad c_\gamma^{(i)} = C(P),\qquad E_\gamma = E_0+\frac{P^2}{2M},\qquad E_{\gamma_f} = E_1+\frac{P_f^2}{2M},
+\end{align}
+so that the sum over $\gamma$ becomes an integral over the projectile momentum $P$, and the energy difference entering $\mathcal E$ is
+\begin{align}
+    E_{\gamma_f}-E_\gamma = (E_1-E_0)+\frac{P_f^2-P^2}{2M} = \hbar\omega_0+\frac{P_f^2-P^2}{2M}.
+\end{align}
+the matrix element $\langle \gamma_f|H_I|\gamma\rangle = \langle P_f,1(a)|H_I|P,0(a)\rangle$ picks out the $n_1=1\leftarrow n_2=0$ (absorption) term of eq.~\eqref{eq:tls-full-matrix-element}, i.e.\ $H_{10}(P_f,P)$ of eq.~\eqref{eq:tls-H10}:
+\begin{align}
+    \langle P_f,1(a)|H_I|P,0(a)\rangle = H_{10}(P_f,P) = V_0\frac{\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_f-P)}\left[c_+^*e^{-\frac{\sigma_V^2(P_f-P+P_+)^2}{2\hbar^2}}+c_-^*e^{-\frac{\sigma_V^2(P_f-P-P_-)^2}{2\hbar^2}}\right]\label{eq:tls-one-absorber-matrix-element}
+\end{align}
+
+putting these pieces together, the first-order transition amplitude for one-absorber excitation is
+\begin{importantbox}
+    \begin{align}
+        \mathcal A_{fi}^{(1)} = \int\limits_{-\infty}^{\infty}dP\, C(P)\, H_{10}(P_f,P)\, \mathcal E\!\left(E_1+\frac{P_f^2}{2M},\,E_0+\frac{P^2}{2M}\right)\label{eq:tls-one-absorber-amplitude}
+    \end{align}
+\end{importantbox}
+where $C(P)$ is given by eq.~\eqref{eq:proj-CP}, $H_{10}(P_f,P)$ by eq.~\eqref{eq:tls-H10}, and $\mathcal E$ by eq.~\eqref{eq:gen-first-order-amplitude} (a numerically stable $\operatorname{sinc}$ form of $\mathcal E$ is given in Sect.~\ref{sec:app-stable-first-order}).
+
+\subsection{the first order transition probability}
+specializing the general Mott-case probability, eq.~\eqref{eq:gen-first-order-probability}, to the single term above gives the probability, differential in the final projectile momentum $P_f$, that the atom is found excited and the projectile scattered to $P_f$:
+\begin{importantbox}
+    \begin{align}
+        p_{fi}^{(1)}(P_f) = \left|\mathcal A_{fi}^{(1)}\right|^2 = \left|\int\limits_{-\infty}^{\infty}dP\, C(P)\, H_{10}(P_f,P)\, \mathcal E\!\left(E_1+\frac{P_f^2}{2M},\,E_0+\frac{P^2}{2M}\right)\right|^2\label{eq:tls-one-absorber-probability}
+    \end{align}
+\end{importantbox}
+
+\subsection{the long interaction-time limit}\label{sec:tls-one-absorber-longtau}
+the $P$-integral in eq.~\eqref{eq:tls-one-absorber-amplitude} can be evaluated in closed form in the long-time regime, where $\Delta t=t_f-t_i$ is large enough that $\mathcal E$ is sharply peaked in energy compared to the Gaussian widths $\hbar/\sigma_\alpha$, $\hbar/\sigma_V$ over which $C(P)$ and $H_{10}(P_f,P)$ vary — precisely the regime of the long-$\tau$ limit of $\mathcal E$ derived in Sect.~\ref{sec:app-first-order-delta-limit}, eq.~\eqref{eq:app-first-order-delta-limit}:
+\begin{align}
+    \mathcal E(E_{\gamma_f},E_\gamma) \approx -2\pi i\, e^{-i\tau E_{\gamma_f}}\,\delta(E_{\gamma_f}-E_\gamma),\qquad \tau=\Delta t/\hbar.
+\end{align}
+the delta function forces the projectile onto the energy shell fixed by $\gamma_f=(P_f,1)$: defining the on-shell momentum
+\begin{importantbox}
+    \begin{align}
+        P_0 = \sqrt{P_f^2+2M\hbar\omega_0},\qquad \frac{P_0^2}{2M} = E_{\gamma_f}-E_0 = \hbar\omega_0+\frac{P_f^2}{2M},\label{eq:tls-one-absorber-longtau-P0}
+    \end{align}
+\end{importantbox}
+and keeping only its positive root, matching the forward-moving lobe of the incident wave packet (eq.~\eqref{eq:proj-CP-approx}), gives $\delta(E_{\gamma_f}-E_\gamma)=\delta\!\left(E_{\gamma_f}-E_0-\frac{P^2}{2M}\right)\to\frac{M}{P_0}\delta(P-P_0)$. the $P$-integral in eq.~\eqref{eq:tls-one-absorber-amplitude} then collapses onto $P=P_0$:
+\begin{importantbox}
+    \begin{align}
+        \mathcal A_{fi}^{(1)} \approx -2\pi i\, e^{-i\tau E_{\gamma_f}}\,\frac{M}{P_0}\, C(P_0)\, H_{10}(P_f,P_0)\label{eq:tls-one-absorber-longtau-amplitude}
+    \end{align}
+\end{importantbox}
+with $P_0$ given by eq.~\eqref{eq:tls-one-absorber-longtau-P0}, $C(P)$ by eq.~\eqref{eq:proj-CP}, and $H_{10}(P_f,P)$ by eq.~\eqref{eq:tls-H10}. the overall phase $e^{-i\tau E_{\gamma_f}}$ drops out of the corresponding probability, which follows directly from eq.~\eqref{eq:tls-one-absorber-probability}:
+\begin{align}
+    p_{fi}^{(1)}(P_f) \approx (2\pi)^2\frac{M^2}{P_0^2}\left|C(P_0)\right|^2\left|H_{10}(P_f,P_0)\right|^2.\label{eq:tls-one-absorber-longtau-probability}
+\end{align}
+this is the discrete-atom analogue of the usual Fermi-golden-rule reduction: at first order and in the long-time limit, only the projectile momentum $P_0$ that conserves energy against the atom's excitation gap $\hbar\omega_0$ contributes, and the transition amplitude is just the (energy-conserving) coupling matrix element weighted by the incoming wave packet's amplitude at $P_0$.
+
+\paragraph{the two Gaussian windows.} $C(P_0)$ alone already makes eq.~\eqref{eq:tls-one-absorber-longtau-amplitude} exponentially small unless $P_0$ sits near the wave packet's peak $P_\alpha$ (eq.~\eqref{eq:proj-CP-approx}), but $H_{10}(P_f,P_0)$ is not a free pass around that: it carries its own Gaussian window, in a different combination of momenta. write $\Delta\equiv P_0-P_f$ for the on-shell momentum transfer; since $P_0=\sqrt{P_f^2+2M\hbar\omega_0}>P_f$ whenever $\hbar\omega_0>0$, $\Delta>0$ always. taking $P_+,P_-\ge0$, as fixed by the momentum-selectivity convention of Sect.~\ref{sec:tls-momentum-selective} (symmetric default $P_+=P_-=P_c\ge0$), the two lobes of $H_{10}(P_f,P_0)$ have exponents $-\frac{\sigma_V^2}{2\hbar^2}(P_+-\Delta)^2$ ($c_+$) and $-\frac{\sigma_V^2}{2\hbar^2}(\Delta+P_-)^2$ ($c_-$): the $c_-$ argument $\Delta+P_-\ge\Delta>0$ can never reach resonance for any $P_-\ge0$, while the $c_+$ argument $P_+-\Delta$ vanishes exactly at $P_+=\Delta$. so provided $P_+$ is chosen anywhere near $\Delta$ --- the natural use of that free parameter, and the choice made below --- the $c_+$ (``energy-favoured'', Sect.~\ref{sec:tls-matrix-element}) lobe dominates and the $c_-$ one may be dropped; a $P_+$ chosen far from $\Delta$ instead (e.g.\ $P_+\gg2\Delta$) can push $c_+$'s own suppression above the $c_-$ floor $\Delta^2$, reversing which lobe dominates. keeping the dominant $c_+$ lobe, peaked at $P_f-P_0=-P_+$, i.e.\ at $P_0=P_f+P_+$, with width $\hbar/\sigma_V$ rather than $\hbar/\sigma_\alpha$: since $P_0$ is fixed by energy conservation once $P_f$ is chosen (eq.~\eqref{eq:tls-one-absorber-longtau-P0}), this is not an independent knob but a second condition on $P_f$ itself; keeping only the dominant lobes of $C$ and $H_{10}$, the amplitude's magnitude is suppressed as a product of two Gaussians in $P_f$ (through $P_0=P_0(P_f)$):
+\begin{importantbox}
+    \begin{align}
+        \left|\mathcal A_{fi}^{(1)}\right| \propto \exp\left[-\frac{\sigma_\alpha^2}{2\hbar^2}\big(P_0(P_f)-P_\alpha\big)^2 - \frac{\sigma_V^2}{2\hbar^2}\big(P_f-P_0(P_f)+P_+\big)^2\right].\label{eq:tls-one-absorber-longtau-suppression}
+    \end{align}
+\end{importantbox}
+unlike $P_0(P_f)$, the momentum-selectivity scale $P_+$ is a free coupling parameter (Sect.~\ref{sec:tls-momentum-selective}, ``to be fixed numerically''): choosing it so the coupling's favoured lobe sits exactly where the wave packet peaks,
+\begin{align}
+    P_+^\star = P_\alpha-\sqrt{P_\alpha^2-2M\hbar\omega_0},\qquad\text{attained at}\qquad P_f^\star=\sqrt{P_\alpha^2-2M\hbar\omega_0}
+\end{align}
+(defined provided $P_\alpha^2>2M\hbar\omega_0$, i.e.\ the projectile has enough kinetic energy at $P_\alpha$ to excite the atom without leaving the neighbourhood of the wave packet's peak), removes the second Gaussian factor exactly where the first is largest, so the two windows reinforce rather than compound. leaving $P_+$ generic instead multiplies two independent Gaussians and narrows the excitation window in $P_f$ well below what $C(P_0)$ alone would suggest. which factor controls the residual width is set by $\sigma_\alpha$ versus $\sigma_V$: a short-range coupling ($\sigma_V\ll\sigma_\alpha$) is broad in momentum and barely constrains $P_f$ beyond $C(P_0)$'s own peak, while $\sigma_V\gtrsim\sigma_\alpha$ makes the coupling's selectivity as important as the wave packet's, so a mismatched $P_+$ can suppress the signal well below the $C(P_0)$-only estimate.
+
+\subsection{finite interaction time within the saddle point approximation}\label{sec:tls-one-absorber-saddle}
+
+We write explicitly the integrand of the transition amplitude
+\begin{align}
+     & \mathcal A_{fi}^{(1)} = \int\limits_{-\infty}^{\infty}dP\, C(P)\, H_{10}(P_f,P)\, \mathcal E\!\left(E_1+\frac{P_f^2}{2M},\,E_0+\frac{P^2}{2M}\right)       \label{eq:tls-one-absorber-amplitude-saddle}
+    \\
+     & C(P) = \sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt{\pi}\left(1+e^{-\frac{P_\alpha^2\sigma_\alpha^2}{\hbar^2}}\right)}}\left[ e^{-\frac{(P-P_\alpha)^2\sigma_\alpha^2}{2\hbar^2}} + e^{-\frac{(P+P_\alpha)^2\sigma_\alpha^2}{2\hbar^2}} \right]\nonumber                     \\
+     & H_{10}(P_f,P) = V_0\frac{\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_f-P)}\left[c_+^*e^{-\frac{\sigma_V^2(P_f-P+P_+)^2}{2\hbar^2}}+c_-^*e^{-\frac{\sigma_V^2(P_f-P-P_-)^2}{2\hbar^2}}\right]\nonumber                                                                \\
+     & {\cal E}(E_1+\frac{P_f^2}{2M},E_0+\frac{P^2}{2M}) = \frac{e^{-\frac{i}{\hbar}\left(\frac{P_f^2}{2M}+E_1\right)\Delta t}-e^{-\frac{i}{\hbar}{\left(\frac{P^2}{2M}+E_0\right)}\Delta t} }{\frac{P_f^2}{2M}+\hbar\omega_0- \frac{P^2}{2M}},\qquad \hbar\omega_0 = E_1-E_0
+\end{align}
+
+splitting the amplitude according to the two terms in $\mathcal E$'s numerator,
+\begin{align}
+    \mathcal A_{fi}^{(1)} = e^{-\frac{i}{\hbar}\left(\frac{P_f^2}{2M}+E_1\right)\Delta t}\,I_1(P_f) - I_2(P_f),\qquad
+    I_1(P_f) \equiv \int\limits_{-\infty}^{\infty}dP\,\frac{C(P)\,H_{10}(P_f,P)}{D(P)},\qquad
+    I_2(P_f) \equiv \int\limits_{-\infty}^{\infty}dP\,\frac{C(P)\,H_{10}(P_f,P)}{D(P)}\,e^{-\frac{i}{\hbar}\left(\frac{P^2}{2M}+E_0\right)\Delta t},
+\end{align}
+with $D(P)\equiv\frac{P_f^2}{2M}+\hbar\omega_0-\frac{P^2}{2M}$ the (real) energy denominator common to both. only $I_2$ carries a genuine $P$-dependent oscillatory phase beyond the position phase already present in $H_{10}$: in $I_1$ the pulled-out exponential is $P$-independent, so its integrand oscillates in $P$ only through $H_{10}$'s linear phase $e^{\frac{i}{\hbar}aP}$, with no quadratic term to balance it --- it has no interior stationary point, and is better handled directly through the real Gaussian factors of $C(P)$ and $H_{10}$ (a separate calculation, not pursued here). we focus on $I_2$: keeping only the imaginary (oscillatory) exponents and collecting every non-oscillatory factor into a slowly varying envelope,
+\begin{align}
+    I_2(P_f) = e^{-\frac{i}{\hbar}\left(aP_f+E_0\Delta t\right)}\int\limits_{-\infty}^{\infty}dP\, h(P)\, e^{\frac{i}{\hbar}\phi(P)},\qquad
+    h(P) \equiv \frac{C(P)}{D(P)}\,V_0\frac{\sigma_V}{\sqrt{2\pi}\hbar}\left[c_+^*e^{-\frac{\sigma_V^2(P_f-P+P_+)^2}{2\hbar^2}}+c_-^*e^{-\frac{\sigma_V^2(P_f-P-P_-)^2}{2\hbar^2}}\right],\label{eq:tls-one-absorber-saddle-envelope}
+\end{align}
+with the oscillatory phase
+\begin{importantbox}
+    \begin{align}
+        \phi(P) = aP - \frac{\Delta t}{2M}P^2\label{eq:tls-one-absorber-saddle-phase}
+    \end{align}
+\end{importantbox}
+collecting $H_{10}$'s position phase ($aP$, Sect.~\ref{sec:tls-matrix-element}) and the free-propagation phase carried by the second term of $\mathcal E$ ($-\frac{\Delta t}{2M}P^2$).
+
+\subsubsection{the stationary point}
+the stationary point of $\phi$ is
+\begin{importantbox}
+    \begin{align}
+        \phi'(P) = a - \frac{\Delta t}{M}P = 0 \quad\Longrightarrow\quad P_s = \frac{Ma}{\Delta t}\label{eq:tls-one-absorber-saddle-point}
+    \end{align}
+\end{importantbox}
+i.e.\ exactly the classical momentum of a free particle of mass $M$ that covers the distance $a$ from the wave packet's initial centre (Sect.~\ref{sec:proj-wavepacket}) to the absorber in the elapsed time $\Delta t$: a classical transit condition, distinct from the energy-conserving momentum $P_0$ of Sect.~\ref{sec:tls-one-absorber-longtau}, eq.~\eqref{eq:tls-one-absorber-longtau-P0}, which $P_s$ need not coincide with at finite $\Delta t$. since $\phi$ is exactly quadratic in $P$,
+\begin{align}
+    \phi''(P) = -\frac{\Delta t}{M}\qquad\text{(constant)},
+\end{align}
+the expansion of $\phi$ around $P_s$ is exact, with no higher-order corrections, and
+\begin{align}
+    \phi(P_s) = \frac{Ma^2}{2\Delta t},
+\end{align}
+exactly the classical free-particle action for that transit ($\frac12Mv^2\Delta t$ with $v=a/\Delta t$).
+
+\subsubsection{the Fresnel integral}
+writing $\phi(P)=\phi(P_s)+\frac12\phi''(P_s)(P-P_s)^2$ (exact) and using the standard Fresnel integral $\int_{-\infty}^{\infty}dx\, e^{-i\beta x^2}=\sqrt{\pi/\beta}\,e^{-i\pi/4}$ (valid for real $\beta=\Delta t/(2M\hbar)>0$),
+\begin{align}
+    \int\limits_{-\infty}^{\infty}dP\, e^{\frac{i}{\hbar}\phi(P)} \approx e^{\frac{i}{\hbar}\phi(P_s)}\int\limits_{-\infty}^{\infty}dP\, e^{-\frac{i\Delta t}{2M\hbar}(P-P_s)^2} = e^{\frac{i}{\hbar}\phi(P_s)}\sqrt{\frac{2\pi M\hbar}{\Delta t}}\,e^{-i\pi/4},
+\end{align}
+freezing the slowly varying envelope $h(P)$ of eq.~\eqref{eq:tls-one-absorber-saddle-envelope} at $P=P_s$ gives the saddle-point approximation to $I_2$:
+\begin{importantbox}
+    \begin{align}
+        I_2(P_f) \approx h(P_s)\,\sqrt{\frac{2\pi M\hbar}{\Delta t}}\;\exp\left\{-\frac{i}{\hbar}\left[aP_f+E_0\Delta t-\frac{Ma^2}{2\Delta t}\right]-\frac{i\pi}{4}\right\},\qquad P_s=\frac{Ma}{\Delta t}.\label{eq:tls-one-absorber-finite-tau-amplitude}
+    \end{align}
+\end{importantbox}
+with $h(P_s)$ read off eq.~\eqref{eq:tls-one-absorber-saddle-envelope} at $P=P_s$, $C(P)$ from eq.~\eqref{eq:proj-CP}, and $D(P_s)=\frac{P_f^2}{2M}+\hbar\omega_0-\frac{P_s^2}{2M}$.
+
+\paragraph{validity.} freezing $h(P)$ at $P_s$ is legitimate once the Fresnel factor is narrower than the envelope: its width is $\delta P\sim\sqrt{2M\hbar/\Delta t}$, so the approximation holds for
+\begin{align}
+    \Delta t \gg \frac{2M\sigma_\alpha^2}{\hbar},\ \frac{2M\sigma_V^2}{\hbar},
+\end{align}
+a much weaker condition than the $\Delta t\to\infty$ needed for the long interaction-time limit of Sect.~\ref{sec:tls-one-absorber-longtau}: the present result already applies at finite, moderate $\Delta t$. it breaks down, and a uniform (Airy-type) treatment is needed instead, if $\Delta t$ is tuned so that the classical transit momentum coincides with the energy-conserving one, $P_s\to P_0$, where $D(P_s)\to0$.
+
+\subsubsection{the $I_1$ term: pole cancellation and the off-resonance closed form}
+we now return to $I_1(P_f)$, set aside above. unlike $I_2$, its integrand carries no quadratic phase --- $H_{10}$'s intrinsic phase $e^{\frac{i}{\hbar}aP}$ is linear in $P$ --- so it has no interior stationary point; but it shares $D(P)$ with $I_2$, and $D(P)=0$ exactly at $P=\pm P_0$ (eq.~\eqref{eq:tls-one-absorber-longtau-P0}). the full $\mathcal E$ is regular there (Sect.~\ref{sect:general-tdpt}, or directly by L'H\^opital), but $C(P)H_{10}(P_f,P)$ alone does not vanish at $D=0$: so neither $I_1$ nor $I_2$, taken on its own, is an ordinary convergent integral --- the singularity that is removable in the full $\mathcal E$ is not removable once its two terms are pulled apart.
+
+\paragraph{the residue cancels.} regularize the shared pole by $D(P)\to D(P)-i\sigma0^+$, for either fixed sign $\sigma=\pm1$, and use Sokhotski--Plemelj,
+\begin{align}
+    \frac{1}{D(P)-i\sigma0^+} = \text{P.V.}\frac1{D(P)} + i\sigma\pi\,\delta(D(P)) = \text{P.V.}\frac1{D(P)} + i\sigma\pi\,\frac{M}{P_0}\,\delta(P-P_0)
+\end{align}
+(keeping the positive branch, as throughout). both $I_1$ and $I_2$ then pick up an identical residue at $P=P_0$:
+\begin{align}
+    I_1 = \text{P.V.}(I_1) + i\sigma\pi\frac{M}{P_0}C(P_0)H_{10}(P_f,P_0),\qquad
+    I_2 = \text{P.V.}(I_2) + i\sigma\pi\frac{M}{P_0}C(P_0)H_{10}(P_f,P_0)\,e^{-\frac{i}{\hbar}E_{\gamma_f}\Delta t},
+\end{align}
+where the phase in the second line follows from $\frac{P_0^2}{2M}+E_0=E_{\gamma_f}$ (eq.~\eqref{eq:tls-one-absorber-longtau-P0}). substituting into $\mathcal A_{fi}^{(1)}=e^{-\frac{i}{\hbar}E_{\gamma_f}\Delta t}I_1-I_2$, the two residue terms cancel exactly, for {\it any} $\sigma$:
+\begin{importantbox}
+    \begin{align}
+        \mathcal A_{fi}^{(1)} = e^{-\frac{i}{\hbar}E_{\gamma_f}\Delta t}\,\text{P.V.}(I_1) - \text{P.V.}(I_2).\label{eq:tls-one-absorber-finite-tau-total}
+    \end{align}
+\end{importantbox}
+this is as it must be: the original integrand has no pole to begin with, so no genuine on-shell delta function survives at finite $\Delta t$ once $I_1,I_2$ are recombined correctly, and no causality or $i0^+$ convention actually needs to be chosen --- the split introduced the singularity, and the recombination removes it again, regardless of sign. the stationary-phase result of eq.~\eqref{eq:tls-one-absorber-finite-tau-amplitude} should accordingly be read as the leading approximation to $\text{P.V.}(I_2)$: legitimate since, for generic $\Delta t$, the Fresnel contribution is localized near $P_s=Ma/\Delta t$, away from the pole at $P_0$ (Sect.~\ref{sec:tls-one-absorber-saddle}, ``validity'').
+
+\paragraph{$I_1$ away from resonance.} $\text{P.V.}(I_1)$ itself has no elementary closed form in general --- a Gaussian envelope convolved against a simple pole is a Faddeeva/Dawson-type integral. away from resonance, however, i.e.\ when $P_0$ lies outside the effective support of $C(P)H_{10}(P_f,P)$ (which is where $\text{P.V.}(I_1)$'s value is actually generated), $D(P)$ can be frozen at the envelope's own Gaussian-weighted centre and pulled out of the integral, reducing $I_1$ to an ordinary Gaussian integral. keeping the dominant lobes of $C(P)$ (eq.~\eqref{eq:proj-CP-approx}) and $H_{10}$ (eq.~\eqref{eq:tls-H10}), and writing
+\begin{align}
+    \bar P \equiv \frac{\sigma_\alpha^2 P_\alpha+\sigma_V^2(P_f+P_+)}{\sigma_\alpha^2+\sigma_V^2}
+\end{align}
+for their combined (Gaussian-weighted) peak, completing the square in the two Gaussians gives
+\begin{importantbox}
+    \begin{align}
+        I_1(P_f) \approx \frac{\sigma_V}{D(\bar P)}\sqrt{\frac{\sigma_\alpha}{2\hbar\sqrt\pi(\sigma_\alpha^2+\sigma_V^2)}}\;V_0c_+^*\,e^{-\frac{i}{\hbar}aP_f}\,\exp\left[-\frac{\sigma_\alpha^2\sigma_V^2(P_\alpha-P_f-P_+)^2}{2\hbar^2(\sigma_\alpha^2+\sigma_V^2)}-\frac{a^2}{2(\sigma_\alpha^2+\sigma_V^2)}+\frac{ia\bar P}{\hbar}\right].\label{eq:tls-one-absorber-I1-offresonance}
+    \end{align}
+\end{importantbox}
+unlike $I_2$'s classical-transit amplitude, eq.~\eqref{eq:tls-one-absorber-finite-tau-amplitude}, which grows as $\Delta t$ shrinks (through the Fresnel prefactor $\sqrt{2\pi M\hbar/\Delta t}$) and carries no penalty in $a$, $I_1$ is a genuine Gaussian tail in the absorber's position, $e^{-a^2/2(\sigma_\alpha^2+\sigma_V^2)}$: it has no oscillatory mechanism to reach a distant $a$ within a finite $\Delta t$, carrying none of the free-propagation phase that produced the classical action of eq.~\eqref{eq:tls-one-absorber-saddle-phase}. eq.~\eqref{eq:tls-one-absorber-I1-offresonance} fails, and the pole must be treated exactly (via the Faddeeva function, or by matching onto the long interaction-time result of Sect.~\ref{sec:tls-one-absorber-longtau}), when $\bar P$ approaches $P_0$. together with eq.~\eqref{eq:tls-one-absorber-finite-tau-amplitude} and eq.~\eqref{eq:tls-one-absorber-finite-tau-total}, this completes the off-resonance, finite-$\Delta t$ transition amplitude in closed form.

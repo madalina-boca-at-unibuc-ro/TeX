@@ -39,9 +39,34 @@ It follows that
   \begin{align} {\cal E}(E_{\gamma_f},E_\gamma)=\frac{e^{-i\tau E_{\gamma_f}}-e^{-i\tau E_\gamma}}{E_{\gamma_f}-E_\gamma} = -i\tau
     e^{-i\tau(E_{\gamma_f}+E_\gamma)/2}        \operatorname{sinc} \left[
       \frac{\tau(E_{\gamma_f}-E_{\gamma})}{2}
-    \right].
+    \right].\label{eq:app-E-sinc-form}
   \end{align}
 \end{importantbox}
+
+\subsection{ the long-$\tau$ limit: the energy-conserving delta function}\label{sec:app-first-order-delta-limit}
+
+for $\tau$ large compared to the inverse of the energy scale over which the rest of the integrand (matrix elements, wave-packet amplitudes) varies, the $\operatorname{sinc}$ factor in eq.~\eqref{eq:app-E-sinc-form} collapses to a delta function in energy. this is the standard distributional limit
+\begin{align}
+  \lim_{L\to\infty}\frac{\sin(Lx)}{\pi x} = \delta(x),
+\end{align}
+applied with $L=\tau/2$: writing
+\begin{align}
+  \tau\,\operatorname{sinc}\!\left(\frac{\tau x}{2}\right) = \tau\,\frac{\sin(\tau x/2)}{\tau x/2} = \frac{2\sin\left((\tau/2)x\right)}{x} = 2\pi\,\frac{\sin\left((\tau/2)x\right)}{\pi x}
+\end{align}
+gives
+\begin{importantbox}
+  \begin{align}
+    \lim_{\tau\to\infty}\tau\,\operatorname{sinc}\!\left(\frac{\tau x}{2}\right) = 2\pi\,\delta(x).\label{eq:app-sinc-delta-limit}
+  \end{align}
+\end{importantbox}
+applying eq.~\eqref{eq:app-sinc-delta-limit} to eq.~\eqref{eq:app-E-sinc-form} with $x=E_{\gamma_f}-E_\gamma$, and evaluating the now-degenerate prefactor at $E_\gamma=E_{\gamma_f}$, gives the long-time (Fermi-golden-rule-type) limit of the first-order energy factor:
+\begin{importantbox}
+  \begin{align}
+    \lim_{\tau\to\infty}{\cal E}(E_{\gamma_f},E_\gamma) = -2\pi i\, e^{-i\tau E_{\gamma_f}}\,\delta(E_{\gamma_f}-E_\gamma).\label{eq:app-first-order-delta-limit}
+  \end{align}
+\end{importantbox}
+this limit is only meaningful once $\mathcal E$ sits under an integral or sum over $\gamma$ (or, equivalently, over $E_\gamma$) whose other factors vary slowly on the energy scale $1/\tau$; it is used, e.g., in the long interaction-time reduction of the one-absorber transition amplitude of Sect.~\ref{sec:tls-one-absorber-longtau}. a genuine saddle-point (stationary-phase) treatment of the same integral at finite $\tau$ --- locating a minimum of the oscillatory part of the exponent rather than taking $\tau\to\infty$ outright --- is left for a later section.
+
 \section{ numerically stable form of the second-order expression energy factor}
 
 Consider the expression

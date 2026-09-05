@@ -1,0 +1,46 @@
+\section{the elastic channel: forward scattering vs. reflection}\label{sec:tls-one-absorber-elastic}
+
+we now turn to the diagonal (elastic) term $W_0(a)$ of Sect.~\ref{sec:tls-elastic}, at first order, for the same one-absorber setup as Sect.~\ref{sect:tls-one-absorber-perturbative}: the alpha particle described as in Sect.~\ref{sec:proj-wavepacket}, the atom starting in its ground state. unlike the excitation channel, initial and final atomic states coincide, so the first order transition amplitude of Part~\ref{part:general-tdpt}, eq.~\eqref{eq:gen-first-order-amplitude}, is obtained by identifying
+\begin{align}
+    \gamma = (P,0),\qquad \gamma_f = (P_f,0),\qquad c_\gamma^{(i)} = C(P),\qquad E_\gamma = E_0+\frac{P^2}{2M},\qquad E_{\gamma_f} = E_0+\frac{P_f^2}{2M},
+\end{align}
+so that, in contrast with eq.~\eqref{eq:tls-one-absorber-longtau-P0}, the energy difference entering $\mathcal E$ carries no excitation gap:
+\begin{align}
+    E_{\gamma_f}-E_\gamma = \frac{P_f^2-P^2}{2M}.
+\end{align}
+the matrix element $\langle P_f,0(a)|H_I|P,0(a)\rangle = W_0(P_f,P)$ is the $n=0$ case of eq.~\eqref{eq:tls-Wn} (taking the default $w_0=1$):
+\begin{align}
+    W_0(P_f,P) = \frac{V_0\sigma_V}{2\sqrt{2\pi}\hbar}e^{-\frac{i}{\hbar}a(P_f-P)}\left[e^{-\frac{\sigma_V^2(P_f-P-P_e)^2}{2\hbar^2}}+e^{-\frac{\sigma_V^2(P_f-P+P_e)^2}{2\hbar^2}}\right],
+\end{align}
+and the first-order elastic amplitude is
+\begin{importantbox}
+    \begin{align}
+        \mathcal A_{fi}^{(1),\text{el}} = \int\limits_{-\infty}^{\infty}dP\, C(P)\, W_0(P_f,P)\, \mathcal E\!\left(E_0+\frac{P_f^2}{2M},\,E_0+\frac{P^2}{2M}\right).\label{eq:tls-one-absorber-elastic-amplitude}
+    \end{align}
+\end{importantbox}
+
+\subsection{the long interaction-time limit: forward vs.\ reflected scattering}\label{sec:tls-one-absorber-elastic-longtau}
+in the same long-$\tau$ regime as Sect.~\ref{sec:tls-one-absorber-longtau} ($\tau=\Delta t/\hbar$), $\mathcal E\to-2\pi i\,e^{-i\tau E_{\gamma_f}}\,\delta(E_{\gamma_f}-E_\gamma)$, and the delta function now enforces $P^2=P_f^2$: with no excitation gap to pay for, on-shell elastic scattering conserves the projectile's momentum magnitude exactly, $\delta\!\left(\frac{P_f^2-P^2}{2M}\right) = \frac M{|P_f|}\left[\delta(P-P_f)+\delta(P+P_f)\right]$, with two roots $P=\pm P_f$ rather than the single positive root of eq.~\eqref{eq:tls-one-absorber-longtau-P0}. keeping only the positive (forward-incident) root, as throughout, selects $P=|P_f|$ regardless of the sign of $P_f$ --- the forward branch $P_f>0$ picks out $P=P_f$ (zero momentum transfer), the reflected branch $P_f<0$ picks out $P=-P_f=|P_f|$ (momentum transfer $2P_f$). the $P$-integral collapses accordingly:
+\begin{importantbox}
+    \begin{align}
+        \mathcal A_{fi}^{(1),\text{el}} \approx -2\pi i\, e^{-i\tau E_{\gamma_f}}\,\frac{M}{|P_f|}\, C(|P_f|)\, W_0(P_f,|P_f|).\label{eq:tls-one-absorber-elastic-longtau-amplitude}
+    \end{align}
+\end{importantbox}
+
+\paragraph{the reflection resonance.} on the reflected branch ($P_f<0$, $\Delta\equiv P_f-|P_f|=2P_f<0$), $W_0(P_f,|P_f|)$'s two lobes sit at exponents $-\frac{\sigma_V^2}{2\hbar^2}(2|P_f|\mp P_e)^2$; keeping the dominant lobe of $C(P)$ (eq.~\eqref{eq:proj-CP-approx}) as in Sect.~\ref{sec:tls-one-absorber-longtau}, the amplitude's magnitude is suppressed as a product of two Gaussians in $P_f$, the elastic-channel analogue of eq.~\eqref{eq:tls-one-absorber-longtau-suppression}:
+\begin{importantbox}
+    \begin{align}
+        \left|\mathcal A_{fi}^{(1),\text{el}}(P_f<0)\right| \propto \exp\left[-\frac{\sigma_\alpha^2}{2\hbar^2}\big(|P_f|-P_\alpha\big)^2 - \frac{\sigma_V^2}{2\hbar^2}\big(2|P_f|-P_e\big)^2\right].\label{eq:tls-one-absorber-elastic-suppression}
+    \end{align}
+\end{importantbox}
+both factors vanish together, exactly, at
+\begin{importantbox}
+    \begin{align}
+        P_e^\star = 2P_\alpha,\label{eq:tls-one-absorber-elastic-reflection}
+    \end{align}
+\end{importantbox}
+with no square-root correction and no condition on $P_\alpha^2$ versus $2M\hbar\omega_0$: there is no excitation gap to pay for, so the on-shell reflected momentum is $|P_f|=P_\alpha$ exactly, unlike the excitation channel's $P_f^\star=\sqrt{P_\alpha^2-2M\hbar\omega_0}$ (eq.~\eqref{eq:tls-one-absorber-forward-Pplus}). eq.~\eqref{eq:tls-one-absorber-elastic-reflection} is exactly the value $P_e=2P_\alpha$ already noted, on general grounds, in Sect.~\ref{sec:tls-elastic}; it is also the limit $P_+^{\rm refl}\to2P_\alpha$ of the excitation channel's reflection resonance (eq.~\eqref{eq:tls-one-absorber-reflection-Pplus}) as $\hbar\omega_0\to0$, i.e.\ as the two channels become indistinguishable.
+
+\paragraph{forward suppression and the zeroth-order background.} on the forward branch ($P_f>0$) the momentum transfer vanishes identically, $W_0(P_f,P_f) = \frac{V_0\sigma_V}{\sqrt{2\pi}\hbar}e^{-\frac{\sigma_V^2P_e^2}{2\hbar^2}}$: raising $P_e$ away from $0$ toward the reflection resonance eq.~\eqref{eq:tls-one-absorber-elastic-reflection} suppresses this first-order forward term. unlike the reflected amplitude, however, which has no zeroth-order (free-propagation) counterpart to compete with --- exactly as for the excitation amplitude, which is likewise absent at zeroth order --- the forward first-order term is a correction on top of the large zeroth-order ``goes straight through'' piece. its shrinking with $P_e$ therefore describes the first-order correction to forward transmission, not the vanishing of transmission itself; reading eq.~\eqref{eq:tls-one-absorber-elastic-suppression}--\eqref{eq:tls-one-absorber-elastic-reflection} as ``the atom turns from transparent to a mirror'' is a first-order statement about the reflected channel switching on, not (without also carrying the zeroth-order term) a statement that the forward channel switches off.
+
+\paragraph{symmetric lobes: what the elastic channel cannot do.} $W_0$ must be Hermitian on its own, being a diagonal block of $H_I$, and this forces its $+P_e$ and $-P_e$ lobes to carry equal weight (eq.~\eqref{eq:tls-Wn}) --- hence a cosine, rather than the independent $c_+e^{iP_+X}+c_-e^{-iP_-X}$ form of the off-diagonal coupling (Sect.~\ref{sec:tls-momentum-selective}), whose two terms are related to each other by $V\leftrightarrow V^\dag$ rather than each being self-conjugate. so $P_e$ can tune the elastic channel anywhere between transparent ($P_e=0$) and a mirror ($P_e=2P_\alpha$), but cannot give forward and reflected elastic scattering independently tunable weights the way $P_+\ne P_-$, $c_+\ne c_-$ do for absorption and emission (Sect.~\ref{sec:tls-one-absorber-longtau}). like eq.~\eqref{eq:tls-one-absorber-reflection-Pplus}, this is a long-interaction-time result; the finite-$\Delta t$ behaviour of the elastic channel is not addressed here.

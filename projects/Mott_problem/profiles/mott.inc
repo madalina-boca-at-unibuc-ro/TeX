@@ -39,6 +39,7 @@
 \chapter{the one absorber system}
 \input{\srcpath/mott_problem/part3_discrete_atoms/one-absorber-description.tex}
 \input{\srcpath/mott_problem/part3_discrete_atoms/one-absorber-perturbative.tex}
+\input{\srcpath/mott_problem/part3_discrete_atoms/one-absorber-elastic.tex}
 
 
 \setcounter{chapter}{0}

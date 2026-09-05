@@ -75,9 +75,21 @@ this is the discrete-atom analogue of the usual Fermi-golden-rule reduction: at 
 \end{importantbox}
 unlike $P_0(P_f)$, the momentum-selectivity scale $P_+$ is a free coupling parameter (Sect.~\ref{sec:tls-momentum-selective}, ``to be fixed numerically''): choosing it so the coupling's favoured lobe sits exactly where the wave packet peaks,
 \begin{align}
-    P_+^\star = P_\alpha-\sqrt{P_\alpha^2-2M\hbar\omega_0},\qquad\text{attained at}\qquad P_f^\star=\sqrt{P_\alpha^2-2M\hbar\omega_0}
+    P_+^\star = P_\alpha-\sqrt{P_\alpha^2-2M\hbar\omega_0},\qquad\text{attained at}\qquad P_f^\star=\sqrt{P_\alpha^2-2M\hbar\omega_0}\label{eq:tls-one-absorber-forward-Pplus}
 \end{align}
 (defined provided $P_\alpha^2>2M\hbar\omega_0$, i.e.\ the projectile has enough kinetic energy at $P_\alpha$ to excite the atom without leaving the neighbourhood of the wave packet's peak), removes the second Gaussian factor exactly where the first is largest, so the two windows reinforce rather than compound. leaving $P_+$ generic instead multiplies two independent Gaussians and narrows the excitation window in $P_f$ well below what $C(P_0)$ alone would suggest. which factor controls the residual width is set by $\sigma_\alpha$ versus $\sigma_V$: a short-range coupling ($\sigma_V\ll\sigma_\alpha$) is broad in momentum and barely constrains $P_f$ beyond $C(P_0)$'s own peak, while $\sigma_V\gtrsim\sigma_\alpha$ makes the coupling's selectivity as important as the wave packet's, so a mismatched $P_+$ can suppress the signal well below the $C(P_0)$-only estimate.
+
+\paragraph{resonant backscattering via excitation.} the wave-packet window in eq.~\eqref{eq:tls-one-absorber-longtau-suppression} depends on $P_f$ only through $P_0(P_f)=\sqrt{P_f^2+2M\hbar\omega_0}$, and is therefore blind to the sign of $P_f$: the forward branch $P_f=P_f^\star$ and the reflected branch $P_f=-P_f^\star$ (eq.~\eqref{eq:tls-one-absorber-forward-Pplus}) are equally favoured by the wave packet. only the coupling window, through the linear term $P_f-P_0(P_f)$, distinguishes them. the forward resonance $P_+^\star$ of eq.~\eqref{eq:tls-one-absorber-forward-Pplus} matches $c_+$ to $\Delta_{\rm fwd}=P_\alpha-\sqrt{P_\alpha^2-2M\hbar\omega_0}$; choosing instead
+\begin{importantbox}
+    \begin{align}
+        P_+^{\rm refl} = P_\alpha+\sqrt{P_\alpha^2-2M\hbar\omega_0} \xrightarrow[P_\alpha^2\gg2M\hbar\omega_0]{} 2P_\alpha\label{eq:tls-one-absorber-reflection-Pplus}
+    \end{align}
+\end{importantbox}
+matches $c_+$ to the reflected branch's momentum transfer $\Delta_{\rm refl}=P_\alpha+\sqrt{P_\alpha^2-2M\hbar\omega_0}$ instead, while pushing the forward branch off resonance by $P_+^{\rm refl}-P_+^\star=2\sqrt{P_\alpha^2-2M\hbar\omega_0}$ and suppressing it exponentially. the two roots satisfy
+\begin{align}
+    P_+^\star\,P_+^{\rm refl} = 2M\hbar\omega_0,\qquad P_+^\star+P_+^{\rm refl}=2P_\alpha,\label{eq:tls-one-absorber-reflection-identity}
+\end{align}
+so the forward- and reflection-resonant couplings are conjugate through the excitation gap: measuring $P_+^{\rm refl}$ at fixed $P_\alpha$ amounts to measuring $\hbar\omega_0$. at $P_+=P_+^{\rm refl}$ the atom becomes, in its excitation channel alone, a resonant backscatterer: the projectile reverses direction only together with exciting the atom, an effect with no counterpart in ordinary (elastic) potential scattering off a short-range bump (cf.\ Sect.~\ref{sec:tls-one-absorber-elastic}, where the analogous elastic-channel reflection resonance is exact, $P_e=2P_\alpha$, since there is no excitation gap to pay for). the $c_-$ lobe stays non-resonant on either branch, since $\Delta+P_-\ge\Delta>0$ always. like the rest of this subsection, this is a long-interaction-time result; whether the resonance survives at finite $\Delta t$ is not addressed here.
 
 \subsection{finite interaction time within the saddle point approximation}\label{sec:tls-one-absorber-saddle}
 

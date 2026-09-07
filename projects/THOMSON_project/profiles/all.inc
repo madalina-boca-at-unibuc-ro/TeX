@@ -1,5 +1,6 @@
 % Complete THOMSON document profile.
 
+
 \part{The electromagnetic field}
 \chapter{The plane wave electromagnetic field}\label{ch:plane_wave}
 \input{\srcpath/elm_field/plane_wave/plane_wave.tex}
@@ -28,7 +29,10 @@
 
 \part{The radiation scattering - Frequency domain}
 \setcounter{chapter}{0}
+\chapter{The Fourier transform of the emitted radiation}
+\input{\srcpath/elm_el_sc/frequency-domain/FT-direct.tex}
 \input{\srcpath/elm_el_sc/frequency-domain/FT-simplified.tex}
+
 
 \part{{\color{red} The radiation scattering - frequency domain - INCOMPLETE}  }
 \setcounter{chapter}{0}

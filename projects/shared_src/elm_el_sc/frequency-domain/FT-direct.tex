@@ -1,0 +1,78 @@
+%\newpage
+\section{The Fourier transform of the Faraday tensor - direct formula}\label{sect:FTF-direct}
+The goal is to calculate the Fourier transform of the Faraday tensor
+\begin{align}
+    F(\omega, {\bf x}) = \frac1{2\pi}\int\limits_{-\infty}^{\infty} dt e^{i\omega t}F(t,{\bf x})
+\end{align}
+by the direct transformation of the primary form
+\begin{align}
+    F^{\alpha\beta}(x)
+    =\left.\frac{e}{4\pi\epsilon_0c}
+    \frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
+        -((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^3}\right|_{\tau=\tau_r}.\label{eq:F_alpha_beta_primary_form-used1}
+\end{align}
+The fourier transform becomes
+\begin{align}
+    F^{\alpha\beta}(\omega, {\bf x})=\frac1{2\pi}\int\limits_{-\infty}^{\infty}dte^{i\omega t}F(t,{\bf x})
+\end{align}
+we make the change of variable from $t$ to $\tau_r$. We have
+The relation between the laboratory time $t$ and the retarded proper time $\tau_r$ is given in (\ref{ct-taur-rel})
+\begin{align}
+    ct= r^0(\tau_r)+|{\bf x}-{\bf r}(\tau_r)| \equiv r_0^0(\tau_r)+|{\bf x}_0-{\bf r}_0(\tau_r)|.
+\end{align}
+We change tha variable of integration for $t$ to $\tau_r$ in the previous integral, using
+\begin{align}
+    \frac{d{ct}}{d\tau_r} = \frac{dr_0^0(\tau_r)}{d\tau_r} + \frac{d|{\bf x}_0 -{\bf r}_0(\tau_r)|}{d\tau_r} = u^0(\tau_r) - {\bf u}(\tau_t)\cdot\frac{{\bf x}_0 -{\bf r}_0(\tau_r)}{{|\bf x}_0 -{\bf r}_0(\tau_r)|}
+\end{align}
+or, using the unity four vectors $R_0$ and   $n_{R_0}$ defined in (\ref{defnr})
+\begin{align}
+    n_{R_0}=(1,{\bf n}_{R_0}),\quad {\bf n}_{R_0}=\frac{{\bf x}_0-{\bf r}_0(\tau_r)}{|{\bf x}_0-{\bf r}_0(\tau_r)|},\quad  R_0 =  |{\bf R}_0|n_{R_0}
+\end{align}
+we get
+\begin{importantbox}\begin{align}
+        \frac{d(ct)}{d\tau_r} = {n_{R_0}(\tau_R)\cdot u(\tau_r)}
+    \end{align}\end{importantbox}
+Using the notation
+\begin{importantbox}
+    \begin{align}
+        k = \frac{\omega}c\label{defk-primar}
+    \end{align}
+\end{importantbox}
+and denoting the variable of integration by $\tau$ we have
+\begin{align}
+    F^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau)|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
+        -((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^3}
+\end{align}
+In the previous result we can isolate the long from the short range components
+\begin{align}
+    F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-(w\cdot R_0)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^3}\nonumber                                                                                                                                                                                                                                                \\
+                                  & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_0)(n_0^{\alpha}w^{\beta}-n_0^{\beta}w^{\alpha})-(w\cdot n_0)(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
+    {|{\bf R}_0|(u\cdot n_0)^3}
+\end{align}
+and similarly
+\begin{align}
+    F_s^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e c^2}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
+    {|{\bf R}_0|^2(u\cdot n_0)^3}
+\end{align}
+
+The final results are
+\begin{highlightbox}
+    \begin{align}
+        F^{\alpha\beta}(c k,{\bf x})  & = F^{\alpha\beta}_{l}(c k,{\bf x}) + F^{\alpha\beta}_{s}(c k,{\bf x}),
+        \\
+        F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_0)(n_0^{\alpha}w^{\beta}-n_0^{\beta}w^{\alpha})-(w\cdot n_0)(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
+        {|{\bf R}_0|(u\cdot n_0)^3}                                                                                                                                                                                                                                             \\
+        F_s^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e c^2}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
+        {|{\bf R}_0|^2(u\cdot n_0)^3}
+    \end{align}
+\end{highlightbox}
+The notations used here are those already defined
+\begin{highlightbox}
+    \begin{align}
+        k = \frac{\omega}{c},\quad
+        R_0 = (|{\bf R}_0|,{\bf R}_0)=|{\bf R}_0| (1,{\bf n}_{R_0}) = |{\bf R}_0|n_{R_0}, \qquad {\bf R}_0 = {\bf x}_0-{\bf r}_0(\tau),\quad {\bf n}_{R_0} = \frac{{\bf R}_0}{|{\bf R}_0|}.
+    \end{align}
+\end{highlightbox}

@@ -31,31 +31,52 @@ or, using the unity four vectors $R_0$ and   $n_{R_0}$ defined in (\ref{defnr})
 \end{align}
 we get
 \begin{importantbox}\begin{align}
-        \frac{d(ct)}{d\tau_r} = {n_{R_0}(\tau_R)\cdot u(\tau_r)}
+        \frac{d(ct)}{d\tau_r} = {n_{R_0}(\tau_r)\cdot u(\tau_r)}
     \end{align}\end{importantbox}
+Note that this is the derivative of $ct$, not of $t$: changing the integration
+variable in $\int dt\, e^{i\omega t}(\ldots)$ requires the dimensionless
+Jacobian
+\begin{importantbox}
+    \begin{align}
+        \frac{dt}{d\tau_r}=\frac1c\, n_{R_0}(\tau_r)\cdot u(\tau_r)\label{dtdtaur}
+    \end{align}
+\end{importantbox}
+which must be inserted explicitly, and not dropped, when the integration
+variable is changed from $t$ to $\tau_r$.
 Using the notation
 \begin{importantbox}
     \begin{align}
         k = \frac{\omega}c\label{defk-primar}
     \end{align}
 \end{importantbox}
-and denoting the variable of integration by $\tau$ we have
+and denoting the variable of integration by $\tau$, we have
 \begin{align}
-    F^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau)|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
+    F^{\alpha\beta}(\omega,{\bf x}) & =\frac1{2\pi}\int\limits_{-\infty}^{\infty}\frac{dt}{d\tau}\,d\tau\, e^{ik\left(r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau)|\right)}F^{\alpha\beta}(\tau)\nonumber                                                                                                            \\
+                                    & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{-\infty}^{\infty}d\tau\,(u\cdot n_{R_0})\, e^{ik\left(r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau)|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
         -((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
     {(u\cdot R_0)^3}
 \end{align}
+using $u\cdot n_{R_0}=(u\cdot R_0)/|{\bf R}_0|$ (\ref{defnr}), one power of
+$(u\cdot R_0)$ cancels and this simplifies to
+\begin{importantbox}
+    \begin{align}
+        F^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2|{\bf R}_0|}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau)|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})
+        -((w\cdot R_0)-c^2)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^2}\label{eq:F-direct-corrected}
+    \end{align}
+\end{importantbox}
 In the previous result we can isolate the long from the short range components
 \begin{align}
-    F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-(w\cdot R_0)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
-    {(u\cdot R_0)^3}\nonumber                                                                                                                                                                                                                                                \\
-                                  & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_0)(n_0^{\alpha}w^{\beta}-n_0^{\beta}w^{\alpha})-(w\cdot n_0)(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
-    {|{\bf R}_0|(u\cdot n_0)^3}
+    F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2|{\bf R}_0|}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(u\cdot R_0)(R_0^{\alpha}w^{\beta}-R_0^{\beta}w^{\alpha})-(w\cdot R_0)(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^2}\nonumber                                                                                                                                                                                                                                                \\
+                                  & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2|{\bf R}_0|}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_{R_0})(n_{R_0}^{\alpha}w^{\beta}-n_{R_0}^{\beta}w^{\alpha})-(w\cdot n_{R_0})(n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha})}
+    {(u\cdot n_{R_0})^2}
 \end{align}
 and similarly
 \begin{align}
-    F_s^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e c^2}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
-    {|{\bf R}_0|^2(u\cdot n_0)^3}
+    F_s^{\alpha\beta}(ck,{\bf x})=\frac1{2\pi}\frac{e c^2}{4\pi\epsilon_0c^2|{\bf R}_0|}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha})}
+    {(u\cdot R_0)^2}=\frac1{2\pi}\frac{e}{4\pi\epsilon_0|{\bf R}_0|^2}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha})}
+    {(u\cdot n_{R_0})^2}
 \end{align}
 
 The final results are
@@ -63,12 +84,18 @@ The final results are
     \begin{align}
         F^{\alpha\beta}(c k,{\bf x})  & = F^{\alpha\beta}_{l}(c k,{\bf x}) + F^{\alpha\beta}_{s}(c k,{\bf x}),
         \\
-        F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_0)(n_0^{\alpha}w^{\beta}-n_0^{\beta}w^{\alpha})-(w\cdot n_0)(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
-        {|{\bf R}_0|(u\cdot n_0)^3}                                                                                                                                                                                                                                             \\
-        F_s^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e c^2}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha})}
-        {|{\bf R}_0|^2(u\cdot n_0)^3}
+        F_l^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2|{\bf R}_0|}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0\right)}\frac{(u\cdot n_{R_0})(n_{R_0}^{\alpha}w^{\beta}-n_{R_0}^{\beta}w^{\alpha})-(w\cdot n_{R_0})(n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha})}
+        {(u\cdot n_{R_0})^2}                                                                                                                                                                                                                                             \\
+        F_s^{\alpha\beta}(ck,{\bf x}) & =\frac1{2\pi}\frac{e}{4\pi\epsilon_0|{\bf R}_0|^2}\int\limits_{-\infty}^{\infty}d\tau e^{ik\left(r_0^0+|{\bf R}_0|\right)}\frac{(n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha})}
+        {(u\cdot n_{R_0})^2}
     \end{align}
 \end{highlightbox}
+Compare with the simplified form of Sec.~\ref{sect:FTF-simplified}: both
+derivations now carry the same overall factor $e/(4\pi\epsilon_0c^2)$, as
+required for the two routes to compute the same $F^{\alpha\beta}(ck,{\bf x})$.
+The individual $F_l$, $F_s$ pieces need not agree term by term, since the
+long/short split is defined differently in each derivation; only the total
+$F^{\alpha\beta}=F_l^{\alpha\beta}+F_s^{\alpha\beta}$ is guaranteed to match.
 The notations used here are those already defined
 \begin{highlightbox}
     \begin{align}

@@ -1,5 +1,5 @@
 \newpage
-\section{The Fourier transform of the Faraday tensor - simplified form}
+\section{The Fourier transform of the Faraday tensor - simplified form}\label{sect:FTF-simplified}
 
 We want to calculate the Fourier transform of the Faraday tensor
 \begin{align}
@@ -29,8 +29,19 @@ or, using the unity four vectors $R_0$ and   $n_{R_0}$ defined in (\ref{defnr})
 \end{align}
 we get
 \begin{importantbox}\begin{align}
-        \frac{d(ct)}{d\tau_r} = {n_{R_0}(\tau_R)\cdot u(\tau_r)}
+        \frac{d(ct)}{d\tau_r} = {n_{R_0}(\tau_r)\cdot u(\tau_r)}
     \end{align}\end{importantbox}
+As in Sec.~\ref{sect:FTF-direct}, note that this is the derivative of $ct$,
+not of $t$: the change of variable in $\int dt\, e^{i\omega t}(\ldots)$
+requires the extra factor
+\begin{importantbox}
+    \begin{align}
+        \frac{dt}{d\tau_r}=\frac1c\, n_{R_0}(\tau_r)\cdot u(\tau_r),
+    \end{align}
+\end{importantbox}
+which combines with the $1/(u\cdot R_0)$ already present in Jackson's formula
+to give $\dfrac{u\cdot n_{R_0}}{c\,(u\cdot R_0)}=\dfrac1{c|{\bf R}_0|}$, not
+$\dfrac1{|{\bf R}_0|}$.
 Using the notation
 \begin{importantbox}
     \begin{align}
@@ -39,8 +50,8 @@ Using the notation
 \end{importantbox}
 and denoting the variable of integration by $\tau$ we have
 \begin{align}
-    F^{\alpha\beta}(c k, {\bf x}) & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau_r)|)}\frac{u\cdot n_{R_0}}{u\cdot R_0} \frac{d}{d\tau}\left[ \frac{R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha}}{R_0\cdot u}\right]\nonumber \\
-                                  & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\frac{1}{|{\bf R}_0|} \frac{d}{d\tau}\left[ \frac{n_0^{\alpha}u^{\beta}-n_0^{\beta}u^{\alpha}}{n_0\cdot u}\right]\nonumber                                     \\
+    F^{\alpha\beta}(c k, {\bf x}) & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0(\tau)+|{\bf x}_0-{\bf r}_0(\tau_r)|)}\frac{u\cdot n_{R_0}}{c\,(u\cdot R_0)} \frac{d}{d\tau}\left[ \frac{R_0^{\alpha}u^{\beta}-R_0^{\beta}u^{\alpha}}{R_0\cdot u}\right]\nonumber \\
+                                  & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\frac{1}{|{\bf R}_0|} \frac{d}{d\tau}\left[ \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}\right]\nonumber                                     \\
 \end{align}
 We perform an integration by parts, and neglect the boundary terms, which contribute only for $\omega\rightarrow0$, and we use
 \begin{align}
@@ -48,7 +59,7 @@ We perform an integration by parts, and neglect the boundary terms, which contri
 \end{align}
 After the integration by parts, the result is
 \begin{align}
-    F^{\alpha\beta}(c k, {\bf x}) & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\left\{ -ik \frac{  (u\cdot n_{R_0})}{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot{\bf u}}{|{\bf R}_0|^2}\right\} \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}
+    F^{\alpha\beta}(c k, {\bf x}) & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{-\infty}^{\infty} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\left\{ -ik \frac{  (u\cdot n_{R_0})}{|{\bf R}_0|}+\frac{{\bf n}_{R_0}\cdot{\bf u}}{|{\bf R}_0|^2}\right\} \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}
 \end{align}
 
 \begin{highlightbox}
@@ -56,7 +67,7 @@ After the integration by parts, the result is
         F^{\alpha\beta}(c k,{\bf x})     & = F^{\alpha\beta}_{l}(c k,{\bf x}) + F^{\alpha\beta}_{s}(c k,{\bf x}),
         \\
         F^{\alpha\beta}_{l}(c k,{\bf x}) & =
-        \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau\,
+        \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{-\infty}^{\infty} d\tau\,
         e^{i k (r_0^0+|{\bf R}_0|)}
         \left(
         -ik \frac{u\cdot n_{R_0}}{|{\bf R}_0|}
@@ -64,7 +75,7 @@ After the integration by parts, the result is
         \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u},
         \\
         F^{\alpha\beta}_{s}(c k,{\bf x}) & =
-        \frac1{2\pi}\frac{e}{4\pi\epsilon_0c}\int\limits_{-\infty}^{\infty} d\tau\,
+        \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{-\infty}^{\infty} d\tau\,
         e^{i k (r_0^0+|{\bf R}_0|)}
         \left(
         \frac{{\bf n}_{R_0}\cdot{\bf u}}{|{\bf R}_0|^2}
@@ -72,6 +83,11 @@ After the integration by parts, the result is
         \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}.
     \end{align}
 \end{highlightbox}
+Compare with the direct form of Sec.~\ref{sect:FTF-direct}: both derivations
+now carry the same overall factor $e/(4\pi\epsilon_0c^2)$, as required for the
+two routes to compute the same $F^{\alpha\beta}(ck,{\bf x})$; the individual
+$F_l$, $F_s$ pieces need not agree term by term, since the long/short split is
+defined differently in each derivation.
 The notations are the same as in the previous section \ref{sect:FTF-direct}
 \begin{highlightbox}
     \begin{align}

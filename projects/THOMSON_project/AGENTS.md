@@ -4,7 +4,7 @@ A LaTeX project assembling reusable sources on classical radiation scattering
 and electron–laser interaction. This file is the single project guide and
 working-instructions document; keep it current when the layout or build changes.
 Physics discussions and numerical implementation notes live separately in
-`md_helpers/` and are not loaded by LaTeX. Preserve those notes.
+`md_helpers/` and `theory/` and are not loaded by LaTeX. Preserve those notes.
 
 ## Layout and profiles
 

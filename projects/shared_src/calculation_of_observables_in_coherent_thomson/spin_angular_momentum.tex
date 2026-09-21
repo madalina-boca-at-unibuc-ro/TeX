@@ -1,0 +1,154 @@
+
+\section{Spin angular-momentum density: the axial component}
+\label{sec:canonical-sam-density-and-flux}
+
+The spin angular-momentum (SAM) density in the time domain is
+\begin{align}
+  \boldsymbol{\mathcal S}=\epsilon_0{\bf E}\times{\bf A},\qquad
+  \mathcal S_z=\epsilon_0(E_x A_y-E_y A_x).
+  \label{eq:canonical-sam-time-domain}
+\end{align}
+We use the radiation gauge introduced in
+Eq.~\eqref{eq:am-general-radiation-gauge}.  Tildes denote Fourier amplitudes
+at $(\omega,{\bf x})$, with $\omega>0$, and
+$\tilde{\bf A}=\tilde{\bf E}/(i\omega)$.
+In spectral expressions, $\mathcal S_z$ denotes the time-integrated density.
+With the Fourier convention of
+Eq.~\eqref{eq:Faraday-Fourier-convention-observables}, the one-sided
+bilinear spectral factor is $4\pi$, giving
+\begin{align}
+  \frac{d\mathcal S_z}{d\omega}
+  =4\pi\epsilon_0\operatorname{Re}\left[
+    \tilde E_x\tilde A_y^*-\tilde E_y\tilde A_x^*
+  \right].
+  \label{eq:canonical-sam-bilinear-spectrum}
+\end{align}
+Substituting $\tilde A_i^*=i\tilde E_i^*/\omega$ yields
+\begin{align}
+  \tilde E_x\tilde A_y^*-\tilde E_y\tilde A_x^*
+  &=\frac{i}{\omega}\left(
+    \tilde E_x\tilde E_y^*-\tilde E_y\tilde E_x^*\right)\nonumber\\
+  &=-\frac{2}{\omega}\operatorname{Im}
+    \left[\tilde E_x\tilde E_y^*\right]
+  =\frac{2}{\omega}\operatorname{Im}
+    \left[\tilde E_x^*\tilde E_y\right].
+  \label{eq:canonical-sam-spectral-reduction}
+\end{align}
+Thus the axial SAM spectrum is
+\begin{importantbox}
+  \begin{align}
+    \frac{d\mathcal S_z}{d\omega}
+    =\frac{8\pi\epsilon_0}{\omega}\operatorname{Im}
+      \left[\tilde E_x^*\tilde E_y\right]
+    =-\frac{8\pi\epsilon_0}{\omega}\operatorname{Im}
+      \left[\tilde E_x\tilde E_y^*\right],\qquad \omega>0.
+    \label{eq:canonical-sam-density-spectrum}
+  \end{align}
+\end{importantbox}
+
+\section{Spin angular-momentum flux and continuity equation}
+\label{sec:canonical-sam-flux}
+
+The local conservation law for spin angular momentum in vacuum is
+\begin{importantbox}
+  \begin{align}
+    \partial_t\mathcal S_i+\partial_j\Sigma_{ij}=0.
+    \label{eq:canonical-sam-continuity}
+  \end{align}
+\end{importantbox}
+Here $\mathcal S_i=\epsilon_0({\bf E}\times{\bf A})_i$ is the instantaneous
+spin density, and $\Sigma_{ij}$ is the flux of its $i$th component in the
+$j$th direction.  The spin flux tensor in SI units is
+\begin{align}
+  \Sigma_{ij}
+  &=\epsilon_0c^2\left[
+    \delta_{ij}({\bf B}\cdot{\bf A})-B_i A_j-B_j A_i\right]\nonumber\\
+  &=\frac{1}{\mu_0}\left[
+    \delta_{ij}({\bf B}\cdot{\bf A})-B_i A_j-B_j A_i\right].
+  \label{eq:canonical-sam-flux-tensor}
+\end{align}
+Repeated spatial indices are summed.
+
+\subsection{Derivation of the continuity equation}
+
+Differentiating the spin density in the radiation gauge gives
+\begin{align}
+  \partial_t\boldsymbol{\mathcal S}
+  =\epsilon_0\left[
+    (\partial_t{\bf E})\times{\bf A}
+    +{\bf E}\times(\partial_t{\bf A})\right].
+\end{align}
+The second term vanishes because $\partial_t{\bf A}=-{\bf E}$.
+Using the vacuum Maxwell--Amp\`ere equation,
+$\partial_t{\bf E}=c^2\boldsymbol{\nabla}\times{\bf B}$, we obtain
+\begin{align}
+  \partial_t\mathcal S_i
+  &=\epsilon_0c^2\left[
+    (\boldsymbol{\nabla}\times{\bf B})\times{\bf A}\right]_i\nonumber\\
+  &=\epsilon_0c^2\left[
+    (\partial_l B_i)A_l-(\partial_i B_l)A_l\right].
+  \label{eq:canonical-sam-time-derivative}
+\end{align}
+The divergence of the flux tensor is
+\begin{align}
+  \partial_j\Sigma_{ij}
+  &=\epsilon_0c^2\partial_j\left[
+    \delta_{ij}B_l A_l-B_i A_j-B_j A_i\right]\nonumber\\
+  &=\epsilon_0c^2\left[
+    (\partial_i B_l)A_l-(\partial_l B_i)A_l
+    +B_j(\partial_i A_j-\partial_j A_i)\right],
+\end{align}
+where $\partial_j A_j=0$ and $\partial_j B_j=0$ were used.
+The remaining term containing derivatives of the potential vanishes:
+\begin{align}
+  B_j(\partial_i A_j-\partial_j A_i)
+  =\left[{\bf B}\times(\boldsymbol{\nabla}\times{\bf A})\right]_i
+  =({\bf B}\times{\bf B})_i=0.
+\end{align}
+Consequently,
+\begin{highlightbox}
+  \begin{align}
+    \partial_j\Sigma_{ij}
+    =\epsilon_0c^2\left[
+      (\partial_i B_l)A_l-(\partial_l B_i)A_l\right]
+    =-\partial_t\mathcal S_i,
+    \label{eq:canonical-sam-continuity-verification}
+  \end{align}
+\end{highlightbox}
+which establishes Eq.~\eqref{eq:canonical-sam-continuity}.
+
+\subsection{Spectral density of the axial flux}
+
+The flux along $Oz$ of the spin component $\mathcal S_z$ is obtained by
+setting $i=j=z$:
+\begin{highlightbox}
+  \begin{align}
+    \Sigma_{zz}
+    &=\epsilon_0c^2\left[({\bf B}\cdot{\bf A})-2B_z A_z\right]\nonumber\\
+    &=\epsilon_0c^2\left[B_x A_x+B_y A_y-B_z A_z\right].
+    \label{eq:canonical-sam-axial-flux}
+  \end{align}
+\end{highlightbox}
+As for the density, $d\Sigma_{zz}/d\omega$ denotes the one-sided spectrum
+of the time-integrated flux.  Applying the bilinear spectral rule gives
+\begin{align}
+  \frac{d\Sigma_{zz}}{d\omega}
+  =4\pi\epsilon_0c^2\operatorname{Re}\left[
+    \tilde B_x\tilde A_x^*+\tilde B_y\tilde A_y^*
+    -\tilde B_z\tilde A_z^*\right].
+  \label{eq:canonical-sam-flux-bilinear}
+\end{align}
+Substituting $\tilde A_k^*=i\tilde E_k^*/\omega$, the result is
+\begin{importantbox}
+  \begin{align}
+    \frac{d\Sigma_{zz}}{d\omega}
+    &=-\frac{4\pi\epsilon_0c^2}{\omega}\operatorname{Im}\left[
+      \tilde B_x\tilde E_x^*+\tilde B_y\tilde E_y^*
+      -\tilde B_z\tilde E_z^*\right]\nonumber\\
+    &=\frac{4\pi\epsilon_0c^2}{\omega}\operatorname{Im}\left[
+      \tilde B_x^*\tilde E_x+\tilde B_y^*\tilde E_y
+      -\tilde B_z^*\tilde E_z\right],\qquad \omega>0.
+    \label{eq:canonical-sam-flux-spectrum}
+  \end{align}
+\end{importantbox}
+All Fourier amplitudes are evaluated at $(\omega,{\bf x})$.

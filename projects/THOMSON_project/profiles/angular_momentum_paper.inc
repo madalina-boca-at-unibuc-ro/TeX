@@ -47,6 +47,8 @@
 \end{importantbox}
 \input{\srcpath/calculation_of_observables_in_coherent_thomson/angular-momentum-general-defintions.tex}
 \newpage
-\input{\srcpath/calculation_of_observables_in_coherent_thomson/angular-momentum-density.tex}
+\input{\srcpath/calculation_of_observables_in_coherent_thomson/orbital_angular_momentum.tex}
 \newpage
-\input{\srcpath/calculation_of_observables_in_coherent_thomson/angular-momentum-flux-density.tex}
+\input{\srcpath/calculation_of_observables_in_coherent_thomson/spin_angular_momentum.tex}
+\newpage
+

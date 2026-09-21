@@ -1,127 +1,121 @@
-\section{General decomposition of angular momentum}
+\section{General definitions}
+\label{sec:am-vector-potential-split}
 
-The electromagnetic angular-momentum density about a chosen origin is
-\begin{align}
-  {\bf l}(t,{\bf x})={\bf x}\times{\bf g}(t,{\bf x}),
-  \label{eq:angular-momentum-density-general}
-\end{align}
-where ${\bf g}={\bf S}/c^2$ is the linear-momentum density.  Correspondingly,
-the flux density of the $i$th component of angular momentum in the $l$th
-direction is
-\begin{align}
-  M_{li}(t,{\bf x})
-  =\epsilon_{ijk}x_jT_{kl}(t,{\bf x}),
-  \label{eq:angular-momentum-flux-tensor-general}
-\end{align}
-with $T_{kl}$ defined in
-Eq.~\eqref{eq:linear-momentum-flux-tensor}.  These definitions are exact.
+Following Ref.~\cite{bliokh_conservation_2014}, we introduce the standard
+separation of electromagnetic angular momentum into orbital (OAM) and
+spin (SAM) contributions through the vector potential.  We use SI units
+and consider a source-free radiation field, so that
+$\boldsymbol{\nabla}\cdot{\bf E}=0$.  All quantities in this section are
+instantaneous fields evaluated at $(t,{\bf r})$, with ${\bf r}={\bf x}$
+measured from the chosen origin.
 
-We consider a detector parallel to the $Oxy$ plane, with normal along the
-positive $x_3$ direction.  The spectral flux density of the third component
-of angular momentum through this detector is therefore
-\begin{align}
-  \frac{d\mathcal M_{33,+}}{d\omega}
-  =x_1\frac{d\mathcal T_{23,+}}{d\omega}
-  -x_2\frac{d\mathcal T_{13,+}}{d\omega},
-  \qquad \omega>0,
-  \label{eq:spectral-total-angular-momentum-flux-density}
-\end{align}
-and its integral over the detector gives the total angular-momentum spectrum,
-\begin{align}
-  \frac{d\mathcal J^{\mathrm{tot}}_3}{d\omega}
-  =\int_A dA\,
-  \frac{d\mathcal M_{33,+}}{d\omega}.
-  \label{eq:spectral-total-angular-momentum-flux}
-\end{align}
+\subsection{Total angular momentum and the vector potential}
 
-The total angular momentum is separated first into extrinsic and intrinsic
-parts,
+The kinetic momentum density and its angular-momentum density are
 \begin{align}
-  \frac{d\mathcal J^{\mathrm{tot}}_3}{d\omega}
-  =\frac{d\mathcal J^{\mathrm{ext}}_3}{d\omega}
-  +\frac{d\mathcal J^{\mathrm{int}}_3}{d\omega}.
-  \label{eq:extrinsic-intrinsic-angular-momentum-split}
+  {\bf g}&=\epsilon_0{\bf E}\times{\bf B},\qquad
+  {\bf j}^{\mathrm{kin}}={\bf r}\times{\bf g},\\
+  {\bf J}_V&=\int_V d^3r\,{\bf j}^{\mathrm{kin}}.
+  \label{eq:am-general-total-integral}
 \end{align}
-\begin{importantbox}
-  To define the extrinsic part, let $(X_c,Y_c)$ be the centroid of the energy
-  crossing the detector at the frequency $\omega$,
+We choose the transverse vector potential in the radiation gauge,
+\begin{align}
+  \boldsymbol{\nabla}\cdot{\bf A}=0,\qquad
+  \Phi=0,\qquad
+  {\bf E}=-\partial_t{\bf A},\qquad
+  {\bf B}=\boldsymbol{\nabla}\times{\bf A}.
+  \label{eq:am-general-radiation-gauge}
+\end{align}
+The transverse potential is fixed by the fields and suitable boundary
+conditions.  This gauge choice specifies the orbital and spin densities
+used below; expressions involving an arbitrary, unfixed potential would
+in general depend on the gauge.
+
+Substituting ${\bf B}=\boldsymbol{\nabla}\times{\bf A}$ gives, in components,
+\begin{align}
+  g_k=\epsilon_0\sum_m E_m\partial_k A_m
+  -\epsilon_0\sum_m E_m\partial_m A_k.
+  \label{eq:am-general-momentum-potential}
+\end{align}
+Using $\partial_m E_m=0$ and the product rule,
+\begin{align}
+  \varepsilon_{ijk}r_j E_m\partial_m A_k
+  =\partial_m\left[E_m\varepsilon_{ijk}r_j A_k\right]
+  -\varepsilon_{imk}E_m A_k,
+\end{align}
+where repeated spatial indices are summed.  Hence the local decomposition is
+\begin{highlightbox}
   \begin{align}
-    X_c(\omega)
-    &=\frac{\displaystyle\int_A dA\,x_1
-    \dfrac{d\mathcal S^3_+}{d\omega}}
-    {\displaystyle\int_A dA\,
-    \dfrac{d\mathcal S^3_+}{d\omega}}, \quad
-    Y_c(\omega)
-    =\frac{\displaystyle\int_A dA\,x_2
-    \dfrac{d\mathcal S^3_+}{d\omega}}
-    {\displaystyle\int_A dA\,
-    \dfrac{d\mathcal S^3_+}{d\omega}}.
-    \label{eq:spectral-energy-flux-centroid}
+    j_i^{\mathrm{kin}}
+    =\mathcal L_i+\mathcal S_i
+    -\epsilon_0\partial_m\left[E_m({\bf r}\times{\bf A})_i\right].
+    \label{eq:am-general-local-split}
   \end{align}
-\end{importantbox}
-Recall that $\mathcal P_i$, defined in
-Eq.~\eqref{eq:spectral-screen-integrated-linear-momentum}, denotes the total
-$i$th component of linear momentum transported through the detector.  In
-particular, the transverse components entering the extrinsic angular
-momentum are
-\begin{align}
-  \frac{d\mathcal P_i}{d\omega}
-  =\int_A dA\,\frac{d\mathcal T_{i3,+}}{d\omega},
-  \qquad i=1,2,\quad \omega>0.
-  \label{eq:spectral-transverse-momentum-flux}
-\end{align}
-\begin{importantbox}
-  The extrinsic angular momentum is the angular momentum of this centroid and
-  the net transverse momentum flux:
-  \begin{align}
-    \frac{d\mathcal J^{\mathrm{ext}}_3}{d\omega}
-    =X_c\frac{d\mathcal P_2}{d\omega}
-    -Y_c\frac{d\mathcal P_1}{d\omega}.
-    \label{eq:spectral-extrinsic-angular-momentum-flux}
-  \end{align}
-  It is the contribution associated with propagation that is not directed
-  along the detector normal.  In particular, it vanishes when the net
-  transverse momentum fluxes vanish, or if the Poynting vector is distributed symmetric about the origin.  It depends on the choice of transverse
-  origin.
-\end{importantbox}
-The intrinsic contribution is the remainder evaluated about the energy-flux
-centroid,
-\begin{align}
-  \frac{d\mathcal J^{\mathrm{int}}_3}{d\omega}
-  &=\frac{d\mathcal J^{\mathrm{tot}}_3}{d\omega}
-  -\frac{d\mathcal J^{\mathrm{ext}}_3}{d\omega}=\int_A dA\left[
-    (x_1-X_c)\frac{d\mathcal T_{23,+}}{d\omega}
-    -(x_2-Y_c)\frac{d\mathcal T_{13,+}}{d\omega}
-  \right].
-  \label{eq:spectral-intrinsic-angular-momentum-flux}
-\end{align}
-\begin{importantbox}
-  If $X_c=Y_c=0$ then
-  \begin{align}
-    \frac{d\mathcal J^{\mathrm{int}}_3}{d\omega}
-    &=\frac{d\mathcal J^{\mathrm{tot}}_3}{d\omega}
-    -\frac{d\mathcal J^{\mathrm{ext}}_3}{d\omega}=\int_A dA\left[
-      x_1\frac{d\mathcal T_{23,+}}{d\omega}
-      -x_2\frac{d\mathcal T_{13,+}}{d\omega}
-    \right].
-    \label{eq:spectral-intrinsic-angular-momentum-flux-symmetric}
-  \end{align}
-\end{importantbox}
+\end{highlightbox}
 
-Unlike the extrinsic part, this quantity is invariant under a translation of
-the transverse coordinate origin accompanied by the same translation of the
-centroid.
+\subsection{Orbital and spin contributions}
 
-Finally, the intrinsic angular momentum is separated into spin and intrinsic
-orbital contributions,
+The canonical orbital and spin angular-momentum densities are
 \begin{importantbox}
   \begin{align}
-    \frac{d\mathcal J^{\mathrm{int}}_3}{d\omega}
-    =\frac{d\mathcal J^{\mathrm{spin}}_3}{d\omega}
-    +\frac{d\mathcal J^{\mathrm{orb,int}}_3}{d\omega}.
-    \label{eq:spin-orbital-angular-momentum-split}
+    \boldsymbol{\mathcal L}
+    &=\epsilon_0\sum_{m=1}^{3}E_m
+      ({\bf r}\times\boldsymbol{\nabla})A_m,
+    \label{eq:am-general-orbital-density}\\
+    \boldsymbol{\mathcal S}
+    &=\epsilon_0{\bf E}\times{\bf A}.
+    \label{eq:am-general-spin-density}
   \end{align}
-  The spin term describes the polarization contribution, whereas the intrinsic
-  orbital term describes the spatial structure of the field about its
-  energy-flux centroid.
 \end{importantbox}
+The orbital term contains the spatial rotation operator acting on each
+Cartesian component of the potential and depends on the chosen origin.
+The spin term contains no explicit position vector and describes the
+polarization contribution.  Here $\boldsymbol{\mathcal S}$ denotes spin
+angular-momentum density, distinct from the Poynting vector ${\bf S}$.
+
+Integrating Eq.~\eqref{eq:am-general-local-split} over a volume $V$ gives
+\begin{align}
+  {\bf J}_V
+  ={\bf L}_V+{\bf S}_V^{\mathrm{spin}}
+  -\epsilon_0\oint_{\partial V}dA\,
+    ({\bf E}\cdot{\bf n})({\bf r}\times{\bf A}),
+  \label{eq:am-general-split-boundary}
+\end{align}
+where ${\bf n}$ is the outward unit normal,
+${\bf L}_V=\int_V d^3r\,\boldsymbol{\mathcal L}$, and
+${\bf S}_V^{\mathrm{spin}}=\int_V d^3r\,\boldsymbol{\mathcal S}$.
+For fields localized sufficiently rapidly at infinity, or for boundary
+conditions that make this surface integral vanish, the total angular
+momentum therefore separates as
+\begin{importantbox}
+  \begin{align}
+    {\bf J}={\bf L}+{\bf S}^{\mathrm{spin}},\qquad
+    {\bf L}=\epsilon_0\int d^3r\sum_{m=1}^{3}
+      E_m({\bf r}\times\boldsymbol{\nabla})A_m,\\
+    {\bf S}^{\mathrm{spin}}
+    =\epsilon_0\int d^3r\,{\bf E}\times{\bf A}.
+    \label{eq:am-general-integrated-spin-orbital-split}
+  \end{align}
+\end{importantbox}
+Locally, the canonical sum
+$\boldsymbol{\mathcal L}+\boldsymbol{\mathcal S}$ and the kinetic density
+${\bf r}\times{\bf g}$ differ by the divergence in
+Eq.~\eqref{eq:am-general-local-split}.  For a finite integration region,
+the corresponding surface term must be retained unless it vanishes.
+
+\subsection{Components along the detector axis}
+
+For the axis $Oz\equiv Ox_3$, the densities used in the following sections
+are
+\begin{highlightbox}
+  \begin{align}
+    \mathcal L_z
+    &=\epsilon_0\sum_{m=x,y,z}E_m
+      (x\partial_y-y\partial_x)A_m,\\
+    \mathcal S_z&=\epsilon_0(E_x A_y-E_y A_x).
+    \label{eq:am-general-axial-spin-orbital-densities}
+  \end{align}
+\end{highlightbox}
+These are the time-domain definitions underlying the spectral expressions.
+With the Fourier convention used in this document,
+$\tilde{\bf A}=\tilde{\bf E}/(i\omega)$ for $\omega>0$.

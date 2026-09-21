@@ -1,0 +1,62 @@
+\section{Poynting vector of the emitted radiation}
+
+In SI units, the instantaneous electromagnetic energy-flux density is the
+Poynting vector
+\begin{align}
+  {\bf S}(t,{\bf x})
+  =\frac1{\mu_0}{\bf E}(t,{\bf x})\times{\bf B}(t,{\bf x}).
+  \label{eq:standard-Poynting-vector}
+\end{align}
+Using Eq.~\eqref{eq:fields-from-Faraday}, its Cartesian components can be
+written directly in terms of the Faraday tensor as
+\begin{align}
+  S^i(t,{\bf x})
+  =-\frac{c}{\mu_0}\sum_{j=1}^{3}
+  F^{j0}(t,{\bf x})F^{ij}(t,{\bf x}).
+  \label{eq:Poynting-vector-Faraday}
+\end{align}
+
+We use the Fourier convention of
+Eq.~\eqref{eq:Faraday-Fourier-convention-observables}, with $e^{i\omega t}$
+in the forward transform and $e^{-i\omega t}$ in the inverse transform.
+Substitution of the inverse transforms into
+Eq.~\eqref{eq:Poynting-vector-Faraday} gives
+\begin{align}
+  S^i(t,{\bf x})
+  =-\frac{c}{\mu_0}
+  \int_{-\infty}^{\infty}d\omega
+  \int_{-\infty}^{\infty}d\omega'\,
+  e^{-i(\omega+\omega')t}
+  \sum_{j=1}^{3}
+  F^{j0}(\omega,{\bf x})F^{ij}(\omega',{\bf x}).
+  \label{eq:instantaneous-Poynting-vector-Fourier-F}
+\end{align}
+
+The Poynting vector integrated over time is obtained from Parseval's identity,
+\begin{align}
+  &\int_{-\infty}^{\infty}dt\,S^i(t,{\bf x})
+  =\int_{-\infty}^{\infty}d\omega\,
+  \frac{d\mathcal S^i}{d\omega}(\omega,{\bf x}),\\
+  &\frac{d\mathcal S^i}{d\omega}(\omega,{\bf x})
+  =-\frac{2\pi c}{\mu_0}\operatorname{Re}
+  \left[
+    \sum_{j=1}^{3}F^{j0}(\omega,{\bf x})
+    F^{ij}(\omega,{\bf x})^*
+  \right].
+  \label{eq:two-sided-spectral-Poynting-vector-F}
+\end{align}
+Here $d{\boldsymbol{\mathcal S}}/d\omega$ is the two-sided spectral energy
+flux density.
+\begin{highlightbox}[title={One-sided spectral Poynting vector}]
+  For a real time-domain Faraday tensor, the one-sided spectrum
+  is
+  \begin{align}
+    \frac{d\mathcal S^i_+}{d\omega}(\omega,{\bf x})
+    =-\frac{4\pi c}{\mu_0}\operatorname{Re}
+    \left[
+      \sum_{j=1}^{3}F^{j0}(\omega,{\bf x})
+      F^{ij}(\omega,{\bf x})^*
+    \right],\qquad \omega>0.
+    \label{eq:one-sided-spectral-Poynting-vector-F}
+  \end{align}
+\end{highlightbox}

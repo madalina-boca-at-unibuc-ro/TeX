@@ -1,0 +1,81 @@
+\section{Linear-momentum flux density}
+
+The flux density of the $i$th Cartesian component of electromagnetic linear
+momentum in the $j$th direction is described by the stress tensor.  With the
+sign convention used in this document, the source-free momentum-continuity
+equation and the stress tensor are
+\begin{align}
+  &  \frac{\partial g_i}{\partial t}+\partial_jT_{ij}=0,
+  \label{eq:linear-momentum-continuity}\\
+  &T_{ij}(t,{\bf x})
+  =-\epsilon_0E_i(t,{\bf x})E_j(t,{\bf x})
+  -\frac1{\mu_0}B_i(t,{\bf x})B_j(t,{\bf x})
+  +w(t,{\bf x})\delta_{ij}.
+  \label{eq:linear-momentum-flux-tensor}
+\end{align}
+This $T_{ij}$ is the negative of the quantity that is also commonly called
+the Maxwell stress tensor.  The sign above is fixed by
+Eq.~\eqref{eq:linear-momentum-continuity}.
+
+Using Eqs.~\eqref{eq:fields-from-Faraday} and
+\eqref{eq:standard-energy-density}, the same tensor can be written in terms of
+the Faraday tensor as
+\begin{align}
+  T_{ij}(t,{\bf x})
+  =\epsilon_0c^2\Bigg[
+    &-F^{i0}(t,{\bf x})F^{j0}(t,{\bf x})
+    -\frac14\epsilon_{ikl}\epsilon_{jmn}
+    F^{kl}(t,{\bf x})F^{mn}(t,{\bf x})\nonumber\\
+    &+\frac12\delta_{ij}\left(
+      \sum_{a=1}^{3}F^{a0}(t,{\bf x})F^{a0}(t,{\bf x})
+      +\sum_{1\leq a<b\leq3}F^{ab}(t,{\bf x})F^{ab}(t,{\bf x})
+  \right)\Bigg].
+  \label{eq:linear-momentum-flux-tensor-Faraday}
+\end{align}
+
+For the Fourier convention of
+Eq.~\eqref{eq:Faraday-Fourier-convention-observables}, the time-integrated
+momentum flux is
+\begin{align}
+  \int_{-\infty}^{\infty}dt\,T_{ij}(t,{\bf x})
+  =\int_{-\infty}^{\infty}d\omega\,
+  \frac{d\mathcal T_{ij}}{d\omega}(\omega,{\bf x}),
+\end{align}
+where the exact two-sided spectral momentum-flux density is
+\begin{align}
+  \frac{d\mathcal T_{ij}}{d\omega}(\omega,{\bf x})
+  =2\pi\epsilon_0c^2\operatorname{Re}\left[
+    -F^{i0}(F^{j0})^*
+    -\frac14\epsilon_{ikl}\epsilon_{jmn}F^{kl}(F^{mn})^*+\frac12\delta_{ij}\left(
+      \sum_{a=1}^{3}|F^{a0}|^2
+      +\sum_{1\leq a<b\leq3}|F^{ab}|^2
+  \right)\right]
+  \label{eq:two-sided-spectral-linear-momentum-flux-F}
+\end{align}
+\begin{highlightbox}[title={One-sided spectral linear-momentum flux density}]
+  All Fourier components on the right-hand side are evaluated at
+  $(\omega,{\bf x})$.  For the one-sided spectrum,
+  \begin{align}
+    \frac{d\mathcal T_{ij,+}}{d\omega}(\omega,{\bf x})
+    =4\pi\epsilon_0c^2\operatorname{Re}\left[
+      -F^{i0}(F^{j0})^*
+      -\frac14\epsilon_{ikl}\epsilon_{jmn}F^{kl}(F^{mn})^*+\frac12\delta_{ij}\left(
+        \sum_{a=1}^{3}|F^{a0}|^2
+        +\sum_{1\leq a<b\leq3}|F^{ab}|^2
+    \right)\right],\qquad \omega>0.
+    \label{eq:one-sided-spectral-linear-momentum-flux-F}
+  \end{align}
+\end{highlightbox}
+
+For a detector of area $A$ parallel to the $Oxy$ plane, with normal along
+the positive $x_3$ direction, we denote by $\mathcal P_i$ the total $i$th
+component of linear momentum transported through the detector.  Its
+one-sided spectrum is
+\begin{align}
+  \frac{d\mathcal P_i}{d\omega}
+  =\int_A dA\,\frac{d\mathcal T_{i3,+}}{d\omega},
+  \qquad i=1,2,3,\quad \omega>0.
+  \label{eq:spectral-screen-integrated-linear-momentum}
+\end{align}
+Thus $d\mathcal T_{i3,+}/d\omega$ is the local momentum-flux density on the
+screen, whereas $d\mathcal P_i/d\omega$ is its integral over the screen.

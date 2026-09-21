@@ -1,0 +1,68 @@
+
+\section{numerical evaluation of the simplified formula}
+
+in a practical calculation the simplified formula presented in Sect. \ref{sect:FTF-simplified} is evaluated on a finite interval $\tau\in(\tau_{\min},\tau_{max})$. when we perform an integration by parts of the formula (\ref{eq:ft-simplified-total-integral})
+\begin{align}
+  F^{\alpha\beta}(c k, {\bf x}) &  = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{\tau_{min}}^{\tau_{max}} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\frac{1}{|{\bf R}_0|} \frac{d}{d\tau}\left[ \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}\right]\label{eq:ft-simplified-total-integral-numeric}
+\end{align}
+
+We perform an integration by parts,
+\begin{align}
+  \frac{d}{d\tau}e^{i k (r_0^0+|{\bf R}_0|)}\frac1{|{\bf R}_0|} = i k (u\cdot n_{R_0}) e^{i k (r_0^0+|{\bf R}_0|)}\frac1{|{\bf R}_0|} + e^{i k (r_0^0+|{\bf R}_0|)}\frac{{\bf n}_{R_0}\cdot {\bf u}}{|{\bf R}_0|^2}
+\end{align}
+After the integration by parts, the result is
+\begin{align}
+  F^{\alpha\beta}(c k, {\bf x}) & = \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\left[\int\limits_{\tau_{min}}^{\tau_{max}} d\tau e^{i k (r_0^0+|{\bf R}_0|)}\left\{ -ik \frac{  (u\cdot n_{R_0})}{|{\bf R}_0|}-\frac{{\bf n}_{R_0}\cdot{\bf u}}{|{\bf R}_0|^2}\right\} \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}+{\left(e^{i k (r_0^0+|{\bf R}_0|)}  \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{{|{\bf R}_0|}(n_{R_0}\cdot u) }\right)\vline}_{\tau_{min}}^{\tau_{\max}}\right]
+\end{align}
+and $F$ becomes the sum of three terms: long range, short range and boundary term
+\begin{highlightbox}[title={Finite-interval Fourier transform for numerical evaluation}]
+  \begin{align}
+    F^{\alpha\beta}(c k,{\bf x})     & = F^{\alpha\beta}_{l}(c k,{\bf x}) + F^{\alpha\beta}_{s}(c k,{\bf x}) + F^{\alpha\beta}_{b}(c k,{\bf x}),
+    \\
+    F^{\alpha\beta}_{l}(c k,{\bf x}) & =    \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{\tau_{min}}^{\tau_{max}} d\tau\,
+    e^{i k (r_0^0+|{\bf R}_0|)}
+    \left(
+      -ik \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}
+    {|{\bf R}_0|}\right),
+    \\
+    F^{\alpha\beta}_{s}(c k,{\bf x}) & =
+    \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}\int\limits_{\tau_{min}}^{\tau_{max}} d\tau\,
+    e^{i k (r_0^0+|{\bf R}_0|)}
+    \left(
+      - \frac{{\bf n}_{R_0}\cdot{\bf u}}{|{\bf R}_0|^2}
+    \right)
+    \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{n_{R_0}\cdot u}.\\
+    F^{\alpha\beta}_{b}(ck,{\bf x}) &= \frac1{2\pi}\frac{e}{4\pi\epsilon_0c^2}
+    {\left(e^{i k (r_0^0+|{\bf R}_0|)}  \frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}{{|{\bf R}_0|}(n_{R_0}\cdot u) }\right)\vline}_{\tau_{min}}^{\tau_{\max}}
+  \end{align}
+\end{highlightbox}
+
+To verify the physical dimensions, let $L$ and $T$ denote length and time.
+Here $[k]=L^{-1}$, $[R_0]=L$, $[\tau]=T$, $[u]=L T^{-1}$,
+and $n_{R_0}$ and the exponential are dimensionless.  Consequently,
+\begin{align}
+  \left[\frac{n_{R_0}^{\alpha}u^{\beta}-n_{R_0}^{\beta}u^{\alpha}}
+  {n_{R_0}\cdot u}\right]&=1,\quad
+  \left[d\tau\,k\frac{u}{|{\bf R}_0|}\right]=L^{-1}, \quad
+  \left[d\tau\,\frac{u}{|{\bf R}_0|^2}\right]=L^{-1}, \quad
+  \left[\frac1{|{\bf R}_0|}\right]=L^{-1}.
+\end{align}
+Thus the quantities inside the common prefactor in $F_l$, $F_s$, and $F_b$
+all have dimension $L^{-1}$.  Since all three terms also contain the same
+factor $e/(8\pi^2\epsilon_0c^2)$, they have the same physical dimension,
+namely that of the Fourier-transformed field tensor $F^{\alpha\beta}(ck,{\bf
+x})$.  The common prefactor is essential in the definition of the boundary
+term.
+Compare with the direct form of Sec.~\ref{sect:FTF-direct}: both derivations
+now carry the same overall factor $e/(4\pi\epsilon_0c^2)$, as required for the
+two routes to compute the same $F^{\alpha\beta}(ck,{\bf x})$; the individual
+$F_l$, $F_s$ pieces need not agree term by term, since the long/short split is
+defined differently in each derivation.
+The notations are the same as in the previous section \ref{sect:FTF-direct}
+\begin{highlightbox}
+  \begin{align}
+    k = \frac{\omega}{c},\quad
+    R_0 = (|{\bf R}_0|,{\bf R}_0)=|{\bf R}_0| (1,{\bf n}_{R_0}) = |{\bf R}_0|n_{R_0}, \qquad {\bf R}_0 = {\bf x}_0-{\bf r}_0(\tau),\quad {\bf n}_{R_0} = \frac{{\bf R}_0}{|{\bf R}_0|}.
+  \end{align}
+\end{highlightbox}
+In the integrals the integrands must be evaluated as functions of $\tau$, the variable of integration.

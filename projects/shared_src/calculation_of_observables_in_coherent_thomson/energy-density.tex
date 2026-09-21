@@ -1,0 +1,89 @@
+\section{Energy density of the emitted radiation}
+
+In SI units, the instantaneous electromagnetic energy density is
+\begin{align}
+  w(t,{\bf x})
+  =\frac{\epsilon_0}{2}|{\bf E}(t,{\bf x})|^2
+  +\frac{1}{2\mu_0}|{\bf B}(t,{\bf x})|^2
+  =\frac{\epsilon_0}{2}
+  \left(|{\bf E}(t,{\bf x})|^2+c^2|{\bf B}(t,{\bf x})|^2\right).
+  \label{eq:standard-energy-density}
+\end{align}
+With the conventions used in Part~III, the electric and magnetic fields are
+the following components of the Faraday tensor:
+\begin{align}
+  E_i(t,{\bf x})=cF^{i0}(t,{\bf x}),\qquad
+  B^i(t,{\bf x})=-\frac12\epsilon_{ijk}F^{jk}(t,{\bf x}).
+  \label{eq:fields-from-Faraday}
+\end{align}
+
+Part~III defines the Fourier transform with a positive sign in the
+exponential,
+\begin{align}
+  F^{\alpha\beta}(\omega,{\bf x})
+  =\frac1{2\pi}\int_{-\infty}^{\infty}dt\,
+  e^{i\omega t}F^{\alpha\beta}(t,{\bf x}).
+  \label{eq:Faraday-Fourier-convention-observables}
+\end{align}
+The corresponding inverse transform therefore contains the negative sign,
+\begin{align}
+  F^{\alpha\beta}(t,{\bf x})
+  =\int_{-\infty}^{\infty}d\omega\,
+  e^{-i\omega t}F^{\alpha\beta}(\omega,{\bf x}).
+  \label{eq:Faraday-inverse-Fourier-observables}
+\end{align}
+Thus the Fourier transforms of the electric and magnetic fields are obtained
+directly from the Fourier-transformed Faraday tensor:
+\begin{align}
+  E_i(\omega,{\bf x})=cF^{i0}(\omega,{\bf x}),\qquad
+  B^i(\omega,{\bf x})=-\frac12\epsilon_{ijk}F^{jk}(\omega,{\bf x}).
+  \label{eq:Fourier-fields-from-Faraday}
+\end{align}
+Substitution of the inverse transforms in
+Eq.~\eqref{eq:standard-energy-density} gives the instantaneous energy density
+entirely in terms of the available Fourier components:
+\begin{align}
+  w(t,{\bf x})
+  =\frac{\epsilon_0c^2}{2}
+  \int_{-\infty}^{\infty}d\omega
+  \int_{-\infty}^{\infty}d\omega'\,
+  e^{-i(\omega+\omega')t}
+  \left[
+    \sum_{i=1}^{3}F^{i0}(\omega,{\bf x})F^{i0}(\omega',{\bf x})
+    +\sum_{1\leq i<j\leq3}F^{ij}(\omega,{\bf x})F^{ij}(\omega',{\bf x})
+  \right].
+  \label{eq:instantaneous-energy-density-Fourier-F}
+\end{align}
+
+For radiation spectra, the relevant quantity is the energy density integrated
+over time.  Parseval's identity for the convention in
+Eq.~\eqref{eq:Faraday-Fourier-convention-observables} yields
+\begin{align}
+  &\int_{-\infty}^{\infty}dt\,w(t,{\bf x})
+  =\int_{-\infty}^{\infty}d\omega\,
+  \frac{d\mathcal U}{d\omega}(\omega,{\bf x}),\\
+  &\frac{d\mathcal U}{d\omega}(\omega,{\bf x})
+  =\pi\epsilon_0c^2
+  \left[
+    \sum_{i=1}^{3}|F^{i0}(\omega,{\bf x})|^2
+    +\sum_{1\leq i<j\leq3}|F^{ij}(\omega,{\bf x})|^2
+  \right].
+  \label{eq:two-sided-spectral-energy-density-F}
+\end{align}
+This is the two-sided spectrum.  Since the time-domain Faraday tensor is
+real, $F^{\alpha\beta}(-\omega,{\bf x})=
+F^{\alpha\beta}(\omega,{\bf x})^*$.
+\begin{highlightbox}[title={One-sided spectral energy density}]
+  Therefore the one-sided spectrum for
+  $\omega>0$ is
+  \begin{align}
+    \frac{d\mathcal U_+}{d\omega}(\omega,{\bf x})
+    =2\pi\epsilon_0c^2
+    \left[
+      \sum_{i=1}^{3}|F^{i0}(\omega,{\bf x})|^2
+      +\sum_{1\leq i<j\leq3}|F^{ij}(\omega,{\bf x})|^2
+    \right],\qquad \omega>0.
+    \label{eq:one-sided-spectral-energy-density-F}
+  \end{align}
+
+\end{highlightbox}

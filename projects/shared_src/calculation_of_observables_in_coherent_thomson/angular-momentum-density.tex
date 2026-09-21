@@ -1,0 +1,139 @@
+
+\section{Spin and orbital angular-momentum densities}
+
+The intrinsic angular-momentum density is obtained by taking moments
+of the linear-momentum density about the energy-flux centroid.  On the
+detector screen, let ${\bf r}_\perp=(x_1,x_2,0)$ and
+${\bf R}_c(\omega)=(X_c(\omega),Y_c(\omega),0)$.  Its third component in the
+one-sided spectrum is
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{int}}_{3,+}}{d\omega}
+  &=4\pi\epsilon_0\left[
+    ({\bf r}_\perp-{\bf R}_c)\times
+    \operatorname{Re}\bigl({\bf E}(\omega,{\bf x})
+    \times{\bf B}(\omega,{\bf x})^*\bigr)
+  \right]_3,
+  \qquad \omega>0.
+  \label{eq:one-sided-intrinsic-kinetic-angular-momentum-density}
+\end{align}
+
+We adopt the dual-symmetric spin--orbital separation for a source-free
+electromagnetic field \cite{bliokh_conservation_2014}.  For the one-sided
+Fourier spectrum, the spin density of the third component is
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{spin}}_{3,+}}{d\omega}
+  =\frac{2\pi\epsilon_0}{\omega}\operatorname{Im}\left[
+    \left({\bf E}^*\times{\bf E}\right)_3
+    +c^2\left({\bf B}^*\times{\bf B}\right)_3
+  \right],
+  \qquad \omega>0.
+  \label{eq:one-sided-spin-angular-momentum-density}
+\end{align}
+Here and below, all fields in a spectral expression are evaluated at
+$(\omega,{\bf x})$.  One local representative of the orbital density is the
+residual obtained by subtracting the spin density from the intrinsic kinetic
+density:
+
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{orb,res}}_{3,+}}{d\omega}
+  =\frac{d\mathcal L^{\mathrm{int}}_{3,+}}{d\omega}
+  -\frac{d\mathcal L^{\mathrm{spin}}_{3,+}}{d\omega}.
+  \label{eq:one-sided-intrinsic-orbital-angular-momentum-density-dif}
+\end{align}
+The dual-symmetric canonical orbital density is instead expressed through the
+generator of rotations about $Ox_3$.  On the detector screen, introduce polar
+coordinates about the energy-flux centroid at each frequency by
+\begin{align}
+  x_1-X_c=\rho\cos\phi,
+  \qquad
+  x_2-Y_c=\rho\sin\phi.
+  \label{eq:screen-polar-coordinates-about-centroid}
+\end{align}
+The generator of rotations about the third axis is then
+\begin{align}
+  \mathscr L_3
+  =(x_1-X_c)\partial_2-(x_2-Y_c)\partial_1
+  =\frac{\partial}{\partial\phi}.
+  \label{eq:intrinsic-orbital-rotation-generator}
+\end{align}
+Consequently, the canonical intrinsic orbital density on the screen is
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{orb,can}}_{3,+}}{d\omega}
+  =\frac{2\pi\epsilon_0}{\omega}\operatorname{Im}\left[
+    \sum_{a=1}^{3}E_a^*\mathscr L_3E_a
+    +c^2\sum_{a=1}^{3}B_a^*\mathscr L_3B_a
+  \right],
+  \qquad \omega>0,
+  \label{eq:one-sided-intrinsic-orbital-angular-momentum-density}
+\end{align}
+or, equivalently,
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{orb,can}}_{3,+}}{d\omega}
+  =\frac{2\pi\epsilon_0}{\omega}\operatorname{Im}\left[
+    \sum_{a=1}^{3}E_a^*\frac{\partial E_a}{\partial\phi}
+    +c^2\sum_{a=1}^{3}B_a^*\frac{\partial B_a}{\partial\phi}
+  \right],
+  \qquad \omega>0.
+  \label{eq:one-sided-intrinsic-orbital-angular-momentum-density-azimuthal}
+\end{align}
+
+For clarity, the four quantities needed in the numerical calculation can all
+be expressed directly through $F^{\alpha\beta}(\omega,{\bf x})$.  First, the
+intrinsic  density is
+\begin{highlightbox}[title={Intrinsic angular-momentum density from the Faraday tensor}]
+  \begin{align}
+    \frac{d\mathcal L^{\mathrm{int}}_{3,+}}{d\omega}
+    =-4\pi\epsilon_0c\left\{
+      (x_1-X_c)\operatorname{Re}\left[
+      \sum_{j=1}^{3}F^{j0}(F^{2j})^*\right]-(x_2-Y_c)\operatorname{Re}\left[
+      \sum_{j=1}^{3}F^{j0}(F^{1j})^*\right]
+    \right\}.
+    \label{eq:one-sided-intrinsic-kinetic-angular-momentum-density-Faraday}
+  \end{align}
+\end{highlightbox}
+\begin{highlightbox}[title={Spin angular-momentum density from the Faraday tensor}]
+  \begin{align}
+    \frac{d\mathcal L^{\mathrm{spin}}_{3,+}}{d\omega}
+    =\frac{2\pi\epsilon_0c^2}{\omega}\operatorname{Im}\left[(F^{10})^*F^{20}-(F^{20})^*F^{10}+(F^{13})^*F^{23}-(F^{23})^*F^{13}
+    \right].
+    \label{eq:one-sided-spin-angular-momentum-density-Faraday}
+  \end{align}
+\end{highlightbox}
+\begin{highlightbox}[title={Orbital angular-momentum densities from the Faraday tensor}]
+  The orbital density obtained as the residual of the intrinsic kinetic
+  density is
+  \begin{align}
+    \frac{d\mathcal L^{\mathrm{orb,res}}_{3,+}}{d\omega}
+    =\frac{d\mathcal L^{\mathrm{int}}_{3,+}}{d\omega}
+    -\frac{d\mathcal L^{\mathrm{spin}}_{3,+}}{d\omega}.
+    \label{eq:one-sided-residual-orbital-angular-momentum-density-Faraday}
+  \end{align}
+  In the dual-symmetric canonical separation, the orbital density is instead
+  evaluated directly from the azimuthal variation of the field,
+  \begin{align}
+    \frac{d\mathcal L^{\mathrm{orb,can}}_{3,+}}{d\omega}
+    =\frac{2\pi\epsilon_0c^2}{\omega}\operatorname{Im}\left[
+      \sum_{a=1}^{3}(F^{a0})^*\frac{\partial F^{a0}}{\partial\phi}
+      +\sum_{1\leq a<b\leq3}(F^{ab})^*
+      \frac{\partial F^{ab}}{\partial\phi}
+    \right].
+    \label{eq:one-sided-canonical-orbital-angular-momentum-density-Faraday}
+  \end{align}
+  Here $\omega>0$, every Faraday component is evaluated at
+  $(\omega,{\bf x})$, and $\partial_\phi$ is taken at fixed $\rho$ about the
+  energy-flux centroid.
+\end{highlightbox}
+
+The sum of the spin and canonical orbital densities defines the canonical
+intrinsic angular-momentum density,
+\begin{align}
+  \frac{d\mathcal L^{\mathrm{int,can}}_{3,+}}{d\omega}
+  =\frac{d\mathcal L^{\mathrm{spin}}_{3,+}}{d\omega}
+  +\frac{d\mathcal L^{\mathrm{orb,can}}_{3,+}}{d\omega}.
+  \label{eq:one-sided-intrinsic-angular-momentum-density-split}
+\end{align}
+The residual and canonical orbital densities need not coincide point by point:
+the kinetic and canonical momentum densities differ by a spatial-divergence
+term.  Their integrals over the complete screen agree when the associated
+boundary term vanishes.  No relation between ${\bf E}$ and ${\bf B}$ beyond
+Maxwell's equations has been imposed.
